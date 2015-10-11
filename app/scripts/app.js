@@ -2,9 +2,9 @@
 
 /**
 * @ngdoc overview
-* @name featureLoginApp
+* @name eva21DayChallengeApp
 * @description
-* # featureLoginApp
+* # eva21DayChallengeApp
 *
 * Main module of the application.
 */
@@ -44,8 +44,11 @@ var app = angular
     redirectTo: '/login'
   });
 });
-
-app.config(['$httpProvider', function($httpProvider) {
-  $httpProvider.defaults.useXDomain = true;
-  delete $httpProvider.defaults.headers.common['X-Requested-With'];
-}]);
+/*
+* Define constants in the project here
+*/
+app.constant('URLS', {
+  "API" : "http://localhost:52072",
+  "ACCOUNT" : '/api/Account'
+});
+app.constant('TOKEN', 'eva.access_token');

@@ -2,10 +2,10 @@
 
 /**
  * @ngdoc function
- * @name featureLoginApp.controller:AboutCtrl
+ * @name eva21DayChallengeApp.controller:AboutCtrl
  * @description
  * # AboutCtrl
- * Controller of the featureLoginApp
+ * Controller of the eva21DayChallengeApp
  */
 angular.module('eva21DayChallengeApp')
   .controller('AboutCtrl', function () {

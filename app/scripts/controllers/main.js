@@ -7,14 +7,6 @@
  * # MainCtrl
  * Controller of the eva21DayChallengeApp
  */
-app.controller('MainCtrl', ['$scope', 'AuthService', function($scope, auth){
+app.controller('MainCtrl', function(){
 
-  //Temporary
-  $scope.sendRequest = function(){
-
-    //call AuthService register
-    auth.register();
-  };
-  //Temporary
-
-}]);
+});
