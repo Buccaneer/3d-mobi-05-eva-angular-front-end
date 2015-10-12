@@ -11,7 +11,7 @@
 * # AuthorizationService
 * # AuthorizationService of the eva21DayChallengeApp
 */
-app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', function ($localstorage, $http, URLS) {
+app.service('AuthService', ['$localstorage', '$http', 'URLS', function ($localstorage, $http, URLS) {
   var factory = {
 
     /**
@@ -56,10 +56,6 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', function 
       return $http({
         method: 'GET',
         url: URLS.API + URLS.ACCOUNT + '/ExternalLogins?returnUrl=%2F&generateState=true',
-      }).then(function(response){
-        return response.data;
-      }).catch(function(response){
-        return response;
       });
     }
   };

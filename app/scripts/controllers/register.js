@@ -1,5 +1,9 @@
 'use strict';
 
+//TODO
+// redirect to /login after successfull register,
+// show error-handling/message-handling
+
 /**
  * @ngdoc function
  * @name eva21DayChallengeApp.controller:AboutCtrl
@@ -26,7 +30,11 @@ angular.module('eva21DayChallengeApp')
       promise.then(function(response){
         console.log(response);
       }).catch(function(response){
-        console.log(response);
+        switch(response.status){
+          case -1:
+            $scope.error = "Sorry! Er kan geen verbinding gemaakt worden met de server.";
+            break;
+        }
       });
     };
   }]);

@@ -1,5 +1,9 @@
 <div class="row" id="register-view">
-  <form class="col-sm-offset-3 col-sm-6" name="signUp_form"
+  <div ng-show='error'>
+    {{error}}
+  </div>
+
+  <form id="registerForm" class="col-sm-offset-2 col-sm-8" name="signUp_form"
     ng-submit="callRegister()" novalidate>
     <legend>Sign up</legend>
     <div>
@@ -45,7 +49,7 @@
       required match="user.password"/>
     </div>
 
-    <div class="form-group col-sm-offset-4 col-sm-9">
+    <div class="form-group">
       <button class="btn btn-success"  type="submit">register</button>
     </div>
   </form>
