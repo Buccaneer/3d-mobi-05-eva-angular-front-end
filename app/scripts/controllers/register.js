@@ -25,6 +25,8 @@ angular.module('eva21DayChallengeApp')
     };
 
     $scope.callRegister = function() {
+      $scope.error = '';
+
       //call AuthService register
       var promise = auth.register($scope.user);
       promise.then(function(response) {
@@ -32,8 +34,18 @@ angular.module('eva21DayChallengeApp')
       }).catch(function(response) {
         switch (response.status) {
           case -1:
-            $scope.error = 'Sorry! Er kan geen verbinding gemaakt worden met de server.';
+            console.log(response);
+            $scope.error = 'Connection with the server cannot be established.';
             break;
+          case 400:
+            var modelState = response.data.ModelState;
+            var errors = modelState[""];
+            for (var i = 0; i < errors.length; i++) {
+              $scope.error += ' ' + errors[i];
+            }
+            break;
+          default:
+            console.log(response);
         }
       });
     };

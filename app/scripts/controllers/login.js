@@ -31,8 +31,10 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$window'
           for (var i in data) {
             var socialUrl = {
               name: data[i].Name,
-              url: data[i].Url
+              url: URLS.PUBLIC_API + data[i].Url
             };
+
+            console.log(socialUrl);
 
             $scope.socialUrls.push(socialUrl);
           }
@@ -40,7 +42,7 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$window'
       }).catch(function(response) {
         switch (response.status) {
           case -1:
-            $scope.error = "Sorry! Er kan nu niet ingelogd worden met sociale media.";
+            $scope.error = 'Logging in with social media is disabled.';
             break;
         }
       });
@@ -56,7 +58,7 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$window'
         console.log(response);
         $window.location.href = '/';
       }).catch(function(response) {
-        $scope.error = "Sorry! We kunnen geen verbinding maken met de server.";
+        $scope.error = 'Connection with the server cannot be established.';
         console.log(response);
       });
     };

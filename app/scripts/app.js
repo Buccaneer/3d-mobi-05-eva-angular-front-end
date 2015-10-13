@@ -53,7 +53,8 @@ var app = angular
  * Define constants in the project here
  */
 app.constant('URLS', {
-  "API": "http://localhost:52072",
-  "ACCOUNT": '/api/Account'
+  'PUBLIC_API': 'http://evavzwrest.azurewebsites.net',
+  'API': 'http://localhost:52072',
+  'ACCOUNT': '/api/Account'
 });
 app.constant('TOKEN', 'eva.access_token');

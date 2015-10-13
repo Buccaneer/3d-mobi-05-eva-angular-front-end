@@ -1,8 +1,9 @@
 'use strict';
 
 // TODO
-// refactoring
 // isAuthed
+// change call in login-method from local API to public API
+// when CORS is enabled on Token
 
 /**
  * @ngdoc function
@@ -20,7 +21,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', function($localsto
     register: function(user) {
       return $http({
         method: 'POST',
-        url: URLS.API + URLS.ACCOUNT + '/Register',
+        url: URLS.PUBLIC_API + URLS.ACCOUNT + '/Register',
         data: {
           'Email': user.email,
           'Password': user.password,
@@ -55,7 +56,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', function($localsto
     getSocialLinks: function() {
       return $http({
         method: 'GET',
-        url: URLS.API + URLS.ACCOUNT + '/ExternalLogins?returnUrl=%2F&generateState=true'
+        url: URLS.PUBLIC_API + URLS.ACCOUNT + '/ExternalLogins?returnUrl=%2F&generateState=true'
       });
     }
   };
