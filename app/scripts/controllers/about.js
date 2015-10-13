@@ -8,5 +8,4 @@
  * Controller of the eva21DayChallengeApp
  */
 angular.module('eva21DayChallengeApp')
-  .controller('AboutCtrl', function () {
-  });
+  .controller('AboutCtrl', function() {});

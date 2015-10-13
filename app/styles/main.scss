@@ -1,7 +1,6 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
-
 body {
   padding: 0;
 }
@@ -33,9 +32,8 @@ body {
   color: #777;
   border-top: 1px solid #e5e5e5;
 }
-
 #loginForm #registerForm {
-  display:inline-block;
+  display: inline-block;
   text-align: center;
 }
 
@@ -43,11 +41,9 @@ body {
 #wrapper {
   margin-top: 75px;
 }
-
 .socialUrl {
   margin-bottom: 5%;
 }
-
 @media screen and (max-width: 767px) {
 
 }

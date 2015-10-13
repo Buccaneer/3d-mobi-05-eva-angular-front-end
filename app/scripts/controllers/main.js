@@ -7,6 +7,4 @@
  * # MainCtrl
  * Controller of the eva21DayChallengeApp
  */
-app.controller('MainCtrl', function(){
-
-});
+app.controller('MainCtrl', function() {});

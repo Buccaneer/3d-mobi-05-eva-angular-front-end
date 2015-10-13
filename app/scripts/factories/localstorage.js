@@ -9,16 +9,16 @@
  */
 app.factory('$localstorage', ['$window', function($window) {
   return {
-    set: function(key, value){
+    set: function(key, value) {
       $window.localStorage[key] = value;
     },
-    get: function(key, defaultvalue){
+    get: function(key, defaultvalue) {
       return ($window.localStorage[key] || defaultvalue);
     },
-    setObject: function(key, obj){
+    setObject: function(key, obj) {
       $window.localStorage[key] = JSON.stringify(obj);
     },
-    getObject: function(key){
+    getObject: function(key) {
       return ($window.localStorage[key] || '{}');
     }
   };
