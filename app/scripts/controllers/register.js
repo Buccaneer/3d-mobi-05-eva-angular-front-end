@@ -20,29 +20,36 @@ angular.module('eva21DayChallengeApp')
       password: ''
     };
 
+    //Show validation after Submit
+    $scope.submitted = false;
+
     $scope.callRegister = function() {
       $scope.error = '';
 
-      //call AuthService register
-      var promise = auth.register($scope.user);
-      promise.then(function(response) {
-        console.log(response);
-      }).catch(function(response) {
-        switch (response.status) {
-          case -1:
-            console.log(response);
-            $scope.error = 'Connection with the server cannot be established.';
-            break;
-          case 400:
-            var modelState = response.data.ModelState;
-            var errors = modelState[""];
-            for (var i = 0; i < errors.length; i++) {
-              $scope.error += ' ' + errors[i];
-            }
-            break;
-          default:
-            console.log(response);
-        }
-      });
+      if ($scope.signUp_form.$valid) {
+        //call AuthService register
+        var promise = auth.register($scope.user);
+        promise.then(function(response) {
+          console.log(response);
+        }).catch(function(response) {
+          switch (response.status) {
+            case -1:
+              console.log(response);
+              $scope.error = 'Connection with the server cannot be established.';
+              break;
+            case 400:
+              var modelState = response.data.ModelState;
+              var errors = modelState[""];
+              for (var i = 0; i < errors.length; i++) {
+                $scope.error += ' ' + errors[i];
+              }
+              break;
+            default:
+              console.log(response);
+          }
+        });
+      } else {
+        $scope.signUp_form.submitted = true;
+      }
     };
   }]);

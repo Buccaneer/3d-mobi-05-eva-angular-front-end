@@ -19,6 +19,9 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$locatio
 
     $scope.baseUrl = URLS.API;
 
+    //Show validation after Submit
+    $scope.submitted = false;
+
     $scope.getSocialLinks = function() {
       var promise = auth.getSocialLinks();
       promise.then(function(response) {
@@ -48,16 +51,21 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$locatio
     $scope.callLogin = function() {
       $scope.error = '';
 
-      var promise = auth.login($scope.user);
-      promise.then(function(){
-        $location.path('/main');
-      }).catch(function(response) {
-        switch(response.status){
-          case 400:
-          $scope.error = response.data.error_description;
-        }
-      });
+      if($scope.loginForm.$valid){
+        var promise = auth.login($scope.user);
+        promise.then(function(){
+          $location.path('/main');
+        }).catch(function(response) {
+          switch(response.status){
+            case 400:
+            $scope.error = response.data.error_description;
+          }
+        });
+      } else {
+        $scope.loginForm.submitted = true;
+      }
     };
+
 
     $scope.externalLogin = function(index) {
       //call this when socialLogin has redirected to the page.
