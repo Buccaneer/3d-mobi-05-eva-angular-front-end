@@ -14,7 +14,7 @@
  */
 app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope',
   function($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
-    var factory = {
+    var service = {
       /**
        * register-function used to register a user
        */
@@ -55,6 +55,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
           };
           //add token to localstorage
           $localstorage.setObject(TOKEN, _token);
+
           $rootScope.authentication = {
             isAuthed: true,
             token: _token
@@ -62,6 +63,11 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
 
           $location.path('/main');
         });
+      },
+
+      logout: function(){
+        $localstorage.setObject(TOKEN, undefined);
+        $rootScope.authentication = undefined;
       },
 
       getUserInfo: function() {
@@ -85,7 +91,8 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
         //if there is a token object in the localstorage,
         //load it in memory
         var _token = $localstorage.getObject(TOKEN);
-        if (typeof _token !== 'undefined') {
+
+        if (_token !== 'undefined') {
           $rootScope.authentication = {
             isAuthed: true,
             token: _token
@@ -95,8 +102,8 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
     };
 
     //when page is refreshed, call this
-    factory.init();
+    service.init();
 
-    return factory;
+    return service;
   }
 ]);

@@ -12,7 +12,6 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
 
     //temporarily clean the Token-object in memory
     //for testing purposes
-    $localstorage.setObject(TOKEN, undefined);
     console.log($localstorage.getObject(TOKEN));
   }
 ]);

@@ -19,7 +19,7 @@ app.factory('$localstorage', ['$window', function($window) {
       $window.localStorage[key] = obj;
     },
     getObject: function(key) {
-      return ($window.localStorage[key] || '{}');
+      return ($window.localStorage[key]);
     }
   };
 }]);

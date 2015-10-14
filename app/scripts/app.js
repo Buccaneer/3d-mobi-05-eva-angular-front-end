@@ -54,7 +54,7 @@ app.config(function($stateProvider, $urlRouterProvider) {
 
 app.run(['$rootScope', '$state', function($rootScope, $state) {
 
-  $rootScope.$on('$stateChangeStart', function(event, toState, toParams) {
+  $rootScope.$on('$stateChangeStart', function(event, toState) {
     //state requires login?
     var requireLogin = toState.requireAuth;
     //check stateName,
