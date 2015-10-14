@@ -10,48 +10,52 @@
       <div>
         <div class="form-group">
           <label for="email">Email address</label>
-          <input class="form-control" name="email" ng-model="user.email" placeholder="Enter here your email" required type="email"/>
+          <div class="text-danger" ng-show="loginForm.email.$invalid && loginForm.submitted
+          || loginForm.email.$touched && loginForm.email.$invalid && !loginForm.email.$focused">
+            <small ng-show="loginForm.email.$error.required">
+              Your email is required.
+            </small>
+            <small ng-show="loginForm.email.$error.email">
+              That is not a valid email. Please input a valid email.
+            </small>
+          </div>
+          <input class="form-control" name="email" ng-model="user.email" placeholder="Enter here your email" ng-focus="loginForm.submitted = false" required type="email" />
         </div>
+      </div>
 
-        <!--
-        <div class="error" ng-show="login.email.$dirty && login.email.$invalid">
-        <small class="error" ng-show="login.email.$error.required">
-        Your email is required.
-      </small>
-      <small class="error" ng-show="login.email.$error.email">
-      That is not a valid email. Please input a valid email.
-    </small>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <div class="text-danger" ng-show="loginForm.password.$invalid && loginForm.submitted
+        || loginForm.password.$touched && loginForm.password.$invalid && !loginForm.password.$focused">
+          <small ng-show="loginForm.email.$error.required">
+            Your password is required.
+          </small>
+        </div>
+        <input class="form-control" name="password" ng-model="user.password" placeholder="Enter your password" ng-focus="loginForm.submitted = false" required type="password" />
+      </div>
+
+      <div class="form-group text-center">
+        <button class="btn btn-success" type="submit">
+          login
+        </button>
+      </div>
+
+      <div class="form-group text-center">
+        <p class="text-info">
+          <a ng-href="#/register">Nog geen account?</a>
+        </p>
+      </div>
+    </form>
   </div>
-</div>
--->
-        <div>
-          <div class="form-group">
-            <label for="password">Password</label>
-            <input class="form-control" name="password" ng-model="user.password" placeholder="Enter your password" required type="password"/>
-          </div>
-
-          <div class="form-group text-center">
-            <button class="btn btn-success" ng-disabled="loginForm.$invalid" type="submit">
-              login</button>
-          </div>
-
-          <div class="form-group text-center">
-            <p class="text-info">
-              <a ng-href="#/register">Nog geen account?</a>
-            </p>
-          </div>
-        </form>
-      </div>
-      <div ng-repeat='p in socialUrls'>
-        <div class="col-sm-6 socialUrl">
-          <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
-            <i class='fa fa-{{p.name | lowercase}}' ></i>
-            <span>
-              Sign in with {{p.name}}
-            </span>
-          </a>
-        </a>
-      </div>
+  <div ng-repeat='p in socialUrls'>
+    <div class="col-sm-6 socialUrl">
+      <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
+        <i class='fa fa-{{p.name | lowercase}}'></i>
+        <span>
+          Sign in with {{p.name}}
+        </span>
+      </a>
     </div>
-
   </div>
+
+</div>
