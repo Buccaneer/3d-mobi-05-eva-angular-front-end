@@ -14,10 +14,6 @@
 angular.module('eva21DayChallengeApp')
   .controller('RegisterCtrl', ['$scope', 'AuthService', function($scope, auth) {
 
-    $scope.init = function() {
-
-    };
-
     //user-object used to register
     $scope.user = {
       email: '',

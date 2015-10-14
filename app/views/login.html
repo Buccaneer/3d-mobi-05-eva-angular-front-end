@@ -1,6 +1,6 @@
 <div class="container" id="login-view">
 
-  <div class="row col-sm-offset-2 col-sm-10">
+  <div class="row col-md-offset-2 col-md-10">
     <form id="loginForm" name="loginForm" ng-submit="callLogin()" novalidate>
       <div class="text-center" ng-show="error">
         {{error}}
@@ -42,12 +42,13 @@
           </div>
         </form>
       </div>
-      <div ng-repeat="p in socialUrls">
+      <div ng-repeat='p in socialUrls'>
         <div class="col-sm-6 socialUrl">
-          <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' href="{{p.url}}">
-            <i class='fa fa-{{p.name | lowercase}}' ng-click="externalLogin($index)"></i>
-            Sign in with
-            {{p.name}}
+          <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
+            <i class='fa fa-{{p.name | lowercase}}' ></i>
+            <span>
+              Sign in with {{p.name}}
+            </span>
           </a>
         </a>
       </div>

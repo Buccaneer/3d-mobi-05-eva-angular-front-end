@@ -43,7 +43,10 @@
 
           <ul class="nav navbar-nav">
             <li class="active"><a href="#/">Home</a></li>
-            <li><a ng-hide="signedIn" ng-href="#/login">Login</a></li>
+            <li><a ng-href="#/login">Login</a></li>
+            <li>
+              <a ng-href="#/main">Main</a>
+            </li>
           </ul>
         </div>
       </div>
@@ -51,7 +54,7 @@
   </div>
 
   <div id="wrapper">
-    <div ng-view=""></div>
+    <div ui-view=""></div>
   </div>
 
   <div class="footer">
@@ -87,13 +90,13 @@
   <script src="bower_components/angular-sanitize/angular-sanitize.js"></script>
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
+  <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.js"></script>
   <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/about.js"></script>
   <script src="scripts/controllers/login.js"></script>
   <script src="scripts/controllers/register.js"></script>
   <script src="scripts/services/authService.js"></script>

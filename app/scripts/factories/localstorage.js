@@ -16,7 +16,7 @@ app.factory('$localstorage', ['$window', function($window) {
       return ($window.localStorage[key] || defaultvalue);
     },
     setObject: function(key, obj) {
-      $window.localStorage[key] = JSON.stringify(obj);
+      $window.localStorage[key] = obj;
     },
     getObject: function(key) {
       return ($window.localStorage[key] || '{}');
