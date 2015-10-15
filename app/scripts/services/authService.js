@@ -1,10 +1,5 @@
 'use strict';
 
-// TODO
-// isAuthed
-// change call in login-method from local API to public API
-// when CORS is enabled on Token
-
 /**
  * @ngdoc function
  * @name eva21DayChallengeApp.service:AuthService
@@ -36,12 +31,11 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
 
       /**
        * login-function used to get the token of a user
-       * JWT
        */
       login: function(user) {
         return $http({
           method: 'POST',
-          url: URLS.API + '/Token',
+          url: URLS.PUBLIC_API + '/Token',
           headers: {
             "Content-Type": "application/x-www-form-urlencoded"
           },
@@ -54,6 +48,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
             expires: data['.expires']
           };
           //add token to localstorage
+          console.log(_token);
           $localstorage.setObject(TOKEN, _token);
 
           $rootScope.authentication = {
@@ -65,19 +60,29 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
         });
       },
 
-      logout: function(){
+      /*
+       * Logout the current user,
+       * set the token in $localstorage to undefined
+       */
+      logout: function() {
         $localstorage.setObject(TOKEN, undefined);
         $rootScope.authentication = undefined;
       },
 
+      /**
+       * Get user info, only called when logging in with externalLogins
+       */
       getUserInfo: function() {
         var token = $localstorage.get(TOKEN);
         console.log('USERINFO: ' + token);
-        if (token) {
-          var d = new Date(token.expires);
-          console.log(d);
-        }
-        return this.userInfo;
+
+        return $http({
+          method: 'GET',
+          url: URLS.PUBLIC_API + URLS.ACCOUNT + '/UserInfo',
+          headers: {
+            'Authorization': 'Bearer ' + token
+          }
+        });
       },
 
       getSocialLinks: function() {
@@ -87,17 +92,37 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
         });
       },
 
+      /**
+      * Check if the user already has a token object in the
+      * localStorage
+      */
+
       init: function() {
         //if there is a token object in the localstorage,
         //load it in memory
         var _token = $localstorage.getObject(TOKEN);
-
+        console.log(_token);
         if (_token !== 'undefined') {
           $rootScope.authentication = {
             isAuthed: true,
             token: _token
           };
         }
+      },
+
+      /**
+      * Login with external Providers
+      * (Facebook, Twitter and Google)
+      */
+      externalLogin: function(url) {
+        var w = window.open(url);
+
+        //gives an error in reference to the security.
+        //(permissiondenied)
+        //ports,domain need to be the same
+        setTimeout(function() {
+          console.log(w.location.href);
+        }, 3000);
       }
     };
 

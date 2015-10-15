@@ -14,7 +14,9 @@ app.directive('ensureUnique', function($http) {
     require: 'ngModel',
     link: function(scope, ele, attrs, c) {
       scope.$watch(attrs.ngModel, function(n) {
-        if (!n) return;
+        if (!n) {
+          return;
+        }
         $http({
           method: 'POST',
           url: '/api/check/' + attrs.ensureUnique,
@@ -28,5 +30,5 @@ app.directive('ensureUnique', function($http) {
         });
       });
     }
-  }
+  };
 });

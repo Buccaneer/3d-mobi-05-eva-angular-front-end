@@ -10,7 +10,7 @@
 app.controller('NavCtrl', ['AuthService', '$location', '$scope',
   function(auth, $location, $scope) {
 
-    $scope.logout = function(){
+    $scope.logout = function() {
       auth.logout();
       $location.path('/');
     };

@@ -12,7 +12,8 @@
  * Controller of the eva21DayChallengeApp
  */
 angular.module('eva21DayChallengeApp')
-  .controller('RegisterCtrl', ['$scope', 'AuthService', function($scope, auth) {
+  .controller('RegisterCtrl',
+  ['$scope', 'AuthService', '$location', function($scope, auth, $location) {
 
     //user-object used to register
     $scope.user = {
@@ -31,6 +32,7 @@ angular.module('eva21DayChallengeApp')
         var promise = auth.register($scope.user);
         promise.then(function(response) {
           console.log(response);
+          $location.path('/');
         }).catch(function(response) {
           switch (response.status) {
             case -1:

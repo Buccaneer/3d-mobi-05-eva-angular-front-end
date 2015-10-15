@@ -30,6 +30,10 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$locatio
         //if not, catch the error and dont show them
         if (data !== undefined) {
           for (var i in data) {
+
+            if (data[i].Name === 'Microsoft') {
+              continue;
+            }
             var socialUrl = {
               name: data[i].Name,
               url: URLS.PUBLIC_API + data[i].Url
@@ -51,14 +55,14 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$locatio
     $scope.callLogin = function() {
       $scope.error = '';
 
-      if($scope.loginForm.$valid){
+      if ($scope.loginForm.$valid) {
         var promise = auth.login($scope.user);
-        promise.then(function(){
+        promise.then(function() {
           $location.path('/main');
         }).catch(function(response) {
-          switch(response.status){
+          switch (response.status) {
             case 400:
-            $scope.error = response.data.error_description;
+              $scope.error = response.data.error_description;
           }
         });
       } else {
@@ -68,15 +72,7 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$locatio
 
 
     $scope.externalLogin = function(index) {
-      //call this when socialLogin has redirected to the page.
-
-      var w = window.open($scope.socialUrls[index].url);
-      //gives an error in reference to the security.
-      //(permissiondenied)
-      //ports,domain need to be the same
-      setTimeout(function() {
-        console.log(w.location.href);
-      }, 3000);
+      auth.externalLogin($scope.socialUrls[index].url);
     };
 
     //user-object used to login
