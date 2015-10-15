@@ -19,10 +19,12 @@ app.factory('$localstorage', ['$window', function($window) {
       $window.localStorage[key] = JSON.stringify(obj);
     },
     getObject: function(key) {
-      //check if item exists, if it does, parse it.$
+      //check if item exists, if it does, return it.
+      //if it doesn't exist, return null
       if (typeof $window.localStorage[key] !== 'undefined'){
-        return JSON.parse($window.localStorage[key]);
+        return $window.localStorage[key];
       }
+      return null;
     },
     remove: function(key) {
       $window.localStorage.removeItem(key);

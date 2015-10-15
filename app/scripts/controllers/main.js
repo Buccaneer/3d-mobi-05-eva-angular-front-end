@@ -9,6 +9,6 @@
  */
 app.controller('MainCtrl', ['$localstorage', 'TOKEN',
   function($localstorage, TOKEN) {
-    console.log($localstorage.getObject(TOKEN));
+    console.log(JSON.parse($localstorage.getObject(TOKEN)));
   }
 ]);

@@ -1,7 +1,6 @@
 'use strict';
 
 //TODO
-// redirect to /login after successfull register,
 // show error-handling/message-handling
 
 /**

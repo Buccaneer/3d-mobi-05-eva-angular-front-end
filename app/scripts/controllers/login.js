@@ -12,8 +12,8 @@
  * # LoginCtrl
  * Controller of the eva21DayChallengeApp
  */
-app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$location', 'URLS',
-  function($scope, auth, $localstorage, $location, URLS) {
+app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstorage', '$location', 'URLS',
+  function($rootScope, $scope, auth, $localstorage, $location, URLS) {
 
     $scope.socialUrls = [];
 
@@ -55,6 +55,12 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$locatio
     $scope.callLogin = function() {
       $scope.error = '';
 
+      //don't send unnecessary requests to the server
+      if (typeof $rootScope.authentication !== 'undefined') {
+        $scope.error = 'Already logged in!';
+        return;
+      }
+
       if ($scope.loginForm.$valid) {
         var promise = auth.login($scope.user);
         promise.then(function() {
@@ -73,12 +79,6 @@ app.controller('LoginCtrl', ['$scope', 'AuthService', '$localstorage', '$locatio
 
     $scope.externalLogin = function(index) {
       auth.externalLogin($scope.socialUrls[index].url);
-    };
-
-    //user-object used to login
-    $scope.user = {
-      email: '',
-      password: '',
     };
   }
 ]);

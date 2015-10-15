@@ -48,7 +48,6 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
             expires: data['.expires']
           };
           //add token to localstorage
-          console.log(_token);
           $localstorage.setObject(TOKEN, _token);
 
           $rootScope.authentication = {
@@ -101,11 +100,12 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
         //if there is a token object in the localstorage,
         //load it in memory
         var _token = $localstorage.getObject(TOKEN);
-        console.log(_token);
-        if (typeof _token !== 'undefined') {
+        if (_token !== null) {
+          var parsedToken = JSON.parse(_token);
+          console.log(parsedToken);
           $rootScope.authentication = {
             isAuthed: true,
-            token: _token
+            token: parsedToken
           };
         }
       },
