@@ -65,7 +65,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
        * set the token in $localstorage to undefined
        */
       logout: function() {
-        $localstorage.setObject(TOKEN, undefined);
+        $localstorage.remove(TOKEN);
         $rootScope.authentication = undefined;
       },
 
@@ -102,7 +102,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
         //load it in memory
         var _token = $localstorage.getObject(TOKEN);
         console.log(_token);
-        if (_token !== 'undefined') {
+        if (typeof _token !== 'undefined') {
           $rootScope.authentication = {
             isAuthed: true,
             token: _token
