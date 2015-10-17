@@ -7,11 +7,8 @@
  * # MainCtrl
  * Controller of the eva21DayChallengeApp
  */
-angular.module('eva21DayChallengeApp')
-  .controller('MainCtrl', function () {
-    this.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
-  });
+app.controller('MainCtrl', ['$localstorage', 'TOKEN',
+  function($localstorage, TOKEN) {
+    console.log(JSON.parse($localstorage.getObject(TOKEN)));
+  }
+]);

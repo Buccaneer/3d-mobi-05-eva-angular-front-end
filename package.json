@@ -1,5 +1,5 @@
 {
-  "name": "eva21daychallenge",
+  "name": "eva21DayChallengeApp",
   "private": true,
   "devDependencies": {
     "grunt": "^0.4.5",
@@ -36,5 +36,7 @@
   },
   "scripts": {
     "test": "grunt test"
+  },
+  "dependencies": {
   }
 }

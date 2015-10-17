@@ -1,4 +1,4 @@
-// Generated on 2015-10-04 using generator-angular 0.12.1
+// Generated on 2015-10-10 using generator-angular 0.12.1
 'use strict';
 
 // # Globbing
@@ -404,8 +404,8 @@ module.exports = function (grunt) {
           src: ['generated/*']
         }, {
           expand: true,
-          cwd: '.',
-          src: 'bower_components/bootstrap-sass-official/assets/fonts/bootstrap/*',
+          cwd: 'bower_components/bootstrap/dist',
+          src: 'fonts/*',
           dest: '<%= yeoman.dist %>'
         }]
       },
