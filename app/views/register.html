@@ -8,13 +8,16 @@
         <div class="text-danger text-center" ng-show="error">
           {{error}}
         </div>
+        <div class="text-danger text-center" ng-show="signUp_form.cfPassword.$error.match && signUp_form.$submitted ||signUp_form.cfPassword.$error.match && signUp_form.cfPassword.$touched">
+          Your password doesn't match the confirmation password.
+        </div>
         <div class="form-group">
           <label for="email">Email address</label>
           <div class="text-danger" ng-messages="signUp_form.email.$error" ng-show="signUp_form.$submitted || signUp_form.email.$touched">
             <div ng-message="required">Your email is required.</div>
             <div ng-message="email">That is not a valid email. Please input a valid email.</div>
           </div>
-          <input class="form-control" ensure-unique="email" name="email" ng-model="user.email" placeholder="Enter here your email" required type="email"/>
+          <input class="form-control" ensure-unique="email" name="email" ng-model="user.email" placeholder="Enter here your email" required type="email" />
         </div>
       </div>
 
@@ -22,15 +25,17 @@
         <label for="password">Password</label>
         <div class="text-danger" ng-messages="signUp_form.password.$error" ng-show="signUp_form.$submitted || signUp_form.password.$touched">
           <div ng-message="required">Your password is required.</div>
+          <div ng-message="minlength">Your password is required to be at least 6 characters.</div>
         </div>
-        <input class="form-control" name="password" ng-model="user.password" placeholder="Enter here your password" required type="password"/>
+        <input class="form-control" name="password" ng-model="user.password" placeholder="Enter here your password" ng-minlength=6 required type="password" />
       </div>
       <div class="form-group">
         <label for="password">Confirm password</label>
         <div class="text-danger" ng-messages="signUp_form.cfPassword.$error" ng-show="signUp_form.$submitted || signUp_form.cfPassword.$touched">
           <div ng-message="required">Your confirmation of your password is required.</div>
+          <div ng-message="minlength">Your confirmation of your password is required to be at least 6 characters.</div>
         </div>
-        <input class="form-control" name="cfPassword" ng-model="confirmPassword" placeholder="Enter here your password" required type="password"/>
+        <input class="form-control" name="cfPassword" ng-model="confirmPassword" placeholder="Enter here your password" match="user.password" ng-minlength=6 required type="password" />
       </div>
 
       <div class="form-group text-center">
