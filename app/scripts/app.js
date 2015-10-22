@@ -16,6 +16,7 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'ngMessages',
     'validation.match',
     'ui.router'
   ]);
