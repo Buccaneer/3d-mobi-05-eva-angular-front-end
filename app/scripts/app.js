@@ -16,6 +16,7 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
+    'pascalprecht.translate',
     'ngMessages',
     'validation.match',
     'ui.router'
@@ -25,7 +26,7 @@ var app = angular
  * set up the config for the app
  * (routing and such)
  */
-app.config(function($stateProvider, $urlRouterProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
   $urlRouterProvider.otherwise('/home');
 
   //setting up the states
@@ -51,6 +52,35 @@ app.config(function($stateProvider, $urlRouterProvider) {
       //controller: 'MainCtrl',
       requireAuth: true
     });
+
+
+    //let translateProvider load translations from external json
+    $translateProvider.useStaticFilesLoader({
+      prefix: './i18n/locale-',
+      suffix: '.json'
+    });
+
+    //register all available languages
+    $translateProvider.registerAvailableLanguageKeys(['en', 'nl'], {
+      'en_US': 'en',
+      'en_UK': 'en',
+      'en_CA': 'en',
+      'nl_BE': 'nl',
+      'nl_NL': 'nl',
+      'fr_FR': 'fr',
+      'fr_BE': 'fr',
+      'fr_LU': 'fr',
+      'fr_CH': 'fr',
+      'fr_CA': 'fr'
+    });
+
+    //determine the language of the user and use it for translations
+    $translateProvider.determinePreferredLanguage();
+    //$translateProvider.preferredLanguage('en');
+    //if determined language isn't supported, fall back on english
+    $translateProvider.fallbackLanguage('en');
+    //safety measurements against XSS
+    $translateProvider.useSanitizeValueStrategy('escapeParameters');
 });
 
 app.run(['$rootScope', '$state', function($rootScope, $state) {

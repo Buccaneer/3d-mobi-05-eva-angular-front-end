@@ -44,7 +44,7 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
       }).catch(function(response) {
         switch (response.status) {
           case -1:
-            $scope.error = 'Logging in with social media is disabled.';
+            $scope.error = 'login.errors.socialLoginDisabled';
             break;
         }
       });
@@ -57,7 +57,7 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
 
       //don't send unnecessary requests to the server
       if (typeof $rootScope.authentication !== 'undefined') {
-        $scope.error = 'Already logged in!';
+        $scope.error = 'login.errors.alreadyLoggedIn';
         return;
       }
 

@@ -22,7 +22,7 @@ app.factory('$localstorage', ['$window', function($window) {
       //check if item exists, if it does, return it.
       //if it doesn't exist, return null
       if (typeof $window.localStorage[key] !== 'undefined'){
-        return $window.localStorage[key];
+        return JSON.parse($window.localStorage[key]);
       }
       return null;
     },

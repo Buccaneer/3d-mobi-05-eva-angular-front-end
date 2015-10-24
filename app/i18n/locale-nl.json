@@ -1,0 +1,34 @@
+{
+  "home": {
+    "title": "Welkom op de 21 day challenge website!"
+  },
+  "login": {
+    "email": "Email adres",
+    "emailPlaceholder": "voorbeeld@voorbeeld.com",
+    "password": "Wachtwoord",
+    "passwordPlaceholder": "Geef je wachtwoord in",
+    "loginButton": "Inloggen",
+    "noAccount": "Nog geen account?",
+    "signInWith": "Inloggen met ",
+
+    "errors": {
+      "passwordRequired": "Uw wachtwoord is verplicht.",
+      "emailRequired": "Uw email adres is verplicht.",
+      "emailInvalid": "Dit is geen geldig email adres",
+      "alreadyLoggedIn": "U bent al aangemeld!",
+      "socialLoginDisabled": "Sorry! Inloggen met sociale media is niet beschikbaar."
+    }
+  },
+
+  "register": {
+    "signUp": "Registreer",
+    "email": "@:login.email",
+    "password": "@:login.password",
+    "passwordPlaceholder": "@:login.passwordPlaceholder",
+    "passwordConfirmation": "Confirm password",
+    "registerButton": "Register",
+
+    "errors": {
+    }
+  }
+}

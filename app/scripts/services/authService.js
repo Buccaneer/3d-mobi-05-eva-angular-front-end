@@ -43,6 +43,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
         }).then(function(response) {
 
           var data = response.data;
+          console.log(data);
           var _token = {
             token: data.access_token,
             expires: data['.expires']
@@ -101,7 +102,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
         //load it in memory
         var _token = $localstorage.getObject(TOKEN);
         if (_token !== null) {
-          var parsedToken = JSON.parse(_token);
+          var parsedToken = _token;
           console.log(parsedToken);
           $rootScope.authentication = {
             isAuthed: true,
