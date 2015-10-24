@@ -32,7 +32,7 @@ angular.module('eva21DayChallengeApp')
         var promise = auth.register($scope.user);
         promise.then(function(response) {
           console.log(response);
-          $location.path('/');
+          $location.path('/login');
         }).catch(function(response) {
           switch (response.status) {
             case -1:

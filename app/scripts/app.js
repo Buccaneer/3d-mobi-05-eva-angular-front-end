@@ -18,15 +18,24 @@ var app = angular
     'ngTouch',
     'pascalprecht.translate',
     'ngMessages',
+    'ui.router',
+    'angular-loading-bar',
     'validation.match',
-    'ui.router'
+    'ui.bootstrap.collapse'
   ]);
 
 /**
  * set up the config for the app
  * (routing and such)
  */
-app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+app.config(function(
+  $stateProvider, $urlRouterProvider, $translateProvider,
+  cfpLoadingBarProvider) {
+
+  //set up the loading bar
+  cfpLoadingBarProvider.includeSpinner = false;
+
+  //go to /home in case of an uncaught route
   $urlRouterProvider.otherwise('/home');
 
   //setting up the states
@@ -52,7 +61,6 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
       //controller: 'MainCtrl',
       requireAuth: true
     });
-
 
     //let translateProvider load translations from external json
     $translateProvider.useStaticFilesLoader({

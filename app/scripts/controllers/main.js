@@ -14,7 +14,7 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
       var current = new Date();
 
       console.log(Date.parse(tokenObj.expires));
-      console.log(current - Date.parse(tokenObj.expires))
+      console.log(current - Date.parse(tokenObj.expires));
     }
   }
 ]);

@@ -6,7 +6,7 @@
       <legend>{{'register.signUp' | translate}}</legend>
       <div>
         <div class="text-danger text-center" ng-show="error">
-          {{error}}
+          {{error | translate}}
         </div>
         <div class="text-danger text-center" ng-show="signUp_form.cfPassword.$error.match && signUp_form.$submitted ||signUp_form.cfPassword.$error.match && signUp_form.cfPassword.$touched">
           {{'register.errors.passwordConfirmation' | translate}}
