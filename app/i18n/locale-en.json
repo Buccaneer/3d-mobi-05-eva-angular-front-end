@@ -29,6 +29,10 @@
     "registerButton": "Register",
 
     "errors": {
+      "passwordRequired":"@:login.passwordRequired",
+      "emailRequired":"@:login.emailRequired",
+      "emailInvald":"@:login.emailInvalid",
+      "passwordMinLength":"Your password has to be 6 characters long."
     }
   }
 }

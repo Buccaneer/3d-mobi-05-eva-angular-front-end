@@ -23,12 +23,18 @@
   "register": {
     "signUp": "Registreer",
     "email": "@:login.email",
+    "emailPlaceholder": "@:login.emailPlaceholder",
     "password": "@:login.password",
     "passwordPlaceholder": "@:login.passwordPlaceholder",
-    "passwordConfirmation": "Confirm password",
-    "registerButton": "Register",
+    "passwordConfirmation": "Bevestig wachtwoord",
+    "registerButton": "Registreer",
 
     "errors": {
+      "passwordRequired":"@:login.errors.passwordRequired",
+      "emailRequired":"@:login.errors.emailRequired",
+      "emailInvalid":"@:login.errors.emailInvalid",
+      "passwordMinLength":"Uw wachtwoord moet minstens 6 karakters tellen.",
+      "passwordConfirmation":"De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
     }
   }
 }
