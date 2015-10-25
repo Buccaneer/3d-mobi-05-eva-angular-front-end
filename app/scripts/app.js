@@ -111,6 +111,9 @@ app.run(['$rootScope', '$state', function($rootScope, $state) {
 app.constant('URLS', {
   'PUBLIC_API': 'http://evavzwrest.azurewebsites.net',
   'API': 'http://localhost:52072',
-  'ACCOUNT': '/api/Account'
+  'ACCOUNT': '/api/Account',
+  'CHALLENGE':'api/Challenge',
+  'RECIPE':'api/Recipes'
+
 });
 app.constant('TOKEN', 'eva.access_token');
