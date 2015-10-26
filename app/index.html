@@ -11,7 +11,7 @@
   <!-- bower:css -->
   <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
   <link rel="stylesheet" href="bower_components/bootstrap-social/bootstrap-social.css" />
-  <link rel="stylesheet" href="bower_components/angular-loading-bar/build/loading-bar.css" />
+  <link rel="stylesheet" href="bower_components/angular-material/angular-material.css" />
   <!-- endbower -->
   <!-- endbuild -->
   <!-- build:css(.tmp) styles/main.css -->
@@ -19,48 +19,22 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="eva21DayChallengeApp">
+<body ng-app="eva21DayChallengeApp" md-theme="app-dark" flex>
   <!--[if lte IE 8]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div class="header">
-    <div class="navbar navbar-inverse navbar-fixed-top" role="navigation" ng-controller="NavCtrl">
-      <div class="container">
-        <div class="navbar-header">
 
-          <button type="button" class="navbar-toggle" ng-init="isCollapsed=true" ng-click="isCollapsed = !isCollapsed">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-
-          <a class="navbar-brand" href="#/">eva21DayChallengeApp</a>
+  <md-content id="wrapper" layout="column" layout-fill layout-align="center center">
+    <div ng-controller="NavCtrl">
+      <md-content ng-controller="NavCtrl">
+        <div flex ui-view="">
         </div>
-
-        <div class="collapse navbar-collapse" ng-class="!isCollapsed && 'in'" ng-click="isCollapsed = true">
-
-            <ul class="nav navbar-nav navbar-left">
-              <li><a href="#/">Home</a></li>
-              <li> <a ng-href="#/main">Main</a> </li>
-            </ul>
-            <ul class="nav navbar-nav navbar-right">
-              <li><a ng-href="#/login" ng-hide="authentication">Login</a></li>
-              <li>
-                <a ng-href="#" ng-click="logout()" ng-show="authentication">Logout</a>
-              </li>
-            </ul>
-
-        </div>
-      </div>
+      </md-content>
     </div>
-  </div>
+  </md-content>
 
-  <div id="wrapper">
-    <div ui-view=""></div>
-  </div>
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -92,8 +66,8 @@
   <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-translate/angular-translate.js"></script>
   <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
-  <script src="bower_components/angular-loading-bar/build/loading-bar.js"></script>
-  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <script src="bower_components/angular-aria/angular-aria.js"></script>
+  <script src="bower_components/angular-material/angular-material.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
@@ -105,6 +79,8 @@
   <script src="scripts/controllers/nav.js"></script>
   <script src="scripts/services/authService.js"></script>
   <script src="scripts/factories/localstorage.js"></script>
+  <script src="scripts/factories/challenges.js"></script>
+  <script src="scripts/directives/backImg.js"></script>
   <!-- endbuild -->
 </body>
 

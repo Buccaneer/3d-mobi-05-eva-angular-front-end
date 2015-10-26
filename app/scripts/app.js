@@ -16,12 +16,11 @@ var app = angular
     'ngRoute',
     'ngSanitize',
     'ngTouch',
-    'pascalprecht.translate',
     'ngMessages',
+    'pascalprecht.translate',
     'ui.router',
-    'angular-loading-bar',
     'validation.match',
-    'ui.bootstrap.collapse'
+    'ngMaterial'
   ]);
 
 /**
@@ -30,10 +29,8 @@ var app = angular
  */
 app.config(function(
   $stateProvider, $urlRouterProvider, $translateProvider,
-  cfpLoadingBarProvider) {
+  $mdThemingProvider) {
 
-  //set up the loading bar
-  cfpLoadingBarProvider.includeSpinner = false;
 
   //go to /home in case of an uncaught route
   $urlRouterProvider.otherwise('/home');
@@ -85,10 +82,16 @@ app.config(function(
     //determine the language of the user and use it for translations
     $translateProvider.determinePreferredLanguage();
     //$translateProvider.preferredLanguage('en');
+
     //if determined language isn't supported, fall back on english
     $translateProvider.fallbackLanguage('en');
+
     //safety measurements against XSS
     $translateProvider.useSanitizeValueStrategy('escapeParameters');
+
+
+    $mdThemingProvider.theme('app-dark', 'default')
+      .primaryPalette('yellow').accentPalette('light-green').dark();
 });
 
 app.run(['$rootScope', '$state', function($rootScope, $state) {
@@ -118,7 +121,7 @@ app.run(['$rootScope', '$state', function($rootScope, $state) {
  */
 app.constant('URLS', {
   'PUBLIC_API': 'http://evavzwrest.azurewebsites.net',
-  'API': 'http://localhost:52072',
+  'LOCAL_API': 'http://localhost:52072', //shouldn't be used anymore
   'ACCOUNT': '/api/Account'
 });
 app.constant('TOKEN', 'eva.access_token');
