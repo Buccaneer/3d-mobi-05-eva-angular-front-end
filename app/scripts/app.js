@@ -76,7 +76,7 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
 
     //determine the language of the user and use it for translations
     $translateProvider.determinePreferredLanguage();
-    //$translateProvider.preferredLanguage('en');
+    //$translateProvider.preferredLanguage('fr');
     //if determined language isn't supported, fall back on english
     $translateProvider.fallbackLanguage('en');
     //safety measurements against XSS

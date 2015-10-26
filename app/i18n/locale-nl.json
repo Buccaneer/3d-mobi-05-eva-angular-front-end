@@ -6,7 +6,7 @@
     "email": "Email adres",
     "emailPlaceholder": "voorbeeld@voorbeeld.com",
     "password": "Wachtwoord",
-    "passwordPlaceholder": "Geef je wachtwoord in",
+    "passwordPlaceholder": "Geef uw wachtwoord in",
     "loginButton": "Inloggen",
     "noAccount": "Nog geen account?",
     "signInWith": "Inloggen met ",
@@ -26,7 +26,7 @@
     "emailPlaceholder": "@:login.emailPlaceholder",
     "password": "@:login.password",
     "passwordPlaceholder": "@:login.passwordPlaceholder",
-    "passwordConfirmation": "Bevestig wachtwoord",
+    "passwordConfirmation": "Bevestig uw wachtwoord",
     "registerButton": "Registreer",
 
     "errors": {
