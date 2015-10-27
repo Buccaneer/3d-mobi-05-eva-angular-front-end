@@ -25,6 +25,7 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
     $scope.getSocialLinks = function() {
       var promise = auth.getSocialLinks();
       promise.then(function(response) {
+        $rootScope.loading = true;
         var data = response.data;
         //if the links are loaded show them,
         //if not, catch the error and dont show them
@@ -41,13 +42,18 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
             $scope.socialUrls.push(socialUrl);
           }
         }
+
+        $rootScope.loading = false;
       }).catch(function(response) {
+        $rootScope.loading = false;
+
         switch (response.status) {
           case -1:
             $scope.error = 'login.errors.socialLoginDisabled';
             break;
         }
       });
+
     };
 
     $scope.getSocialLinks();
@@ -62,10 +68,15 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
       }
 
       if ($scope.loginForm.$valid) {
+        $rootScope.loading = true;
+
         var promise = auth.login($scope.user);
         promise.then(function() {
           $location.path('/main');
+
+          $rootScope.loading = false;
         }).catch(function(response) {
+          $rootScope.loading = false;
           switch (response.status) {
             case 400:
               $scope.error = response.data.error_description;
@@ -74,11 +85,13 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
       } else {
         $scope.loginForm.submitted = true;
       }
+
     };
 
 
     $scope.externalLogin = function(index) {
       auth.externalLogin($scope.socialUrls[index].url);
     };
+
   }
 ]);

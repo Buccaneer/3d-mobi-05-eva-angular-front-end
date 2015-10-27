@@ -12,8 +12,8 @@
  */
 angular.module('eva21DayChallengeApp')
   .controller('RegisterCtrl',
-  ['$scope', 'AuthService', '$location',
-   function($scope, auth, $location) {
+  ['$rootScope', '$scope', 'AuthService', '$location',
+   function($rootScope, $scope, auth, $location) {
 
     //user-object used to register
     $scope.user = {
@@ -28,6 +28,9 @@ angular.module('eva21DayChallengeApp')
       $scope.error = '';
 
       if ($scope.signUp_form.$valid) {
+
+        $rootScope.loading = true;
+
         //call AuthService register
         var promise = auth.register($scope.user);
         promise.then(function(response) {
@@ -53,5 +56,7 @@ angular.module('eva21DayChallengeApp')
       } else {
         $scope.signUp_form.submitted = true;
       }
+
+      $rootScope.loading = false;
     };
   }]);

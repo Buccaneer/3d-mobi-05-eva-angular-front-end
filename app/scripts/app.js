@@ -91,7 +91,7 @@ app.config(function(
 
 
     $mdThemingProvider.theme('app-dark', 'default')
-      .primaryPalette('yellow').accentPalette('light-green').dark();
+      .primaryPalette('blue').accentPalette('yellow').dark();
 });
 
 app.run(['$rootScope', '$state', function($rootScope, $state) {

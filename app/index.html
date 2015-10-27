@@ -19,22 +19,88 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="eva21DayChallengeApp" md-theme="app-dark" flex>
+<body ng-app="eva21DayChallengeApp" md-theme="app-dark" flex layout-fill>
   <!--[if lte IE 8]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
 
   <!-- Add your site or application content here -->
+  <md-content id="wrapper" layout-fill>
+    <md-progress-linear md-mode="indeterminate" ng-show="loading == true"></md-progress-linear>
 
-  <md-content id="wrapper" layout="column" layout-fill layout-align="center center">
-    <div ng-controller="NavCtrl">
-      <md-content ng-controller="NavCtrl">
-        <div flex ui-view="">
-        </div>
-      </md-content>
+    <div layout="column" ng-controller="NavCtrl">
+
+      <div flex>
+
+
+        <md-toolbar>
+
+          <div class="md-toolbar-tools">
+            <md-button aria-label="button-collapse" ng-click="openLeftMenu()" show-sm hide-gt-sm>
+              <i class="fa fa-bars pointer" hide-gt-lg></i>
+            </md-button>
+            <div class="md-toolbar-tools" hide-sm>
+              <span flex></span>
+              <md-button ng-href="#/home">home</md-button>
+              <md-button ng-show="authentication.isAuthed" ng-href="#/main">main</md-button>
+              <span flex></span>
+              <md-button ng-hide="authentication.isAuthed" ng-href="#/register">register</md-button>
+              <md-button ng-hide="authentication.isAuthed" ng-href="#/login">login</md-button>
+              <md-button ng-show="authentication.isAuthed" ng-click="logout()" ng-href="#/logout">logout</md-button>
+              <span flex></span>
+            </div>
+          </div>
+        </md-toolbar>
+      </div>
+
+
+      <div layout="row" ng-controller="NavCtrl">
+
+        <md-sidenav flex layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+          <md-toolbar layout="column" layout-align="center center">
+            <span>Toolbar</span>
+          </md-toolbar>
+          <md-content layout="column" layout-align="start center" flex>
+            <md-button ng-href="#/home" ng-click="closeNav()">
+              <h3>home</h3>
+            </md-button>
+            <md-button ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
+              <h3>main</h3>
+            </md-button>
+            <md-button ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
+              <h3>register</h3>
+            </md-button>
+            <span flex></span>
+            <md-button ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/login">
+              <h3>login</h3>
+            </md-button>
+            <md-button ng-show="authentication.isAuthed" ng-click="logout(); closeNav()">
+              <h3>logout</h3>
+            </md-button>
+          </md-content>
+
+        </md-sidenav>
+
+        <!-- CENTER MAIN CONTENT WITH FLEX -->
+        <span flex></span>
+
+        <section layout="row" layout-align="center">
+
+          <md-content layout="row" layout-padding layout-align="center center">
+            <md-content>
+              <div flex ui-view>
+              </div>
+            </md-content>
+          </md-content>
+
+        </section>
+
+        <span flex></span>
+      </div>
     </div>
-  </md-content>
 
+
+  </md-content>
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -79,8 +145,6 @@
   <script src="scripts/controllers/nav.js"></script>
   <script src="scripts/services/authService.js"></script>
   <script src="scripts/factories/localstorage.js"></script>
-  <script src="scripts/factories/challenges.js"></script>
-  <script src="scripts/directives/backImg.js"></script>
   <!-- endbuild -->
 </body>
 
