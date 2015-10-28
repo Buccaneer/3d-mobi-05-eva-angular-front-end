@@ -23,7 +23,7 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
       },
 
       getRecipes: function() {
-        var token = $localstorage.get(TOKEN);
+        var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'GET',
@@ -36,7 +36,7 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
       },
 
       getRecipesWithIngredients: function(ingredientNames) {
-        var token = $localstorage.get(TOKEN);
+         var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'POST',
@@ -52,7 +52,7 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
       },
 
       getRecipesWithProperties: function(challengeId) {
-        var token = $localstorage.get(TOKEN);
+          var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'POST',

@@ -73,8 +73,8 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
        * Get user info, only called when logging in with externalLogins
        */
       getUserInfo: function() {
-        var token = $localstorage.get(TOKEN);
-        console.log('USERINFO: ' + token);
+        var token = $localstorage.getObject(TOKEN).token;
+        
 
         return $http({
           method: 'GET',

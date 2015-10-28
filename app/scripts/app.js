@@ -26,7 +26,7 @@ var app = angular
  * set up the config for the app
  * (routing and such)
  */
-app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
   $urlRouterProvider.otherwise('/home');
 
   //setting up the states
@@ -51,41 +51,52 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
       templateUrl: 'views/main.html',
       //controller: 'MainCtrl',
       requireAuth: true
+    })
+    .state('challenges-overview', {
+      url: '/challenges',
+      templateUrl: 'views/challenges/overview.html',
+      controller: 'ChallengesCtrl',
+      requireAuth: true,
+      resolve: {
+        fetchChallengesPromise: ['ChallengeService', function (ChallengeService) {
+          return ChallengeService.getChallenges();
+        }]
+      }
     });
 
 
-    //let translateProvider load translations from external json
-    $translateProvider.useStaticFilesLoader({
-      prefix: './i18n/locale-',
-      suffix: '.json'
-    });
+  //let translateProvider load translations from external json
+  $translateProvider.useStaticFilesLoader({
+    prefix: './i18n/locale-',
+    suffix: '.json'
+  });
 
-    //register all available languages
-    $translateProvider.registerAvailableLanguageKeys(['en', 'nl'], {
-      'en_US': 'en',
-      'en_UK': 'en',
-      'en_CA': 'en',
-      'nl_BE': 'nl',
-      'nl_NL': 'nl',
-      'fr_FR': 'fr',
-      'fr_BE': 'fr',
-      'fr_LU': 'fr',
-      'fr_CH': 'fr',
-      'fr_CA': 'fr'
-    });
+  //register all available languages
+  $translateProvider.registerAvailableLanguageKeys(['en', 'nl'], {
+    'en_US': 'en',
+    'en_UK': 'en',
+    'en_CA': 'en',
+    'nl_BE': 'nl',
+    'nl_NL': 'nl',
+    'fr_FR': 'fr',
+    'fr_BE': 'fr',
+    'fr_LU': 'fr',
+    'fr_CH': 'fr',
+    'fr_CA': 'fr'
+  });
 
-    //determine the language of the user and use it for translations
-    $translateProvider.determinePreferredLanguage();
-    //$translateProvider.preferredLanguage('fr');
-    //if determined language isn't supported, fall back on english
-    $translateProvider.fallbackLanguage('en');
-    //safety measurements against XSS
-    $translateProvider.useSanitizeValueStrategy('escapeParameters');
+  //determine the language of the user and use it for translations
+  $translateProvider.determinePreferredLanguage();
+  //$translateProvider.preferredLanguage('fr');
+  //if determined language isn't supported, fall back on english
+  $translateProvider.fallbackLanguage('en');
+  //safety measurements against XSS
+  $translateProvider.useSanitizeValueStrategy('escapeParameters');
 });
 
-app.run(['$rootScope', '$state', function($rootScope, $state) {
+app.run(['$rootScope', '$state', function ($rootScope, $state) {
 
-  $rootScope.$on('$stateChangeStart', function(event, toState) {
+  $rootScope.$on('$stateChangeStart', function (event, toState) {
     //state requires login?
     var requireLogin = toState.requireAuth;
     //check stateName,
@@ -112,8 +123,8 @@ app.constant('URLS', {
   'PUBLIC_API': 'http://evavzwrest.azurewebsites.net',
   'API': 'http://localhost:52072',
   'ACCOUNT': '/api/Account',
-  'CHALLENGE':'api/Challenge',
-  'RECIPE':'api/Recipes'
+  'CHALLENGE': '/api/Challenge',
+  'RECIPE': '/api/Recipes'
 
 });
 app.constant('TOKEN', 'eva.access_token');

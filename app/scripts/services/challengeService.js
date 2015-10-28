@@ -6,9 +6,11 @@
  * This service allows the user to work with challenges.
  */
 app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope',
-  function($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
+  function ($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
     var service = {
-      init: function() {
+      challenges: [],
+
+      init: function () {
         //if there is a token object in the localstorage,
         //load it in memory
         var _token = $localstorage.getObject(TOKEN);
@@ -21,21 +23,10 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
           };
         }
       },
+      
 
-      getChallenges: function() {
-        var token = $localstorage.get(TOKEN);
-
-        return $http({
-          method: 'GET',
-          url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
-          headers: {
-            'Authorization': 'Bearer ' + token
-          }
-        });
-      },
-
-      getChallenge: function(challengeId) {
-        var token = $localstorage.get(TOKEN);
+      getChallenge: function (challengeId) {
+        var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'GET',
@@ -46,8 +37,8 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
         });
       },
 
-      markChallengeAsDone: function(challengeId) {
-        var token = $localstorage.get(TOKEN);
+      markChallengeAsDone: function (challengeId) {
+        var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'POST',
@@ -58,9 +49,8 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
         });
       },
 
-      deleteChallenge: function(challengeId) {
-        var token = $localstorage.get(TOKEN);
-
+      deleteChallenge: function (challengeId) {
+        var token = $localstorage.getObject(TOKEN).token;
         return $http({
           method: 'DELETE',
           url: URLS.PUBLIC_API + URLS.CHALLENGE + '/' + challengeId,
@@ -70,9 +60,8 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
         });
       },
 
-      createRecipeChallenge: function(recipeId) {
-        var token = $localstorage.get(TOKEN);
-
+      createRecipeChallenge: function (recipeId) {
+        var token = $localstorage.getObject(TOKEN).token;
         return $http({
           method: 'PUT',
           url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
@@ -87,8 +76,8 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
         });
       },
 
-      createCreativeCookingChallenge: function(ingredientsId) {
-        var token = $localstorage.get(TOKEN);
+      createCreativeCookingChallenge: function (ingredientsId) {
+        var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'PUT',
@@ -106,7 +95,20 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
 
 
     };
-
+    service.getChallenges = function () {
+      var token = $localstorage.getObject(TOKEN).token;
+   
+      $http({
+        method: 'GET',
+        url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      }).success(function (data) {
+      
+          angular.copy(data, service.challenges);
+      });
+    };
     service.init();
     return service;
   }

@@ -1,0 +1,12 @@
+<div class="container">
+
+	<h1>Challenges</h1>
+	
+	<div ng-repeat="challenge in challenges" class="challenge-list">
+		<div class="challenge" ng-class="{done: challenge.Done, today: !challenge.Done}">
+			
+			<span class="title"><a href="#/challenge/{{challenge.ChallengeId}}">Challenge {{index + 1}}</a></span>
+			<span class="date">{{challenge.Data | date:'fullDate'}}</span>
+		</div>
+	</div>
+</div>
