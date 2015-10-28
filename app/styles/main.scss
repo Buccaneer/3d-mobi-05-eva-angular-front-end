@@ -15,6 +15,20 @@ md-sidenav.md-locked-open{
   background-color: rgba(255, 255, 255, .75);
   border-radius: 5px;
 }
+
+.sidenav-content{
+  align-items: stretch;
+  padding: 0;
+}
+.sidenav-button {
+  margin: 0;
+}
+
+.sidenav-button:hover {
+  margin: 0;
+  color: #FFFFFF
+}
+
 @media screen and (max-width: 767px) {
 
 }

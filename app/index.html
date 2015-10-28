@@ -60,21 +60,21 @@
           <md-toolbar layout="column" layout-align="center center">
             <span>Toolbar</span>
           </md-toolbar>
-          <md-content layout="column" layout-align="start center" flex>
-            <md-button ng-href="#/home" ng-click="closeNav()">
+          <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
+            <md-button class="sidenav-button" ng-href="#/home" ng-click="closeNav()">
               <h3>home</h3>
             </md-button>
-            <md-button ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
               <h3>main</h3>
             </md-button>
-            <md-button ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
               <h3>register</h3>
             </md-button>
             <span flex></span>
-            <md-button ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/login">
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/login">
               <h3>login</h3>
             </md-button>
-            <md-button ng-show="authentication.isAuthed" ng-click="logout(); closeNav()">
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout(); closeNav()">
               <h3>logout</h3>
             </md-button>
           </md-content>
