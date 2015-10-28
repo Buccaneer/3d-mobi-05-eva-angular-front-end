@@ -39,8 +39,7 @@ app.config(function(
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'views/home.html',
-      controller: 'MainCtrl'
+      templateUrl: 'views/home.html'
     })
     .state('login', {
       url: '/login',
@@ -59,39 +58,58 @@ app.config(function(
       requireAuth: true
     });
 
-    //let translateProvider load translations from external json
-    $translateProvider.useStaticFilesLoader({
-      prefix: './i18n/locale-',
-      suffix: '.json'
-    });
+  //let translateProvider load translations from external json
+  $translateProvider.useStaticFilesLoader({
+    prefix: './i18n/locale-',
+    suffix: '.json'
+  });
 
-    //register all available languages
-    $translateProvider.registerAvailableLanguageKeys(['en', 'nl'], {
-      'en_US': 'en',
-      'en_UK': 'en',
-      'en_CA': 'en',
-      'nl_BE': 'nl',
-      'nl_NL': 'nl',
-      'fr_FR': 'fr',
-      'fr_BE': 'fr',
-      'fr_LU': 'fr',
-      'fr_CH': 'fr',
-      'fr_CA': 'fr'
-    });
+  //register all available languages
+  $translateProvider.registerAvailableLanguageKeys(['en', 'nl'], {
+    'en_US': 'en',
+    'en_UK': 'en',
+    'en_CA': 'en',
+    'nl_BE': 'nl',
+    'nl_NL': 'nl',
+    'fr_FR': 'fr',
+    'fr_BE': 'fr',
+    'fr_LU': 'fr',
+    'fr_CH': 'fr',
+    'fr_CA': 'fr'
+  });
 
-    //determine the language of the user and use it for translations
-    $translateProvider.determinePreferredLanguage();
-    //$translateProvider.preferredLanguage('en');
+  //determine the language of the user and use it for translations
+  $translateProvider.determinePreferredLanguage();
+  //$translateProvider.preferredLanguage('en');
 
-    //if determined language isn't supported, fall back on english
-    $translateProvider.fallbackLanguage('en');
+  //if determined language isn't supported, fall back on english
+  $translateProvider.fallbackLanguage('en');
 
-    //safety measurements against XSS
-    $translateProvider.useSanitizeValueStrategy('escapeParameters');
+  //safety measurements against XSS
+  $translateProvider.useSanitizeValueStrategy('escapeParameters');
 
 
-    $mdThemingProvider.theme('app-dark', 'default')
-      .primaryPalette('blue').accentPalette('yellow').dark();
+  //  $mdThemingProvider.theme('app-dark', 'default')
+  //    .primaryPalette('green');
+
+  var theme = $mdThemingProvider.extendPalette('green', {
+    '200': 'b3a59f',
+    '500': 'afbd1f',
+    'contrastDefaultColor': 'light'
+  });
+  var accent = $mdThemingProvider.extendPalette('green', {
+    //'500' : '032d18',
+    //'200' : '032d18'
+  });
+  var background = $mdThemingProvider.extendPalette('grey', {
+    'A100': 'b3a59f'
+      //'hue-1':'400'
+  });
+
+  $mdThemingProvider.definePalette('primary', theme);
+  $mdThemingProvider.definePalette('accent', accent);
+  $mdThemingProvider.definePalette('background', background);
+  $mdThemingProvider.theme('default').primaryPalette('primary').backgroundPalette('background');
 });
 
 app.run(['$rootScope', '$state', function($rootScope, $state) {
@@ -105,7 +123,6 @@ app.run(['$rootScope', '$state', function($rootScope, $state) {
     if (toStateName === 'login') {
       return;
     }
-
     //if requiresLogin and the authentication-object is still undefined,
     //let user login
     if (requireLogin && typeof $rootScope.authentication === 'undefined') {
