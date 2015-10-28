@@ -19,14 +19,15 @@ var app = angular
     'pascalprecht.translate',
     'ngMessages',
     'validation.match',
-    'ui.router'
+    'ui.router',
+    'ngMaterial'
   ]);
 
 /**
  * set up the config for the app
  * (routing and such)
  */
-app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
+app.config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider) {
   $urlRouterProvider.otherwise('/home');
 
   //setting up the states
@@ -54,33 +55,55 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider) {
     });
 
 
-    //let translateProvider load translations from external json
-    $translateProvider.useStaticFilesLoader({
-      prefix: './i18n/locale-',
-      suffix: '.json'
-    });
+  //let translateProvider load translations from external json
+  $translateProvider.useStaticFilesLoader({
+    prefix: './i18n/locale-',
+    suffix: '.json'
+  });
 
-    //register all available languages
-    $translateProvider.registerAvailableLanguageKeys(['en', 'nl'], {
-      'en_US': 'en',
-      'en_UK': 'en',
-      'en_CA': 'en',
-      'nl_BE': 'nl',
-      'nl_NL': 'nl',
-      'fr_FR': 'fr',
-      'fr_BE': 'fr',
-      'fr_LU': 'fr',
-      'fr_CH': 'fr',
-      'fr_CA': 'fr'
-    });
+  //register all available languages
+  $translateProvider.registerAvailableLanguageKeys(['en', 'nl'], {
+    'en_US': 'en',
+    'en_UK': 'en',
+    'en_CA': 'en',
+    'nl_BE': 'nl',
+    'nl_NL': 'nl',
+    'fr_FR': 'fr',
+    'fr_BE': 'fr',
+    'fr_LU': 'fr',
+    'fr_CH': 'fr',
+    'fr_CA': 'fr'
+  });
 
-    //determine the language of the user and use it for translations
-    $translateProvider.determinePreferredLanguage();
-    //$translateProvider.preferredLanguage('fr');
-    //if determined language isn't supported, fall back on english
-    $translateProvider.fallbackLanguage('en');
-    //safety measurements against XSS
-    $translateProvider.useSanitizeValueStrategy('escapeParameters');
+  //determine the language of the user and use it for translations
+  $translateProvider.determinePreferredLanguage();
+  //$translateProvider.preferredLanguage('fr');
+  //if determined language isn't supported, fall back on english
+  $translateProvider.fallbackLanguage('en');
+  //safety measurements against XSS
+  $translateProvider.useSanitizeValueStrategy('escapeParameters');
+
+  //$mdThemingProvider.theme('app-dark', 'default');
+  //    .primaryPalette('green');
+
+  var theme = $mdThemingProvider.extendPalette('green', {
+    '200': 'b3a59f',
+    '500': 'afbd1f',
+    'contrastDefaultColor': 'light'
+  });
+  var accent = $mdThemingProvider.extendPalette('green', {
+    //'500' : '032d18',
+    //'200' : '032d18'
+  });
+  var background = $mdThemingProvider.extendPalette('grey', {
+    'A100': 'b3a59f'
+      //'hue-1':'400'
+  });
+
+  $mdThemingProvider.definePalette('primary', theme);
+  $mdThemingProvider.definePalette('accent', accent);
+  $mdThemingProvider.definePalette('background', background);
+  $mdThemingProvider.theme('default').primaryPalette('primary').backgroundPalette('background');
 });
 
 app.run(['$rootScope', '$state', function($rootScope, $state) {
@@ -112,8 +135,8 @@ app.constant('URLS', {
   'PUBLIC_API': 'http://evavzwrest.azurewebsites.net',
   'API': 'http://localhost:52072',
   'ACCOUNT': '/api/Account',
-  'CHALLENGE':'api/Challenge',
-  'RECIPE':'api/Recipes'
+  'CHALLENGE': 'api/Challenge',
+  'RECIPE': 'api/Recipes'
 
 });
 app.constant('TOKEN', 'eva.access_token');
