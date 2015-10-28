@@ -7,13 +7,22 @@
  * # MainCtrl
  * Controller of the eva21DayChallengeApp
  */
-app.controller('NavCtrl', ['AuthService', '$location', '$scope',
-  function(auth, $location, $scope) {
+app.controller('NavCtrl', ['AuthService', '$location', '$scope', '$mdSidenav',
+  function(auth, $location, $scope, $mdSidenav) {
 
     $scope.logout = function() {
       auth.logout();
       $location.path('/');
     };
 
+    $scope.isSidenavOpen = false;
+
+    $scope.openLeftMenu = function() {
+      $mdSidenav('left').toggle();
+    };
+
+    $scope.closeNav = function() {
+      $mdSidenav('left').close();
+    };
   }
 ]);
