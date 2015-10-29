@@ -21,19 +21,10 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
           };
         }
       },
+      
+      recipes: [],
 
-      getRecipes: function() {
-        var token = $localstorage.getObject(TOKEN).token;
-
-        return $http({
-          method: 'GET',
-          url: URLS.PUBLIC_API + URLS.RECIPE + '/',
-          headers: {
-            'Authorization': 'Bearer ' + token,
-            'Content-type': 'application/json; charset=utf-8'
-          }
-        });
-      },
+      
 
       getRecipesWithIngredients: function(ingredientNames) {
          var token = $localstorage.getObject(TOKEN).token;
@@ -51,7 +42,7 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
         });
       },
 
-      getRecipesWithProperties: function(challengeId) {
+      getRecipesWithProperties: function(properties) {
           var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
@@ -62,7 +53,7 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
             'Content-type': 'application/json; charset=utf-8'
           },
           data: {
-            values: ingredientNames
+            values: properties
           }
         });
       }
@@ -70,7 +61,23 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
 
 
     };
-
+    service.getRecipes = function() {
+        if (service.recipes.length > 0)
+          return;
+        var token = $localstorage.getObject(TOKEN).token;
+        
+         $http({
+          method: 'GET',
+          url: URLS.PUBLIC_API + URLS.RECIPE + '/',
+          headers: {
+            'Authorization': 'Bearer ' + token,
+            'Content-type': 'application/json; charset=utf-8'
+          }
+        }).success(function (data) {
+      
+          angular.copy(data, service.recipes);
+      });;
+      },
     service.init();
     return service;
   }

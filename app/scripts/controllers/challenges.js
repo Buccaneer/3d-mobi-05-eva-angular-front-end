@@ -12,3 +12,18 @@ app.controller('ChallengesCtrl', ['$scope','$localstorage', 'TOKEN', 'ChallengeS
     $scope.challenges = ChallengeService.challenges;
   }
 ]);
+
+app.controller('ChallengeCtrl', ['$state', '$scope','$localstorage', 'TOKEN', 'ChallengeService','challenge', 'AuthService',
+  function($state,$scope,$localstorage, TOKEN,ChallengeService,challenge, AuthService) {
+    $scope.challenge = challenge;
+    
+    if (challenge.Recipe)
+      $scope.recipe = challenge.Recipe;
+    
+    $scope.markAsDone = function() {
+      console.log(challenge);
+      ChallengeService.markChallengeAsDone(challenge.ChallengeId);
+      $state.go('challenges-overview');
+    };
+  }
+]);

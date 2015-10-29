@@ -1,0 +1,7 @@
+<div class="container">
+	<ul ng-repeat="recipe in recipes | orderBy:'Name'">
+		<li ng-click="setSelectedRecipe(recipe)">{{recipe.Name}}</li>
+		
+		
+	</ul>
+</div>

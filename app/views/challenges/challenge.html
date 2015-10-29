@@ -1,0 +1,10 @@
+<div class="container">
+	<h1>{{challenge.Date | date:'fullDate'}}</h1>
+	<div ng-show="recipe">
+		<div ng-include="'views/recipe.html'" />
+	</div>
+
+	<div class="markAsDone" ng-click="markAsDone()" ng-hide="challenge.Done">
+		Done!
+	</div>
+</div>

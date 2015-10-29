@@ -62,6 +62,40 @@ app.config(function ($stateProvider, $urlRouterProvider, $translateProvider) {
           return ChallengeService.getChallenges();
         }]
       }
+    })
+     .state('create-challenge', {
+      url: '/challenge/create',
+      templateUrl: 'views/challenges/create-challenge.html',
+      requireAuth: true
+    })
+    .state('challenge-overview', {
+      url: '/challenge/:id',
+      templateUrl: 'views/challenges/challenge.html',
+      controller: 'ChallengeCtrl',
+      requireAuth: true,
+      resolve: {
+        challenge: ['$stateParams','ChallengeService', function ($stateParams,ChallengeService) {
+          return ChallengeService.getChallenge($stateParams.id);
+        }]
+      }
+    })
+   
+    .state('select-view-recipe', {
+      url: '/challenge/create/recipe/agree',
+      controller: 'AgreeRecipeCtrl',
+      templateUrl: 'views/challenges/create-recipe-challenge-agree.html',
+      requireAuth: true
+    })
+    .state('create-recipe-challenge', {
+      url: '/challenge/create/recipe',
+      templateUrl: 'views/challenges/create-recipe-challenge.html',
+      controller: 'ChallengeRecipesCtrl',
+      requireAuth: true,
+      resolve: {
+        fetchChallengesPromise: ['RecipeService', function (RecipeService) {
+          return RecipeService.getRecipes();
+        }]
+      }
     });
 
 

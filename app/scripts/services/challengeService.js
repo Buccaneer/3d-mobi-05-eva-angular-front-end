@@ -23,19 +23,6 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
           };
         }
       },
-      
-
-      getChallenge: function (challengeId) {
-        var token = $localstorage.getObject(TOKEN).token;
-
-        return $http({
-          method: 'GET',
-          url: URLS.PUBLIC_API + URLS.CHALLENGE + '/' + challengeId,
-          headers: {
-            'Authorization': 'Bearer ' + token
-          }
-        });
-      },
 
       markChallengeAsDone: function (challengeId) {
         var token = $localstorage.getObject(TOKEN).token;
@@ -97,7 +84,7 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
     };
     service.getChallenges = function () {
       var token = $localstorage.getObject(TOKEN).token;
-   
+
       $http({
         method: 'GET',
         url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
@@ -105,10 +92,26 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
           'Authorization': 'Bearer ' + token
         }
       }).success(function (data) {
-      
-          angular.copy(data, service.challenges);
+
+        angular.copy(data, service.challenges);
       });
     };
+
+    service.getChallenge = function (challengeId) {
+      var token = $localstorage.getObject(TOKEN).token;
+
+      return $http({
+        method: 'GET',
+        url: URLS.PUBLIC_API + URLS.CHALLENGE + '/' + challengeId,
+        headers: {
+          'Authorization': 'Bearer ' + token
+        }
+      }).then(function(res) {
+        return res.data;
+      });
+    };
+
+
     service.init();
     return service;
   }

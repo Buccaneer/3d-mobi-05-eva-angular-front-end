@@ -1,0 +1,21 @@
+<h2>{{recipe.Name}}</h2>
+<img src="{{recipe.Image}}" class="recipe-image" />
+<div ng-repeat="property in recipe.Properties" class="recipe-properties">
+	<div class="recipe-property">
+		<span class="title">{{property.Type}}</span>
+		<span class="value">{{property.Value}}</span>
+	</div>
+</div>
+
+<h3>Ingredients</h3>
+<div ng-repeat="ingredient in recipe.Ingredients" class="recipe-ingredients">
+	<div class="recipe-ingredient">
+		<span class="quantity">{{ingredient.Quantity}}</span> <span class="unit">{{ingredient.Ingredient.Unit}}</span> <span class="name">{{ingredient.Ingredient.Name}}</span>
+	</div>
+</div>
+
+
+<h3>Description</h3>
+<div class="recipe-description" ng-bind-html="recipe.Description">
+
+</div>
