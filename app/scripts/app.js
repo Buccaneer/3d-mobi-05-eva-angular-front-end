@@ -27,7 +27,7 @@ var app = angular
  * set up the config for the app
  * (routing and such)
  */
-app.config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider) {
+app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider) {
   $urlRouterProvider.otherwise('/home');
 
   //setting up the states
@@ -52,6 +52,51 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdT
       templateUrl: 'views/main.html',
       //controller: 'MainCtrl',
       requireAuth: true
+    })
+    .state('challenges-overview', {
+      url: '/challenges',
+      templateUrl: 'views/challenges/overview.html',
+      controller: 'ChallengesCtrl',
+      requireAuth: true,
+      resolve: {
+        fetchChallengesPromise: ['ChallengeService', function (ChallengeService) {
+          return ChallengeService.getChallenges();
+        }]
+      }
+    })
+     .state('create-challenge', {
+      url: '/challenge/create',
+      templateUrl: 'views/challenges/create-challenge.html',
+      requireAuth: true
+    })
+    .state('challenge-overview', {
+      url: '/challenge/:id',
+      templateUrl: 'views/challenges/challenge.html',
+      controller: 'ChallengeCtrl',
+      requireAuth: true,
+      resolve: {
+        challenge: ['$stateParams','ChallengeService', function ($stateParams,ChallengeService) {
+          return ChallengeService.getChallenge($stateParams.id);
+        }]
+      }
+    })
+
+    .state('select-view-recipe', {
+      url: '/challenge/create/recipe/agree',
+      controller: 'AgreeRecipeCtrl',
+      templateUrl: 'views/challenges/create-recipe-challenge-agree.html',
+      requireAuth: true
+    })
+    .state('create-recipe-challenge', {
+      url: '/challenge/create/recipe',
+      templateUrl: 'views/challenges/create-recipe-challenge.html',
+      controller: 'ChallengeRecipesCtrl',
+      requireAuth: true,
+      resolve: {
+        fetchChallengesPromise: ['RecipeService', function (RecipeService) {
+          return RecipeService.getRecipes();
+        }]
+      }
     });
 
 
@@ -106,9 +151,9 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdT
   $mdThemingProvider.theme('default').primaryPalette('primary').backgroundPalette('background');
 });
 
-app.run(['$rootScope', '$state', function($rootScope, $state) {
+app.run(['$rootScope', '$state', function ($rootScope, $state) {
 
-  $rootScope.$on('$stateChangeStart', function(event, toState) {
+  $rootScope.$on('$stateChangeStart', function (event, toState) {
     //state requires login?
     var requireLogin = toState.requireAuth;
     //check stateName,
@@ -135,8 +180,8 @@ app.constant('URLS', {
   'PUBLIC_API': 'http://evavzwrest.azurewebsites.net',
   'API': 'http://localhost:52072',
   'ACCOUNT': '/api/Account',
-  'CHALLENGE': 'api/Challenge',
-  'RECIPE': 'api/Recipes'
+  'CHALLENGE': '/api/Challenge',
+  'RECIPE': '/api/Recipes'
 
 });
 app.constant('TOKEN', 'eva.access_token');

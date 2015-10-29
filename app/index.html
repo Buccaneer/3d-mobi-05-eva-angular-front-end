@@ -19,7 +19,7 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="eva21DayChallengeApp" flex layout-fill>
+<body ng-app="eva21DayChallengeApp">
   <!--[if lte IE 8]>
   <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
   <![endif]-->
@@ -43,6 +43,7 @@
               <span flex></span>
               <md-button ng-hide="authentication.isAuthed" ng-href="#/home">home</md-button>
               <md-button ng-show="authentication.isAuthed" ng-href="#/main">main</md-button>
+              <md-button ng-show="authentication.isAuthed" ng-href="#/challenges">challenges</md-button>
               <span flex></span>
               <md-button ng-hide="authentication.isAuthed" ng-href="#/register">register</md-button>
               <md-button ng-hide="authentication.isAuthed" ng-href="#/login">login</md-button>
@@ -67,7 +68,10 @@
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
               <h3>main</h3>
             </md-button>
-            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/challenges">
+              <h3>challenges</h3>
+            </md-button>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
               <h3>register</h3>
             </md-button>
             <span flex></span>
@@ -82,16 +86,9 @@
         </md-sidenav>
 
         <!-- CENTER MAIN CONTENT WITH FLEX -->
-        <span flex></span>
 
-        <md-content layout="row" layout-align="center">
-          <md-content>
-            <div flex ui-view>
-            </div>
-          </md-content>
-        </md-content>
-
-        <span flex></span>
+        <div flex ui-view>
+        </div>
       </div>
     </div>
 
@@ -138,8 +135,12 @@
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/login.js"></script>
   <script src="scripts/controllers/register.js"></script>
+  <script src="scripts/controllers/challengerecipe.js"></script>
+  <script src="scripts/controllers/challenges.js"></script>
   <script src="scripts/controllers/nav.js"></script>
   <script src="scripts/services/authService.js"></script>
+  <script src="scripts/services/challengeService.js"></script>
+  <script src="scripts/services/recipeService.js"></script>
   <script src="scripts/factories/localstorage.js"></script>
   <!-- endbuild -->
 </body>

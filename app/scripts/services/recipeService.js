@@ -22,21 +22,12 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
         }
       },
 
-      getRecipes: function() {
-        var token = $localstorage.get(TOKEN);
+      recipes: [],
 
-        return $http({
-          method: 'GET',
-          url: URLS.PUBLIC_API + URLS.RECIPE + '/',
-          headers: {
-            'Authorization': 'Bearer ' + token,
-            'Content-type': 'application/json; charset=utf-8'
-          }
-        });
-      },
+
 
       getRecipesWithIngredients: function(ingredientNames) {
-        var token = $localstorage.get(TOKEN);
+        var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'POST',
@@ -51,8 +42,8 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
         });
       },
 
-      getRecipesWithProperties: function(challengeId) {
-        var token = $localstorage.get(TOKEN);
+      getRecipesWithProperties: function(properties) {
+        var token = $localstorage.getObject(TOKEN).token;
 
         return $http({
           method: 'POST',
@@ -62,7 +53,7 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
             'Content-type': 'application/json; charset=utf-8'
           },
           data: {
-            values: ingredientNames
+            values: properties
           }
         });
       }
@@ -70,7 +61,27 @@ app.service('RecipeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locat
 
 
     };
+    service.getRecipes = function() {
+      if (service.recipes.length > 0) {
+        return;
+      }
+      var token = $localstorage.getObject(TOKEN).token;
 
+      $rootScope.loading = true;
+      $http({
+        method: 'GET',
+        url: URLS.PUBLIC_API + URLS.RECIPE + '/',
+        headers: {
+          'Authorization': 'Bearer ' + token,
+          'Content-type': 'application/json; charset=utf-8'
+        }
+      }).success(function(data) {
+        $rootScope.loading = false;
+        angular.copy(data, service.recipes);
+      }).catch(function() {
+        $rootScope.loading = false;
+      });
+    };
     service.init();
     return service;
   }
