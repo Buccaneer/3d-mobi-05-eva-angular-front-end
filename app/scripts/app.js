@@ -34,8 +34,8 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdT
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'views/home.html',
-      controller: 'MainCtrl'
+      templateUrl: 'views/home.html'
+        //controller: 'MainCtrl'
     })
     .state('login', {
       url: '/login',
@@ -50,7 +50,7 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdT
     .state('main', {
       url: '/main',
       templateUrl: 'views/main.html',
-      //controller: 'MainCtrl',
+      controller: 'MainCtrl',
       requireAuth: true
     });
 

@@ -1,3 +1,36 @@
-<div>
-  Je kan deze pagina niet zien zonder ingelogd te zijn.
+<div layout="column">
+  <div flex id="welcomeDiv" layout-align="center center" layout="column">
+    <h1>Welkom terug!</h1>
+
+    <h2>
+      U zit op dag
+      {{progress.amountOfDays}}
+      van de challenge
+    </h2>
+    <md-progress-circular md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}"></md-progress-circular>
+
+  </div>
+  <div ng-show="currentChallenge">
+
+    <md-content flex id="header" layout="column">
+      <div flex id="mainTile" layout-align="center center" layout="column" ng-style="{'background-image': 'url(' + currentChallenge.img + ')'}">
+        <h1>Huidige challenge</h1>
+        <h2>
+          {{currentChallenge.type}}
+        </h2>
+        <div>
+          {{currentChallenge.typeDescription}}
+        </div>
+      </div>
+    </md-content>
+
+    <div layout-align="center center" layout="row">
+      <md-content flex="45" id="description">
+        {{currentChallenge.description}}
+      </md-content>
+    </div>
+
+  </div>
+
 </div>
+<button ng-click="getChallenge()">get</button>

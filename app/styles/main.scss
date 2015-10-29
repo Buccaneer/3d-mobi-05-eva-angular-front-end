@@ -1,11 +1,12 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
+
 // endbower
 body {
   padding: 0;
 }
 md-sidenav,
-md-sidenav.md-locked-open{
+md-sidenav.md-locked-open {
   min-width: 200px !important;
   width: 60vw !important;
   max-width: 400px !important;
@@ -14,21 +15,26 @@ md-sidenav.md-locked-open{
   margin-top: 2vh;
   background-color: rgba(255, 255, 255, .75);
   border-radius: 5px;
+  padding: 20px;
 }
-
-.sidenav-content{
+#mainTile {
+  background-image: no-repeat center center;
+  background-size: cover;
+  min-height: 50vh;
+  padding: 10px;
+  box-shadow: inset 0 0 0 1000px rgba(250,250,250,.60);
+}
+.sidenav-content {
   align-items: stretch;
   padding: 0;
 }
 .sidenav-button {
   margin: 0;
 }
-
 .sidenav-button:hover {
   margin: 0;
-  color: #FFFFFF
+  color: #fff;
 }
-
 @media screen and (max-width: 767px) {
 
 }
