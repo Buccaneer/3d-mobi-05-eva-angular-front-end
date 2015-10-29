@@ -1,0 +1,38 @@
+{
+  "home": {
+    "title": "Welcome to the 21 day challenge website!"
+  },
+  "login": {
+    "email": "Email address",
+    "emailPlaceholder": "example@example.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter your password",
+    "loginButton": "Login",
+    "noAccount": "Don't have an account?",
+    "signInWith": "Sign in with ",
+
+    "errors": {
+      "passwordRequired": "Your password is required.",
+      "emailRequired": "Your email address is required.",
+      "emailInvalid": "That email address is invalid.",
+      "alreadyLoggedIn": "You are already logged in!",
+      "socialLoginDisabled": "Sorry! Logging in with social accounts is unavailable."
+    }
+  },
+
+  "register": {
+    "signUp": "Sign up",
+    "email": "@:login.email",
+    "password": "@:login.password",
+    "passwordPlaceholder": "@:login.passwordPlaceholder",
+    "passwordConfirmation": "Confirm password",
+    "registerButton": "Register",
+
+    "errors": {
+      "passwordRequired":"@:login.passwordRequired",
+      "emailRequired":"@:login.emailRequired",
+      "emailInvald":"@:login.emailInvalid",
+      "passwordMinLength":"Your password has to be 6 characters long."
+    }
+  }
+}

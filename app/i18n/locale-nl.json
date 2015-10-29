@@ -1,0 +1,40 @@
+{
+  "home": {
+    "title": "Welkom op de 21 day challenge website!"
+  },
+  "login": {
+    "email": "Email adres",
+    "emailPlaceholder": "voorbeeld@voorbeeld.com",
+    "password": "Wachtwoord",
+    "passwordPlaceholder": "Geef uw wachtwoord in",
+    "loginButton": "Inloggen",
+    "noAccount": "Nog geen account?",
+    "signInWith": "Inloggen met ",
+
+    "errors": {
+      "passwordRequired": "Uw wachtwoord is verplicht.",
+      "emailRequired": "Uw email adres is verplicht.",
+      "emailInvalid": "Dit is geen geldig email adres",
+      "alreadyLoggedIn": "U bent al aangemeld!",
+      "socialLoginDisabled": "Sorry! Inloggen met sociale media is niet beschikbaar."
+    }
+  },
+
+  "register": {
+    "signUp": "Registreer",
+    "email": "@:login.email",
+    "emailPlaceholder": "@:login.emailPlaceholder",
+    "password": "@:login.password",
+    "passwordPlaceholder": "@:login.passwordPlaceholder",
+    "passwordConfirmation": "Bevestig uw wachtwoord",
+    "registerButton": "Registreer",
+
+    "errors": {
+      "passwordRequired":"@:login.errors.passwordRequired",
+      "emailRequired":"@:login.errors.emailRequired",
+      "emailInvalid":"@:login.errors.emailInvalid",
+      "passwordMinLength":"Uw wachtwoord moet minstens 6 karakters tellen.",
+      "passwordConfirmation":"De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
+    }
+  }
+}

@@ -1,0 +1,40 @@
+{
+  "home": {
+    "title": "Bienvenue sur le site '21 day challenge'!"
+  },
+  "login": {
+    "email": "Adresse e-mail",
+    "emailPlaceholder": "exemple@exemple.com",
+    "password": "Mot de passe",
+    "passwordPlaceholder": "Introduisez votre mot de passe",
+    "loginButton": "Se connecter",
+    "noAccount": "Ni de compte?",
+    "signInWith": "Se connecter avec",
+
+    "errors": {
+      "passwordRequired": "Votre mot de passe est obligatoire.",
+      "emailRequired": "Votre adresse e-mail est obligatoire.",
+      "emailInvalid": "Ceci n’est pas une adresse e-mail valide.",
+      "alreadyLoggedIn": "Vous êtes déjà connecté!",
+      "socialLoginDisabled": "Désolé, s’identifier avec un réseau social n’est pas disponible."
+    }
+  },
+
+  "register": {
+    "signUp": "Inscription",
+    "email": "@:login.email",
+    "emailPlaceholder": "@:login.emailPlaceholder",
+    "password": "@:login.password",
+    "passwordPlaceholder": "@:login.passwordPlaceholder",
+    "passwordConfirmation": "Confirmez votre mot de passe",
+    "registerButton": "Inscription",
+
+    "errors": {
+      "passwordRequired":"@:login.errors.passwordRequired",
+      "emailRequired":"@:login.errors.emailRequired",
+      "emailInvalid":"@:login.errors.emailInvalid",
+      "passwordMinLength":"Votre mot de passe doit comporter au minimum 6 caractères.",
+      "passwordConfirmation":"Les 2 mots de passe que vous avez introduits ne sont pas identiques. "
+    }
+  }
+}

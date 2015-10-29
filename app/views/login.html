@@ -1,0 +1,65 @@
+<div layout-align="center center" layout="row">
+  <md-content layout-align="center" layout-padding flex="75">
+    <div class="white-bg md-whiteframe-10dp" id="loginForm">
+      <div>
+        <div layout-align="center center" layout="column">
+          <div ng-show="error">
+            {{error | translate}}
+          </div>
+
+          <div>
+            <h1>{{'login.loginButton' | translate}}</h1>
+          </div>
+
+          <div>
+            <a ng-href="#/register">Nog geen account?</a>
+          </div>
+        </div>
+
+        <form name="loginForm" ng-submit="callLogin()" novalidate>
+          <div layout-align="center" layout-margin layout-padding layout="column">
+            <md-input-container>
+              <label>{{'login.email' | translate}}</label>
+              <input name="email" ng-model="user.email" required type="email">
+
+              <div ng-messages="loginForm.email.$error" ng-show="loginForm.$submitted || loginForm.email.$touched">
+                <div ng-message="required">{{'login.errors.emailRequired' | translate}}</div>
+                <div ng-message="email">{{'login.errors.emailInvalid' | translate}}</div>
+              </div>
+
+            </md-input-container>
+
+            <md-input-container>
+              <label>{{'login.password' | translate}}</label>
+              <input name="password" ng-model="user.password" required type="password">
+              <div ng-messages="loginForm.password.$error" ng-show="loginForm.$submitted || loginForm.password.$touched">
+                <div ng-message="required">{{'login.errors.passwordRequired' | translate}}</div>
+              </div>
+            </md-input-container>
+          </div>
+
+          <div layout-align="center" layout="row">
+            <md-button class="md-raised md-primary" type="submit">
+              {{'login.loginButton' | translate}}
+            </md-button>
+          </div>
+        </form>
+
+      </div>
+
+      <div layout-gt-md="row" layout-margin layout-sm="column">
+        <div flex layout-padding ng-repeat='p in socialUrls'>
+          <div class="socialUrl">
+            <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
+              <i class='fa fa-{{p.name | lowercase}}'></i>
+              <span>
+                {{'login.signInWith' | translate}}
+                {{p.name}}
+              </span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </md-content>
+</div>
