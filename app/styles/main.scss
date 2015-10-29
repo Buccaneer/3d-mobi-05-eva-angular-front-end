@@ -1,6 +1,5 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
-
 // endbower
 body {
   padding: 0;
@@ -34,6 +33,10 @@ md-sidenav.md-locked-open {
 .sidenav-button:hover {
   margin: 0;
   color: #fff;
+}
+.error-message {
+  color: red;
+  padding: 5px;
 }
 @media screen and (max-width: 767px) {
 
