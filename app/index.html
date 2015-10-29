@@ -62,7 +62,7 @@
             <span>Toolbar</span>
           </md-toolbar>
           <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
-            <md-button class="sidenav-button" ng-href="#/home" ng-click="closeNav()">
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/home" ng-click="closeNav()">
               <h3>home</h3>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
@@ -71,10 +71,9 @@
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/challenges">
               <h3>challenges</h3>
             </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
               <h3>register</h3>
             </md-button>
-            <span flex></span>
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/login">
               <h3>login</h3>
             </md-button>

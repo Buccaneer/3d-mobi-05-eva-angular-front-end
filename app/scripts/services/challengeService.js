@@ -86,7 +86,7 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
       var token = $localstorage.getObject(TOKEN).token;
 
       $rootScope.loading = true;
-      
+
       $http({
         method: 'GET',
         url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
@@ -97,7 +97,6 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
         $rootScope.loading = false;
         angular.copy(data, service.challenges);
       });
-      $rootScope.loading = false;
     };
 
     service.getChallenge = function(challengeId) {

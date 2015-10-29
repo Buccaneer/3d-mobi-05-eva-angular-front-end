@@ -1,5 +1,5 @@
-<div layout="row" layout-align="center center">
-  <md-content layout-align="center" layout-padding>
+<div layout-align="center center" layout="row">
+  <md-content layout-align="center" layout-padding flex="75">
     <div class="white-bg md-whiteframe-10dp" id="loginForm">
       <div>
         <div layout-align="center center" layout="column">
@@ -46,20 +46,20 @@
         </form>
 
       </div>
-    </md-content>
 
-    <div layout-gt-sm="row" layout-margin layout-sm="column">
-      <div flex layout-padding ng-repeat='p in socialUrls'>
-        <div class="socialUrl">
-          <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
-            <i class='fa fa-{{p.name | lowercase}}'></i>
-            <span>
-              {{'login.signInWith' | translate}}
-              {{p.name}}
-            </span>
-          </a>
+      <div layout-gt-md="row" layout-margin layout-sm="column">
+        <div flex layout-padding ng-repeat='p in socialUrls'>
+          <div class="socialUrl">
+            <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
+              <i class='fa fa-{{p.name | lowercase}}'></i>
+              <span>
+                {{'login.signInWith' | translate}}
+                {{p.name}}
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </md-content>
 </div>

@@ -1,7 +1,6 @@
 <div layout="row" layout-align="center">
-
-  <md-content layout-align="center" layout-padding>
-    <div class="white-bg md-whiteframe-10dp" id="loginForm">
+  <md-content layout-align="center" layout-padding flex="75">
+    <div class="white-bg md-whiteframe-10dp" id="registerForm">
       <div layout-align="center center" layout="column">
         <div ng-show="error">
           {{error | translate}}
@@ -43,7 +42,7 @@
             </md-input-container>
           </div>
 
-          <div layout-align="center" layout="row">
+          <div layout-align="center" layout="row" layout-margin>
             <md-button class="md-raised md-primary" type="submit">
               {{'register.registerButton' | translate}}
             </md-button>
