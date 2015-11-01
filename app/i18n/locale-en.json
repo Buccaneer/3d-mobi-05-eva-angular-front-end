@@ -1,4 +1,10 @@
 {
+  "nav": {
+    "register": "register",
+    "login": "login",
+    "logout": "logout"
+  },
+
   "home": {
     "title": "Welcome to the 21 day challenge website!"
   },
@@ -29,10 +35,10 @@
     "registerButton": "Register",
 
     "errors": {
-      "passwordRequired":"@:login.passwordRequired",
-      "emailRequired":"@:login.emailRequired",
-      "emailInvald":"@:login.emailInvalid",
-      "passwordMinLength":"Your password has to be 6 characters long."
+      "passwordRequired": "@:login.passwordRequired",
+      "emailRequired": "@:login.emailRequired",
+      "emailInvald": "@:login.emailInvalid",
+      "passwordMinLength": "Your password has to be 6 characters long."
     }
   }
 }

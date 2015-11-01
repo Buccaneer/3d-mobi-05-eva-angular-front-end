@@ -96,8 +96,8 @@ app.config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdT
     //'200' : '032d18'
   });
   var background = $mdThemingProvider.extendPalette('grey', {
-    'A100': 'b3a59f'
-      //'hue-1':'400'
+    //'A100': 'b3a59f'
+    //'hue-1':'400'
   });
 
   $mdThemingProvider.definePalette('primary', theme);

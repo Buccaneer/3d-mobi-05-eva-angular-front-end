@@ -1,16 +1,14 @@
-<div layout="row" layout-align="center center">
-  <md-content layout-align="center" layout-padding>
-    <div class="white-bg md-whiteframe-10dp" id="loginForm">
+<div layout-align="center" layout="row">
+  <md-content class="white-bg" flex-gt-lg="60" flex-gt-sm="70" flex-sm="75" layout-align="center" layout-padding>
+    <div id="loginForm">
       <div>
         <div layout-align="center center" layout="column">
-          <div class="error-message" ng-show="error">
+          <div ng-show="error">
             {{error | translate}}
           </div>
-
           <div>
             <h1>{{'login.loginButton' | translate}}</h1>
           </div>
-
           <div>
             <a ng-href="#/register">Nog geen account?</a>
           </div>
@@ -46,20 +44,20 @@
         </form>
 
       </div>
-    </md-content>
 
-    <div layout-gt-sm="row" layout-margin layout-sm="column">
-      <div flex layout-padding ng-repeat='p in socialUrls'>
-        <div class="socialUrl">
-          <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
-            <i class='fa fa-{{p.name | lowercase}}'></i>
-            <span>
-              {{'login.signInWith' | translate}}
-              {{p.name}}
-            </span>
-          </a>
+      <div layout-gt-md="row" layout-margin layout-sm="column">
+        <div flex layout-padding ng-repeat='p in socialUrls'>
+          <div class="socialUrl">
+            <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
+              <i class='fa fa-{{p.name | lowercase}}'></i>
+              <span>
+                {{'login.signInWith' | translate}}
+                {{p.name}}
+              </span>
+            </a>
+          </div>
         </div>
       </div>
     </div>
-  </div>
+  </md-content>
 </div>

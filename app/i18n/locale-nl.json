@@ -1,4 +1,9 @@
 {
+  "nav": {
+    "register": "registreren",
+    "login": "inloggen",
+    "logout": "uitloggen"
+  },
   "home": {
     "title": "Welkom op de 21 day challenge website!"
   },
@@ -30,11 +35,11 @@
     "registerButton": "Registreer",
 
     "errors": {
-      "passwordRequired":"@:login.errors.passwordRequired",
-      "emailRequired":"@:login.errors.emailRequired",
-      "emailInvalid":"@:login.errors.emailInvalid",
-      "passwordMinLength":"Uw wachtwoord moet minstens 6 karakters tellen.",
-      "passwordConfirmation":"De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
+      "passwordRequired": "@:login.errors.passwordRequired",
+      "emailRequired": "@:login.errors.emailRequired",
+      "emailInvalid": "@:login.errors.emailInvalid",
+      "passwordMinLength": "Uw wachtwoord moet minstens 6 karakters tellen.",
+      "passwordConfirmation": "De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
     }
   }
 }
