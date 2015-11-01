@@ -34,8 +34,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $md
   $stateProvider
     .state('home', {
       url: '/home',
-      templateUrl: 'views/home.html',
-      controller: 'MainCtrl'
+      templateUrl: 'views/home.html'
+        //controller: 'MainCtrl'
     })
     .state('login', {
       url: '/login',
@@ -50,7 +50,7 @@ app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $md
     .state('main', {
       url: '/main',
       templateUrl: 'views/main.html',
-      //controller: 'MainCtrl',
+      controller: 'MainCtrl',
       requireAuth: true
     })
     .state('challenges-overview', {
@@ -141,8 +141,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $md
     //'200' : '032d18'
   });
   var background = $mdThemingProvider.extendPalette('grey', {
-    'A100': 'b3a59f'
-      //'hue-1':'400'
+    //'A100': 'b3a59f'
+    //'hue-1':'400'
   });
 
   $mdThemingProvider.definePalette('primary', theme);

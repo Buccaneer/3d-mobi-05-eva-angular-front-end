@@ -28,31 +28,30 @@
   <md-content id="wrapper" layout-fill>
     <md-progress-linear md-mode="indeterminate" ng-show="loading == true"></md-progress-linear>
 
+
     <div layout="column" ng-controller="NavCtrl">
 
-      <div flex>
-
-
-        <md-toolbar>
-
-          <div class="md-toolbar-tools">
-            <md-button aria-label="button-collapse" ng-click="openLeftMenu()" show-sm hide-gt-sm>
-              <i class="fa fa-bars pointer" hide-gt-lg></i>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button aria-label="button-collapse" ng-click="openLeftMenu()" show-sm hide-gt-sm>
+            <i class="fa fa-bars pointer" hide-gt-lg></i>
+          </md-button>
+          <div class="md-toolbar-tools" hide-sm>
+            <span flex></span>
+            <md-button ng-hide="authentication.isAuthed" ng-href="#/home" class="brand">
+              <img aria-label="eva-logo" class="brand" src="images/eva-logo.png"></img>
             </md-button>
-            <div class="md-toolbar-tools" hide-sm>
-              <span flex></span>
-              <md-button ng-hide="authentication.isAuthed" ng-href="#/home">home</md-button>
-              <md-button ng-show="authentication.isAuthed" ng-href="#/main">main</md-button>
-              <md-button ng-show="authentication.isAuthed" ng-href="#/challenges">challenges</md-button>
-              <span flex></span>
-              <md-button ng-hide="authentication.isAuthed" ng-href="#/register">register</md-button>
-              <md-button ng-hide="authentication.isAuthed" ng-href="#/login">login</md-button>
-              <md-button ng-show="authentication.isAuthed" ng-click="logout()" ng-href="#/logout">logout</md-button>
-              <span flex></span>
-            </div>
+            <md-button ng-show="authentication.isAuthed" ng-href="#/main" class="brand">
+              <img aria-label="eva-logo" class="brand" src="images/eva-logo.png"></img>
+            </md-button>
+            <span flex></span>
+            <md-button ng-hide="authentication.isAuthed" ng-href="#/register">{{'nav.register' | translate}}</md-button>
+            <md-button ng-hide="authentication.isAuthed" ng-href="#/login"> {{'nav.login' | translate}}</md-button>
+            <md-button ng-show="authentication.isAuthed" ng-click="logout()" ng-href="#/logout">{{'nav.logout' | translate}}</md-button>
+            <span flex></span>
           </div>
-        </md-toolbar>
-      </div>
+        </div>
+      </md-toolbar>
 
 
       <div layout="row" ng-controller="NavCtrl">
@@ -62,14 +61,11 @@
             <span>Toolbar</span>
           </md-toolbar>
           <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
-            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/home" ng-click="closeNav()">
+            <md-button class="sidenav-button" ng-href="#/home" ng-click="closeNav()">
               <h3>home</h3>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
               <h3>main</h3>
-            </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/challenges">
-              <h3>challenges</h3>
             </md-button>
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
               <h3>register</h3>
@@ -81,18 +77,16 @@
               <h3>logout</h3>
             </md-button>
           </md-content>
-
         </md-sidenav>
-
-        <!-- CENTER MAIN CONTENT WITH FLEX -->
-
-        <div flex ui-view>
-        </div>
       </div>
     </div>
 
+    <div id="ui-view" flex ui-view>
+    </div>
 
   </md-content>
+
+
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -134,12 +128,8 @@
   <script src="scripts/controllers/main.js"></script>
   <script src="scripts/controllers/login.js"></script>
   <script src="scripts/controllers/register.js"></script>
-  <script src="scripts/controllers/challengerecipe.js"></script>
-  <script src="scripts/controllers/challenges.js"></script>
   <script src="scripts/controllers/nav.js"></script>
   <script src="scripts/services/authService.js"></script>
-  <script src="scripts/services/challengeService.js"></script>
-  <script src="scripts/services/recipeService.js"></script>
   <script src="scripts/factories/localstorage.js"></script>
   <!-- endbuild -->
 </body>

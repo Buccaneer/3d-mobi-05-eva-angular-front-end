@@ -1,4 +1,9 @@
 {
+  "nav": {
+    "register": "enregistrer",
+    "login": "login",
+    "logout": "Déconnexion"
+  },
   "home": {
     "title": "Bienvenue sur le site '21 day challenge'!"
   },
@@ -30,11 +35,11 @@
     "registerButton": "Inscription",
 
     "errors": {
-      "passwordRequired":"@:login.errors.passwordRequired",
-      "emailRequired":"@:login.errors.emailRequired",
-      "emailInvalid":"@:login.errors.emailInvalid",
-      "passwordMinLength":"Votre mot de passe doit comporter au minimum 6 caractères.",
-      "passwordConfirmation":"Les 2 mots de passe que vous avez introduits ne sont pas identiques. "
+      "passwordRequired": "@:login.errors.passwordRequired",
+      "emailRequired": "@:login.errors.emailRequired",
+      "emailInvalid": "@:login.errors.emailInvalid",
+      "passwordMinLength": "Votre mot de passe doit comporter au minimum 6 caractères.",
+      "passwordConfirmation": "Les 2 mots de passe que vous avez introduits ne sont pas identiques. "
     }
   }
 }
