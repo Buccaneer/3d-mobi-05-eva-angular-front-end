@@ -1,5 +1,24 @@
-<div layout-align="center" layout="row">
-  <md-content class="white-bg" flex-gt-lg="60" flex-gt-sm="75" flex-sm="75" layout-align="center" layout-padding>
-    <h1>Welkom op de 21 day challenge website!</h1>
-  </md-content>
+<div id="header" layout="column">
+  <div id="header-text" flex="30" layout-align="center center" layout-padding layout="column">
+    <div>
+      <h1>{{'home.title' | translate}}</h1>
+    </div>
+    <h3>{{'home.headline' | translate}}</h3>
+    <h3>{{'home.text-signup-login' | translate}}</h3>
+    <div layout="row" layout-align="center">
+      <md-button md-noink class="header-btn" ng-href="#/login">{{'nav.login' | translate}}</md-button>
+      <md-button md-noink class="header-btn" ng-href="#/register">{{'nav.register' | translate}}</md-button>
+    </div>
+  </div>
+</div>
+<div layout-align="center center" layout-padding layout="column">
+  <div>
+    <h1>Over</h1>
+    <p>
+      {{'home.subline' | translate}}
+    </p>
+    <p>
+      {{'home.text' | translate}}
+    </p>
+  </div>
 </div>

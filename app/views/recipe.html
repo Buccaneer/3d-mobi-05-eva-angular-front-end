@@ -1,10 +1,12 @@
 <!-- TODO include translations -->
 
 <div layout-align="center start" layout="column">
-  <div layout-align="center" layout="row">
-    <h2>{{recipe.Name}}</h2>
+  <div class="recipe-image img-responsive">
+    <div layout-align="center" layout="column" class="inset-white" ng-style="{'background-image':'url({{recipe.Image}})'}">
+      <h2>{{recipe.Name}}</h2>
+    </div>
   </div>
-  <img class="recipe-image img-responsive" src="{{recipe.Image}}"/>
+
   <div class="recipe-properties" ng-repeat="property in recipe.Properties">
     <div class="recipe-property">
       <span class="title">{{property.Type}}</span>:

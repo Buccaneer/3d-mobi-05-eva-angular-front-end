@@ -5,7 +5,11 @@
     "logout": "uitloggen"
   },
   "home": {
-    "title": "Welkom op de 21 day challenge website!"
+    "title": "Welkom op de 21 day challenge website!",
+    "headline": "We dagen je uit om 21 dagen lang, 1 dagelijkse challenge uit te voeren!",
+    "subline": "Met deze applicatie willen we u de vele voordelen van vegetarisch eten duidelijk maken aan de hand van een challenge die u elke dag kan uitvoeren.",
+    "text": "21 dagen lijkt wat raar, maar het is mogelijk om in 21 dagen een nieuwe gewoonte aan te leren",
+    "text-signup-login": "Indien je klaar bent om de uitdagingen aan te gaan, kan u zich hieronder aanmelden of registreren."
   },
   "login": {
     "email": "Email adres",

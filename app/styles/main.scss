@@ -10,30 +10,28 @@ md-sidenav.md-locked-open {
   width: 60vw !important;
   max-width: 400px !important;
 }
-.white-bg {
-  background-color: rgba(255, 255, 255, .85);
-  border-radius: 5px;
-  padding: 2%;
-}
-#mainTile {
-  background-image: no-repeat center center;
-  background-size: cover;
-  min-height: 50vh;
-  padding: 10px;
-  box-shadow: inset 0 0 0 1000px rgba(250,250,250,.60);
-}
 .sidenav-content {
   align-items: stretch;
   padding: 0;
 }
-#wrapper {
+.bg-white {
+  background-color: rgba(255, 255, 255, 0.7);
+}
+#header {
   background-size: cover;
   background-image: url("/images/bg.jpg");
-  background-attachment: scroll;
+  background-attachment: fixed;
   background-repeat: no-repeat;
+  min-height: 50vh;
+  box-shadow: inset 0 0 0 1000px rgba(250,250,250,.4);
 }
-#ui-view {
-  margin-top: 20px;
+#header-text {
+  margin-top: 5vh;
+}
+.header-btn {
+  margin-top: 5vh;
+  border-style: solid;
+  background-color: rgba(255, 255, 255, 1);
 }
 .sidenav-button {
   margin: 0;
@@ -52,7 +50,10 @@ md-sidenav.md-locked-open {
   margin-top: 0;
 }
 @media screen and (max-width: 767px) {
-
+  #header {
+    background-attachment: scroll;
+    min-height: 100vh;
+  }
 }
 
 /* Responsive: Portrait tablets and up */
