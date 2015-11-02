@@ -43,6 +43,7 @@ angular.module('eva21DayChallengeApp')
               $scope.error = 'Connection with the server cannot be established.';
               break;
             case 400:
+              console.log(response.data);
               var modelState = response.data.ModelState;
               var errors = modelState[""];
               for (var i = 0; i < errors.length; i++) {

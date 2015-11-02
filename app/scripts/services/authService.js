@@ -20,8 +20,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
           data: {
             'Email': user.email,
             'Password': user.password,
-            //already checked in form, should the client-side check be deleted?
-            'ConfirmPassword': user.password
+            'ConfirmPassword': user.confirmPassword
           },
           headers: {
             'Content-type': 'application/json; charset=utf-8'
@@ -74,7 +73,7 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
        */
       getUserInfo: function() {
         var token = $localstorage.getObject(TOKEN).token;
-        
+
 
         return $http({
           method: 'GET',
