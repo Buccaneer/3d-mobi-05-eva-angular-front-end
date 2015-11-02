@@ -41,5 +41,9 @@
       "passwordMinLength": "Uw wachtwoord moet minstens 6 karakters tellen.",
       "passwordConfirmation": "De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
     }
+  },
+
+  "challenges": {
+    "loading": "We zijn uw uitdagingen aan het zoeken!"
   }
 }

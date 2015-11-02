@@ -38,17 +38,22 @@
           </md-button>
           <div class="md-toolbar-tools" hide-sm>
             <span flex></span>
-            <md-button ng-hide="authentication.isAuthed" ng-href="#/home" class="brand">
+            <md-button ng-hide="authentication.isAuthed" ng-href="#/home">
               <img aria-label="eva-logo" class="brand" src="images/eva-logo.png"></img>
             </md-button>
             <md-button ng-show="authentication.isAuthed" ng-href="#/main" class="brand">
               <img aria-label="eva-logo" class="brand" src="images/eva-logo.png"></img>
             </md-button>
             <span flex></span>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
+              challenges
+            </md-button>
+            <span flex></span>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/register">{{'nav.register' | translate}}</md-button>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/login"> {{'nav.login' | translate}}</md-button>
             <md-button ng-show="authentication.isAuthed" ng-click="logout()" ng-href="#/logout">{{'nav.logout' | translate}}</md-button>
             <span flex></span>
+
           </div>
         </div>
       </md-toolbar>
@@ -61,20 +66,23 @@
             <span>Toolbar</span>
           </md-toolbar>
           <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
-            <md-button class="sidenav-button" ng-href="#/home" ng-click="closeNav()">
-              <h3>home</h3>
+            <md-button class="sidenav-button" ng-href="#/home">
+              <h4>home</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
-              <h3>main</h3>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/main">
+              <h4>main</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
-              <h3>register</h3>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
+              <h4>challenges</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/login">
-              <h3>login</h3>
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/register">
+              <h4>register</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout(); closeNav()">
-              <h3>logout</h3>
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/login">
+              <h4>login</h4>
+            </md-button>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout()">
+              <h4>logout</h4>
             </md-button>
           </md-content>
         </md-sidenav>
@@ -130,7 +138,11 @@
   <script src="scripts/controllers/register.js"></script>
   <script src="scripts/controllers/nav.js"></script>
   <script src="scripts/services/authService.js"></script>
+  <script src="scripts/services/challengeService.js"></script>
+  <script src="scripts/services/recipeService.js"></script>
   <script src="scripts/factories/localstorage.js"></script>
+  <script src="scripts/controllers/challenges.js"></script>
+  <script src="scripts/controllers/challengerecipe.js"></script>
   <!-- endbuild -->
 </body>
 

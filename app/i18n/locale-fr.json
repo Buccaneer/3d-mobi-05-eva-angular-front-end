@@ -41,5 +41,9 @@
       "passwordMinLength": "Votre mot de passe doit comporter au minimum 6 caractères.",
       "passwordConfirmation": "Les 2 mots de passe que vous avez introduits ne sont pas identiques. "
     }
+  },
+
+  "challenges": {
+    "loading": "Nous cherchons vos défis!"
   }
 }

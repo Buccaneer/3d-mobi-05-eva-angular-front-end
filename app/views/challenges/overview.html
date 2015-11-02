@@ -1,20 +1,28 @@
-<div flex="100" layout-align="center center" layout="column">
-  <h1>Challenges</h1>
-  <a href="#/challenge/create">New challenge</a>
+<div layout-align="center" layout="row">
+  <div ng-show="loading" class="white-bg" flex-sm="75" flex-gt-sm="none" flex-md="50" flex-gt-md="none" >
+    <h1>{{'challenges.loading' | translate}}</h1>
+  </div>
+  <div ng-hide="loading" class="white-bg" flex-sm="75" flex-gt-sm="none" flex-md="50" flex-gt-md="none" layout-align="center center" layout="column">
+    <div layout="column" layout-align="center center">
+      <h1>Challenges</h1>
+      <a href="#/challenge/create">New challenge</a>
 
-  <div>
-    <md-list>
-      <md-list-item class="challenge-list" ng-repeat="challenge in challenges | orderBy:'-Date'">
-        <div class="challenge" ng-class="{done: challenge.Done, today: !challenge.Done}">
-          <span class="title">
-            <a href="#/challenge/{{challenge.ChallengeId}}">
-              Challenge
-              {{$index + 1}}</a>
-          </span>
-          <div class="md-list-item-text">{{challenge.Date | date:'fullDate'}}</div>
-        </div>
-        <md-divider></md-divider>
-      </md-list-item>
-    </md-list>
+      <div>
+        <md-list>
+          <md-list-item class="challenge-list" ng-repeat="challenge in challenges | orderBy:'-Date'">
+            <div class="challenge" ng-class="{done: challenge.Done, today: !challenge.Done}">
+              <span class="title">
+                <a href="#/challenge/{{challenge.ChallengeId}}">
+                  Challenge
+                  {{$index + 1}}</a>
+              </span>
+              <div class="md-list-item-text">{{challenge.Date | date:'fullDate'}}</div>
+            </div>
+            <md-divider></md-divider>
+          </md-list-item>
+        </md-list>
+      </div>
+    </div>
+
   </div>
 </div>

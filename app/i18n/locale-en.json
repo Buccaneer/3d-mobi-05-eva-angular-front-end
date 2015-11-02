@@ -40,5 +40,9 @@
       "emailInvald": "@:login.emailInvalid",
       "passwordMinLength": "Your password has to be 6 characters long."
     }
+  },
+
+  "challenges": {
+    "loading": "We're searching for your challenges!"
   }
 }

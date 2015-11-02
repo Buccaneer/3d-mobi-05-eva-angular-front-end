@@ -1,6 +1,5 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
-
 // endbower
 body {
   padding: 0;
@@ -14,7 +13,7 @@ md-sidenav.md-locked-open {
 .white-bg {
   background-color: rgba(255, 255, 255, .85);
   border-radius: 5px;
-  padding: 20px;
+  padding: 2%;
 }
 #mainTile {
   background-image: no-repeat center center;
@@ -48,7 +47,9 @@ md-sidenav.md-locked-open {
   padding: 5px;
 }
 .brand {
-  max-height: 50px;
+  max-height: 40px;
+  padding-top: 0;
+  margin-top: 0;
 }
 @media screen and (max-width: 767px) {
 

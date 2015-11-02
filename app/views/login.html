@@ -1,5 +1,5 @@
 <div layout-align="center" layout="row">
-  <md-content class="white-bg" flex-gt-lg="60" flex-gt-sm="70" flex-sm="75" layout-align="center" layout-padding>
+  <md-content class="white-bg" flex-sm="75" flex-gt-sm="none" flex-md="50" flex-gt-md="none" layout-align="center" layout-padding>
     <div id="loginForm">
       <div>
         <div layout-align="center center" layout="column">
@@ -45,7 +45,7 @@
 
       </div>
 
-      <div layout-gt-md="row" layout-margin layout-sm="column">
+      <div layout-gt-md="row" layout-margin layout-md="column">
         <div flex layout-padding ng-repeat='p in socialUrls'>
           <div class="socialUrl">
             <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>

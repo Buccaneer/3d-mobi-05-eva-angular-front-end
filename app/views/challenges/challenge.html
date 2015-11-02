@@ -1,10 +1,13 @@
-<div layout="column" layout-align="center center">
-	<h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
-	<div ng-show="recipe">
-		<div ng-include="'views/recipe.html'" />
-	</div>
+<div layout="row" layout-align="center">
 
-	<div class="markAsDone" ng-click="markAsDone()" ng-hide="challenge.Done">
-		Done!
-	</div>
+  <div class="white-bg" layout="column" layout-align="center center">
+    <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+    <div ng-show="recipe">
+      <div ng-include="'views/recipe.html'"/>
+    </div>
+
+    <div class="markAsDone" ng-click="markAsDone()" ng-hide="challenge.Done">
+      Done!
+    </div>
+  </div>
 </div>

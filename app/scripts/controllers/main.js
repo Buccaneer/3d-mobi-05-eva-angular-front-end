@@ -7,9 +7,18 @@
  * # MainCtrl
  * Controller of the eva21DayChallengeApp
  */
-app.controller('MainCtrl', ['$localstorage', 'TOKEN', '$scope',
-  function($localstorage, TOKEN, $scope) {
+app.controller('MainCtrl', ['$localstorage', 'TOKEN', '$scope', 'ChallengeService',
+  function($localstorage, TOKEN, $scope, challengeService) {
     var tokenObj = $localstorage.getObject(TOKEN);
+
+    var init = function(){
+      //should get more detailed info from the server
+      challengeService.getChallenges().then(function(){
+        console.log(challengeService.challenges);
+      });
+    };
+
+    init();
 
     if (tokenObj !== null) {
       var current = new Date();
@@ -24,13 +33,5 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN', '$scope',
       percentagePerDay: 4.7,
     };
 
-    $scope.getChallenge = function() {
-      $scope.currentChallenge = {
-        type: 'Zelf koken!',
-        typeDescription: 'Het doel van deze challenge is het klaarmaken van een gerecht tot een goed einde te brengen.',
-        img: '/images/boerenkoolcannelloni.jpg',
-        description: "Was de boerenkool en verwijder de dikke nerven. \n Blancheer de boerenkool in flink gezouten water gedurende 3 minuten.\n Spoel onmiddellijk af in ijswater of onder de koude kraan. Versnipper de sjalotjes. Zet een bakpan op het vuur. Giet er een scheut olijfolie in en bak het tofugehakt mooi krokant. Bak kort de sjalot mee en breng op smaak met zout en peper. Blus met een scheutje witte wijn en laat dit helemaal verdampen. Neem van het vuur."
-      };
-    };
   }
 ]);

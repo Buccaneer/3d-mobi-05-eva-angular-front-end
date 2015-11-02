@@ -1,8 +1,8 @@
 <div layout="row" layout-align="center center">
-	<div ng-show="loading">
+	<md-content ng-show="loading" class="white-bg" flex-sm="75" flex-gt-sm="70" flex-gt-lg="60">
 		<h1>Getting some recipes...</h1>
-	</div>
-  <div ng-hide="loading" layout="column" layout-align="center center" class="white-bg" layout-padding >
+	</md-content>
+  <md-content ng-hide="loading" layout="column" layout-align="center center" class="white-bg" layout-padding flex-sm="75" flex-gt-sm="70" flex-gt-lg="60">
     <h1>Select a recipe</h1>
     <md-list ng-repeat="recipe in recipes | orderBy:'Name'">
       <md-list-item class="md-1-line">
@@ -12,5 +12,5 @@
       </md-list-item>
       <md-divider></md-divider>
     </md-list>
-  </div>
+  </md-content>
 </div>

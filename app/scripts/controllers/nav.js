@@ -22,7 +22,7 @@ app.controller('NavCtrl', ['AuthService', '$location', '$scope', '$mdSidenav',
     };
 
     $scope.closeNav = function() {
-      $mdSidenav('left').close();
+      $mdSidenav('left').toggle();
     };
   }
 ]);

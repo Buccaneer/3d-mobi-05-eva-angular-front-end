@@ -10,7 +10,16 @@
 app.controller('ChallengesCtrl', ['$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'AuthService',
   function($scope, $localstorage, TOKEN, ChallengeService) {
     $scope.challenges = ChallengeService.challenges;
-    console.log($scope);
+    $scope.images = [];
+
+    //this should be called for each challenge is $scope.challenges to grab additional information
+    //so that a more detailed view can be created with a Card
+    ChallengeService.getChallenge($scope.challenges[0].ChallengeId).then(function(data){
+      if(typeof data.Recipe !== 'undefined'){
+        $scope.images.push(data.Recipe.Image);
+      }
+      console.log($scope.images);
+    });
   }
 ]);
 
@@ -18,6 +27,7 @@ app.controller('ChallengeCtrl', ['$state', '$scope', '$localstorage', 'TOKEN', '
   function($state, $scope, $localstorage, TOKEN, ChallengeService, challenge) {
     $scope.challenge = challenge;
 
+    console.log(challenge);
     if (challenge.Recipe) {
       $scope.recipe = challenge.Recipe;
     }

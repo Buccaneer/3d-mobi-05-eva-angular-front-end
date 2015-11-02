@@ -1,11 +1,10 @@
 <!-- TODO include translations -->
 
-<div layout="column" flex="100">
-
+<div layout-align="center start" layout="column">
   <div layout-align="center" layout="row">
     <h2>{{recipe.Name}}</h2>
   </div>
-  <img class="recipe-image" src="{{recipe.Image}}"/>
+  <img class="recipe-image img-responsive" src="{{recipe.Image}}"/>
   <div class="recipe-properties" ng-repeat="property in recipe.Properties">
     <div class="recipe-property">
       <span class="title">{{property.Type}}</span>:
@@ -21,7 +20,7 @@
         <span class="unit">{{ingredient.Ingredient.Unit}}</span>
         <span class="name">{{ingredient.Ingredient.Name}}</span>
       </div>
-			<md-divider></md-divider>
+      <md-divider></md-divider>
     </md-list-item>
   </md-list>
   <h3>Description</h3>
