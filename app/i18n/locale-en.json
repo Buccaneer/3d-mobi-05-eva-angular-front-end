@@ -33,7 +33,7 @@
       "emailRequired":"@:login.emailRequired",
       "emailInvald":"@:login.emailInvalid",
       "passwordMinLength":"Your password has to be 6 characters long.",
-      "passwordConfirmation":"The 2 passwords you have entered doesn't match."
+      "passwordConfirmation":"The 2 passwords you have entered don't match."
     }
   }
 }

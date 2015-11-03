@@ -23,7 +23,8 @@ app.service('AuthService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$locatio
             'ConfirmPassword': user.confirmPassword
           },
           headers: {
-            'Content-type': 'application/json; charset=utf-8'
+            'Content-type': 'application/json; charset=utf-8',
+            'Accept-Lanugage': 'fr_FR'
           }
         });
       },
