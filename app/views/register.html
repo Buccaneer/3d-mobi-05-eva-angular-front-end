@@ -2,8 +2,10 @@
   <md-content layout-align="center" layout-padding flex="75">
     <div class="white-bg md-whiteframe-10dp" id="registerForm">
       <div layout-align="center center" layout="column">
-        <div ng-show="error">
-          {{error | translate}}
+        <div ng-show="error" ng-bind-html="error | translate">
+        </div>
+        <div class="error-message" ng-show="signUp_form.cfPassword.$error.match && signUp_form.$submitted ||signUp_form.cfPassword.$error.match && signUp_form.cfPassword.$touched">
+          {{'register.errors.passwordConfirmation' | translate}}
         </div>
         <div>
           <h1>{{'register.signUp' | translate}}</h1>
@@ -33,7 +35,7 @@
               <label>
                 {{'register.passwordConfirmation' | translate}}
               </label>
-              <input name="cfPassword" ng-minlength=6 ng-model="confirmPassword" required type="password">
+              <input name="cfPassword" ng-minlength=6 ng-model="user.confirmPassword" match="user.password" required type="password">
               <div ng-messages="signUp_form.cfPassword.$error" ng-show="signUp_form.$submitted || signUp_form.cfPassword.$touched">
                 <div ng-message="required">{{'register.errors.passwordRequired' | translate}}</div>
                 <div ng-message="minlength">{{'register.errors.passwordMinLength' | translate}}</div>
