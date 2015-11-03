@@ -137,8 +137,8 @@ app.config(function ($stateProvider, $urlRouterProvider, $translateProvider, $md
     'contrastDefaultColor': 'light'
   });
   var accent = $mdThemingProvider.extendPalette('green', {
-    //'500' : '032d18',
-    //'200' : '032d18'
+    '500' : '032d18',
+    '200' : '032d18'
   });
   var background = $mdThemingProvider.extendPalette('grey', {
     //'A100': 'b3a59f'

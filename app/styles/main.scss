@@ -44,11 +44,12 @@ md-sidenav.md-locked-open {
   margin-top: 5vh;
   color: #fff;
 }
+.text-border {
+  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
+}
 .header-btn {
   margin-top: 2vh;
   border-style: solid;
-  background-color: rgba(255, 255, 255, 1);
-  color: #000;
 }
 #about-text {
   margin-top: 2vh;
