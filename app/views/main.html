@@ -1,7 +1,7 @@
-<div layout-align="center center" layout="row" ng-init="init()">
+<div layout-align="center center" layout="row" ng-init="init()" flex="100">
 
-  <div class="white-bg" flex-gt-md="none" flex-gt-sm="none" flex-md="50" flex-sm="75" layout="column">
-    <div flex id="welcomeDiv" layout-align="center center" layout="column">
+  <md-content layout-padding layout="column" flex="100">
+    <div id="welcomeDiv" layout-align="center center" layout="column">
       <h1>Welkom terug!</h1>
       <md-progress-circular md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}" md-diameter="99%"></md-progress-circular>
 
@@ -14,5 +14,5 @@
     </div>
     <div ng-include="'views/recipe.html'" ng-show="{{challenge.recipe}}"/>
 
-  </div>
+  </md-content>
 </div>

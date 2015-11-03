@@ -14,12 +14,14 @@ app.controller('ChallengesCtrl', ['$scope', '$localstorage', 'TOKEN', 'Challenge
 
     //this should be called for each challenge is $scope.challenges to grab additional information
     //so that a more detailed view can be created with a Card
-    ChallengeService.getChallenge($scope.challenges[0].ChallengeId).then(function(data){
-      if(typeof data.Recipe !== 'undefined'){
-        $scope.images.push(data.Recipe.Image);
-      }
-      console.log($scope.images);
-    });
+    if ($scope.challenges.length > 0) {
+      ChallengeService.getChallenge($scope.challenges[0].ChallengeId).then(function(data) {
+        if (typeof data.Recipe !== 'undefined') {
+          $scope.images.push(data.Recipe.Image);
+        }
+        console.log($scope.images);
+      });
+    }
   }
 ]);
 

@@ -1,24 +1,85 @@
-<div id="header" layout="column">
-  <div id="header-text" flex="30" layout-align="center center" layout-padding layout="column">
+<div class="text-center" id="header" layout="column">
+
+  <md flex="30" id="header-text" layout-align="center center" layout-padding layout="column">
     <div>
       <h1>{{'home.title' | translate}}</h1>
     </div>
     <h3>{{'home.headline' | translate}}</h3>
     <h3>{{'home.text-signup-login' | translate}}</h3>
-    <div layout="row" layout-align="center">
-      <md-button md-noink class="header-btn" ng-href="#/login">{{'nav.login' | translate}}</md-button>
-      <md-button md-noink class="header-btn" ng-href="#/register">{{'nav.register' | translate}}</md-button>
+    <div layout-align="center" layout="row">
+      <md-button class="header-btn" md-noink ng-href="#/login">{{'nav.login' | translate}}</md-button>
+      <md-button class="header-btn" md-noink ng-href="#/register">{{'nav.register' | translate}}</md-button>
+    </div>
+    <div id="about-text">
+      <h3>{{'home.text-about' | translate}}</h3>
     </div>
   </div>
+
 </div>
-<div layout-align="center center" layout-padding layout="column">
-  <div>
-    <h1>Over</h1>
-    <p>
-      {{'home.subline' | translate}}
-    </p>
-    <p>
-      {{'home.text' | translate}}
-    </p>
+<!-- set background -->
+<md-content class="grey" layout="column">
+  <div class="container" layout="row">
+    <div>
+      <h1 id="about">{{'home.about' | translate}}</h1>
+      <p>
+        {{'home.about-intro-1' | translate}}
+      </p>
+      <p>
+        {{'home.about-intro-2' | translate}}
+      </p>
+    </div>
   </div>
-</div>
+
+  <div class="container" id="steps" layout="column">
+    <div layout="row">
+      <div flex="50" id="step1">
+        <h3>{{'home.about-step-1-title' | translate}}</h3>
+        <p>
+          {{'home.about-step-1-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div layout="row">
+      <div flex="50" id="step2">
+        <h3>{{'home.about-step-2-title' | translate}}</h3>
+        <p>
+          {{'home.about-step-2-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div layout="row">
+      <div flex="50" id="step3">
+        <h3>{{'home.about-step-3-title' | translate}}</h3>
+        <p>
+          {{'home.about-step-3-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div layout="row">
+      <div flex="50" id="step3">
+        <h3>{{'home.about-step-4-title' | translate}}</h3>
+        <p>
+          {{'home.about-step-4-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div class="text-center" layout="row">
+      <div flex="100" id="step3">
+        <h3>{{'home.about-step-5' | translate}}</h3>
+      </div>
+    </div>
+    <!-- <div layout="row" layout-align="center" flex="50">
+      <div flex="20">
+        <h1></h1>
+      </div>
+      <div>
+        NOG IETS
+      </div>
+    </div> -->
+  </div>
+
+</md-content>

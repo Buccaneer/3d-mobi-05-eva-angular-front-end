@@ -15,7 +15,10 @@ md-sidenav.md-locked-open {
   padding: 0;
 }
 .bg-white {
-  background-color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(255, 255, 255, 0.4);
+}
+.padding-view {
+  padding-top: 5%;
 }
 #header {
   background-size: cover;
@@ -23,15 +26,46 @@ md-sidenav.md-locked-open {
   background-attachment: fixed;
   background-repeat: no-repeat;
   min-height: 50vh;
-  box-shadow: inset 0 0 0 1000px rgba(250,250,250,.4);
+  box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
+  color: #fff;
+
+ //  &:before {
+ //   content: '';
+ //   position: absolute;
+ //   top: 0;
+ //   right: 0;
+ //   bottom: 0;
+ //   left: 0;
+ //   background-image: linear-gradient(to bottom,#002f4b,#dc4225);
+ //   opacity: .6;
+ // }
 }
 #header-text {
   margin-top: 5vh;
+  color: #fff;
 }
 .header-btn {
-  margin-top: 5vh;
+  margin-top: 2vh;
   border-style: solid;
   background-color: rgba(255, 255, 255, 1);
+  color: #000;
+}
+#about-text {
+  margin-top: 2vh;
+}
+#wrapper {
+  background-size: cover;
+  background-image: url("/images/bg-bw.jpg");
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  min-height: 50vh;
+  box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
+}
+#register{
+  min-width: 70vh;
+}
+#steps {
+  margin-top: 5vh;
 }
 .sidenav-button {
   margin: 0;
@@ -54,9 +88,23 @@ md-sidenav.md-locked-open {
     background-attachment: scroll;
     min-height: 100vh;
   }
+  #header-text {
+    margin-top: 5vh;
+  }
+  .header-btn {
+    margin-top: 2vh;
+  }
+  .padding-view {
+    padding-top: 0px;
+  }
+  #register, #login {
+    min-width: 100%;
+  }
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-
+  #register {
+    max-width: 40px;
+  }
 }
