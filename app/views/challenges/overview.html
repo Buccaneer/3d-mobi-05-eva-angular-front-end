@@ -1,13 +1,15 @@
 <div id="wrapper">
-
   <div class="padding-view" layout-align="center" layout="row" ng-init="init()">
-    <div class="bg-white" flex-gt-md="none" flex-gt-sm="none" flex-md="50" flex-sm="75" ng-show="loading">
-      <h1>{{'challenges.loading' | translate}}</h1>
-    </div>
-    <div class="white-bg" layout-align="center center" layout="column" ng-hide="loading">
-      <div layout-align="center center" layout="column">
 
-        <div class="bg-white" flex="60" layout-align="center center" layout="column">
+    <md-content class="bg-white" class="white-bg" ng-show="loading">
+      <div layout="row">
+        <h1>{{'recipe.loading' | translate}}</h1>
+      </div>
+    </md-content>
+
+    <div class="white-bg" layout-align="center center" layout="column" flex="60" ng-hide="loading">
+      <div  layout-align="center" layout="row">
+        <div class="bg-white" layout-align="center center" layout="column">
           <div layout-align="center" layout="row">
             <div layout="column">
               <h1>Challenges</h1>
@@ -15,8 +17,8 @@
             </div>
           </div>
 
-          <div ng-repeat="challenge in detailedChallenges | orderBy: '-Date'">
-            <md-card ng-hide="challenge.Done" ng-show="challenge.Done === false">
+          <div flex="60" ng-repeat="challenge in detailedChallenges | orderBy: '-Date'">
+            <md-card>
               <img class="md-card-image img-responsive" ng-src="{{challenge.Recipe.Image}}">
               <md-card-content>
                 <h2 class="md-title">{{challenge.Recipe.Name}}</h2>

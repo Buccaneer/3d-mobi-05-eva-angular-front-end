@@ -1,4 +1,4 @@
-<div id="wrapper" flex layout-fill layout="column" ng-init="init()">
+<div flex id="wrapper" layout-fill layout="column" ng-init="init()">
   <div class="padding-view" ng-show="loading">
     <div layout-align="center" layout-margin layout-padding layout="row">
       <md-content class="bg-white" layout-align="center" layout="row">
@@ -8,27 +8,36 @@
       </md-content>
     </div>
   </div>
-  <div layout="column" ng-hide="loading" ng-show="currentChallenge">
-    <md-content class="bg-white" layout="column">
-      <div class="big-left-margin" layout="row" layout-align="center">
-        <h1>Timer hier</h1>
-      </div>
-      <div class="big-left-margin" id="title" layout-align="center" layout="row">
-        <h1>Huidige uitdaging:</h1>
-      </div>
-    </md-content>
-    <md-content class="bg-white" layout="column">
-      <div class="left-margin" layout-align="center center" layout-padding layout="column">
-        <img class="img-responsive" id="recipe-image" src={{currentChallenge.Recipe.Image}}/>
-        <div layout-align="center center" layout-margin layout="column">
-          <h1>{{currentChallenge.Recipe.Name}}</h1>
+  <div layout="column">
+    <div ng-show="currentChallenge">
+      <div class="bg-white" layout="column">
+        <div class="big-left-margin" layout-align="center" layout="row">
+          <h1>Timer hier</h1>
+        </div>
+        <div class="big-left-margin" id="title" layout-align="center" layout="row">
+          <h1>Huidige uitdaging:</h1>
         </div>
       </div>
+      <md-content class="bg-white" layout="column">
+        <div class="left-margin" layout-align="center center" layout-padding layout="column">
+          <img class="img-responsive" id="recipe-image" src={{currentChallenge.Recipe.Image}}/>
+          <div layout-align="center center" layout-margin layout="column">
+            <h1>{{currentChallenge.Recipe.Name}}</h1>
+          </div>
+        </div>
 
-      <div layout-align="center center" layout="column">
-        <md-button class="header-btn md-primary md-raised" ng-href="#/challenge/{{currentChallenge.ChallengeId}}">Bekijk details</md-button>
+        <div layout-align="center center" layout="column">
+          <md-button class="header-btn md-primary md-raised" ng-href="#/challenge/{{currentChallenge.ChallengeId}}">Bekijk details</md-button>
+        </div>
       </div>
+      <div flex id="mainHeader" class="bg-white" ng-hide="currentChallenge || loading" layout="column" layout-align="center center">
+        <h1>
+          U hebt nog geen actieve uitdaging.
+        </h1>
 
+        <md-button class="md-primary md-raised" ng-href="#/challenge/create">
+          Verkrijg een uitdaging</md-button>
+      </div>
       <!-- <div id="welcomeDiv" layout="column">
       <div layout="row">
         <h1>Welkom terug!</h1>
@@ -54,7 +63,7 @@
     <div ng-include="'views/recipe.html'" ng-show="{{challenge.recipe}}"/> -->
     </md-content>
 
-    <div id="progress" layout="column">
+    <div id="progress" layout="column" ng-hide="loading">
       <div layout-align="center" layout="row">
         <h1>Statistieken</h1>
       </div>
@@ -79,7 +88,7 @@
         <h1>Prestaties</h1>
       </div>
       <div layout-align="center" layout="row">
-            <p>Hier komen de achievements</p>
+        <p>Hier komen de achievements</p>
       </div>
     </div>
 

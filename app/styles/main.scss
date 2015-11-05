@@ -84,6 +84,9 @@ md-sidenav.md-locked-open {
   color: #fff !important;
   min-width: 120px;
 }
+.type-btn{
+  min-width: 250px;
+}
 #about-text {
   margin-top: 2vh;
 }
@@ -145,6 +148,15 @@ md-sidenav.md-locked-open {
   padding-top: 0;
   margin-top: 0;
 }
+#mainHeader{
+  min-height: 50vh;
+}
+@media screen and (max-width: 750px) {
+  .padding-view {
+    padding-top: 0;
+    padding-bottom: 0
+  }
+}
 @media screen and (max-width: 767px) {
   #header {
     background-attachment: scroll;
@@ -156,10 +168,6 @@ md-sidenav.md-locked-open {
   .header-btn {
     margin-top: 2vh;
   }
-  .padding-view {
-    padding-top: 0;
-    padding-bottom: 0
-  }
   #register,
   #login {
     min-width: 100%;
@@ -169,6 +177,7 @@ md-sidenav.md-locked-open {
   }
   #mainHeader {
     margin-left: 0;
+    min-height: 50vh;
   }
   #recipe {
     min-width: none;

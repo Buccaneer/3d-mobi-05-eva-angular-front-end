@@ -60,10 +60,10 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
     $scope.fillin = function(){
       $scope.user={
         email: "fien@eva.be",
-        password: "password"
+        password: "testje"
       };
     };
-    
+
     $scope.callLogin = function() {
       $scope.error = '';
 

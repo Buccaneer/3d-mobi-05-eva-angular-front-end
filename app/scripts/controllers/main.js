@@ -11,6 +11,7 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
   '$scope', 'ChallengeService', '$interval',
   function($localstorage, TOKEN, $scope, challengeService, $interval) {
     var tokenObj = $localstorage.getObject(TOKEN);
+    $scope.currentChallenge = null;
 
     $scope.progress = {
       amountOfDays: 0,
@@ -43,7 +44,7 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
     $scope.init = function() {
       //gets more detailed info from the server
       challengeService.getChallenges().then(function() {
-
+        console.log(challengeService.challenges);
         challengeService.challenges.forEach(function(challenge){
           if(!challenge.Done){
             console.log(challenge);
@@ -98,5 +99,6 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
       console.log(current - Date.parse(tokenObj.expires));
     }
 
+    console.log($scope.currentChallenge);
   }
 ]);

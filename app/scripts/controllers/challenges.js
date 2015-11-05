@@ -17,11 +17,14 @@ app.controller('ChallengesCtrl', ['$scope', '$localstorage', 'TOKEN', 'Challenge
     $scope.init = function() {
       if ($scope.challenges.length > 0) {
         console.log($scope.challenges);
-        ChallengeService.getChallenge($scope.challenges[0].ChallengeId).then(function(data) {
-          if (typeof data.Recipe !== 'undefined') {
-            $scope.detailedChallenges.push(data);
-            console.log(data);
-          }
+        $scope.challenges.forEach(function(challenge) {
+          console.log("challenge " + challenge);
+          ChallengeService.getChallenge(challenge.ChallengeId).then(function(data) {
+            if (typeof data.Recipe !== 'undefined') {
+              $scope.detailedChallenges.push(data);
+              console.log(data);
+            }
+          });
         });
       }
     };
