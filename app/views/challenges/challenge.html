@@ -1,20 +1,23 @@
-<div id="wrapper" layout-align="center" layout="row" layout-fill>
-  <div layout="column" id="recipe">
+<div id="wrapper" layout-align="center" layout="row" class="padding-view">
 
-    <div layout="column" class="padding-view" flex>
-      <div layout="column" flex>
-        <div ng-show="loading" class="bg-white">
-          <h1>{{'challenges.loading' | translate}}</h1>
-        </div>
-        <div class="bg-white padding-view" layout-align="center center" layout="column" ng-hide="loading">
-          <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
-          <div flex layout="column" ng-show="recipe">
-            <div ng-include="'views/recipe.html'"></div>
+  <div flex layout-align="center" layout="row">
+    <div id="recipe" layout="column">
+
+      <div class="padding-view" flex layout="column">
+        <div flex layout="column">
+          <div class="bg-white" ng-show="loading">
+            <h1>{{'challenges.loading' | translate}}</h1>
           </div>
-          <div layout-align="center" layout="row" flex>
-            <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
-              Done!
-            </md-button>
+          <div class="bg-white padding-view" layout-align="center center" layout="column" ng-hide="loading">
+            <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+            <div flex layout="column" ng-show="recipe">
+              <div flex layout="column" ng-include="'views/recipe.html'"></div>
+            </div>
+            <div layout-align="center" layout="row">
+              <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done === true">
+                Done!
+              </md-button>
+            </div>
           </div>
         </div>
       </div>
