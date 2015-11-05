@@ -1,21 +1,31 @@
-<div layout="row" layout-align="center" class="padding-view">
-  <md-content class="white-bg" layout="column" flex-sm="100" flex-gt-sm="70">
+<div class="padding-view" layout="row" layout-align="center">
+  <md-content class="bg-white" layout="column" layout-align="center center" flex-gt-md="40" flex-sm='100'>
     <h1>Create challenge</h1>
-    <md-list>
+    <md-list layout-align="center center">
       <md-list-item>
-        <a href="#/challenge/create/recipe">Recipe</a>
+        <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenge/create/recipe">
+          <h4>Recipe</h4>
+        </md-button>
       </md-list-item>
       <md-list-item>
-        <a href="#/challenge/create/recipe-region">Region recipe</a>
+        <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenge/create/recipe-region">
+          <h4>Region recipe</h4>
+        </md-button>
       </md-list-item>
       <md-list-item>
-        <a href="#/challenge/create/restaurant">Restaurant</a>
+        <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenge/create/restaurant">
+          <h4>Restaurant</h4>
+        </md-button>
       </md-list-item>
       <md-list-item>
-        <a href="#/challenge/create/restaurant-region">Region restaurant</a>
+        <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenge/create/restaurant-region">
+          <h4>Region restaurant</h4>
+        </md-button>
       </md-list-item>
       <md-list-item>
-        <a href="#/challenge/create/creative-cooking">Creative cooking</a>
+        <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenge/create/creative-cooking">
+          <h4>Creative cooking</h4>
+        </md-button>
       </md-list-item>
     </md-list>
   </md-content>
