@@ -7,10 +7,10 @@
             {{error | translate}}
           </div>
           <div>
-            <h1>{{'login.loginButton' | translate}}</h1>
+            <h1 ng-click="fillin()">{{'login.loginButton' | translate}}</h1>
           </div>
           <div>
-            <a ng-href="#/register">Nog geen account?</a>
+            <a ng-href="#/register">{{'login.noAccount' | translate}}</a>
           </div>
         </div>
 
@@ -45,7 +45,7 @@
 
       </div>
 
-      <div layout-gt-sm="row" layout-margin layout-md="column">
+      <div layout-gt-sm="row" layout-margin layout-sm="column">
         <div flex layout-padding ng-repeat='p in socialUrls'>
           <div class="socialUrl">
             <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>

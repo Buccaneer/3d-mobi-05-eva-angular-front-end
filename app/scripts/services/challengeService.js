@@ -101,6 +101,7 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
 
     service.getChallenge = function(challengeId) {
       var token = $localstorage.getObject(TOKEN).token;
+      $rootScope.loading = true;
 
       return $http({
         method: 'GET',
@@ -109,6 +110,7 @@ app.service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$lo
           'Authorization': 'Bearer ' + token
         }
       }).then(function(res) {
+        $rootScope.loading = false;
         return res.data;
       });
     };

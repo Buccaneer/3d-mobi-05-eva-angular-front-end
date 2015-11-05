@@ -1,10 +1,49 @@
-<div layout-align="center center" layout="row" ng-init="init()" flex="100">
+<div flex layout-fill layout="column" ng-init="init()">
+  <div class="padding-view" ng-show="loading">
+    <div layout-align="center" layout-margin layout-padding layout="row">
+      <md-content class="bg-white" layout-align="center" layout="row">
+        <h1>
+          Uw gegevens worden geladen...
+        </h1>
+      </md-content>
+    </div>
+  </div>
+  <div layout="column" ng-hide="loading" ng-show="currentChallenge">
+    <md-content class="bg-white" layout="column">
+      <div class="big-left-margin" layout="row" layout-align="center">
+        <h1>Timer hier</h1>
+      </div>
+      <div class="big-left-margin" id="title" layout-align="center" layout="row">
+        <h1>Huidige uitdaging:</h1>
+      </div>
+    </md-content>
+    <md-content class="bg-white" layout="column">
+      <div class="left-margin" layout-align="center center" layout-padding layout="column">
+        <img class="img-responsive" id="recipe-image" src={{currentChallenge.Recipe.Image}}/>
+        <div layout-align="center center" layout-margin layout="column">
+          <h1>{{currentChallenge.Recipe.Name}}</h1>
+        </div>
+      </div>
 
-  <md-content layout-padding layout="column" flex="100">
-    <div id="welcomeDiv" layout-align="center center" layout="column">
-      <h1>Welkom terug!</h1>
-      <md-progress-circular md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}" md-diameter="99%"></md-progress-circular>
+      <div layout-align="center center" layout="column">
+        <md-button class="header-btn md-primary md-raised" ng-href="#/challenge/{{currentChallenge.ChallengeId}}">Bekijk details</md-button>
+      </div>
 
+      <!-- <div id="welcomeDiv" layout="column">
+      <div layout="row">
+        <h1>Welkom terug!</h1>
+      </div>
+      <div layout="row" layout-align="center center">
+        <div id="progressBar">
+          <md-progress-circular md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}" md-diameter="99%"></md-progress-circular>
+        </div>
+        <span flex></span>
+        <div id="progress-text">
+          <p>
+            U zit op dag {{progress.amountOfDays}}
+          </p>
+        </div>
+      </div>
       <h2>
         U zit op dag
         {{progress.amountOfDays}}
@@ -12,7 +51,37 @@
       </h2>
 
     </div>
-    <div ng-include="'views/recipe.html'" ng-show="{{challenge.recipe}}"/>
+    <div ng-include="'views/recipe.html'" ng-show="{{challenge.recipe}}"/> -->
+    </md-content>
 
-  </md-content>
+    <div id="progress" layout="column">
+      <div layout-align="center" layout="row">
+        <h1>Statistieken</h1>
+      </div>
+      <div layout-align-sm="center center" layout-align="center" layout-sm="column" layout="row">
+        <span flex></span>
+        <div id="progressBar">
+          <md-progress-circular md-diameter="99%" md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}"></md-progress-circular>
+        </div>
+        <div id="progress-text" layout="column">
+          <p>U hebt al
+            {{progress.amountOfDays}}
+            van de 21 dagen vervolledigd!</p>
+          <p>
+            Dit komt neer op
+            {{progress.amountOfDays * progress.percentagePerDay | number: 0}}% van de volledige challenge.
+          </p>
+        </div>
+        <span flex></span>
+      </div>
+
+      <div layout-align="center" layout="row">
+        <h1>Prestaties</h1>
+      </div>
+      <div layout-align="center" layout="row">
+            <p>Hier komen de achievements</p>
+      </div>
+    </div>
+
+  </div>
 </div>

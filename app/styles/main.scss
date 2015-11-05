@@ -1,8 +1,35 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
+@font-face {
+  font-family: "museo";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/Museo300-Regular.otf");
+}
+@font-face {
+  font-family: "museo";
+  font-weight: 500;
+  src: url("/fonts/Museo500-Regular.otf");
+}
+@font-face {
+  font-family: "artistamp";
+  font-weight: 700;
+  src: url("/fonts/ArtistampMedium.ttf");
+}
+@font-face {
+  font-family: "georgia";
+  src: url("/fonts/Georgia.ttf");
+}
 body {
   padding: 0;
+  font-family: "georgia";
+}
+h1 {
+  font-family: "museo";
+}
+p {
+  font-family: "georgia";
 }
 md-sidenav,
 md-sidenav.md-locked-open {
@@ -15,10 +42,11 @@ md-sidenav.md-locked-open {
   padding: 0;
 }
 .bg-white {
-  background-color: rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, .6);
 }
 .padding-view {
-  padding-top: 5%;
+  padding-top: 2%;
+  padding-bottom: 2%;
 }
 #header {
   background-size: cover;
@@ -29,16 +57,16 @@ md-sidenav.md-locked-open {
   box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
   color: #fff;
 
- //  &:before {
- //   content: '';
- //   position: absolute;
- //   top: 0;
- //   right: 0;
- //   bottom: 0;
- //   left: 0;
- //   background-image: linear-gradient(to bottom,#002f4b,#dc4225);
- //   opacity: .6;
- // }
+  //  &:before {
+  //   content: '';
+  //   position: absolute;
+  //   top: 0;
+  //   right: 0;
+  //   bottom: 0;
+  //   left: 0;
+  //   background-image: linear-gradient(to bottom,#002f4b,#dc4225);
+  //   opacity: .6;
+  // }
 }
 #header-text {
   margin-top: 5vh;
@@ -47,26 +75,45 @@ md-sidenav.md-locked-open {
 .text-border {
   text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
 }
+.text-white {
+  color: #fff;
+}
 .header-btn {
   margin-top: 2vh;
   border-style: solid;
+  color: #fff !important;
+  min-width: 120px;
 }
 #about-text {
   margin-top: 2vh;
 }
 #wrapper {
   background-size: cover;
-  background-image: url("/images/bg-bw.jpg");
+  background-image: url("/images/bg.jpg");
   background-attachment: scroll;
   background-repeat: no-repeat;
-  min-height: 50vh;
+  min-height: 100vh;
   box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
 }
-#register{
+#register {
   min-width: 70vh;
 }
 #steps {
   margin-top: 5vh;
+}
+#progress {
+  background-image: url("/images/blackboard.jpg")
+}
+#padding-component {
+  padding: 5%;
+}
+#recipe-image {
+  max-height: 200px;
+}
+#progress {
+  background-color: #032d18;
+  color: #fff;
+  min-height: 57vh;
 }
 .sidenav-button {
   margin: 0;
@@ -74,6 +121,10 @@ md-sidenav.md-locked-open {
 .sidenav-button:hover {
   margin: 0;
   color: #fff;
+}
+#progress-text {
+  margin-top: 20px;
+  margin-left: 3%;
 }
 .error-message {
   color: red;
@@ -96,16 +147,24 @@ md-sidenav.md-locked-open {
     margin-top: 2vh;
   }
   .padding-view {
-    padding-top: 0px;
+    padding-top: 0;
+    padding-bottom: 0
   }
-  #register, #login {
+  #register,
+  #login {
     min-width: 100%;
+  }
+  #recipe-image {
+    max-width: 50%;
+  }
+  #mainHeader {
+    margin-left: 0;
   }
 }
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
   #register {
-    max-width: 40px;
+    max-width: 80px;
   }
 }

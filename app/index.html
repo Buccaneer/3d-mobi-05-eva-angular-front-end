@@ -25,7 +25,7 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <md-content id="wrapper" layout-fill>
+  <div id="wrapper" flex layout-fill>
     <md-progress-linear md-mode="indeterminate" ng-show="loading == true"></md-progress-linear>
 
 
@@ -63,7 +63,9 @@
 
         <md-sidenav flex layout="column" class="md-sidenav-left md-whiteframe-z2" hide-gt-sm md-component-id="left">
           <md-toolbar layout="column" layout-align="center center">
-            <span>Toolbar</span>
+            <span>
+              <img class="brand" src="images/eva-logo.png" />
+            </span>
           </md-toolbar>
           <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
             <md-button class="sidenav-button" ng-href="#/home">
@@ -89,10 +91,12 @@
       </div>
     </div>
 
-    <div id="ui-view" flex ui-view>
+    <div>
+      <div id="ui-view" flex ui-view>
+      </div>
     </div>
 
-  </md-content>
+  </div>
 
 
 
@@ -128,6 +132,7 @@
   <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 

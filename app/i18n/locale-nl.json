@@ -7,16 +7,16 @@
   "home": {
     "title": "Welkom op de 21 day challenge website!",
     "headline": "We dagen je uit om 21 dagen lang, één dagelijkse uitdaging uit te voeren!",
-    "text-signup-login": "Indien je klaar bent om de uitdaging aan te gaan, kan u zich hieronder aanmelden of registreren.",
+    "text-signup-login": "Indien u klaar bent om de uitdaging aan te gaan, kan u zich hieronder aanmelden of registreren.",
     "text-about": "Lees hoe het werkt hieronder!",
     "about": "Hoe werkt het?",
-    "about-intro-1": "Met deze applicatie willen we u de vele voordelen van vegetarisch eten duidelijk maken aan de hand van een challenge die u elke dag kan uitvoeren.",
+    "about-intro-1": "Met deze applicatie kan u de wereld van plantaardig eten ontdekken door middel van challenges die u elke dag kan uitvoeren.",
     "about-step-1-title": "Je schrijft je in en/of meld je aan",
     "about-step-1-text": "De eerste keer dat je inlogt vragen we om een paar gegevens in te vullen, zo kunnen we de uitdagingen personaliseren voor iedere gebruiker.",
     "about-step-2-title": "Je bent ingelogd",
-    "about-step-2-text": "Indien je al een uitdaging hebt voor vandaag, dan krijg je deze bovenaan te zien en de resterende tijd. Indien je nog geen uitdaging hebt kan je op dezelfde plaats 1 aanvragen. Verder kan je je behaalde prestaties bekijken en de vorige uitdagingen die je gedaan hebt.",
+    "about-step-2-text": "Indien je al een uitdaging hebt voor vandaag, dan krijg je deze bovenaan te zien met daarbij de resterende tijd. Als je nog geen uitdaging hebt, kan je er één aanvragen. Verder kan je de behaalde prestaties en de vorige uitdagingen bekijken.",
     "about-step-3-title": "Een nieuwe uitdaging verkrijgen",
-    "about-step-3-text": "Je kan de details van de  uitdaging bekijken door er eenvoudigweg op te klikken. Je kan er ook een nieuwe uitdaging beginnen. Bekijk zeker en vast de verschillende uitdagingen.",
+    "about-step-3-text": "Je kan de details van de uitdaging bekijken door er eenvoudigweg op te klikken. Je kan er ook een nieuwe uitdaging beginnen. Bekijk zeker en vast de verschillende soorten uitdagingen.",
     "about-step-4-title": "Een uitdaging vervolledigen",
     "about-step-4-text": "Indien je de uitdaging vervolledigd hebt, vergeet dan niet om dit aan te duiden door onderaan bij de details op de knop te drukken!",
     "about-step-5": "Proficiat, je hebt je eerste uitdaging vervolledigd!"
@@ -58,6 +58,10 @@
   },
 
   "challenges": {
-    "loading": "We zijn uw uitdagingen aan het zoeken!"
+    "loading": "We zijn uw uitdagingen aan het zoeken.."
+  },
+
+  "recipe": {
+    "loading": "We zijn een paar recepten aan het uitzoeken.."
   }
 }

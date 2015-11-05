@@ -1,4 +1,24 @@
-<div layout-align="center" layout="row">
+<div id="wrapper" layout-align="center" layout="row">
+  <div layout-align="center" layout="column">
+    <div class="bg-white" layout-align="center center" layout="column" ng-hide="loading">
+      <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+      <div ng-show="recipe">
+        <div flex ng-include="'views/recipe.html'"/>
+      </div>
+      <div layout-align="center" layout="row">
+        <div layout="column">
+          <p>Pick this recipe?</p>
+          <div layout-align="center center" layout="row">
+            <md-button class="md-raised md-primary" ng-click="agreed()">Yes!</md-button>
+            <md-button class="md-raised md-warn" ng-click="disagreed()">No</md-button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <div layout-align="center" layout="row">
   <div layout="column" class="white-bg">
     <ng-include src="'views/recipe.html'"></ng-include>
     <div layout-align="center center" layout="column">
@@ -9,4 +29,4 @@
       </div>
     </div>
   </div>
-</div>
+</div> -->

@@ -57,7 +57,13 @@ app.controller('LoginCtrl', ['$rootScope', '$scope', 'AuthService', '$localstora
     };
 
     $scope.getSocialLinks();
-
+    $scope.fillin = function(){
+      $scope.user={
+        email: "fien@eva.be",
+        password: "password"
+      };
+    };
+    
     $scope.callLogin = function() {
       $scope.error = '';
 

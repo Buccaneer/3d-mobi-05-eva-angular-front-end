@@ -1,9 +1,8 @@
 <!-- TODO include translations -->
-
-<div layout-align="center start" layout="column">
+<div flex layout="column" flex>
   <div class="recipe-image img-responsive">
-    <div layout-align="center" layout="column" class="inset-white" ng-style="{'background-image':'url({{recipe.Image}})'}">
-      <h2>{{recipe.Name}}</h2>
+    <div class="inset-white" layout-align="center" layout="column" ng-style="{'background-image':'url({{recipe.Image}})'}">
+      <h2 class="text-white text-border">{{recipe.Name}}</h2>
     </div>
   </div>
 
@@ -15,16 +14,49 @@
   </div>
 
   <h3>Ingredients</h3>
-  <md-list>
+
+  <div layout-align="center" layout="row">
+
+    <table class="text-center table-striped table-responsive table-hover table-condensed">
+      <thead>
+        <tr>
+          <th class="text-center">
+            Quantiteit
+          </th>
+          <th class="text-center">
+            Eenheid
+          </th>
+          <th class="text-center">
+            Naam
+          </th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr ng-repeat="ingredient in recipe.Ingredients">
+          <td>
+            {{ingredient.Quantity}}
+          </td>
+          <td>
+            {{ingredient.Ingredient.Unit}}
+          </td>
+          <td>
+            {{ingredient.Ingredient.Name}}
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- <md-list>
     <md-list-item class="recipe-ingredients" ng-repeat="ingredient in recipe.Ingredients">
-      <div class="recipe-ingredient md-list-item-text">
-        <span class="quantity">{{ingredient.Quantity}}</span>
-        <span class="unit">{{ingredient.Ingredient.Unit}}</span>
-        <span class="name">{{ingredient.Ingredient.Name}}</span>
-      </div>
-      <md-divider></md-divider>
-    </md-list-item>
-  </md-list>
+      <div class="recipe-ingredient md-list-item-text"></table>
+      <span class="quantity">{{ingredient.Quantity}}</span>
+      <span class="unit">{{ingredient.Ingredient.Unit}}</span>
+      <span class="name">{{ingredient.Ingredient.Name}}</span>
+    </div>
+    <md-divider></md-divider>
+  </md-list-item>
+</md-list> -->
   <h3>Description</h3>
   <div class="recipe-description" ng-bind-html="recipe.Description"></div>
 </div>
