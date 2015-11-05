@@ -1,11 +1,6 @@
 <div class="padding-view" id="wrapper" layout-align="center" layout="row">
-  <md-content class="bg-white" class="white-bg" ng-show="loading">
-    <div layout="row">
-      <h1>{{'recipe.loading' | translate}}</h1>
-    </div>
-  </md-content>
-  <div layout="column" flex-sm="100" flex-gt-sm="70">
-    <div class="bg-white" class="white-bg" layout="column" layout-align="center center" ng-hide="loading">
+  <div flex-gt-sm="70" flex-sm="100" layout="column">
+    <div class="bg-white" class="white-bg" layout-align="center center" layout="column" ng-hide="loading">
       <h1>Kies een recept!</h1>
       <md-list ng-repeat="recipe in recipes | orderBy:'Name'">
         <md-list-item class="md-1-line">
