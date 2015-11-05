@@ -41,7 +41,7 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
     // }
 
     $scope.init = function() {
-      //should get more detailed info from the server
+      //gets more detailed info from the server
       challengeService.getChallenges().then(function() {
 
         challengeService.challenges.forEach(function(challenge){
@@ -52,27 +52,25 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
               $scope.currentChallenge = data;
               var beginDate = new Date(data.Date);
               var endDate = new Date(data.Date);
-              console.log(beginDate);
-              endDate.setDate(beginDate.getDate() + 1);
-              console.log(endDate);
-              var diffDate = Date.parse(endDate) - Date.parse(beginDate);
-              console.log(diffDate);
+
+              endDate.setDate(beginDate.getDate() + 1); //add 1 day
+              var diffTime = Date.parse(endDate) - Date.parse(beginDate);
             });
           }
         });
 
-
-        var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
         if (challengeService.challenges.length > 0) {
+          var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds
           var firstDate = new Date(challengeService.challenges[challengeService.challenges.length - 1].Date);
           var secondDate = new Date();
-
           var diffDays = Math.round(Math.abs((firstDate.getTime() - secondDate.getTime()) / (oneDay)));
+          //mock 9 days animation
           if(diffDays === 0){
             runInterval(9);
+          } else {
+            runInterval(diffDays);
           }
-        } else {
-          runInterval(9);
+
         }
 
       });

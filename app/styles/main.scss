@@ -114,7 +114,8 @@ md-sidenav.md-locked-open {
   min-height: 20vh;
 }
 #recipe {
-  // width: 70vw;
+  min-width: 60vw;
+  max-width: 60vw;
 }
 #recipe-image {
   max-height: 200px;
@@ -170,7 +171,8 @@ md-sidenav.md-locked-open {
     margin-left: 0;
   }
   #recipe {
-    min-width: 0;
+    min-width: 0px;
+    width: 100%;
   }
 }
 

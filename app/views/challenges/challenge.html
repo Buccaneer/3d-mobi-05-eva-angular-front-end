@@ -1,8 +1,8 @@
-<div id="wrapper" layout-align="center" layout="row">
+<div id="wrapper" layout-align="center" layout="row" layout-fill>
   <div layout="column" id="recipe">
 
-    <div layout="column" class="padding-view">
-      <div layout="column">
+    <div layout="column" class="padding-view" flex>
+      <div layout="column" flex>
         <div ng-show="loading" class="bg-white">
           <h1>{{'challenges.loading' | translate}}</h1>
         </div>
@@ -11,7 +11,7 @@
           <div flex layout="column" ng-show="recipe">
             <div ng-include="'views/recipe.html'"></div>
           </div>
-          <div layout-align="center" layout="row">
+          <div layout-align="center" layout="row" flex>
             <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
               Done!
             </md-button>

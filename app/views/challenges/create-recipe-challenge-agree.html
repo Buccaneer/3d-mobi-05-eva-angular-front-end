@@ -2,7 +2,7 @@
   <div layout-align="center" layout="column">
     <div class="bg-white" layout-align="center center" layout="column" ng-hide="loading">
       <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
-      <div ng-show="recipe" flex>
+      <div id="recipe" ng-show="recipe" flex>
         <div flex ng-include="'views/recipe.html'"/>
       </div>
       <div layout-align="center" layout="row">
