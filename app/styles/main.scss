@@ -107,6 +107,15 @@ md-sidenav.md-locked-open {
 #padding-component {
   padding: 5%;
 }
+#recipe-header {
+  background-size: cover;
+  background-attachment: scroll;
+  background-repeat: no-repeat;
+  min-height: 20vh;
+}
+#recipe {
+  // width: 70vw;
+}
 #recipe-image {
   max-height: 200px;
 }
@@ -159,6 +168,9 @@ md-sidenav.md-locked-open {
   }
   #mainHeader {
     margin-left: 0;
+  }
+  #recipe {
+    min-width: 0;
   }
 }
 

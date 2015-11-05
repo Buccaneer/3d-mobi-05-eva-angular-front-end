@@ -1,15 +1,15 @@
-<div flex id="wrapper" layout-align="center" layout="row" class="padding-view">
-  <div flex-gt-sm="60" flex-sm="100" layout="column">
+<div id="wrapper" layout-align="center" layout="row">
+  <div layout="column" id="recipe">
 
-    <div  layout="column">
-      <div flex-gt-md="60" flex-md="100" layout="column">
+    <div layout="column" class="padding-view">
+      <div layout="column">
         <div ng-show="loading" class="bg-white">
           <h1>{{'challenges.loading' | translate}}</h1>
         </div>
-        <div class="bg-white" flex-gt-md="70" flex-md="100" layout-align="center center" layout="column" ng-hide="loading">
+        <div class="bg-white padding-view" layout-align="center center" layout="column" ng-hide="loading">
           <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
           <div flex layout="column" ng-show="recipe">
-            <div flex ng-include="'views/recipe.html'"></div>
+            <div ng-include="'views/recipe.html'"></div>
           </div>
           <div layout-align="center" layout="row">
             <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
