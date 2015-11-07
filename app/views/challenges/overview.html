@@ -16,11 +16,11 @@
           </div>
         </div>
 
-        <div flex="60" ng-repeat="challenge in detailedChallenges | orderBy: '-Date'">
+        <div flex="60" ng-repeat="challenge in challenges | orderBy: '-Date'">
           <md-card>
-            <img class="md-card-image img-responsive" ng-src="{{challenge.Recipe.Image}}">
+            
             <md-card-content>
-              <h2 class="md-title">{{challenge.Recipe.Name}}</h2>
+              <h2 class="md-title">Challenge {{$index + 1}}</h2>
               <p></p>
             </md-card-content>
             <div class="md-actions" layout-align="end center" layout="row">

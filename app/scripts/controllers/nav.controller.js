@@ -1,3 +1,5 @@
+(function() {
+
 'use strict';
 
 /**
@@ -7,7 +9,9 @@
  * # MainCtrl
  * Controller of the eva21DayChallengeApp
  */
-app.controller('NavCtrl', ['AuthService', '$location', '$scope', '$mdSidenav',
+angular
+    .module('eva21DayChallengeApp')
+    .controller('NavCtrl', ['AuthService', '$location', '$scope', '$mdSidenav',
   function(auth, $location, $scope, $mdSidenav) {
 
     $scope.logout = function() {
@@ -26,3 +30,4 @@ app.controller('NavCtrl', ['AuthService', '$location', '$scope', '$mdSidenav',
     };
   }
 ]);
+})();

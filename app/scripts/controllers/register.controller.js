@@ -1,3 +1,5 @@
+(function() {
+
 'use strict';
 
 //TODO
@@ -68,3 +70,4 @@ angular.module('eva21DayChallengeApp')
       $rootScope.loading = false;
     };
   }]);
+})();

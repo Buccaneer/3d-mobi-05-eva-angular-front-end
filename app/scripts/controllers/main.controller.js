@@ -1,3 +1,5 @@
+(function() {
+
 'use strict';
 
 /**
@@ -7,7 +9,8 @@
  * # MainCtrl
  * Controller of the eva21DayChallengeApp
  */
-app.controller('MainCtrl', ['$localstorage', 'TOKEN',
+angular
+    .module('eva21DayChallengeApp').controller('MainCtrl', ['$localstorage', 'TOKEN',
   '$scope', 'ChallengeService', '$interval',
   function($localstorage, TOKEN, $scope, challengeService, $interval) {
     var tokenObj = $localstorage.getObject(TOKEN);
@@ -102,3 +105,5 @@ app.controller('MainCtrl', ['$localstorage', 'TOKEN',
     console.log($scope.currentChallenge);
   }
 ]);
+
+})();
