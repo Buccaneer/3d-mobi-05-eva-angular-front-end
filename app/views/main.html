@@ -8,7 +8,7 @@
       </md-content>
     </div>
   </div>
-  <div layout="column">
+  <div layout="column" ng-hide="loading">
     <div ng-show="currentChallenge">
       <div class="bg-white" layout="column">
         <div class="big-left-margin" layout-align="center" layout="row">
@@ -76,10 +76,6 @@
           <p>U hebt al
             {{progress.amountOfDays}}
             van de 21 dagen vervolledigd!</p>
-          <p>
-            Dit komt neer op
-            {{progress.amountOfDays * progress.percentagePerDay | number: 0}}% van de volledige challenge.
-          </p>
         </div>
         <span flex></span>
       </div>

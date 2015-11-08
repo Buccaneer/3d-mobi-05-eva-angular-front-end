@@ -1,9 +1,9 @@
 <div flex id="wrapper">
   <div class="padding-view" layout-align="center" layout="row" ng-init="init()" flex>
 
-    <md-content class="bg-white" class="white-bg" ng-show="loading">
+    <md-content class="bg-white" ng-show="loading">
       <div layout="center" layout="row">
-        <h1>{{'recipe.loading' | translate}}</h1>
+        <h1>{{'challenges.loading' | translate}}</h1>
       </div>
     </md-content>
 
@@ -18,7 +18,7 @@
 
         <div flex="60" ng-repeat="challenge in challenges | orderBy: '-Date'">
           <md-card>
-            
+
             <md-card-content>
               <h2 class="md-title">Challenge {{$index + 1}}</h2>
               <p></p>
