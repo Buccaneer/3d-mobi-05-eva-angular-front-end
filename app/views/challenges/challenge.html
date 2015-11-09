@@ -1,22 +1,26 @@
 <div class="padding-view" id="wrapper" layout-align="center" layout="row">
-  <div id="recipe" layout="column">
-    <div flex layout="column">
-      <div flex layout="column">
-        <div class="bg-white padding-view" layout-align="center center" layout="column" ng-hide="loading">
-          <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+  <div layout="column">
 
-          <div ng-include="view"></div>
+    <md-content class="bg-white" ng-hide="!loading" ng-show="loading">
+      <div layout="center" layout="row">
+        <h1>{{'challenges.loading' | translate}}</h1>
+      </div>
+    </md-content>
 
-          <div layout-align="center" layout="row">
-            <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
-              Done!
-            </md-button>
-            <div ng-show="challenge.Done">
-              <h3 class="text-success">Je hebt deze challenge al gedaan!
-              </h3>
-            </div>
+    <div flex id="recipe" layout="column">
+      <div class="bg-white" layout-align="center center" layout="column" ng-hide="loading">
+        <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+
+        <div ng-include="view"></div>
+
+        <div layout-align="center" layout="row">
+          <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
+            Done!
+          </md-button>
+          <div ng-show="challenge.Done">
+            <h3 class="text-success">Je hebt deze challenge al gedaan!
+            </h3>
           </div>
-
         </div>
       </div>
     </div>

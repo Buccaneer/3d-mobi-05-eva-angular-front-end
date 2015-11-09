@@ -14,7 +14,6 @@
     "passwordPlaceholder": "Introduisez votre mot de passe",
     "loginButton": "Se connecter",
     "noAccount": "Ni de compte?",
-    "signInWith": "Se connecter avec",
 
     "errors": {
       "passwordRequired": "Votre mot de passe est obligatoire.",

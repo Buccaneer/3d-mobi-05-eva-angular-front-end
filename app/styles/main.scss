@@ -84,7 +84,7 @@ md-sidenav.md-locked-open {
   color: #fff !important;
   min-width: 120px;
 }
-.type-btn{
+.type-btn {
   min-width: 250px;
 }
 #about-text {
@@ -105,7 +105,7 @@ md-sidenav.md-locked-open {
   margin-top: 5vh;
 }
 #progress {
-  background-image: url("/images/blackboard.jpg")
+  background-image: url("/images/blackboard.jpg");
 }
 #padding-component {
   padding: 5%;
@@ -148,17 +148,11 @@ md-sidenav.md-locked-open {
   padding-top: 0;
   margin-top: 0;
 }
-.dark-green{
+.dark-green {
   color: #032d18;
 }
-#mainHeader{
+#mainHeader {
   min-height: 50vh;
-}
-@media screen and (max-width: 750px) {
-  .padding-view {
-    padding-top: 0;
-    padding-bottom: 0
-  }
 }
 @media screen and (max-width: 767px) {
   #header {
@@ -186,6 +180,10 @@ md-sidenav.md-locked-open {
     min-width: none;
     max-width: none;
     width: 100%;
+  }
+  .padding-view {
+    padding-top: 0%;
+    padding-bottom: 0%;
   }
 }
 

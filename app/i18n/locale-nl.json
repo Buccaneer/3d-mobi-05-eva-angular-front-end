@@ -28,7 +28,6 @@
     "passwordPlaceholder": "Geef uw wachtwoord in",
     "loginButton": "Inloggen",
     "noAccount": "Nog geen account?",
-    "signInWith": "Inloggen met ",
 
     "errors": {
       "passwordRequired": "Uw wachtwoord is verplicht.",

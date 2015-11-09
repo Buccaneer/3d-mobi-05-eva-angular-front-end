@@ -29,7 +29,6 @@
     "passwordPlaceholder": "Enter your password",
     "loginButton": "Login",
     "noAccount": "Don't have an account?",
-    "signInWith": "Sign in with ",
 
     "errors": {
       "passwordRequired": "Your password is required.",
