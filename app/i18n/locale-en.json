@@ -62,5 +62,10 @@
 
   "recipe": {
     "loading": "We're picking out some recipes..."
+  },
+  
+  "settings": {
+    "userSettings": "User Settings"
   }
+  
 }

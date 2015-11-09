@@ -1,4 +1,5 @@
 (function () {
+	'use strict';
 	 angular
     .module('eva21DayChallengeApp').config(function ($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider) {
       $urlRouterProvider.otherwise('/home');
@@ -19,6 +20,12 @@
           url: '/register',
           templateUrl: 'views/register.html',
           controller: 'RegisterCtrl'
+        })
+        .state('settings', {
+          url: '/settings',
+          templateUrl: 'views/settings.html',
+          controller: 'SettingsCtrl',
+          requireAuth: true
         })
         .state('main', {
           url: '/main',

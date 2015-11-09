@@ -58,8 +58,16 @@
               isAuthed: true,
               token: _token
             };
-
-            $location.path('/main');
+            
+            service.getUserInfo().then(function (response) {
+              var _doneSetup = response.data.DoneSetup;
+              if (_doneSetup === true) {
+                $location.path('/main');
+              }
+              else {
+                $location.path('/settings');
+              }
+            });
           });
         },
 
@@ -77,7 +85,6 @@
          */
         getUserInfo: function () {
           var token = $localstorage.getObject(TOKEN).token;
-
 
           return $http({
             method: 'GET',

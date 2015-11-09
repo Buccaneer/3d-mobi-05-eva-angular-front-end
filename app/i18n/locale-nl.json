@@ -63,5 +63,17 @@
 
   "recipe": {
     "loading": "We zijn een paar recepten aan het uitzoeken.."
+  },
+  
+  "settings": {
+    "userSettings": "Instellingen",
+    "firstname": "Voornaam",
+    "lastname": "Achternaam",
+    "birthdate": "Geboortedatum",
+    "allergies": "Uw allergieën",
+    "budget": "Wat is uw budget?",
+    "typeOfVegan": "Bent u vegetariër?",
+    "peopleInFamily": "Aantal gezinsleden",
+    "save": "Opslaan"
   }
 }
