@@ -28,8 +28,8 @@
 
         $scope.getSocialLinks = function () {
           var promise = auth.getSocialLinks();
+          $rootScope.loading = true;
           promise.then(function (response) {
-            $rootScope.loading = true;
             var data = response.data;
             //if the links are loaded show them,
             //if not, catch the error and dont show them
