@@ -1,14 +1,17 @@
-(function () {
-	 angular
-    .module('eva21DayChallengeApp').config(function ($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider) {
-      $urlRouterProvider.otherwise('/home');
+(function() {
+
+	'use strict';
+
+  angular
+    .module('eva21DayChallengeApp').config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider) {
+			$urlRouterProvider.otherwise('/home');
 
       //setting up the states
       $stateProvider
         .state('home', {
           url: '/home',
           templateUrl: 'views/home.html'
-          //controller: 'MainCtrl'
+            //controller: 'MainCtrl'
         })
         .state('login', {
           url: '/login',
@@ -32,7 +35,7 @@
           controller: 'ChallengesCtrl',
           requireAuth: true,
           resolve: {
-            fetchChallengesPromise: ['ChallengeService', function (ChallengeService) {
+            fetchChallengesPromise: ['ChallengeService', function(ChallengeService) {
               return ChallengeService.getChallenges();
             }]
           }
@@ -48,12 +51,11 @@
           controller: 'ChallengeCtrl',
           requireAuth: true,
           resolve: {
-            challenge: ['$stateParams', 'ChallengeService', function ($stateParams, ChallengeService) {
+            challenge: ['$stateParams', 'ChallengeService', function($stateParams, ChallengeService) {
               return ChallengeService.getChallenge($stateParams.id);
             }]
           }
         })
-
         .state('select-view-recipe', {
           url: '/challenge/create/recipe/agree',
           controller: 'AgreeRecipeCtrl',
@@ -66,17 +68,24 @@
           controller: 'ChallengeRecipesCtrl',
           requireAuth: true,
           resolve: {
-            fetchChallengesPromise: ['RecipeService', function (RecipeService) {
+            fetchChallengesPromise: ['RecipeService', function(RecipeService) {
               return RecipeService.getRecipes();
             }]
           }
-        });
+        }).state('create-restaurant-challenge', {
+					url: '/challenge/create/restaurant',
+					templateUrl: '/views/challenges/create-restaurant-challenge.html',
+					controller: 'RestaurantCtrl',
+					requireAuth: true
+				});
 
 
       //let translateProvider load translations from external json
       $translateProvider.useStaticFilesLoader({
-        prefix: './i18n/locale-',
-        suffix: '.json'
+				files: [{
+					prefix: '../i18n/locale-',
+					suffix: '.json'
+				}]
       });
 
       //register all available languages
@@ -122,6 +131,12 @@
       $mdThemingProvider.definePalette('accent', accent);
       $mdThemingProvider.definePalette('background', background);
       $mdThemingProvider.theme('default').primaryPalette('primary').backgroundPalette('background');
+
+
+			uiGmapGoogleMapApiProvider.configure({
+				v: '3.20',
+				libraries: 'weather,geometry,visualization'
+			});
     });
 
 

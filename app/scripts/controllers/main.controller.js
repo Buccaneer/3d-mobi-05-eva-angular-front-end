@@ -59,6 +59,7 @@ angular
 
               endDate.setDate(beginDate.getDate() + 1); //add 1 day
               var diffTime = Date.parse(endDate) - Date.parse(beginDate);
+              console.log(diffTime);
             });
           }
         });
