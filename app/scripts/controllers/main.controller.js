@@ -1,5 +1,7 @@
 (function() {
-
+//TODO
+//get correct recipe
+//add momentjs timer
 'use strict';
 
 /**
@@ -14,7 +16,6 @@ angular
   '$scope', 'ChallengeService', '$interval',
   function($localstorage, TOKEN, $scope, challengeService, $interval) {
     var tokenObj = $localstorage.getObject(TOKEN);
-    $scope.currentChallenge = null;
 
     $scope.progress = {
       amountOfDays: 0,
@@ -48,21 +49,21 @@ angular
       //gets more detailed info from the server
       challengeService.getChallenges().then(function() {
         console.log(challengeService.challenges);
-        challengeService.challenges.forEach(function(challenge){
-          if(!challenge.Done){
-            console.log(challenge);
-            challengeService.getChallenge(challenge.ChallengeId).then(function(data){
-              console.log(data);
-              $scope.currentChallenge = data;
-              var beginDate = new Date(data.Date);
-              var endDate = new Date(data.Date);
-
-              endDate.setDate(beginDate.getDate() + 1); //add 1 day
-              var diffTime = Date.parse(endDate) - Date.parse(beginDate);
-              console.log(diffTime);
-            });
-          }
-        });
+        // challengeService.challenges.forEach(function(challenge){
+        //   if(!challenge.Done){
+        //     console.log(challenge);
+        //     challengeService.getChallenge(challenge.ChallengeId).then(function(data){
+        //       console.log(data);
+        //       $scope.currentChallenge = data;
+        //       var beginDate = new Date(data.Date);
+        //       var endDate = new Date(data.Date);
+        //
+        //       endDate.setDate(beginDate.getDate() + 1); //add 1 day
+        //       var diffTime = Date.parse(endDate) - Date.parse(beginDate);
+        //       console.log(diffTime);
+        //     });
+        //   }
+        // });
 
         if (challengeService.challenges.length > 0) {
           var oneDay = 24 * 60 * 60 * 1000; // hours*minutes*seconds*milliseconds

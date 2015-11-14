@@ -2,8 +2,8 @@
 
   'use strict';
   angular.module('eva21DayChallengeApp')
-    .service('RestaurantService', ['$http', '$q', '$localstorage', 'URLS', 'TOKEN', '$window', '$rootScope',
-      function($http, $q, $localstorage, URLS, TOKEN, $window, $rootScope) {
+    .service('RestaurantService', ['$http', '$q', '$localstorage', 'URLS', 'TOKEN', '$window',
+      function($http, $q, $localstorage, URLS, TOKEN, $window) {
         var service = {
           // /*
           // initialize token in memory
@@ -25,19 +25,28 @@
           Grab the closest restaurants (Long, Lat, Distance)
           */
           getRestaurants: function(long, lat, dist) {
-            return $http({
+            var deferred = $q.defer();
+            var token = $localstorage.getObject(TOKEN).token;
+
+            $http({
               method: 'POST',
-              url: URLS.PUBLIC_API + URLS.RESTAURANTS + '/find',
+              url: URLS.PUBLIC_API + URLS.RESTAURANT + '/find',
               data: {
                 'Longitude': long,
                 'Latitude': lat,
                 'Distance': dist
               },
               headers: {
-                'Authorization': 'Bearer ' + $rootScope.parsedToken,
+                'Authorization': 'Bearer ' + token,
                 'Content-Type': 'application/json; charset=utf-8'
               }
+            }).then(function(response){
+              deferred.resolve(response.data);
+            }).catch(function(err){
+              deferred.reject(err);
             });
+
+            return deferred.promise;
           },
 
           getCurrentPosition: function() {

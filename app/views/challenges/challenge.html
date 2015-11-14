@@ -1,19 +1,13 @@
 <div class="padding-view" id="wrapper" layout-align="center" layout="row">
 
-  <md-content class="bg-white" class="white-bg" ng-show="loading">
-    <div layout="row" layout-align="center">
-      <h1>{{'challenges.loading' | translate}}</h1>
-    </div>
-  </md-content>
-
   <div id="recipe" layout="column">
     <div class="padding-view" flex layout="column">
       <div flex layout="column">
         <div class="bg-white padding-view" layout-align="center center" layout="column" ng-hide="loading">
           <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
-         
+
             <div flex layout="column" ng-include="view"></div>
-     
+
           <div layout-align="center" layout="row">
             <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
               Done!

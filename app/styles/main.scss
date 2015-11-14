@@ -99,7 +99,7 @@ md-sidenav.md-locked-open {
   box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
 }
 #register {
-  min-width: 70vh;
+  min-width: 75vh;
 }
 #steps {
   margin-top: 5vh;
@@ -191,7 +191,4 @@ md-sidenav.md-locked-open {
 
 /* Responsive: Portrait tablets and up */
 @media screen and (min-width: 768px) {
-  #register {
-    max-width: 80px;
-  }
 }
