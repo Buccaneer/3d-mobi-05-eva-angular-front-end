@@ -27,7 +27,7 @@ body {
   font-family: georgia;
 }
 //used for animations
-.hidden {
+.invis {
   visibility: hidden;
 }
 md-toolbar {
@@ -58,6 +58,10 @@ md-button {
 }
 .fadeInLeft {
   -webkit-animation: fadeInLeft 1s;
+  -webkit-animation-delay: 0.2s;
+}
+.fadeInRight {
+  -webkit-animation: fadeInRight 1s;
   -webkit-animation-delay: 0.2s;
 }
 #header {

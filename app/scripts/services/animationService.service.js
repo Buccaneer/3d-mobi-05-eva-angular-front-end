@@ -20,19 +20,23 @@
           ],
 
           fadeInLeft: function($el) {
-            $el.removeClass('hidden');
+            $el.removeClass('invis');
             $el.addClass('fadeInLeft');
           },
 
+          fadeInRight: function($el) {
+            $el.removeClass('invis');
+            $el.addClass('fadeInRight');
+          },
+
           bounceInUp: function($el) {
-            $el.removeClass('hidden');
+            $el.removeClass('invis');
             $el.addClass('bounceInUp');
           },
 
-          invisible: function($el) {
-            this.anims.forEach(function(anim) {
-              $el.removeClass(anim);
-            });
+          removeFadeInLeft: function($el) {
+            $el.addClass('invis');
+            $el.removeClass('fadeInLeft');
           }
         };
 

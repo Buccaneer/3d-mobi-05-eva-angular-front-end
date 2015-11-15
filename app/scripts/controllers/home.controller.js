@@ -17,8 +17,24 @@
           anim.fadeInLeft($el);
         };
 
+        $scope.removeInvis = function($el){
+          $el.removeClass('invis');
+        };
+
+        $scope.addInvis = function($el){
+          $el.addClass('invis');
+        };
+
+        $scope.fadeInRight = function($el){
+          anim.fadeInRight($el);
+        };
+
         $scope.bounceInUp = function($el){
           anim.bounceInUp($el);
+        };
+
+        $scope.removeFadeInLeft = function($el){
+          anim.removeFadeInLeft($el);
         };
 
         $scope.invisible = function($el){
