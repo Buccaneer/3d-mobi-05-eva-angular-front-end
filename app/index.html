@@ -6,6 +6,7 @@
   <title>21 Day Veggie Challenge</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles/animate.css">
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
@@ -127,18 +128,22 @@
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-translate/angular-translate.js"></script>
   <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
-  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.module.js"></script>
-    <script src="scripts/app.config.js"></script>
+  <script src="scripts/app.config.js"></script>
+  <script src="scripts/controllers/home.controller.js"></script>
   <script src="scripts/controllers/main.controller.js"></script>
   <script src="scripts/controllers/login.controller.js"></script>
   <script src="scripts/controllers/register.controller.js"></script>
@@ -146,11 +151,13 @@
   <script src="scripts/services/authService.service.js"></script>
   <script src="scripts/services/challengeService.service.js"></script>
   <script src="scripts/services/recipeService.service.js"></script>
+  <script src="scripts/services/restaurantService.service.js"></script>
+  <script src="scripts/services/animationService.service.js"></script>
   <script src="scripts/factories/localstorage.factory.js"></script>
   <script src="scripts/controllers/challenges.controller.js"></script>
   <script src="scripts/controllers/challengerecipe.controller.js"></script>
+  <script src="scripts/controllers/challengerestaurant.controller.js"></script>
   <!-- endbuild -->
 </body>
 
 </html>
-

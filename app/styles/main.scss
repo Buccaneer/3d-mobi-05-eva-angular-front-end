@@ -1,197 +1,98 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
+//fonts
 @font-face {
-  font-family: "museo";
+  font-family: "museo-normal";
   font-style: normal;
   font-weight: 300;
-  src: url("/fonts/Museo300-Regular.otf");
+  src: url("../fonts/eva-fonts/Museo300-Regular.otf");
 }
 @font-face {
-  font-family: "museo";
+  font-family: "museo-weighted";
   font-weight: 500;
-  src: url("/fonts/Museo500-Regular.otf");
+  src: url("../fonts/eva-fonts/Museo500-Regular.otf");
 }
 @font-face {
   font-family: "artistamp";
   font-weight: 700;
-  src: url("/fonts/ArtistampMedium.ttf");
+  src: url("../fonts/eva-fonts/ArtistampMedium.ttf");
 }
 @font-face {
   font-family: "georgia";
-  src: url("/fonts/Georgia.ttf");
+  src: url("../fonts/eva-fonts/Georgia.ttf");
 }
 body {
   padding: 0;
-  font-family: "georgia";
+  font-family: georgia;
 }
-h1 {
-  font-family: "museo";
+//used for animations
+.hidden {
+  visibility: hidden;
 }
-p {
-  font-family: "georgia";
-}
-md-sidenav,
-md-sidenav.md-locked-open {
-  min-width: 200px !important;
-  width: 60vw !important;
-  max-width: 400px !important;
-}
-.sidenav-content {
-  align-items: stretch;
-  padding: 0;
-}
-.bg-white {
-  background-color: rgba(255, 255, 255, .6);
-}
-.padding-view {
-  padding-top: 2%;
-  padding-bottom: 2%;
-}
-#header {
-  background-size: cover;
-  background-image: url("/images/bg.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 50vh;
-  box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
-  color: #fff;
-
-  //  &:before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   background-image: linear-gradient(to bottom,#002f4b,#dc4225);
-  //   opacity: .6;
-  // }
-}
-#header-text {
-  margin-top: 5vh;
-  color: #fff;
-}
-.text-border {
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.text-white {
-  color: #fff;
-}
-.header-btn {
-  margin-top: 2vh;
-  border-style: solid;
-  color: #fff !important;
-  min-width: 120px;
-}
-.type-btn{
-  min-width: 250px;
-}
-#about-text {
-  margin-top: 2vh;
-}
-#wrapper {
-  background-size: cover;
-  background-image: url("/images/bg.jpg");
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  min-height: 100vh;
-  box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
-}
-#register {
-  min-width: 70vh;
-}
-#steps {
-  margin-top: 5vh;
-}
-#progress {
-  background-image: url("/images/blackboard.jpg")
-}
-#padding-component {
-  padding: 5%;
-}
-#recipe-header {
-  background-size: cover;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  min-height: 20vh;
-}
-#recipe {
-  min-width: 60vw;
-  max-width: 60vw;
-}
-#recipe-image {
-  max-height: 200px;
-}
-#progress {
-  background-color: #032d18;
-  color: #fff;
-  min-height: 57vh;
-}
-.sidenav-button {
-  margin: 0;
-}
-.sidenav-button:hover {
-  margin: 0;
-  color: #fff;
-}
-#progress-text {
-  margin-top: 20px;
-  margin-left: 3%;
-}
-.error-message {
-  color: red;
-  padding: 5px;
+md-toolbar {
+  font-family: georgia;
 }
 .brand {
   max-height: 40px;
-  padding-top: 0;
-  margin-top: 0;
+  max-height: 40px;
+  margin-bottom: 5px;
 }
-.dark-green{
-  color: #032d18;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: museo-weighted;
 }
-#mainHeader{
-  min-height: 50vh;
+md-button {
+  font-family: museo-normal;
 }
-@media screen and (max-width: 750px) {
-  .padding-view {
-    padding-top: 0;
-    padding-bottom: 0
-  }
+.bounceInUp {
+  -webkit-animation: bounceInUp 1s;
+  -webkit-animation-delay: 0.1s;
 }
-@media screen and (max-width: 767px) {
+.bounceInLeft {
+  -webkit-animation: bounceInLeft 1s;
+  -webkit-animation-delay: 0.1s;
+}
+.fadeInLeft {
+  -webkit-animation: fadeInLeft 1s;
+  -webkit-animation-delay: 0.2s;
+}
+#header {
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.png");
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.png");
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.png");
+  /* IE6-9 */
+  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+
+  // background-image: url("../images/header.png");
+  background-size: cover;
+  min-height: 100vh;
+}
+#header-btns {
+  margin-bottom: 20px;
+}
+#header-text {
+  margin-left: 50vw;
+  margin-top: 25vh;
+}
+.form {
+  min-width: 50vw;
+  max-width: 800px;
+}
+@media screen and (max-width: 768px) {
   #header {
-    background-attachment: scroll;
-    min-height: 100vh;
+    background-image: url("../images/resp-header.jpg");
+    background-size: cover;
   }
   #header-text {
-    margin-top: 5vh;
-  }
-  .header-btn {
-    margin-top: 2vh;
-  }
-  #register,
-  #login {
-    min-width: 100%;
-  }
-  #recipe-image {
-    max-width: 50%;
-  }
-  #mainHeader {
+    color: #fff;
     margin-left: 0;
-    min-height: 50vh;
-  }
-  #recipe {
-    min-width: none;
-    max-width: none;
-    width: 100%;
-  }
-}
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-  #register {
-    max-width: 80px;
+    margin-top: 40vh;
   }
 }

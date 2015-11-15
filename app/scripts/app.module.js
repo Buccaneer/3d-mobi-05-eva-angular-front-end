@@ -22,7 +22,9 @@
       'ngMessages',
       'validation.match',
       'ui.router',
-      'ngMaterial'
+      'ngMaterial',
+      'uiGmapgoogle-maps',
+      'angular-scroll-animate'
     ]);
 
   /**
@@ -59,8 +61,8 @@
     'API': 'http://localhost:52072',
     'ACCOUNT': '/api/Account',
     'CHALLENGE': '/api/Challenge',
-    'RECIPE': '/api/Recipes'
-
+    'RECIPE': '/api/Recipes',
+    'RESTAURANT': '/api/Restaurants'
   });
   app.constant('TOKEN', 'eva.access_token');
 
