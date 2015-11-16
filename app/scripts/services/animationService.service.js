@@ -20,23 +20,28 @@
           ],
 
           fadeInLeft: function($el) {
-            $el.removeClass('invis');
+            $el.removeClass("hidden");
             $el.addClass('fadeInLeft');
           },
 
           fadeInRight: function($el) {
-            $el.removeClass('invis');
+            $el.removeClass('hidden');
             $el.addClass('fadeInRight');
           },
 
           bounceInUp: function($el) {
-            $el.removeClass('invis');
+            $el.removeClass('hidden');
             $el.addClass('bounceInUp');
           },
 
           removeFadeInLeft: function($el) {
-            $el.addClass('invis');
+            $el.addClass('hidden');
             $el.removeClass('fadeInLeft');
+          },
+
+          removeBounceInUp: function($el) {
+            $el.addClass('hidden');
+            $el.removeClass('bounceInUp');
           }
         };
 

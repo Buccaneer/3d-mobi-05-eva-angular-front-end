@@ -11,7 +11,7 @@
         .state('home', {
           url: '/home',
           templateUrl: 'views/home.html',
-          controller: 'HomeCtrl'
+          // controller: 'HomeCtrl'
         })
         .state('login', {
           url: '/login',

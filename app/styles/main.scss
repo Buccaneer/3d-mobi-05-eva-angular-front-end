@@ -26,8 +26,9 @@ body {
   padding: 0;
   font-family: georgia;
 }
+
 //used for animations
-.invis {
+.hidden {
   visibility: hidden;
 }
 md-toolbar {
@@ -37,6 +38,9 @@ md-toolbar {
   max-height: 40px;
   max-height: 40px;
   margin-bottom: 5px;
+}
+div {
+  display: block;
 }
 h1,
 h2,
@@ -85,6 +89,25 @@ md-button {
   margin-left: 50vw;
   margin-top: 25vh;
 }
+#loginWrapper, #registerWrapper {
+  background-image: url("../images/form-bg.jpg");
+  background-size: cover;
+  min-height: 93vh;
+  min-width: 100%;
+  position: absolute;
+}
+#login, #register {
+  margin: 20vh 10vh 0vh 10vh;
+  color: #fff !important;
+  background-color: rgba(0, 0, 0, 0.8);
+}
+md-input-container label {
+  color: #fff !important;
+}
+md-input-container .md-input {
+    color: #fff !important;
+    border-color: #fff;
+}
 .form {
   min-width: 50vw;
   max-width: 800px;
@@ -94,9 +117,21 @@ md-button {
     background-image: url("../images/resp-header.jpg");
     background-size: cover;
   }
+  #login, #register {
+    margin: 0vh;
+  }
   #header-text {
     color: #fff;
     margin-left: 0;
     margin-top: 40vh;
   }
+}
+@media screen
+  and (min-width: 1200px)
+  and (-webkit-min-device-pixel-ratio: 1) {
+    #login, #register {
+      margin-top: 25vh;
+      margin-left: 25vh;
+      margin-right: 25vh;
+    }
 }

@@ -1,7 +1,9 @@
-<div class="padding-view" layout-align="center" layout="row">
-  <div id="loginForm" layout="column" layout-align-gt-md="center" flex-sm="100" flex-md="70" flex-gt-md="50" flex-gt-lg="40">
+<div id="loginWrapper">
+
+  <div id="login" layout="row" layout-align="center" when-visible="bounceInUp">
+    <div id="loginForm" layout="column" flex-gt-lg="40" flex-gt-md="50" flex-md="70" flex-sm="100"  layout-align-gt-md="center" >
       <div layout-align="center center" layout="column">
-        <div ng-show="error">
+        <div ng-show="error" when-not-visible="removeFadeInLeft" when-visible="fadeInLeft">
           {{error | translate}}
         </div>
         <div>
@@ -12,7 +14,7 @@
         </div>
       </div>
 
-      <form name="loginForm" ng-submit="callLogin()" novalidate>
+      <form id="loginForm" name="loginForm" ng-submit="callLogin()" novalidate>
         <div layout-align="center" layout-margin layout-padding layout="column">
           <md-input-container>
             <label>{{'login.email' | translate}}</label>
@@ -41,14 +43,14 @@
         </div>
       </form>
 
-
-    <div layout-sm="column" layout-gt-sm="row" layout-margin>
-      <div flex layout-padding ng-repeat='p in socialUrls'>
-        <div class="socialUrl">
-          <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
-            <i class='fa fa-{{p.name | lowercase}}'></i>
+      <div layout-gt-sm="row" layout-margin layout-sm="column">
+        <div flex layout-padding ng-repeat='p in socialUrls'>
+          <div class="socialUrl">
+            <a class='btn btn-block btn-md btn-social btn-{{p.name | lowercase}}' ng-click='externalLogin($index)'>
+              <i class='fa fa-{{p.name | lowercase}}'></i>
               {{p.name}}
-          </a>
+            </a>
+          </div>
         </div>
       </div>
     </div>

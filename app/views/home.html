@@ -1,5 +1,4 @@
-<div when-visible="bounceInUp" when-not-visible="invisible">
-
+<div>
   <div id="header" layout="column">
     <div id="header-text">
       <h1 class="text-border">{{'home.title' | translate}}</h1>
@@ -11,9 +10,9 @@
     </div>
 
   </div>
-  <div layout="column" when-visible="removeInvis" when-not-visible="addInvis">
+  <div layout="column">
     <div class="container" layout="row">
-      <div class="text-center" flex="100" when-visible="fadeInLeft">
+      <div class="text-center" flex="100" class="hidden" when-visible="fadeInLeft">
         <h1 id="about">{{'home.about' | translate}}</h1>
         <p>
           {{'home.about-intro-1' | translate}}
@@ -22,8 +21,8 @@
     </div>
 
     <div class="container" id="steps" layout="column">
-      <div layout="row">
-        <div flex="50" id="step1" when-visible="fadeInRight">
+      <div layout="row" when-visible="fadeInLeft">
+        <div flex="50" id="step1">
           <h3>{{'home.about-step-1-title' | translate}}</h3>
           <p>
             {{'home.about-step-1-text' | translate}}
@@ -31,9 +30,9 @@
         </div>
       </div>
 
-      <div layout="row">
+      <div layout="row" when-visible="fadeInRight">
         <span flex></span>
-        <div flex="50" id="step2" when-visible="fadeInLeft">
+        <div flex="50" id="step2">
           <h3>{{'home.about-step-2-title' | translate}}</h3>
           <p>
             {{'home.about-step-2-text' | translate}}
@@ -41,7 +40,7 @@
         </div>
       </div>
 
-      <div layout="row">
+      <div layout="row" when-visible="fadeInLeft">
         <div flex="50" id="step3" when-visible="fadeInRight">
           <h3>{{'home.about-step-3-title' | translate}}</h3>
           <p>
@@ -50,9 +49,9 @@
         </div>
       </div>
 
-      <div layout="row">
+      <div layout="row" when-visible="fadeInRight">
         <span flex></span>
-        <div flex="50" id="step4" when-visible="fadeInRight">
+        <div flex="50" id="step4">
           <h3>{{'home.about-step-4-title' | translate}}</h3>
           <p>
             {{'home.about-step-4-text' | translate}}

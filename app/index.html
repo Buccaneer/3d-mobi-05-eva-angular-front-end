@@ -26,7 +26,7 @@
   <![endif]-->
 
   <!-- Add your site or application content here -->
-  <div id="wrapper" flex layout-fill>
+  <div ng-controller="AnimCtrl">
     <md-progress-linear md-mode="indeterminate" ng-show="loading == true"></md-progress-linear>
 
 
@@ -93,7 +93,7 @@
     </div>
 
     <div>
-      <div id="ui-view" flex ui-view>
+      <div id="ui-view" flex ui-view layout-fill>
       </div>
     </div>
 
@@ -143,7 +143,7 @@
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.module.js"></script>
   <script src="scripts/app.config.js"></script>
-  <script src="scripts/controllers/home.controller.js"></script>
+  <script src="scripts/controllers/animation.controller.js"></script>
   <script src="scripts/controllers/main.controller.js"></script>
   <script src="scripts/controllers/login.controller.js"></script>
   <script src="scripts/controllers/register.controller.js"></script>
