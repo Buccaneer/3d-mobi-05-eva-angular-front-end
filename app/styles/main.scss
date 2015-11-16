@@ -125,6 +125,22 @@ md-input-container .md-input {
     margin-left: 0;
     margin-top: 40vh;
   }
+
+  /*
+  * clear animations since they're not responsive...
+  */
+  .bounceInUp {
+    -webkit-animation: none;
+  }
+  .bounceInLeft {
+    -webkit-animation: none;
+  }
+  .fadeInLeft {
+    -webkit-animation: none;
+  }
+  .fadeInRight {
+    -webkit-animation: none;
+  }
 }
 @media screen
   and (min-width: 1200px)
