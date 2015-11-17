@@ -59,7 +59,8 @@
     'API': 'http://localhost:52072',
     'ACCOUNT': '/api/Account',
     'CHALLENGE': '/api/Challenge',
-    'RECIPE': '/api/Recipes'
+    'RECIPE': '/api/Recipes',
+    'INGREDIENT': '/api/Ingredient?name='
 
   });
   app.constant('TOKEN', 'eva.access_token');
