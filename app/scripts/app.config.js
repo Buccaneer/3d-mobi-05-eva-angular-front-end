@@ -43,6 +43,7 @@
         .state('create-challenge', {
           url: '/challenge/create',
           templateUrl: 'views/challenges/create-challenge.html',
+					controller: 'CreateChallengeCtrl',
           requireAuth: true
         })
         .state('challenge-overview', {

@@ -1,6 +1,15 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
+
 // endbower
+//define variables here
+$min-nav-height: 7vh;
+$content-height: 100vh - $min-nav-height;
+$background-black-opac: rgba(0, 0, 0, 0.8);
+//amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
+$amount-challenge-types: 6;
+$vh-per-challenge: 20%;
+
 //fonts
 @font-face {
   font-family: "museo-normal";
@@ -33,6 +42,10 @@ body {
 }
 md-toolbar {
   font-family: georgia;
+  height: $min-nav-height !important;
+}
+.white {
+  color: #fff;
 }
 .brand {
   max-height: 40px;
@@ -52,6 +65,10 @@ h5 {
 md-button {
   font-family: museo-normal;
 }
+md-toolbar {
+
+}
+//ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
   -webkit-animation-delay: 0s;
@@ -68,6 +85,9 @@ md-button {
   -webkit-animation: fadeInRight 1s;
   -webkit-animation-delay: 0s;
 }
+.slideInUp {
+  -webkit-animation: slideInUp 1s;
+}
 #header {
   /* FF3.6-15 */
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.png");
@@ -80,7 +100,7 @@ md-button {
 
   // background-image: url("../images/header.png");
   background-size: cover;
-  min-height: 100vh;
+  min-height: $content-height;
 }
 #header-btns {
   margin-bottom: 20px;
@@ -89,36 +109,74 @@ md-button {
   margin-left: 50vw;
   margin-top: 25vh;
 }
-#loginWrapper, #registerWrapper {
+#loginWrapper,
+#registerWrapper {
   background-image: url("../images/form-bg.jpg");
   background-size: cover;
-  min-height: 93vh;
+  min-height: $content-height;
   min-width: 100%;
   position: absolute;
 }
-#login, #register {
-  margin: 20vh 10vh 0vh 10vh;
+#login,
+#register {
+  margin: 20vh 10vh 0;
   color: #fff !important;
-  background-color: rgba(0, 0, 0, 0.8);
+  background-color: $background-black-opac;
 }
 md-input-container label {
   color: #fff !important;
 }
 md-input-container .md-input {
-    color: #fff !important;
-    border-color: #fff;
+  color: #fff !important;
+  border-color: #fff;
 }
 .form {
   min-width: 50vw;
   max-width: 800px;
+}
+.fullwidth {
+  height: $content-height;
+}
+.fullwidth-item {
+  min-height: $vh-per-challenge;
+  border-style: solid;
+  border-color: #fff;
+  border-width: thin;
+  background-size: cover;
+}
+.fullwidth-item-inner {
+  color: #fff;
+  background-color: $background-black-opac;
+  min-width: 250px;
+  max-width: 800px !important;
+  padding-top: 5px;
+}
+#createChallengeWrapper {
+  background-image: url("../images/blackboard.jpg");
+}
+#recipe {
+  background-image: url("../images/challenges/recipe.jpg");
+}
+#recipe-region {
+  background-image: url("../images/challenges/recipe-region.jpg");
+}
+#restaurant {
+  background-image: url("../images/challenges/rest.jpg");
+}
+#restaurant-region {
+  background-image: url("../images/challenges/rest-region.jpg");
+}
+#creative-cooking {
+  background-image: url("../images/challenges/creative-cooking.jpg");
 }
 @media screen and (max-width: 768px) {
   #header {
     background-image: url("../images/resp-header.jpg");
     background-size: cover;
   }
-  #login, #register {
-    margin: 0vh;
+  #login,
+  #register {
+    margin: 0;
   }
   #header-text {
     color: #fff;
@@ -142,12 +200,14 @@ md-input-container .md-input {
     -webkit-animation: none;
   }
 }
-@media screen
-  and (min-width: 1200px)
-  and (-webkit-min-device-pixel-ratio: 1) {
-    #login, #register {
-      margin-top: 25vh;
-      margin-left: 25vh;
-      margin-right: 25vh;
-    }
+@media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+  #login,
+  #register {
+    margin-top: 25vh;
+    margin-left: 25vh;
+    margin-right: 25vh;
+  }
+  .fullwidth-item{
+    min-height: 150px;
+  }
 }

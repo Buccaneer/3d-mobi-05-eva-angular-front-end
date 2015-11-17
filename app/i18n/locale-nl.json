@@ -58,7 +58,15 @@
   },
 
   "challenges": {
-    "loading": "We zijn uw uitdagingen aan het zoeken.."
+    "loading": "We zijn uw uitdagingen aan het zoeken..",
+
+    "create": {
+      "recipe": "Recept",
+      "recipe-region": "Uitheems recept",
+      "restaurant": "Restaurant",
+      "restaurant-region": "Uitheems restaurant",
+      "creative-cooking": "Creative Cooking"
+    }
   },
 
   "recipe": {

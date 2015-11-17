@@ -39,6 +39,11 @@
             $el.removeClass('fadeInLeft');
           },
 
+          slideInUp: function($el) {
+            $el.removeClass("hidden");
+            $el.addClass('slideInUp');
+          },
+
           removeBounceInUp: function($el) {
             $el.addClass('hidden');
             $el.removeClass('bounceInUp');

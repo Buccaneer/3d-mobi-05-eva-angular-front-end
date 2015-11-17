@@ -1,3 +1,5 @@
+//TODO
+//REFACTOR
 (function() {
 
   'use strict';
@@ -16,6 +18,11 @@
         $scope.fadeInLeft = function($el){
           $el.removeClass('hidden');
           anim.fadeInLeft($el);
+        };
+
+        $scope.slideInUp = function($el){
+          $el.removeClass('hidden');
+          anim.slideInUp($el);
         };
 
         $scope.removeInvis = function($el){

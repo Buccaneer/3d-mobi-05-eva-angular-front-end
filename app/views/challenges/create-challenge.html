@@ -1,51 +1,48 @@
-  <div layout="column" flex-gt-lg="40" flex-gt-md="50" flex-md="70" flex-sm="100"  layout-align-gt-md="center">
+<div id="createChallengeWrapper" layout-align-gt-md="center center" layout="row">
+  <div class="fullwidth" layout="column" flex="100" flex-gt-md="80">
 
-    <div id="recipe" flex="100">
+    <h1 class="white text-center">
+      Kies één van de volgende uitdagingen!
+    </h1>
 
-    </div>
-    <div id="recipe-region" flex="100">
-
-    </div>
-
-    <div id="restaurant" flex="100">
-
-    </div>
-
-    <div id="restaurant-region" flex="100">
-
+    <div class="fullwidth-item" id="recipe" layout-align="center center" layout="row" ng-click="createRecipeChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.recipe' | translate}}
+        </h3>
+      </div>
     </div>
 
-    <div id="creative cooking" flex="100">
-
+    <div class="fullwidth-item " id="recipe-region" layout-align="center center" layout="row" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.recipe-region' | translate}}
+        </h3>
+      </div>
     </div>
 
-    <!-- <h1>Kies een type</h1>
-    <md-list layout-align="center center">
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/recipe">
-          <h4>Recipe</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/recipe-region">
-          <h4>Region recipe</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/restaurant">
-          <h4>Restaurant</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/restaurant-region">
-          <h4>Region restaurant</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/creative-cooking">
-          <h4>Creative cooking</h4>
-        </md-button>
-      </md-list-item>
-    </md-list> -->
+    <div class="fullwidth-item" id="restaurant" layout-align="center center" layout="row" ng-click="createRestaurantChallenge()"when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.restaurant' | translate}}
+        </h3>
+      </div>
+    </div>
+
+    <div class="fullwidth-item" id="restaurant-region" layout-align="center center" layout="row" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.restaurant-region' | translate}}
+        </h3>
+      </div>
+    </div>
+
+    <div class="fullwidth-item" id="creative-cooking" layout-align="center center" layout="row" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.creative-cooking' | translate}}
+        </h3>
+      </div>
+    </div>
   </div>
 </div>
