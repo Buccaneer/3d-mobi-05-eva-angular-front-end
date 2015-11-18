@@ -1,5 +1,5 @@
 {
-  "name": "design",
+  "name": "eva21DayChallengeApp",
   "private": true,
   "devDependencies": {
     "autoprefixer-core": "^5.2.1",
@@ -31,6 +31,7 @@
     "jshint-stylish": "^1.0.0",
     "karma-jasmine": "*",
     "karma-phantomjs-launcher": "*",
+    "serve-static": "^1.10.0",
     "time-grunt": "^1.0.0"
   },
   "engines": {
