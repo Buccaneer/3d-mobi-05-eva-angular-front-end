@@ -24,14 +24,17 @@
             }
           },
 
-          recipes: [],
+          cache: {},
 
 
         };
 
         service.getIngredients = function (ingredientName) {
+          if (this.cache[ingredientName] !== undefined)
+            return this.cache[ingredientName];
+
           var token = $localstorage.getObject(TOKEN).token;
-          return $http({
+          var item = $http({
             method: 'GET',
             url: URLS.PUBLIC_API + URLS.INGREDIENT + ingredientName,
             headers: {
@@ -39,6 +42,9 @@
               'Content-type': 'application/json; charset=utf-8'
             }
           });
+
+          this.cache[ingredientName] = item;
+          return item;
         };
 
         service.init();
