@@ -2,6 +2,7 @@
   "nav": {
     "register": "register",
     "login": "login",
+    "settings": "settings",
     "logout": "logout"
   },
 

@@ -2,6 +2,7 @@
   "nav": {
     "register": "registreren",
     "login": "inloggen",
+    "settings": "instellingen",
     "logout": "uitloggen"
   },
   "home": {

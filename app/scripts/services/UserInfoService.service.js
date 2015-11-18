@@ -11,8 +11,8 @@
     .module('eva21DayChallengeApp').service('UserInfoService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope',
       function ($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
         var service = {
-          challenges: [],
-
+          userInfo: [] ,
+          
           init: function () {
             //if there is a token object in the localstorage,
             //load it in memory
@@ -47,6 +47,25 @@
               }
             });
           }
+        };
+        
+        service.getUserInfo = function () {
+          var token = $localstorage.getObject(TOKEN).token;
+
+          $rootScope.loading = true;
+
+          //probably best for this to be temporary.
+          return $http({
+            method: 'GET',
+            url: URLS.PUBLIC_API + URLS.ACCOUNT + '/UserInfo',
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'Content-type': 'application/json; charset=utf-8'
+            }
+          }).success(function (data) {
+            $rootScope.loading = false;
+            angular.copy(data, service.userInfo);
+          });
         };
         
         return service;

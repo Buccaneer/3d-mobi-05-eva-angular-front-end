@@ -2,6 +2,7 @@
   "nav": {
     "register": "enregistrer",
     "login": "login",
+    "settings": "paramètres",
     "logout": "Déconnexion"
   },
   "home": {

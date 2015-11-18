@@ -1,12 +1,12 @@
 <div id="wrapper" class="padding-view" layout="row" layout-align="center">
-  <md-content class="white-bg" layout="column" layout-align="center center" flex-gt-md="40" flex-sm='100'>
+  <md-content class="white-bg" layout="column" layout-align="center center" flex-gt-sm="50" flex-sm='100'>
     <div id="settingsForm" layout="column" layout-align-gt-md="center">
       <div layout-align="center center" layout="column">
         <div ng-show="error">
           {{error | translate}}
         </div>
         <div>
-          <h1>{{'settings.userSettings' | translate}}</h1>
+          <h1 ng-click="fillin()">{{'settings.userSettings' | translate}}</h1>
         </div>
       </div>
 
@@ -27,14 +27,17 @@
 
         <div layout-align="center" layout-margin layout-padding layout="column">
           <label>{{'settings.birthdate' | translate}}</label>
-          <md-datepicker ng-model="user.birthdate" md-placeholder="Enter date"></md-datepicker>
+
+<md-datepicker class="white-bg-solid" ng-model="user.birthdate" md-placeholder="Geboortedatum"
+        md-min-date="validate.minDate" md-max-date="validate.maxDate"></md-datepicker>
+
         </div>
 
         <div layout-align="center" layout-margin layout-padding layout="column">
           <md-input-container>
             <label>{{'settings.allergies' | translate}}</label>
             <md-select ng-model="user.allergies">
-              <md-option ng-repeat="allergie in allergiesList">
+              <md-option ng-repeat="allergie in allergiesList" ng-selected="{{user.allergie == allergies}}">
                 {{allergie}}
               </md-option>
             </md-select>
@@ -45,7 +48,7 @@
           <md-input-container>
             <label>{{'settings.budget' | translate}}</label>
             <md-select ng-model="user.budget">
-              <md-option ng-repeat="budget in budgetList">
+              <md-option ng-repeat="budget in budgetList" >
                 {{budget}}
               </md-option>
             </md-select>
@@ -56,7 +59,7 @@
           <md-input-container>
             <label>{{'settings.typeOfVegan' | translate}}</label>
             <md-select ng-model="user.typeOfVegan">
-              <md-option ng-repeat="type in typeOfVeganList">
+              <md-option ng-repeat="type in typeOfVeganList" >
                 {{type}}
               </md-option>
             </md-select>
