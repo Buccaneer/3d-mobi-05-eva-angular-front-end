@@ -73,12 +73,7 @@
               return RecipeService.getRecipes();
             }]
           }
-        }).state('create-restaurant-challenge', {
-					url: '/challenge/create/restaurant',
-					templateUrl: '/views/challenges/create-restaurant-challenge.html',
-					controller: 'RestaurantCtrl',
-					requireAuth: true
-				});
+        });
 
 
       //let translateProvider load translations from external json

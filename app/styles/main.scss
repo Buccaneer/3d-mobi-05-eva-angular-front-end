@@ -1,6 +1,5 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
-
 // endbower
 //define variables here
 $min-nav-height: 7vh;
@@ -8,7 +7,7 @@ $content-height: 100vh - $min-nav-height;
 $background-black-opac: rgba(0, 0, 0, 0.8);
 //amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
 $amount-challenge-types: 6;
-$vh-per-challenge: 20%;
+$vh-per-challenge: 30vh;
 
 //fonts
 @font-face {
@@ -135,7 +134,7 @@ md-input-container .md-input {
   max-width: 800px;
 }
 .fullwidth {
-  height: $content-height;
+  height: 100%;
 }
 .fullwidth-item {
   min-height: $vh-per-challenge;
@@ -153,6 +152,10 @@ md-input-container .md-input {
 }
 #createChallengeWrapper {
   background-image: url("../images/blackboard.jpg");
+  background-size: cover;
+  position: absolute;
+  min-height: 100%;
+  min-width: 100%;
 }
 #recipe {
   background-image: url("../images/challenges/recipe.jpg");
@@ -199,6 +202,12 @@ md-input-container .md-input {
   .fadeInRight {
     -webkit-animation: none;
   }
+  .fullwidth {
+    margin-bottom: 0;
+  }
+  .fullwidth-item{
+    min-height: 40vw;
+  }
 }
 @media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
   #login,
@@ -206,8 +215,5 @@ md-input-container .md-input {
     margin-top: 25vh;
     margin-left: 25vh;
     margin-right: 25vh;
-  }
-  .fullwidth-item{
-    min-height: 150px;
   }
 }
