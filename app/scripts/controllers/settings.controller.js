@@ -47,8 +47,8 @@
                     lastname: 'Dupont',
                     birthdate: new Date(),
                     allergies: '1',
-                    budget: ['hoog'],
-                    typeOfVegan: ['Veganist'],
+                    budget: 'hoog',
+                    typeOfVegan: 'Veganist',
                     peopleInFamily: '3'
                 };
                
