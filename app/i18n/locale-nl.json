@@ -1,4 +1,7 @@
 {
+  "___comment": "niks",
+
+
   "nav": {
     "register": "registreren",
     "login": "inloggen",
@@ -21,6 +24,7 @@
     "about-step-4-text": "Indien je de uitdaging vervolledigd hebt, vergeet dan niet om dit aan te duiden door onderaan bij de details op de knop te drukken!",
     "about-step-5": "Proficiat, je hebt je eerste uitdaging vervolledigd!"
   },
+
   "login": {
     "email": "Email adres",
     "emailPlaceholder": "voorbeeld@voorbeeld.com",
@@ -58,18 +62,22 @@
   },
 
   "challenges": {
-    "loading": "We zijn uw uitdagingen aan het zoeken..",
-
     "create": {
+      "choose": "Kies één van deze uitdagingen!",
       "recipe": "Recept",
+      "recipe-text": "Maak één van onze gerechten klaar.",
       "recipe-region": "Uitheems recept",
+      "recipe-region-text": "Leer de uithoeken van de wereld kennen en maak een gerecht uit een ander deel van de wereld klaar!",
       "restaurant": "Restaurant",
+      "restaurant-text": "Geen zin om te koken? Probeer deze restaurants eens.",
       "restaurant-region": "Uitheems restaurant",
-      "creative-cooking": "Creative Cooking"
+      "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
+      "creative-cooking": "Creative Cooking",
+      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen."
     }
   },
 
   "recipe": {
-    "loading": "We zijn een paar recepten aan het uitzoeken.."
+    "choose": "Kies één van de volgende recepten:"
   }
 }

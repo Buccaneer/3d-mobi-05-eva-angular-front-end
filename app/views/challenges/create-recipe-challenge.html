@@ -1,15 +1,16 @@
-<div class="padding-view" id="wrapper" layout-align="center" layout="row">
-  <div flex-gt-sm="70" flex-sm="100" layout="column">
-    <div class="bg-white" class="white-bg" layout-align="center center" layout="column" ng-hide="loading">
-      <h1>Kies een recept!</h1>
-      <md-list ng-repeat="recipe in recipes | orderBy:'Name'">
-        <md-list-item class="md-1-line">
-          <p class="md-list-item-text" ng-click="setSelectedRecipe(recipe)">
-            {{recipe.Name}}
-          </p>
-        </md-list-item>
-        <md-divider></md-divider>
-      </md-list>
+<!-- CHOOSE RECIPE VIEW -->
+<div class="blackboard-wrapper">
+
+  <div layout-align="center center" layout="column">
+
+    <h1>{{'recipe.choose' | translate}}</h1>
+
+    <div ng-repeat="recipe in recipes | orderBy:'Name'">
+      <p ng-click="setSelectedRecipe(recipe)">
+        {{recipe.Name}}
+      </p>
     </div>
+
   </div>
+
 </div>

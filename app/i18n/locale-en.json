@@ -1,4 +1,7 @@
 {
+  "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen",
+
+
   "nav": {
     "register": "register",
     "login": "login",
@@ -22,6 +25,7 @@
     "about-step-4-text": "If you completed the challenge, don't forget to mark it as done on the bottom of the detailed view!",
     "about-step-5": "Congratulations, you just completed your first challenge!"
   },
+
   "login": {
     "email": "Email address",
     "emailPlaceholder": "example@example.com",
@@ -57,10 +61,22 @@
   },
 
   "challenges": {
-    "loading": "We're searching for your challenges..."
+    "create": {
+      "choose": "Kies één van deze uitdagingen!",
+      "recipe": "Recept",
+      "recipe-text": "Maak één van onze gerechten klaar.",
+      "recipe-region": "Uitheems recept",
+      "recipe-region-text": "Leer de uithoeken van de wereld kennen en maak een gerecht uit een ander deel van de wereld klaar!",
+      "restaurant": "Restaurant",
+      "restaurant-text": "Geen zin om te koken? Probeer deze restaurants eens.",
+      "restaurant-region": "Uitheems restaurant",
+      "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
+      "creative-cooking": "Creative Cooking",
+      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen."
+    }
   },
 
   "recipe": {
-    "loading": "We're picking out some recipes..."
+    "choose": "Kies één van de volgende recepten:"
   }
 }

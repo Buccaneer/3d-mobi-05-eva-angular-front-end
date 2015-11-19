@@ -2,33 +2,39 @@
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
 //define variables here
+$nav-height: 7;
 $min-nav-height: 7vh;
-$content-height: 100vh - $min-nav-height;
+$content-height: 100% - $nav-height;
 $background-black-opac: rgba(0, 0, 0, 0.8);
+
+$margin-top-vh: 10vh;
+
+
 //amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
 $amount-challenge-types: 6;
 $vh-per-challenge: 30vh;
+$sidenav-width: 100vw - $nav-height;
 
 //fonts
 @font-face {
   font-family: "museo-normal";
   font-style: normal;
   font-weight: 300;
-  src: url("../fonts/eva-fonts/Museo300-Regular.otf");
+  src: url("/fonts/eva-fonts/Museo300-Regular.otf");
 }
 @font-face {
   font-family: "museo-weighted";
   font-weight: 500;
-  src: url("../fonts/eva-fonts/Museo500-Regular.otf");
+  src: url("/fonts/eva-fonts/Museo500-Regular.otf");
 }
 @font-face {
   font-family: "artistamp";
   font-weight: 700;
-  src: url("../fonts/eva-fonts/ArtistampMedium.ttf");
+  src: url("/fonts/eva-fonts/ArtistampMedium.ttf");
 }
 @font-face {
   font-family: "georgia";
-  src: url("../fonts/eva-fonts/Georgia.ttf");
+  src: url("/fonts/eva-fonts/Georgia.ttf");
 }
 body {
   padding: 0;
@@ -42,9 +48,6 @@ body {
 md-toolbar {
   font-family: georgia;
   height: $min-nav-height !important;
-}
-.white {
-  color: #fff;
 }
 .brand {
   max-height: 40px;
@@ -67,6 +70,7 @@ md-button {
 md-toolbar {
 
 }
+
 //ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
@@ -89,17 +93,15 @@ md-toolbar {
 }
 #header {
   /* FF3.6-15 */
-  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.png");
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
   /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.png");
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
   /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.png");
-  /* IE6-9 */
-  filter:progid:DXImageTransform.Microsoft.gradient( startColorstr='#00ffffff', endColorstr='#ffffff',GradientType=0 );
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
 
   // background-image: url("../images/header.png");
   background-size: cover;
-  min-height: $content-height;
+  min-height: 100vh;
 }
 #header-btns {
   margin-bottom: 20px;
@@ -118,9 +120,19 @@ md-toolbar {
 }
 #login,
 #register {
-  margin: 20vh 10vh 0;
+  max-width: 600px;
+  margin-top: $margin-top-vh;
+  margin-left: auto;
+  margin-right: auto;
   color: #fff !important;
   background-color: $background-black-opac;
+}
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 80vw !important;
+  max-width: 400px !important;
 }
 md-input-container label {
   color: #fff !important;
@@ -128,10 +140,6 @@ md-input-container label {
 md-input-container .md-input {
   color: #fff !important;
   border-color: #fff;
-}
-.form {
-  min-width: 50vw;
-  max-width: 800px;
 }
 .fullwidth {
   height: 100%;
@@ -150,12 +158,15 @@ md-input-container .md-input {
   max-width: 800px !important;
   padding-top: 5px;
 }
-#createChallengeWrapper {
+.blackboard-wrapper {
   background-image: url("../images/blackboard.jpg");
+  background-color: #000;
   background-size: cover;
   position: absolute;
-  min-height: 100%;
+  min-height: $content-height;
   min-width: 100%;
+  padding-bottom: 50px;
+  color: #fff;
 }
 #recipe {
   background-image: url("../images/challenges/recipe.jpg");
@@ -177,8 +188,13 @@ md-input-container .md-input {
     background-image: url("../images/resp-header.jpg");
     background-size: cover;
   }
+  #loginWrapper,
+  #registerWrapper {
+    background-image: url("../images/sm/form-bg.jpg");
+  }
   #login,
   #register {
+    max-width: none;
     margin: 0;
   }
   #header-text {
@@ -186,34 +202,34 @@ md-input-container .md-input {
     margin-left: 0;
     margin-top: 40vh;
   }
-
-  /*
-  * clear animations since they're not responsive...
-  */
-  .bounceInUp {
-    -webkit-animation: none;
-  }
-  .bounceInLeft {
-    -webkit-animation: none;
-  }
-  .fadeInLeft {
-    -webkit-animation: none;
-  }
-  .fadeInRight {
-    -webkit-animation: none;
-  }
   .fullwidth {
     margin-bottom: 0;
   }
-  .fullwidth-item{
-    min-height: 40vw;
+  .fullwidth-item {
+    width: 100%;
+    min-height: 200px;
+  }
+  #recipe {
+    background-image: url("../images/challenges/sm/recipe.jpg");
+  }
+  #recipe-region {
+    background-image: url("../images/challenges/sm/recipe-region.jpg");
+  }
+  #restaurant {
+    background-image: url("../images/challenges/sm/rest.jpg");
+  }
+  #restaurant-region {
+    background-image: url("../images/challenges/sm/rest-region.jpg");
+  }
+  #creative-cooking {
+    background-image: url("../images/challenges/sm/creative-cooking.jpg");
   }
 }
 @media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
   #login,
   #register {
-    margin-top: 25vh;
-    margin-left: 25vh;
-    margin-right: 25vh;
+    margin-top: $margin-top-vh;
+    margin-left: auto;
+    margin-right: auto;
   }
 }

@@ -26,13 +26,13 @@ angular.module('eva21DayChallengeApp')
     //Show validation after Submit
     $scope.submitted = false;
 
-    $scope.fillin = function(){
-      $scope.user = {
-        email: "fien@eva.be",
-        password: "password",
-      };
-      $scope.confirmPassword = "password";
-    };
+    // $scope.fillin = function(){
+    //   $scope.user = {
+    //     email: "fien@eva.be",
+    //     password: "password",
+    //   };
+    //   $scope.confirmPassword = "password";
+    // };
 
     $scope.callRegister = function() {
       $scope.error = '';

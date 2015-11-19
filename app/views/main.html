@@ -1,96 +1,45 @@
-<div flex id="wrapper" layout-fill layout="column" ng-init="init()">
-  <div class="padding-view" ng-show="loading">
-    <div layout-align="center" layout-margin layout-padding layout="row">
-      <md-content class="bg-white" layout-align="center" layout="row">
-        <h1>
-          Uw gegevens worden geladen...
-        </h1>
-      </md-content>
+<div class="blackboard-wrapper" layout="column" ng-init="init()">
+
+  <!-- DIV TO SHOW CURRENT CHALLENGE -->
+  <div ng-show="currentChallenge">
+    <div class="big-left-margin">
+      <h1>Timer hier</h1>
+    </div>
+    <div class="big-left-margin" id="title" layout-align="center" layout="row">
+      <h1>Huidige uitdaging:</h1>
+    </div>
+
+    <div>
+      <img id="recipe-image" src={{currentChallenge.Recipe.Image}}/>
+      <h1>{{currentChallenge.Recipe.Name}}</h1>
+    </div>
+
+    <div>
+      <md-button class="header-btn md-primary md-raised" ng-href="#/challenge/{{currentChallenge.ChallengeId}}">Bekijk details</md-button>
     </div>
   </div>
-  <div layout="column" ng-hide="loading">
-    <div ng-show="currentChallenge">
-      <div class="bg-white" layout="column">
-        <div class="big-left-margin" layout-align="center" layout="row">
-          <h1>Timer hier</h1>
-        </div>
-        <div class="big-left-margin" id="title" layout-align="center" layout="row">
-          <h1>Huidige uitdaging:</h1>
-        </div>
-      </div>
-      <md-content class="bg-white" layout="column">
-        <div class="left-margin" layout-align="center center" layout-padding layout="column">
-          <img class="img-responsive" id="recipe-image" src={{currentChallenge.Recipe.Image}}/>
-          <div layout-align="center center" layout-margin layout="column">
-            <h1>{{currentChallenge.Recipe.Name}}</h1>
-          </div>
-        </div>
 
-        <div layout-align="center center" layout="column">
-          <md-button class="header-btn md-primary md-raised" ng-href="#/challenge/{{currentChallenge.ChallengeId}}">Bekijk details</md-button>
-        </div>
-      </div>
-      <div flex id="mainHeader" class="bg-white" ng-hide="currentChallenge || loading" layout="column" layout-align="center center">
-        <h1>
-          U hebt nog geen actieve uitdaging.
-        </h1>
+  <!-- DIV TO SHOW WHEN NO CURRENT CHALLENGE -->
+  <div ng-hide="currentChallenge">
+    <h1>
+      U hebt nog geen actieve uitdaging.
+    </h1>
 
-        <md-button class="md-primary md-raised" ng-href="#/challenge/create">
-          Verkrijg een uitdaging</md-button>
-      </div>
-      <!-- <div id="welcomeDiv" layout="column">
-      <div layout="row">
-        <h1>Welkom terug!</h1>
-      </div>
-      <div layout="row" layout-align="center center">
-        <div id="progressBar">
-          <md-progress-circular md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}" md-diameter="99%"></md-progress-circular>
-        </div>
-        <span flex></span>
-        <div id="progress-text">
-          <p>
-            U zit op dag {{progress.amountOfDays}}
-          </p>
-        </div>
-      </div>
-      <h2>
-        U zit op dag
-        {{progress.amountOfDays}}
-        van de 21 day veggie challenge.
-      </h2>
+    <md-button class="md-primary md-raised" ng-href="#/challenge/create">
+      Verkrijg een uitdaging</md-button>
+  </div>
 
-    </div>
-    <div ng-include="'views/recipe.html'" ng-show="{{challenge.recipe}}"/> -->
-    </md-content>
-
-    <div id="progress" layout="column" ng-hide="loading">
-      <div layout-align="center" layout="row">
-        <h1>Statistieken</h1>
-      </div>
-      <div layout-align-sm="center center" layout-align="center" layout-sm="column" layout="row">
-        <span flex></span>
-        <!-- <div id="progressBar">
+  <!-- STATS -->
+  <div id="stats" flex="100">
+    <h1>Statistieken</h1>
+    <!-- <div id="progressBar">
           <md-progress-circular md-diameter="99%" md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}"></md-progress-circular>
         </div> -->
-        <div id="progress-text" layout="column">
-          <p>U hebt al
-            {{progress.amountOfDays}}
-            van de 21 dagen vervolledigd!</p>
-          <p>
-            Dit komt neer op
-            {{progress.amountOfDays * progress.percentagePerDay | number: 0}}% van de volledige challenge.
-          </p>
-        </div>
-        <span flex></span>
-      </div>
+    <p>STATS HIER</p>
 
-      <div layout-align="center" layout="row">
-        <h1>Prestaties</h1>
-      </div>
-      <div layout-align="center" layout="row">
-        <p>Hier komen de achievements</p>
-      </div>
-    </div>
-
+    <h1>Prestaties</h1>
+    <p>Hier komen de achievements</p>
   </div>
+  <!-- close stats -->
 </div>
+<!-- close wrapper -->

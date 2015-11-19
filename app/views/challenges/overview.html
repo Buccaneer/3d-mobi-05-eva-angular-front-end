@@ -1,52 +1,22 @@
-<div flex id="wrapper">
-  <div class="padding-view" layout-align="center" layout="row" ng-init="init()" flex>
+<div class="blackboard-wrapper">
+  <div layout-align="center" layout="row">
 
-    <md-content class="bg-white" class="white-bg" ng-show="loading">
-      <div layout="center" layout="row">
-        <h1>{{'recipe.loading' | translate}}</h1>
+    <div layout-align="center center" layout="column">
+      <div layout-align="center" layout="row">
+        <div layout="column">
+          <h1>Challenges</h1>
+          <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
+        </div>
       </div>
-    </md-content>
 
-    <div class="bg-white" flex-gt-sm="70" flex-sm="100" layout-align="center center" layout="column" ng-hide="loading">
-      <div flex layout-align="center center" layout="column">
-        <div layout-align="center" layout="row">
-          <div layout="column">
-            <h1>Challenges</h1>
-            <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
-          </div>
-        </div>
+      <div layout="column" ng-repeat="challenge in challenges | orderBy: '-Date'">
 
-        <div flex="60" ng-repeat="challenge in challenges | orderBy: '-Date'">
-          <md-card>
-
-            <md-card-content>
-              <h2 class="md-title">Challenge {{$index + 1}}</h2>
-              <p></p>
-            </md-card-content>
-            <div class="md-actions" layout-align="end center" layout="row">
-              <md-button class="md-raised md-primary" ng-href="#/challenge/{{challenge.ChallengeId}}">Bekijk details</md-button>
-            </div>
-          </md-card>
-        </div>
-
-        <div layout="row"></div>
-
-        <!-- <md-list>
-          <md-list-item class="challenge-list" ng-repeat="challenge in challenges | orderBy:'-Date'">
-            <div class="challenge" ng-class="{done: challenge.Done, today: !challenge.Done}">
-              <span class="title">
-                <a href="#/challenge/{{challenge.ChallengeId}}">
-                  Challenge
-                  {{$index + 1}}</a>
-              </span>
-              <div class="md-list-item-text">{{challenge.Date | date:'fullDate'}}</div>
-            </div>
-            <md-divider></md-divider>
-          </md-list-item>
-        </md-list> -->
+        <h2 class="md-title">Challenge
+          {{$index + 1}}</h2>
+        <p></p>
+        <md-button class="md-raised md-primary" ng-href="#/challenge/{{challenge.ChallengeId}}">Bekijk details</md-button>
       </div>
 
     </div>
-
   </div>
 </div>

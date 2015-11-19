@@ -18,7 +18,19 @@
       };
 
       $scope.createRestaurantChallenge = function(){
-        $state.go('create-restaurant-challenge');
+        $state.go('home');
+      };
+
+      $scope.createRegionRecipeChallenge = function(){
+        $state.go('home');
+      };
+
+      $scope.createRegionRestaurantChallenge = function(){
+        $state.go('home');
+      };
+
+      $scope.createCreativeCookingChallenge = function(){
+        $state.go('home');
       };
     }
   ]);

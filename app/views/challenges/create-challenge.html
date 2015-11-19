@@ -1,8 +1,8 @@
-<div id="createChallengeWrapper" layout-align-gt-md="center center" layout="row">
+<div class="blackboard-wrapper" layout-align-gt-md="center center" layout="row">
   <div class="fullwidth" layout="column" flex="100" flex-gt-md="80">
 
-    <h1 class="white text-center">
-      Kies één van de volgende uitdagingen!
+    <h1 class="text-center">
+      {{'challenges.create.choose' | translate}}
     </h1>
 
     <div class="fullwidth-item" id="recipe" layout-align="center center" layout="row" ng-click="createRecipeChallenge()" when-visible="slideInUp">
@@ -10,38 +10,53 @@
         <h3>
           {{'challenges.create.recipe' | translate}}
         </h3>
+        <p class="text-center">
+          {{'challenges.create.recipe-text' | translate}}
+        </p>
       </div>
     </div>
 
-    <div class="fullwidth-item " id="recipe-region" layout-align="center center" layout="row" when-visible="slideInUp">
+    <div class="fullwidth-item " id="recipe-region" layout-align="center center" layout="row" ng-click="createRegionRecipeChallenge()" when-visible="slideInUp">
       <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.recipe-region' | translate}}
         </h3>
+        <p class="text-center">
+          {{'challenges.create.recipe-region-text' | translate}}
+        </p>
       </div>
     </div>
 
-    <div class="fullwidth-item" id="restaurant" layout-align="center center" layout="row" ng-click="createRestaurantChallenge()"when-visible="slideInUp">
+    <div class="fullwidth-item" id="restaurant" layout-align="center center" layout="row" ng-click="createRestaurantChallenge()" when-visible="slideInUp">
       <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.restaurant' | translate}}
         </h3>
+        <p class="text-center">
+          {{'challenges.create.restaurant-text' | translate}}
+        </p>
       </div>
     </div>
 
-    <div class="fullwidth-item" id="restaurant-region" layout-align="center center" layout="row" when-visible="slideInUp">
+    <div class="fullwidth-item" id="restaurant-region" layout-align="center center" layout="row" ng-click="createRegionRestaurantChallenge()" when-visible="slideInUp">
       <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.restaurant-region' | translate}}
         </h3>
+        <p class="text-center">
+          {{'challenges.create.restaurant-region-text' | translate}}
+        </p>
       </div>
     </div>
 
-    <div class="fullwidth-item" id="creative-cooking" layout-align="center center" layout="row" when-visible="slideInUp">
+    <div class="fullwidth-item" id="creative-cooking" layout-align="center center" layout="row" ng-click="createCreativeCookingChallenge()" when-visible="slideInUp">
       <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.creative-cooking' | translate}}
         </h3>
+        <p class="text-center">
+          {{'challenges.create.creative-cooking-text' | translate}}
+        </p>
       </div>
     </div>
   </div>

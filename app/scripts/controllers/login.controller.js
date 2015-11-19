@@ -61,12 +61,13 @@
         };
 
         $scope.getSocialLinks();
-        $scope.fillin = function () {
-          $scope.user = {
-            email: "fien@eva.be",
-            password: "testje"
-          };
-        };
+
+        // $scope.fillin = function () {
+        //   $scope.user = {
+        //     email: "fien@eva.be",
+        //     password: "testje"
+        //   };
+        // };
 
         $scope.callLogin = function () {
           $scope.error = '';
