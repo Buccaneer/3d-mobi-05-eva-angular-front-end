@@ -70,6 +70,11 @@
               return RecipeService.getRecipes();
             }]
           }
+        })
+        .state('about', {
+          url: '/about',
+          templateUrl: 'views/about.html',
+          requireAuth: true
         });
 
 

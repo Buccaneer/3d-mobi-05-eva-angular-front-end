@@ -1,5 +1,6 @@
 {
   "nav": {
+    "about": "",
     "register": "enregistrer",
     "login": "login",
     "logout": "Déconnexion"
@@ -44,5 +45,10 @@
 
   "challenges": {
     "loading": "Nous cherchons vos défis!"
+  },
+  
+  "about":{
+    "text": "Le challenge EVA 21 jours a été développé au nom de l’A.S.B.L. EVA. Cette application veut encourager des personnes à manger des légumes durant 21 jours  pour les convaincre d’utiliser moins de produits animaliers et de choisir plus d’alternatives.",
+    "info": "Si vous souhaitez obtenir plus d’informations sur le travail d’EVA, alors vous pouvez toujours consulter leur site internet."
   }
 }
