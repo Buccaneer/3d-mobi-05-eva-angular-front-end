@@ -12,11 +12,10 @@
 
         },
         templateUrl: '/views/ingredients.html',
-        link: function (scope, elem, attrs) {
-          scope.test = function () {
-            console.log(arguments);
-          }
-          scope.selectedIngredients = [];
+        link: function (scope, elem, attrs) {    
+          if (scope.selectedIngredients === undefined || scope.selectedIngredients === null)
+            scope.selectedIngredients = [];
+            
           scope.search = function (searchString) {
             return IngredientService.getIngredients(searchString)
               .then(function (newData) {
@@ -26,17 +25,6 @@
               });
 
           };
-          function init() {
-
-
-
-
-
-          }
-
-
-
-          init();
         }
 
       };
