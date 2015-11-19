@@ -39,6 +39,7 @@
                 allergies: '',
                 budget: '',
                 typeOfVegan: '',
+                peopleInFamily: ''
             };
             
             $scope.fillin = function(){
@@ -54,9 +55,7 @@
                
             };
             
-            if (_doneSetup === true) {
-                console.log(_userInfo);
-                
+            if (_doneSetup === true) {               
                 $scope.user = {
                     firstname: _userInfo.FirstName,
                     lastname: _userInfo.LastName,

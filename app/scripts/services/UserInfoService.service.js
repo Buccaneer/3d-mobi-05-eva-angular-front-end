@@ -38,7 +38,7 @@
                 'Budget': user.budget,
                 'TypeOfVegan': user.typeOfVegan,
                 'Allergies': user.allergies,
-                'PeopleInFamily': user.typeOfVegan,
+                'PeopleInFamily': user.peopleInFamily,
                 'DoneSetup': true
               },
               headers: {
