@@ -70,6 +70,12 @@
               return RecipeService.getRecipes();
             }]
           }
+        })
+				.state('select-view-creative-cooking', {
+          url: '/challenge/create/creative-cooking',
+    //      controller: 'AgreeRecipeCtrl',
+          templateUrl: 'views/challenges/create-creative-cooking.html',
+          requireAuth: true
         });
 
 

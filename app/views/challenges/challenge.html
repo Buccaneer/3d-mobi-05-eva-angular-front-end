@@ -7,9 +7,11 @@
       </div>
     </md-content>
 
+
     <div flex id="recipe" layout="column">
       <div class="bg-white" layout-align="center center" layout="column" ng-hide="loading">
         <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+
 
         <div ng-include="view"></div>
 
