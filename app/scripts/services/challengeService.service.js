@@ -87,7 +87,7 @@
         service.getChallenges = function () {
           var token = $localstorage.getObject(TOKEN).token;
 
-          $rootScope.loading = true;
+          $rootScope.loading = "loading.challenges";
 
           //probably best for this to be temporary.
           return $http({
@@ -104,7 +104,7 @@
 
         service.getChallenge = function (challengeId) {
           var token = $localstorage.getObject(TOKEN).token;
-          $rootScope.loading = true;
+          $rootScope.loading = "loading.challenge";
 
           return $http({
             method: 'GET',

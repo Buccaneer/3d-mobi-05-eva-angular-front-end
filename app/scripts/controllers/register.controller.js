@@ -39,8 +39,7 @@ angular.module('eva21DayChallengeApp')
 
       if ($scope.signUp_form.$valid) {
 
-        $rootScope.loading = true;
-
+        $rootScope.loading = "loading.register";
         //call AuthService register
         var promise = auth.register($scope.user);
         promise.then(function(response) {

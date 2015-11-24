@@ -8,7 +8,7 @@
     "logout": "uitloggen"
   },
   "home": {
-    "title": "Ontdek de natuur!",
+    "title": "Maak het plantaardig!",
     "headline": "Welkom op de 21 day challenge website!",
     "text-signup-login": "Indien u klaar bent om de uitdaging aan te gaan, kan u zich hieronder aanmelden of registreren.",
     "text-about": "Lees hieronder hoe het werkt!",
@@ -79,5 +79,13 @@
 
   "recipe": {
     "choose": "Kies één van de volgende recepten:"
+  },
+
+  "loading": {
+    "recipes": "We zijn wat recepten aan het zoeken!",
+    "login": "Even geduld!",
+    "register": "@:loading.login",
+    "social": "Even Google, Facebook en Twitter contacteren.",
+    "challenges": "We zijn wat challenges aan het uitzoeken!"
   }
 }

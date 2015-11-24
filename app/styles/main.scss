@@ -166,12 +166,13 @@ md-input-container .md-input {
   height: 20em;
   width: 20em;
   align-self: center;
+  max-width: 800px;
 }
 #recipe-tile-content {
   padding: 20px;
 }
 #recipe-header {
-  margin-top: 0px;
+  margin-top: 0;
   min-height: 200px;
   height: 30vh;
   min-width: 100%;
@@ -201,7 +202,26 @@ md-input-container .md-input {
 #creative-cooking {
   background-image: url("../images/challenges/creative-cooking.jpg");
 }
-
+#video-background {
+  /*  making the video fullscreen  */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index:0; //under the text
+}
+#video-overlay {
+  position: relative;
+  display:block;
+  z-index:1; //over the video
+  margin-top: 35vh;
+}
+#video-content {
+  padding: 20px;
+  color: #fff;
+}
 //ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
@@ -263,9 +283,12 @@ md-input-container .md-input {
   #creative-cooking {
     background-image: url("../images/challenges/sm/creative-cooking.jpg");
   }
+  #recipe-list {
+    justify-content: none;
+  }
   #recipe-tile {
-    margin-top: 20px;
-    width: 100vw;
+    margin-top: 10px;
+    width: 100%;
   }
   #recipe-tile-content {
     width: 100%;

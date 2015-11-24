@@ -29,7 +29,7 @@
         $scope.getSocialLinks = function () {
           var promise = auth.getSocialLinks();
           promise.then(function (response) {
-            $rootScope.loading = true;
+            $rootScope.loading = "loading.social";
             var data = response.data;
             //if the links are loaded show them,
             //if not, catch the error and dont show them
@@ -79,7 +79,7 @@
           }
 
           if ($scope.loginForm.$valid) {
-            $rootScope.loading = true;
+            $rootScope.loading = "loading.login";
 
             var promise = auth.login($scope.user);
             promise.then(function () {
