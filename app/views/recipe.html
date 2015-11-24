@@ -1,17 +1,16 @@
 <!-- TODO include translations -->
-<div layout-align="center" layout="row">
 
-  <div layout="column" flex="100">
-    <div class="recipe-image">
-      <!-- use code below to set background-image to the recipe.image of an element -->
-      <!-- ng-style="{'background-image':'url({{recipe.Image}})'}" -->
-      <div class="inset-white" id="recipe-header" layout-align="center" layout="column">
-        <h2>{{recipe.Name}}</h2>
-      </div>
+<div layout="column" flex>
+  <div id="recipe-header" layout="column" layout-align="center center" ng-style="{'background-image':'url({{recipe.Image}})'}">
+    <div class="bg-black" id="recipe-header-content">
+      <h2>{{recipe.Name}}</h2>
     </div>
+  </div>
 
-    <div class="recipe-properties" ng-repeat="property in recipe.Properties">
-      <div class="recipe-property">
+  <div id="recipe-content">
+
+    <div id="recipe-properties">
+      <div class="recipe-property" ng-repeat="property in recipe.Properties">
         <span class="title">{{property.Type}}</span>:
         <span class="value">{{property.Value}}</span>
       </div>
@@ -19,35 +18,9 @@
 
     <h3>Ingrediënten</h3>
 
-    <table class="table text-center">
-      <thead>
-        <tr>
-          <th class="text-center">
-            Quantiteit
-          </th>
-          <th class="text-center">
-            Eenheid
-          </th>
-          <th class="text-center">
-            Naam
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr ng-repeat="ingredient in recipe.Ingredients">
-          <td>
-            {{ingredient.Quantity}}
-          </td>
-          <td>
-            {{ingredient.Ingredient.Unit}}
-          </td>
-          <td>
-            {{ingredient.Ingredient.Name}}
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
+    <div ng-repeat="ingredient in recipe.Ingredients">
+      {{ingredient.Prefix}} {{ingredient.Suffix}} {{ingredient.Name}}
+    </div>
     <!-- <md-list>
     <md-list-item class="recipe-ingredients" ng-repeat="ingredient in recipe.Ingredients">
       <div class="recipe-ingredient md-list-item-text"></table>

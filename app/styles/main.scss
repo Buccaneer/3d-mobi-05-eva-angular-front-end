@@ -6,9 +6,7 @@ $nav-height: 7;
 $min-nav-height: 7vh;
 $content-height: 100% - $nav-height;
 $background-black-opac: rgba(0, 0, 0, 0.8);
-
 $margin-top-vh: 10vh;
-
 
 //amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
 $amount-challenge-types: 6;
@@ -36,23 +34,18 @@ $sidenav-width: 100vw - $nav-height;
   font-family: "georgia";
   src: url("/fonts/eva-fonts/Georgia.ttf");
 }
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none !important;
+}
 body {
   padding: 0;
   font-family: georgia;
 }
-
-//used for animations
-.hidden {
-  visibility: hidden;
-}
 md-toolbar {
   font-family: georgia;
   height: $min-nav-height !important;
-}
-.brand {
-  max-height: 40px;
-  max-height: 40px;
-  margin-bottom: 5px;
 }
 div {
   display: block;
@@ -70,27 +63,6 @@ md-button {
 md-toolbar {
 
 }
-
-//ANIMATIONS
-.bounceInUp {
-  -webkit-animation: bounceInUp 1s;
-  -webkit-animation-delay: 0s;
-}
-.bounceInLeft {
-  -webkit-animation: bounceInLeft 1s;
-  -webkit-animation-delay: 0s;
-}
-.fadeInLeft {
-  -webkit-animation: fadeInLeft 1s;
-  -webkit-animation-delay: 0s;
-}
-.fadeInRight {
-  -webkit-animation: fadeInRight 1s;
-  -webkit-animation-delay: 0s;
-}
-.slideInUp {
-  -webkit-animation: slideInUp 1s;
-}
 #header {
   /* FF3.6-15 */
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
@@ -102,6 +74,57 @@ md-toolbar {
   // background-image: url("../images/header.png");
   background-size: cover;
   min-height: 100vh;
+}
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 80vw !important;
+  max-width: 400px !important;
+}
+md-input-container label {
+  color: #fff !important;
+}
+md-input-container .md-input {
+  color: #fff !important;
+  border-color: #fff;
+}
+.brand {
+  max-height: 40px;
+  max-height: 40px;
+  margin-bottom: 5px;
+}
+.border-white {
+  border-style: solid;
+  border-color: #fff;
+  border-width: thin;
+}
+.bg-black {
+  background-color: $background-black-opac;
+}
+.fullwidth {
+  height: 100%;
+}
+.fullwidth-item {
+  min-height: $vh-per-challenge;
+  background-size: cover;
+}
+.fullwidth-item-inner {
+  color: #fff;
+  background-color: $background-black-opac;
+  min-width: 250px;
+  max-width: 800px !important;
+  padding-top: 5px;
+}
+.blackboard-wrapper {
+  background-image: url("../images/blackboard.jpg");
+  background-color: #000;
+  background-size: cover;
+  position: absolute;
+  min-height: $content-height;
+  min-width: 100%;
+  padding-bottom: 50px;
+  color: #fff;
 }
 #header-btns {
   margin-bottom: 20px;
@@ -125,48 +148,43 @@ md-toolbar {
   margin-left: auto;
   margin-right: auto;
   color: #fff !important;
-  background-color: $background-black-opac;
 }
-md-sidenav,
-md-sidenav.md-locked-open,
-md-sidenav.md-closed.md-locked-open-add-active {
-  min-width: 200px !important;
-  width: 80vw !important;
-  max-width: 400px !important;
+#recipe-list {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
 }
-md-input-container label {
-  color: #fff !important;
-}
-md-input-container .md-input {
-  color: #fff !important;
-  border-color: #fff;
-}
-.fullwidth {
-  height: 100%;
-}
-.fullwidth-item {
-  min-height: $vh-per-challenge;
-  border-style: solid;
-  border-color: #fff;
-  border-width: thin;
+#recipe-tile {
+  flex-grow: 1;
   background-size: cover;
+  background-position: center;
+  margin: 10px;
+  height: 20em;
+  width: 20em;
+  align-self: center;
 }
-.fullwidth-item-inner {
-  color: #fff;
-  background-color: $background-black-opac;
-  min-width: 250px;
-  max-width: 800px !important;
-  padding-top: 5px;
+#recipe-tile-content {
+  padding: 20px;
 }
-.blackboard-wrapper {
-  background-image: url("../images/blackboard.jpg");
-  background-color: #000;
-  background-size: cover;
-  position: absolute;
-  min-height: $content-height;
+#recipe-header {
+  margin-top: 0px;
+  min-height: 200px;
+  height: 30vh;
   min-width: 100%;
-  padding-bottom: 50px;
-  color: #fff;
+  background-size: cover;
+  background-position: center;
+}
+#recipe-header-content {
+  padding: 20px;
+}
+#recipe-content {
+  margin-top: 10px;
+  margin-left: 20vw;
+  margin-right: 20vw;
 }
 #recipe {
   background-image: url("../images/challenges/recipe.jpg");
@@ -183,7 +201,35 @@ md-input-container .md-input {
 #creative-cooking {
   background-image: url("../images/challenges/creative-cooking.jpg");
 }
+
+//ANIMATIONS
+.bounceInUp {
+  -webkit-animation: bounceInUp 1s;
+  -webkit-animation-delay: 0s;
+}
+.bounceInLeft {
+  -webkit-animation: bounceInLeft 1s;
+  -webkit-animation-delay: 0s;
+}
+.fadeInLeft {
+  -webkit-animation: fadeInLeft 1s;
+  -webkit-animation-delay: 0s;
+}
+.fadeInRight {
+  -webkit-animation: fadeInRight 1s;
+  -webkit-animation-delay: 0s;
+}
+.slideInUp {
+  -webkit-animation: slideInUp 1s;
+}
 @media screen and (max-width: 768px) {
+  .fullwidth {
+    margin-bottom: 0;
+  }
+  .fullwidth-item {
+    width: 100%;
+    min-height: 200px;
+  }
   #header {
     background-image: url("../images/resp-header.jpg");
     background-size: cover;
@@ -202,13 +248,6 @@ md-input-container .md-input {
     margin-left: 0;
     margin-top: 40vh;
   }
-  .fullwidth {
-    margin-bottom: 0;
-  }
-  .fullwidth-item {
-    width: 100%;
-    min-height: 200px;
-  }
   #recipe {
     background-image: url("../images/challenges/sm/recipe.jpg");
   }
@@ -224,6 +263,15 @@ md-input-container .md-input {
   #creative-cooking {
     background-image: url("../images/challenges/sm/creative-cooking.jpg");
   }
+  #recipe-tile {
+    margin-top: 20px;
+    width: 100vw;
+  }
+  #recipe-tile-content {
+    width: 100%;
+    text-align: center;
+    background-color: $background-black-opac;
+  }
 }
 @media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
   #login,
@@ -231,5 +279,13 @@ md-input-container .md-input {
     margin-top: $margin-top-vh;
     margin-left: auto;
     margin-right: auto;
+  }
+  #recipe-list {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  #recipe-tile {
+    margin-top: 20px;
+    width: 400px;
   }
 }
