@@ -21,14 +21,11 @@
 </head>
 
 <body ng-app="eva21DayChallengeApp" ng-cloak>
-  <!--[if lte IE 8]>
-  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
 
-  <!-- Add your site or application content here -->
+
+  <md-progress-linear id="loading-bar" md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+
   <div ng-controller="AnimCtrl">
-    <md-progress-linear md-mode="indeterminate" ng-show="!loading === false"></md-progress-linear>
-
 
     <div layout="column" ng-controller="NavCtrl">
 

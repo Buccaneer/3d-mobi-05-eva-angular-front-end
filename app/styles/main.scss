@@ -222,6 +222,9 @@ md-input-container .md-input {
   padding: 20px;
   color: #fff;
 }
+#loading-bar {
+  z-index:1;
+}
 //ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
