@@ -60,7 +60,9 @@
     'ACCOUNT': '/api/Account',
     'CHALLENGE': '/api/Challenge',
     'RECIPE': '/api/Recipes',
-    'INGREDIENT': '/api/Ingredient?name='
+    'INGREDIENT': '/api/Ingredient?name=',
+    'RECIPEBYINGREDIENTS': '/api/Recipes/ByIngredient'
+    
 
   });
   app.constant('TOKEN', 'eva.access_token');

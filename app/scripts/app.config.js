@@ -75,6 +75,8 @@
                     url: '/challenge/create/creative-cooking',
                     //      controller: 'AgreeRecipeCtrl',
                     templateUrl: 'views/challenges/create-creative-cooking.html',
+                    
+                    controller: 'CreativeCookingCtrl',
                     requireAuth: true
                 })
                 .state('about', {

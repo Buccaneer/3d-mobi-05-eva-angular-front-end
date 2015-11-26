@@ -30,8 +30,9 @@
         };
 
         service.getIngredients = function (ingredientName) {
-          if (this.cache[ingredientName] !== undefined)
+          if (this.cache[ingredientName] !== undefined) {
             return this.cache[ingredientName];
+          }
 
           var token = $localstorage.getObject(TOKEN).token;
           var item = $http({

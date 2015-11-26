@@ -11,14 +11,14 @@
 -->
 <md-content class="md-padding autocomplete" layout="column">
     <md-contact-chips
-        ng-model="selectedIngredients"
+        ng-model="ingredients"
         md-contacts="search($query)"
         md-contact-name="Name"
-    md-autocomplete-snap="" md-require-match="" 
+        md-autocomplete-snap="" 
         md-require-match="true"
         md-highlight-flags="i"
         filter-selected="true"
-        placeholder="Allergie">
+        placeholder="{{placeholder}}">
     </md-contact-chips>
     
   </md-content>

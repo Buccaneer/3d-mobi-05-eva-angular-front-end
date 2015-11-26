@@ -1,6 +1,24 @@
-<div class="padding-view" layout="row" layout-align="center">
+<div class="padding-view" layout="row" layout-align="center" ng-controller="ChallengeRecipesCtrl">
   <md-content class="bg-white" layout="column" layout-align="center center" flex-gt-md="40" flex-sm='100'>
+    <h2>Creative cooking challenge</h2>
+    <div layout-align="center" layout="row">
 
-    <ingredient-selector></ingredient-selector>
+      <ingredient-selector ingredients="selected" placeholder="Ingredient" />
+    </div>
+    <div layout-align="center" layout="row" ng-repeat="recipe in recipes">
+      <div>{{recipe.Name}}</div>
+    </div>
+
+    <div layout-align="center" layout="row">
+      <div layout-align="center center" layout="column">
+        <p>Pick this challenge?</p>
+        <div layout-align="center center" layout="row">
+          <md-button class="md-raised md-primary" ng-click="agreed()">Yes!</md-button>
+          <md-button class="md-raised md-warn" ng-click="disagreed()">No</md-button>
+        </div>
+      </div>
+    </div>
+
   </md-content>
+
 </div>

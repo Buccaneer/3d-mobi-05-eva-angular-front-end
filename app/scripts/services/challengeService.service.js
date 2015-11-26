@@ -65,7 +65,7 @@
             });
           },
 
-          createCreativeCookingChallenge: function (ingredientsId) {
+          createCreativeCookingChallenge: function (ingredientsId, recipeId) {
             var token = $localstorage.getObject(TOKEN).token;
 
             return $http({
@@ -77,7 +77,8 @@
               },
               data: {
                 "Type": "CreativeCooking",
-                "IngredientsId": ingredientsId
+                "IngredientsId": ingredientsId,
+                "RecipeId": recipeId
               }
             });
           }
