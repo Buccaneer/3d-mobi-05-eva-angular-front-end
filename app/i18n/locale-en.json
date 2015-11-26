@@ -5,7 +5,8 @@
   "nav": {
     "register": "register",
     "login": "login",
-    "logout": "logout"
+    "logout": "logout",
+    "settings": "settings"
   },
 
   "home": {
@@ -78,5 +79,15 @@
 
   "recipe": {
     "choose": "Kies één van de volgende recepten:"
+  },
+
+  "about": {
+    "text": "The EVA 21 days challenge was developed for EVA vzw. This app wants to inspire people to eat more vegan for 21 days and convince them to use less animal-related products and more alternatives.",
+    "info": "If you want to read more about the goal of EVA, you can always go to their website."
+  },
+
+  "settings": {
+    "loading": "Trying to find out more about you...",
+    "userSettings": "User Settings"
   }
 }

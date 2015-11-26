@@ -5,7 +5,8 @@
   "nav": {
     "register": "registreren",
     "login": "inloggen",
-    "logout": "uitloggen"
+    "logout": "uitloggen",
+    "settings": "instellingen"
   },
   "home": {
     "title": "Maak het plantaardig!",
@@ -87,5 +88,24 @@
     "register": "@:loading.login",
     "social": "Even Google, Facebook en Twitter contacteren.",
     "challenges": "We zijn wat challenges aan het uitzoeken!"
+  },
+
+  "about": {
+    "text": "De EVA 21 dagen challenge werd ontwikkeld in naam van EVA vzw. Deze app wil mensen aanzetten om 21 dagen plantaardig te eten om hen te overtuigen om minder dierlijke producten te gebruiken en meer alternatieven te nemen.",
+    "info": "Als je meer informatie wil weten over de werking van EVA, dan kun je altijd terecht op hun website."
+  },
+
+  "settings": {
+    "loading": "Even wat gegevens over je ophalen...",
+    "userSettings": "Instellingen",
+    "firstname": "Voornaam",
+    "lastname": "Achternaam",
+    "birthdate": "Geboortedatum",
+    "allergies": "Uw allergieën",
+    "budget": "Wat is uw budget?",
+    "typeOfVegan": "Bent u vegetariër?",
+    "peopleInFamily": "Aantal gezinsleden",
+    "save": "Opslaan"
+
   }
 }

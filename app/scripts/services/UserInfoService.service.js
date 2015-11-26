@@ -12,7 +12,7 @@
       function ($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
         var service = {
           userInfo: [] ,
-          
+
           init: function () {
             //if there is a token object in the localstorage,
             //load it in memory
@@ -48,11 +48,11 @@
             });
           }
         };
-        
+
         service.getUserInfo = function () {
           var token = $localstorage.getObject(TOKEN).token;
 
-          $rootScope.loading = true;
+          $rootScope.loading = "settings.loading";
 
           //probably best for this to be temporary.
           return $http({
@@ -67,8 +67,7 @@
             angular.copy(data, service.userInfo);
           });
         };
-        
+
         return service;
       }]);
 })();
-		  

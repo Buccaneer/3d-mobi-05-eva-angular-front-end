@@ -1,10 +1,10 @@
 (function() {
 
-	'use strict';
+  'use strict';
 
   angular
     .module('eva21DayChallengeApp').config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider) {
-			$urlRouterProvider.otherwise('/home');
+      $urlRouterProvider.otherwise('/home');
 
       //setting up the states
       $stateProvider
@@ -12,6 +12,17 @@
           url: '/home',
           templateUrl: 'views/home.html',
           // controller: 'HomeCtrl'
+        })
+        .state('settings', {
+          url: '/settings',
+          templateUrl: 'views/settings.html',
+          controller: 'SettingsCtrl',
+          requireAuth: true,
+          resolve: {
+            fetchUserInfo: ['UserInfoService', function(UserInfoService) {
+              return UserInfoService.getUserInfo();
+            }]
+          }
         })
         .state('login', {
           url: '/login',
@@ -43,7 +54,7 @@
         .state('create-challenge', {
           url: '/challenge/create',
           templateUrl: 'views/challenges/create-challenge.html',
-					controller: 'CreateChallengeCtrl',
+          controller: 'CreateChallengeCtrl',
           requireAuth: true
         })
         .state('challenge-overview', {
@@ -73,15 +84,20 @@
               return RecipeService.getRecipes();
             }]
           }
+        }).state('select-view-creative-cooking', {
+          url: '/challenge/create/creative-cooking',
+          //      controller: 'AgreeRecipeCtrl',
+          templateUrl: 'views/challenges/create-creative-cooking.html',
+          requireAuth: true
         });
 
 
       //let translateProvider load translations from external json
       $translateProvider.useStaticFilesLoader({
-				files: [{
-					prefix: '../i18n/locale-',
-					suffix: '.json'
-				}]
+        files: [{
+          prefix: '../i18n/locale-',
+          suffix: '.json'
+        }]
       });
 
       //register all available languages
@@ -129,10 +145,10 @@
       $mdThemingProvider.theme('default').primaryPalette('primary').backgroundPalette('background');
 
 
-			uiGmapGoogleMapApiProvider.configure({
-				v: '3.20',
-				libraries: 'weather,geometry,visualization'
-			});
+      uiGmapGoogleMapApiProvider.configure({
+        v: '3.20',
+        libraries: 'weather,geometry,visualization'
+      });
     });
 
 
