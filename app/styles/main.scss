@@ -1,198 +1,317 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
+//define variables here
+$nav-height: 7;
+$min-nav-height: 7vh;
+$content-height: 100% - $nav-height;
+$background-black-opac: rgba(0, 0, 0, 0.8);
+$margin-top-vh: 10vh;
+
+//amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
+$amount-challenge-types: 6;
+$vh-per-challenge: 30vh;
+$sidenav-width: 100vw - $nav-height;
+
+//fonts
 @font-face {
-  font-family: "museo";
+  font-family: "museo-normal";
   font-style: normal;
   font-weight: 300;
-  src: url("/fonts/Museo300-Regular.otf");
+  src: url("/fonts/eva-fonts/Museo300-Regular.otf");
 }
 @font-face {
-  font-family: "museo";
+  font-family: "museo-weighted";
   font-weight: 500;
-  src: url("/fonts/Museo500-Regular.otf");
+  src: url("/fonts/eva-fonts/Museo500-Regular.otf");
 }
 @font-face {
   font-family: "artistamp";
   font-weight: 700;
-  src: url("/fonts/ArtistampMedium.ttf");
+  src: url("/fonts/eva-fonts/ArtistampMedium.ttf");
 }
 @font-face {
   font-family: "georgia";
-  src: url("/fonts/Georgia.ttf");
+  src: url("/fonts/eva-fonts/Georgia.ttf");
+}
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none !important;
 }
 body {
   padding: 0;
-  font-family: "georgia";
+  font-family: georgia;
 }
-h1 {
-  font-family: "museo";
+md-toolbar {
+  font-family: georgia;
+  height: $min-nav-height !important;
 }
-p {
-  font-family: "georgia";
+div {
+  display: block;
 }
-md-sidenav,
-md-sidenav.md-locked-open {
-  min-width: 200px !important;
-  width: 60vw !important;
-  max-width: 400px !important;
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: museo-weighted;
 }
-.sidenav-content {
-  align-items: stretch;
-  padding: 0;
+md-button {
+  font-family: museo-normal;
 }
-.bg-white {
-  background-color: rgba(255, 255, 255, .6);
-}
-.bg-white-solod {
-  background-color: rgba(255, 255, 255, 1);
-}
-.padding-view {
-  padding-top: 2%;
-  padding-bottom: 2%;
+md-toolbar {
+
 }
 #header {
-  background-size: cover;
-  background-image: url("/images/bg.jpg");
-  background-attachment: fixed;
-  background-repeat: no-repeat;
-  min-height: 50vh;
-  box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
-  color: #fff;
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
 
-  //  &:before {
-  //   content: '';
-  //   position: absolute;
-  //   top: 0;
-  //   right: 0;
-  //   bottom: 0;
-  //   left: 0;
-  //   background-image: linear-gradient(to bottom,#002f4b,#dc4225);
-  //   opacity: .6;
-  // }
-}
-#header-text {
-  margin-top: 5vh;
-  color: #fff;
-}
-.text-border {
-  text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;
-}
-.text-white {
-  color: #fff;
-}
-.header-btn {
-  margin-top: 2vh;
-  border-style: solid;
-  color: #fff !important;
-  min-width: 120px;
-}
-.type-btn {
-  min-width: 250px;
-}
-#about-text {
-  margin-top: 2vh;
-}
-#wrapper {
+  // background-image: url("../images/header.png");
   background-size: cover;
-  background-image: url("/images/bg.jpg");
-  background-attachment: scroll;
-  background-repeat: no-repeat;
   min-height: 100vh;
-  box-shadow: inset 0 0 0 1000px rgba(127,127,127,.4);
 }
-#register, #login {
-  min-width: 70vh;
+md-sidenav,
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
+  min-width: 200px !important;
+  width: 80vw !important;
+  max-width: 400px !important;
 }
-#steps {
-  margin-top: 5vh;
+md-input-container label {
+  color: #fff !important;
 }
-#progress {
-  background-image: url("/images/blackboard.jpg");
-}
-#padding-component {
-  padding: 5%;
-}
-#recipe-header {
-  background-size: cover;
-  background-attachment: scroll;
-  background-repeat: no-repeat;
-  min-height: 20vh;
-}
-#recipe {
-  min-width: 60vw;
-  max-width: 60vw;
-}
-#recipe-image {
-  max-height: 200px;
-}
-#progress {
-  background-color: #032d18;
-  color: #fff;
-  min-height: 57vh;
-}
-.sidenav-button {
-  margin: 0;
-}
-.sidenav-button:hover {
-  margin: 0;
-  color: #fff;
-}
-#progress-text {
-  margin-top: 20px;
-  margin-left: 3%;
-}
-.error-message {
-  color: red;
-  padding: 5px;
+md-input-container .md-input {
+  color: #fff !important;
+  border-color: #fff;
 }
 .brand {
   max-height: 40px;
-  padding-top: 0;
+  max-height: 40px;
+  margin-bottom: 5px;
+}
+.border-white {
+  border-style: solid;
+  border-color: #fff;
+  border-width: thin;
+}
+.bg-black {
+  background-color: $background-black-opac;
+}
+.fullwidth {
+  height: 100%;
+}
+.fullwidth-item {
+  min-height: $vh-per-challenge;
+  background-size: cover;
+}
+.fullwidth-item-inner {
+  color: #fff;
+  background-color: $background-black-opac;
+  min-width: 250px;
+  max-width: 800px !important;
+  padding-top: 5px;
+}
+.blackboard-wrapper {
+  background-image: url("../images/blackboard.jpg");
+  background-color: #000;
+  background-size: cover;
+  position: absolute;
+  min-height: $content-height;
+  min-width: 100%;
+  padding-bottom: 50px;
+  color: #fff;
+}
+#header-btns {
+  margin-bottom: 20px;
+}
+#header-text {
+  margin-left: 50vw;
+  margin-top: 25vh;
+}
+#loginWrapper,
+#registerWrapper {
+  background-image: url("../images/form-bg.jpg");
+  background-size: cover;
+  min-height: $content-height;
+  min-width: 100%;
+  position: absolute;
+}
+#login,
+#register {
+  max-width: 600px;
+  margin-top: $margin-top-vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff !important;
+}
+#recipe-list {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#recipe-tile {
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  height: 20em;
+  width: 20em;
+  align-self: center;
+  max-width: 800px;
+}
+#recipe-tile-content {
+  padding: 20px;
+}
+#recipe-header {
   margin-top: 0;
+  min-height: 200px;
+  height: 30vh;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
 }
-.dark-green {
-  color: #032d18;
+#recipe-header-content {
+  padding: 20px;
 }
-#mainHeader {
-  min-height: 50vh;
+#recipe-content {
+  margin-top: 10px;
+  margin-left: 20vw;
+  margin-right: 20vw;
 }
-@media screen and (max-width: 767px) {
+#recipe {
+  background-image: url("../images/challenges/recipe.jpg");
+}
+#recipe-region {
+  background-image: url("../images/challenges/recipe-region.jpg");
+}
+#restaurant {
+  background-image: url("../images/challenges/rest.jpg");
+}
+#restaurant-region {
+  background-image: url("../images/challenges/rest-region.jpg");
+}
+#creative-cooking {
+  background-image: url("../images/challenges/creative-cooking.jpg");
+}
+#video-background {
+  /*  making the video fullscreen  */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index:0; //under the text
+}
+#video-overlay {
+  position: relative;
+  display:block;
+  z-index:1; //over the video
+  margin-top: 35vh;
+}
+#video-content {
+  padding: 20px;
+  color: #fff;
+}
+#loading-bar {
+  z-index:1;
+}
+//ANIMATIONS
+.bounceInUp {
+  -webkit-animation: bounceInUp 1s;
+  -webkit-animation-delay: 0s;
+}
+.bounceInLeft {
+  -webkit-animation: bounceInLeft 1s;
+  -webkit-animation-delay: 0s;
+}
+.fadeInLeft {
+  -webkit-animation: fadeInLeft 1s;
+  -webkit-animation-delay: 0s;
+}
+.fadeInRight {
+  -webkit-animation: fadeInRight 1s;
+  -webkit-animation-delay: 0s;
+}
+.slideInUp {
+  -webkit-animation: slideInUp 1s;
+}
+@media screen and (max-width: 768px) {
+  .fullwidth {
+    margin-bottom: 0;
+  }
+  .fullwidth-item {
+    width: 100%;
+    min-height: 200px;
+  }
   #header {
-    background-attachment: scroll;
-    min-height: 100vh;
+    background-image: url("../images/resp-header.jpg");
+    background-size: cover;
+  }
+  #loginWrapper,
+  #registerWrapper {
+    background-image: url("../images/sm/form-bg.jpg");
+  }
+  #login,
+  #register {
+    max-width: none;
+    margin: 0;
   }
   #header-text {
-    margin-top: 5vh;
-  }
-  .header-btn {
-    margin-top: 2vh;
-  }
-  #register,
-  #login {
-    min-width: 100%;
-  }
-  #recipe-image {
-    max-width: 50%;
-  }
-  #mainHeader {
+    color: #fff;
     margin-left: 0;
-    min-height: 50vh;
+    margin-top: 40vh;
   }
   #recipe {
-    min-width: none;
-    max-width: none;
+    background-image: url("../images/challenges/sm/recipe.jpg");
+  }
+  #recipe-region {
+    background-image: url("../images/challenges/sm/recipe-region.jpg");
+  }
+  #restaurant {
+    background-image: url("../images/challenges/sm/rest.jpg");
+  }
+  #restaurant-region {
+    background-image: url("../images/challenges/sm/rest-region.jpg");
+  }
+  #creative-cooking {
+    background-image: url("../images/challenges/sm/creative-cooking.jpg");
+  }
+  #recipe-list {
+    justify-content: none;
+  }
+  #recipe-tile {
+    margin-top: 10px;
     width: 100%;
   }
-  .padding-view {
-    padding-top: 0%;
-    padding-bottom: 0%;
+  #recipe-tile-content {
+    width: 100%;
+    text-align: center;
+    background-color: $background-black-opac;
   }
 }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+  #login,
   #register {
-    max-width: 80px;
+    margin-top: $margin-top-vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #recipe-list {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  #recipe-tile {
+    margin-top: 20px;
+    width: 400px;
   }
 }

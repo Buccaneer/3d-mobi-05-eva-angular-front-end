@@ -1,32 +1,63 @@
-<div class="padding-view" layout="row" layout-align="center">
-  <md-content class="bg-white" layout="column" layout-align="center center" flex-gt-md="40" flex-sm='100'>
-    <h1>Kies een type</h1>
-    <md-list layout-align="center center">
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/recipe">
-          <h4>Recipe</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/recipe-region">
-          <h4>Region recipe</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/restaurant">
-          <h4>Restaurant</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/restaurant-region">
-          <h4>Region restaurant</h4>
-        </md-button>
-      </md-list-item>
-      <md-list-item>
-        <md-button class="md-primary md-raised type-btn" ng-show="authentication.isAuthed" ng-href="#/challenge/create/creative-cooking">
-          <h4>Creative cooking</h4>
-        </md-button>
-      </md-list-item>
-    </md-list>
-  </md-content>
+<div class="blackboard-wrapper" layout-align-gt-md="center center" layout="row">
+  <div class="fullwidth" layout="column" flex="100" flex-gt-md="80">
+
+    <h1 class="text-center">
+      {{'challenges.create.choose' | translate}}
+    </h1>
+
+    <div class="fullwidth-item border-white" id="recipe" layout-align="center center" layout="row" ng-click="createRecipeChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.recipe' | translate}}
+        </h3>
+        <p class="text-center">
+          {{'challenges.create.recipe-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div class="fullwidth-item border-white" id="recipe-region" layout-align="center center" layout="row" ng-click="createRegionRecipeChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.recipe-region' | translate}}
+        </h3>
+        <p class="text-center">
+          {{'challenges.create.recipe-region-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div class="fullwidth-item border-white" id="restaurant" layout-align="center center" layout="row" ng-click="createRestaurantChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.restaurant' | translate}}
+        </h3>
+        <p class="text-center">
+          {{'challenges.create.restaurant-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div class="fullwidth-item border-white" id="restaurant-region" layout-align="center center" layout="row" ng-click="createRegionRestaurantChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.restaurant-region' | translate}}
+        </h3>
+        <p class="text-center">
+          {{'challenges.create.restaurant-region-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div class="fullwidth-item border-white" id="creative-cooking" layout-align="center center" layout="row" ng-click="createCreativeCookingChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.creative-cooking' | translate}}
+        </h3>
+        <p class="text-center">
+          {{'challenges.create.creative-cooking-text' | translate}}
+        </p>
+      </div>
+    </div>
+  </div>
 </div>

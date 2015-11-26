@@ -69,7 +69,7 @@
         }
         var token = $localstorage.getObject(TOKEN).token;
 
-        $rootScope.loading = true;
+        $rootScope.loading = "loading.recipes";
         $http({
           method: 'GET',
           url: URLS.PUBLIC_API + URLS.RECIPE + '/',

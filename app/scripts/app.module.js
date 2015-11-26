@@ -1,4 +1,4 @@
-(function () {
+(function() {
 
   'use strict';
 
@@ -22,7 +22,9 @@
       'ngMessages',
       'validation.match',
       'ui.router',
-      'ngMaterial'
+      'ngMaterial',
+      'uiGmapgoogle-maps',
+      'angular-scroll-animate'
     ]);
 
   /**
@@ -30,9 +32,13 @@
    * (routing and such)
    */
 
-  app.run(['$rootScope', '$state', function ($rootScope, $state) {
+  app.run(['$rootScope', '$state', '$window', function($rootScope, $state, $window) {
 
-    $rootScope.$on('$stateChangeStart', function (event, toState) {
+    $rootScope.$on('$stateChangeStart', function() {
+      $window.scrollTo(0, 0);
+    });
+
+    $rootScope.$on('$stateChangeStart', function(event, toState) {
       //state requires login?
       var requireLogin = toState.requireAuth;
       //check stateName,
@@ -60,8 +66,7 @@
     'ACCOUNT': '/api/Account',
     'CHALLENGE': '/api/Challenge',
     'RECIPE': '/api/Recipes',
-    'INGREDIENT': '/api/Ingredient?name='
-
+    'RESTAURANT': '/api/Restaurants'
   });
   app.constant('TOKEN', 'eva.access_token');
 
