@@ -38,6 +38,7 @@
 })();
 
 (function () {
+'use strict';
 
   angular
     .module('eva21DayChallengeApp').controller('ChallengeCtrl', ['$state', '$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'challenge', 'AuthService',

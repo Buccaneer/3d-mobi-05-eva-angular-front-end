@@ -55,6 +55,7 @@
             <span flex></span>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/register">{{'nav.register' | translate}}</md-button>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/login"> {{'nav.login' | translate}}</md-button>
+            <md-button ng-show="authentication.isAuthed" ng-href="#/settings"> {{'nav.settings' | translate}}</md-button>
             <md-button ng-show="authentication.isAuthed" ng-click="logout()" ng-href="#/logout">{{'nav.logout' | translate}}</md-button>
             <span flex></span>
 
@@ -89,6 +90,9 @@
             </md-button>
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/login">
               <h4>login</h4>
+            </md-button>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/setting">
+              <h4>settings</h4>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout()">
               <h4>logout</h4>
@@ -149,12 +153,14 @@
   <script src="scripts/controllers/main.controller.js"></script>
   <script src="scripts/controllers/login.controller.js"></script>
   <script src="scripts/controllers/register.controller.js"></script>
+  <script src="scripts/controllers/settings.controller.js"></script>
   <script src="scripts/controllers/nav.controller.js"></script>
   <script src="scripts/services/authService.service.js"></script>
   <script src="scripts/services/challengeService.service.js"></script>
     <script src="scripts/services/ingredientService.service.js"></script>
     <script src="scripts/directives/ingredientcomponent.directive.js"></script>
   <script src="scripts/services/recipeService.service.js"></script>
+  <script src="scripts/services/UserInfoService.service.js"></script>
   <script src="scripts/factories/localstorage.factory.js"></script>
   <script src="scripts/controllers/challenges.controller.js"></script>
   <script src="scripts/controllers/challengerecipe.controller.js"></script>
