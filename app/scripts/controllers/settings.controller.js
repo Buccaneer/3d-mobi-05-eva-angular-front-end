@@ -47,7 +47,7 @@
                     firstname: 'Logan',
                     lastname: 'Dupont',
                     birthdate: new Date(),
-                    allergies: '1',
+                    allergies: '',
                     budget: 'hoog',
                     typeOfVegan: 'Veganist',
                     peopleInFamily: '3'
@@ -71,7 +71,6 @@
             $scope.typeOfVeganList = ['Omnivoor', 'Pescotariër', 'Parttime-vegetariër', 'Vegetariër', 'Veganist'];
             $scope.budgetList = ['hoog', 'gemiddeld', 'laag', 'niet gedeeld'];
             $scope.peopleInFamilyList = ['1', '2', '3', '4'];
-            $scope.allergiesList = ['1', '2', '3'];
 
             $scope.callSettings = function (){
                 UserInfoService.markSetupAsDone($scope.user)

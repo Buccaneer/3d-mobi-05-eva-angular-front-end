@@ -6,7 +6,8 @@
     "register": "register",
     "login": "login",
     "logout": "logout",
-    "settings": "settings"
+    "settings": "settings",
+    "about": "About"
   },
 
   "home": {

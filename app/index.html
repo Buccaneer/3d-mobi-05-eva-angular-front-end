@@ -47,7 +47,7 @@
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
               challenges
             </md-button>
-            <span flex></span>
+            <md-button ng-show="authentication.isAuthed" ng-href="#/about">{{'nav.about' | translate}}</md-button>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/register">{{'nav.register' | translate}}</md-button>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/login"> {{'nav.login' | translate}}</md-button>
             <md-button ng-show="authentication.isAuthed" ng-href="#/settings"> {{'nav.settings' | translate}}</md-button>
@@ -77,14 +77,20 @@
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
               <h4>challenges</h4>
             </md-button>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
+              <h4>challenges</h4>
+            </md-button>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/about">
+              <h4>{{'nav.about' | translate}}</h4>
+            </md-button>
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/register">
-              <h4>register</h4>
+              <h4>{{'nav.register' | translate}}</h4>
             </md-button>
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/login">
-              <h4>login</h4>
+              <h4>{{'nav.login' | translate}}</h4>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout()">
-              <h4>logout</h4>
+              <h4>{{'nav.logout' | translate}}</h4>
             </md-button>
           </md-content>
         </md-sidenav>

@@ -6,7 +6,8 @@
     "register": "registreren",
     "login": "inloggen",
     "logout": "uitloggen",
-    "settings": "instellingen"
+    "settings": "instellingen",
+    "about": "over"
   },
   "home": {
     "title": "Maak het plantaardig!",

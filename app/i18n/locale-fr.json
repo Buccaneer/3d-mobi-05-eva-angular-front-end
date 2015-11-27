@@ -5,7 +5,8 @@
     "register": "enregistrer",
     "login": "login",
     "logout": "Déconnexion",
-    "settings": "paramètres"
+    "settings": "paramètres",
+    "about": ""
   },
   "home": {
     "title": "Bienvenue sur le site '21 day challenge'!",
