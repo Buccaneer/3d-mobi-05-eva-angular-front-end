@@ -5,9 +5,15 @@
 
       <ingredient-selector ingredients="selected" placeholder="Ingredient" />
     </div>
-    <div layout-align="center" layout="row" ng-repeat="recipe in recipes">
-      <div>{{recipe.Name}}</div>
-    </div>
+    <md-select layout-align="center" layout="row" ng-model="recipe" placeholder="Pick a recipe" ng-show="recipes.length > 0" ng-change="onChange(recipe)">
+      <md-option ng-repeat="r in recipes" ng-value="r">
+        {{r.Name}}
+      </md-option>
+    </md-select>
+    
+    <div flex id="recipe" ng-show="recipe">
+        <div flex ng-include="'views/recipe.html'"/>
+      </div>
 
     <div layout-align="center" layout="row">
       <div layout-align="center center" layout="column">

@@ -15,17 +15,23 @@
 
       $scope.selected = [];
       $scope.recipes = [];
+      $scope.recipe = null;
+   
       $scope.$watch('selected', function(newValue) {
         if (newValue.length > 0) {
           var names = newValue.map(function (el) {
          return el.Name;
        });
        $scope.recipes = RecipeService.getRecipesWithIngredients(names).then(function(data) {
-        
+       
        });
        
         }
       }, true);
+     
+      $scope.onChange = function(recipe) {
+        $scope.recipe = recipe;
+      }
       
       $scope.agreed = function() {
         var ids = [];
@@ -34,7 +40,7 @@
         });
         
         console.log(ids);
-        ChallengeService.createCreativeCookingChallenge(ids);
+        ChallengeService.createCreativeCookingChallenge(ids,$scope.recipe.RecipeId);
         $state.go('challenges-overview');
       };
       
