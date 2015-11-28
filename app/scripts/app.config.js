@@ -92,14 +92,25 @@
             }]
           }
         })
-          .state('select-view-creative-cooking', {
-                    url: '/challenge/create/creative-cooking',
-                    //      controller: 'AgreeRecipeCtrl',
-                    templateUrl: 'views/challenges/create-creative-cooking.html',
-                    
-                    controller: 'CreativeCookingCtrl',
-                    requireAuth: true
-                });
+        .state('select-view-creative-cooking', {
+          url: '/challenge/create/creative-cooking',
+          //      controller: 'AgreeRecipeCtrl',
+          templateUrl: 'views/challenges/create-creative-cooking.html',
+
+          controller: 'CreativeCookingCtrl',
+          requireAuth: true
+        })
+        .state('show-badges', {
+          url: '/badges',
+          templateUrl: 'views/badges.html',
+          controller: 'BadgeCtrl',
+          requireAuth: true,
+          resolve: {
+            fetchUserInfoPromise: ['UserInfoService', function( UserInfoService ) {
+              return UserInfoService.getUserInfo();
+            }]
+          }
+        });
 
 
       //let translateProvider load translations from external json
