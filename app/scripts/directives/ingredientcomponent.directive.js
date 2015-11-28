@@ -1,6 +1,8 @@
 (function () {
   'use strict';
 
+'use strict';
+
   angular
     .module('eva21DayChallengeApp')
     .directive('ingredientSelector', ['IngredientService', function (IngredientService) {
@@ -9,20 +11,26 @@
         restrict: 'E',
 
         scope: {
-          selectedIngredients: '=',
+          ingredients: '=',
+          placeholder: '@'
 
         },
         templateUrl: '/views/ingredients.html',
-        link: function (scope, elem, attrs) {
-          if (scope.selectedIngredients === undefined || scope.selectedIngredients === null){
-            scope.selectedIngredients = [];
+
+        link: function (scope) {    
+          if (scope.ingredients === undefined || scope.ingredients === null) {
+            scope.ingredients = [];
+            console.log('hier');
           }
+            
 
           scope.search = function (searchString) {
             return IngredientService.getIngredients(searchString)
               .then(function (newData) {
                 scope.showingIngredients = newData.data;
-                return newData.data.filter(function (x) { return scope.selectedIngredients.indexOf(x) < 0; });
+
+                return newData.data.filter(function (x) { return scope.ingredients.indexOf(x) < 0; });
+
                 // return newData.data;
               });
 

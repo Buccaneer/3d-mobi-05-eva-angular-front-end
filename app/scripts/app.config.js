@@ -2,9 +2,11 @@
 
   'use strict';
 
+
   angular
     .module('eva21DayChallengeApp').config(function ($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider) {
       $urlRouterProvider.otherwise('/home');
+
 
       //setting up the states
       $stateProvider
@@ -89,12 +91,15 @@
               return RecipeService.getRecipes();
             }]
           }
-        }).state('select-view-creative-cooking', {
-          url: '/challenge/create/creative-cooking',
-          //      controller: 'AgreeRecipeCtrl',
-          templateUrl: 'views/challenges/create-creative-cooking.html',
-          requireAuth: true
-        });
+        })
+          .state('select-view-creative-cooking', {
+                    url: '/challenge/create/creative-cooking',
+                    //      controller: 'AgreeRecipeCtrl',
+                    templateUrl: 'views/challenges/create-creative-cooking.html',
+                    
+                    controller: 'CreativeCookingCtrl',
+                    requireAuth: true
+                });
 
 
       //let translateProvider load translations from external json
