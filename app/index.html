@@ -6,6 +6,8 @@
   <title>21 Day Veggie Challenge</title>
   <meta name="description" content="">
   <meta name="viewport" content="width=device-width">
+  <link rel="stylesheet" href="styles/animate.css">
+  <link rel="stylesheet" href="styles/ic.css"> <!-- temporary -->
   <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
   <!-- build:css(.) styles/vendor.css -->
   <!-- bower:css -->
@@ -19,80 +21,89 @@
   <!-- endbuild -->
 </head>
 
-<body ng-app="eva21DayChallengeApp">
-  <!--[if lte IE 8]>
-  <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+<body ng-app="eva21DayChallengeApp" ng-cloak>
 
-  <!-- Add your site or application content here -->
-  <md-content id="wrapper" layout-fill>
-    <md-progress-linear md-mode="indeterminate" ng-show="loading == true"></md-progress-linear>
+
+  <md-progress-linear id="loading-bar" md-mode="indeterminate" ng-show="loading"></md-progress-linear>
+
+  <div ng-controller="AnimCtrl">
 
     <div layout="column" ng-controller="NavCtrl">
 
-      <div flex>
-
-
-        <md-toolbar>
-
-          <div class="md-toolbar-tools">
-            <md-button aria-label="button-collapse" ng-click="openLeftMenu()" show-sm hide-gt-sm>
-              <i class="fa fa-bars pointer" hide-gt-lg></i>
+      <md-toolbar>
+        <div class="md-toolbar-tools">
+          <md-button aria-label="button-collapse" ng-click="openLeftMenu()" show-sm hide-gt-sm>
+            <i class="fa fa-bars pointer" hide-gt-lg></i>
+          </md-button>
+          <div class="md-toolbar-tools" hide-sm>
+            <span flex></span>
+            <md-button ng-hide="authentication.isAuthed" ng-href="#/home">
+              <img aria-label="eva-logo" class="brand" src="images/eva-logo.png" />
             </md-button>
-            <div class="md-toolbar-tools" hide-sm>
-              <span flex></span>
-              <md-button ng-hide="authentication.isAuthed" ng-href="#/home">home</md-button>
-              <md-button ng-show="authentication.isAuthed" ng-href="#/main">main</md-button>
-              <md-button ng-show="authentication.isAuthed" ng-href="#/challenges">challenges</md-button>
-              <span flex></span>
-              <md-button ng-hide="authentication.isAuthed" ng-href="#/register">register</md-button>
-              <md-button ng-hide="authentication.isAuthed" ng-href="#/login">login</md-button>
-              <md-button ng-show="authentication.isAuthed" ng-click="logout()" ng-href="#/logout">logout</md-button>
-              <span flex></span>
-            </div>
+            <md-button ng-show="authentication.isAuthed" ng-href="#/main" class="brand">
+              <img aria-label="eva-logo" class="brand" src="images/eva-logo.png" />
+            </md-button>
+            <span flex></span>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
+              challenges
+            </md-button>
+            <md-button ng-show="authentication.isAuthed" ng-href="#/about">{{'nav.about' | translate}}</md-button>
+            <md-button ng-hide="authentication.isAuthed" ng-href="#/register">{{'nav.register' | translate}}</md-button>
+            <md-button ng-hide="authentication.isAuthed" ng-href="#/login"> {{'nav.login' | translate}}</md-button>
+            <md-button ng-show="authentication.isAuthed" ng-href="#/settings"> {{'nav.settings' | translate}}</md-button>
+            <md-button ng-show="authentication.isAuthed" ng-click="logout()" ng-href="#/logout">{{'nav.logout' | translate}}</md-button>
+            <span flex></span>
+
           </div>
-        </md-toolbar>
-      </div>
+        </div>
+      </md-toolbar>
 
 
       <div layout="row" ng-controller="NavCtrl">
 
-        <md-sidenav flex layout="column" class="md-sidenav-left md-whiteframe-z2" hide-gt-sm md-component-id="left">
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" hide-gt-sm md-component-id="left">
           <md-toolbar layout="column" layout-align="center center">
-            <span>Toolbar</span>
+            <span>
+              <img class="brand" src="images/eva-logo.png" />
+            </span>
           </md-toolbar>
           <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
-            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/home" ng-click="closeNav()">
-              <h3>home</h3>
+            <md-button class="sidenav-button" ng-href="#/home">
+              <h4>home</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/main">
-              <h3>main</h3>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/main">
+              <h4>main</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="closeNav()" ng-href="#/challenges">
-              <h3>challenges</h3>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
+              <h4>challenges</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/register">
-              <h3>register</h3>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
+              <h4>challenges</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-click="closeNav()" ng-href="#/login">
-              <h3>login</h3>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/about">
+              <h4>{{'nav.about' | translate}}</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout(); closeNav()">
-              <h3>logout</h3>
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/register">
+              <h4>{{'nav.register' | translate}}</h4>
+            </md-button>
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/login">
+              <h4>{{'nav.login' | translate}}</h4>
+            </md-button>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout()">
+              <h4>{{'nav.logout' | translate}}</h4>
             </md-button>
           </md-content>
-
         </md-sidenav>
-
-        <!-- CENTER MAIN CONTENT WITH FLEX -->
-
-        <div flex ui-view>
-        </div>
       </div>
     </div>
 
+    <ng-include ng-show="loading" id="loading-view" src="'/views/loading.html'"></ng-include>
 
-  </md-content>
+    <div id="ui-view" ui-view ng-hide="loading"></div>
+
+  </div>
+
+
 
 
   <!-- Google Analytics: change UA-XXXXX-X to be your site's ID -->
@@ -121,26 +132,41 @@
   <script src="bower_components/angular-touch/angular-touch.js"></script>
   <script src="bower_components/angular-validation-match/dist/angular-validation-match.min.js"></script>
   <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
-  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-translate/angular-translate.js"></script>
   <script src="bower_components/angular-translate-loader-static-files/angular-translate-loader-static-files.js"></script>
+  <script src="bower_components/angular-messages/angular-messages.js"></script>
   <script src="bower_components/angular-aria/angular-aria.js"></script>
   <script src="bower_components/angular-material/angular-material.js"></script>
+  <script src="bower_components/angular-simple-logger/dist/angular-simple-logger.js"></script>
+  <script src="bower_components/lodash/lodash.js"></script>
+  <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
+  <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
-  <script src="scripts/app.js"></script>
-  <script src="scripts/controllers/main.js"></script>
-  <script src="scripts/controllers/login.js"></script>
-  <script src="scripts/controllers/register.js"></script>
-  <script src="scripts/controllers/challengerecipe.js"></script>
-  <script src="scripts/controllers/challenges.js"></script>
-  <script src="scripts/controllers/nav.js"></script>
-  <script src="scripts/services/authService.js"></script>
-  <script src="scripts/services/challengeService.js"></script>
-  <script src="scripts/services/recipeService.js"></script>
-  <script src="scripts/factories/localstorage.js"></script>
+  <script src="scripts/app.module.js"></script>
+  <script src="scripts/app.config.js"></script>
+  <script src="scripts/controllers/nav.controller.js"></script>
+  <script src="scripts/controllers/animation.controller.js"></script>
+  <script src="scripts/controllers/main.controller.js"></script>
+  <script src="scripts/controllers/login.controller.js"></script>
+  <script src="scripts/controllers/register.controller.js"></script>
+
+  <script src="scripts/controllers/settings.controller.js"></script>
+  <script src="scripts/controllers/createchallenge.controller.js"></script>
+  <script src="scripts/controllers/creativecooking.controller.js"></script>
+  <script src="scripts/services/UserInfoService.service.js"></script>
+
+  <script src="scripts/services/authService.service.js"></script>
+  <script src="scripts/services/challengeService.service.js"></script>
+  <script src="scripts/services/recipeService.service.js"></script>
+  <script src="scripts/services/animationService.service.js"></script>
+  <script src="scripts/services/ingredientService.service.js"></script>
+  <script src="scripts/directives/ingredientcomponent.directive.js"></script>
+  <script src="scripts/factories/localstorage.factory.js"></script>
+  <script src="scripts/controllers/challenges.controller.js"></script>
+  <script src="scripts/controllers/challengerecipe.controller.js"></script>
   <!-- endbuild -->
 </body>
 

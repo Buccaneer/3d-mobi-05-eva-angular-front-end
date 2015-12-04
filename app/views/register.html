@@ -1,56 +1,53 @@
-<div layout="row" layout-align="center">
-  <md-content layout-align="center" layout-padding flex="75">
-    <div class="white-bg md-whiteframe-10dp" id="registerForm">
-      <div layout-align="center center" layout="column">
-        <div ng-show="error" ng-bind-html="error | translate">
-        </div>
-        <div class="error-message" ng-show="signUp_form.cfPassword.$error.match && signUp_form.$submitted ||signUp_form.cfPassword.$error.match && signUp_form.cfPassword.$touched">
-          {{'register.errors.passwordConfirmation' | translate}}
-        </div>
-        <div>
-          <h1>{{'register.signUp' | translate}}</h1>
-        </div>
 
-        <form name="signUp_form" ng-submit="callRegister()" novalidate>
-          <div layout-align="center" layout-margin layout-padding layout="column">
-            <md-input-container>
-              <label>{{'register.email' | translate}}</label>
-              <input name="email" ng-model="user.email" required type="email">
-              <div ng-messages="signUp_form.email.$error" ng-show="signUp_form.$submitted || signUp_form.email.$touched">
-                <div ng-message="required">{{'register.errors.emailRequired' | translate}}</div>
-                <div ng-message="email">{{'register.errors.emailInvalid' | translate}}</div>
-              </div>
-            </md-input-container>
+<div id="registerWrapper">
 
-            <md-input-container>
-              <label>{{'register.password' | translate}}</label>
-              <input name="password" ng-minlength=6 ng-model="user.password" required type="password">
-              <div ng-messages="signUp_form.password.$error" ng-show="signUp_form.$submitted || signUp_form.password.$touched">
-                <div ng-message="required">{{'register.errors.passwordRequired' | translate}}</div>
-                <div ng-message="minlength">{{'register.errors.passwordMinLength' | translate}}</div>
-              </div>
-            </md-input-container>
-
-            <md-input-container>
-              <label>
-                {{'register.passwordConfirmation' | translate}}
-              </label>
-              <input name="cfPassword" ng-minlength=6 ng-model="user.confirmPassword" match="user.password" required type="password">
-              <div ng-messages="signUp_form.cfPassword.$error" ng-show="signUp_form.$submitted || signUp_form.cfPassword.$touched">
-                <div ng-message="required">{{'register.errors.passwordRequired' | translate}}</div>
-                <div ng-message="minlength">{{'register.errors.passwordMinLength' | translate}}</div>
-              </div>
-
-            </md-input-container>
-          </div>
-
-          <div layout-align="center" layout="row" layout-margin>
-            <md-button class="md-raised md-primary" type="submit">
-              {{'register.registerButton' | translate}}
-            </md-button>
-          </div>
-        </form>
+  <div flex="100" id="register" class="bg-black" layout="column" when-visible="bounceInUp">
+    <div layout-align="center center" layout="column">
+      <div ng-show="error">
+        {{error | translate}}
+      </div>
+      <div>
+        <h1>{{'register.signUp' | translate}}</h1>
       </div>
     </div>
-  </md-content>
-</div>
+
+    <form name="signUp_form" ng-submit="callRegister()" novalidate layout-margin layout-padding>
+        <md-input-container>
+          <label>{{'register.email' | translate}}</label>
+          <input name="email" ng-model="user.email" required type="email">
+          <div ng-messages="signUp_form.email.$error" ng-show="signUp_form.$submitted || signUp_form.email.$touched">
+            <div ng-message="required">{{'register.errors.emailRequired' | translate}}</div>
+            <div ng-message="email">{{'register.errors.emailInvalid' | translate}}</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label>{{'register.password' | translate}}</label>
+          <input name="password" ng-minlength=6 ng-model="user.password" required type="password">
+          <div ng-messages="signUp_form.password.$error" ng-show="signUp_form.$submitted || signUp_form.password.$touched">
+            <div ng-message="required">{{'register.errors.passwordRequired' | translate}}</div>
+            <div ng-message="minlength">{{'register.errors.passwordMinLength' | translate}}</div>
+          </div>
+        </md-input-container>
+
+        <md-input-container>
+          <label>
+            {{'register.passwordConfirmation' | translate}}
+          </label>
+          <input name="cfPassword" ng-minlength=6 ng-model="confirmPassword" required type="password">
+          <div ng-messages="signUp_form.cfPassword.$error" ng-show="signUp_form.$submitted || signUp_form.cfPassword.$touched">
+            <div ng-message="required">{{'register.errors.passwordRequired' | translate}}</div>
+            <div ng-message="minlength">{{'register.errors.passwordMinLength' | translate}}</div>
+          </div>
+
+        </md-input-container>
+
+      <div layout-align="center" layout-margin layout="row">
+        <md-button class="md-raised md-primary" type="submit">
+          {{'register.registerButton' | translate}}
+        </md-button>
+      </div>
+    </form>
+
+  </div> <!-- close #register -->
+</div> <!-- close #registerWrapper -->

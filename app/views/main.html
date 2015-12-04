@@ -1,3 +1,45 @@
-<div layout="row" layout-align="center">
-  Je kan deze pagina niet zien zonder ingelogd te zijn.
+<div class="blackboard-wrapper" layout="column" ng-init="init()">
+
+  <!-- DIV TO SHOW CURRENT CHALLENGE -->
+  <div ng-show="currentChallenge">
+    <div class="big-left-margin">
+      <h1>Timer hier</h1>
+    </div>
+    <div class="big-left-margin" id="title" layout-align="center" layout="row">
+      <h1>Huidige uitdaging:</h1>
+    </div>
+
+    <div>
+      <img id="recipe-image" src={{currentChallenge.Recipe.Image}}/>
+      <h1>{{currentChallenge.Recipe.Name}}</h1>
+    </div>
+
+    <div>
+      <md-button class="header-btn md-primary md-raised" ng-href="#/challenge/{{currentChallenge.ChallengeId}}">Bekijk details</md-button>
+    </div>
+  </div>
+
+  <!-- DIV TO SHOW WHEN NO CURRENT CHALLENGE -->
+  <div ng-hide="currentChallenge">
+    <h1>
+      U hebt nog geen actieve uitdaging.
+    </h1>
+
+    <md-button class="md-primary md-raised" ng-href="#/challenge/create">
+      Verkrijg een uitdaging</md-button>
+  </div>
+
+  <!-- STATS -->
+  <div id="stats" flex="100">
+    <h1>Statistieken</h1>
+    <!-- <div id="progressBar">
+          <md-progress-circular md-diameter="99%" md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}"></md-progress-circular>
+        </div> -->
+    <p>STATS HIER</p>
+
+    <h1>Prestaties</h1>
+    <p>Hier komen de achievements</p>
+  </div>
+  <!-- close stats -->
 </div>
+<!-- close wrapper -->

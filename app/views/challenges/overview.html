@@ -1,20 +1,22 @@
-<div flex="100" layout-align="center center" layout="column">
-  <h1>Challenges</h1>
-  <a href="#/challenge/create">New challenge</a>
+<div class="blackboard-wrapper">
+  <div layout-align="center" layout="row">
 
-  <div>
-    <md-list>
-      <md-list-item class="challenge-list" ng-repeat="challenge in challenges | orderBy:'-Date'">
-        <div class="challenge" ng-class="{done: challenge.Done, today: !challenge.Done}">
-          <span class="title">
-            <a href="#/challenge/{{challenge.ChallengeId}}">
-              Challenge
-              {{$index + 1}}</a>
-          </span>
-          <div class="md-list-item-text">{{challenge.Date | date:'fullDate'}}</div>
+    <div layout-align="center center" layout="column">
+      <div layout-align="center" layout="row">
+        <div layout="column">
+          <h1>Challenges</h1>
+          <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
         </div>
-        <md-divider></md-divider>
-      </md-list-item>
-    </md-list>
+      </div>
+
+      <div layout="column" ng-repeat="challenge in challenges | orderBy: '-Date'">
+
+        <h2 class="md-title">Challenge
+          {{$index + 1}}</h2>
+        <p></p>
+        <md-button class="md-raised md-primary" ng-href="#/challenge/{{challenge.ChallengeId}}">Bekijk details</md-button>
+      </div>
+
+    </div>
   </div>
 </div>

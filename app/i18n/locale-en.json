@@ -1,7 +1,33 @@
 {
-  "home": {
-    "title": "Welcome to the 21 day challenge website!"
+  "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen",
+
+
+  "nav": {
+    "register": "register",
+    "login": "login",
+    "logout": "logout",
+    "settings": "settings",
+    "about": "About"
   },
+
+  "home": {
+    "title": "Make it veggie!",
+    "headline": "We challenge you to complete one of our challenges each day, for 21 days straight!",
+    "text-signup-login": "If you think you've got what it takes, you can sign up or login below.",
+    "text-about": "Take a look here at how the website works!",
+    "about": "How does it work?",
+    "about-intro-1": "With this application you can discover the world of vegetables by completing daily challenges.",
+    "about-step-1-title": "You register and/or sign in on the website",
+    "about-step-1-text": "We'll ask a few questions the first time you log in, that way we can personalize all the challenges.",
+    "about-step-2-title": "You're logged in",
+    "about-step-2-text": "In case you already have a challenge for today, you'll get to view the challenge and the time that's left to complete it. If you do not have a challenge, you'll be able to request one. Furthermore you can look at the achievements you have unlocked and the previous challenges.",
+    "about-step-3-title": "Receiving a new challenge",
+    "about-step-3-text": "You can view the details of the challenge by clicking on it. You can also start a new one. You can also take a look at the different type of challenges.",
+    "about-step-4-title": "Completing a challenge",
+    "about-step-4-text": "If you completed the challenge, don't forget to mark it as done on the bottom of the detailed view!",
+    "about-step-5": "Congratulations, you just completed your first challenge!"
+  },
+
   "login": {
     "email": "Email address",
     "emailPlaceholder": "example@example.com",
@@ -35,5 +61,35 @@
       "passwordMinLength":"Your password has to be 6 characters long.",
       "passwordConfirmation":"The 2 passwords you have entered don't match."
     }
+  },
+
+  "challenges": {
+    "create": {
+      "choose": "Kies één van deze uitdagingen!",
+      "recipe": "Recept",
+      "recipe-text": "Maak één van onze gerechten klaar.",
+      "recipe-region": "Uitheems recept",
+      "recipe-region-text": "Leer de uithoeken van de wereld kennen en maak een gerecht uit een ander deel van de wereld klaar!",
+      "restaurant": "Restaurant",
+      "restaurant-text": "Geen zin om te koken? Probeer deze restaurants eens.",
+      "restaurant-region": "Uitheems restaurant",
+      "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
+      "creative-cooking": "Creative Cooking",
+      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen."
+    }
+  },
+
+  "recipe": {
+    "choose": "Kies één van de volgende recepten:"
+  },
+
+  "about": {
+    "text": "The EVA 21 days challenge was developed for EVA vzw. This app wants to inspire people to eat more vegan for 21 days and convince them to use less animal-related products and more alternatives.",
+    "info": "If you want to read more about the goal of EVA, you can always go to their website."
+  },
+
+  "settings": {
+    "loading": "Trying to find out more about you...",
+    "userSettings": "User Settings"
   }
 }

@@ -1,40 +1,317 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
 // endbower
+//define variables here
+$nav-height: 7;
+$min-nav-height: 7vh;
+$content-height: 100% - $nav-height;
+$background-black-opac: rgba(0, 0, 0, 0.8);
+$margin-top-vh: 10vh;
+
+//amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
+$amount-challenge-types: 6;
+$vh-per-challenge: 30vh;
+$sidenav-width: 100vw - $nav-height;
+
+//fonts
+@font-face {
+  font-family: "museo-normal";
+  font-style: normal;
+  font-weight: 300;
+  src: url("/fonts/eva-fonts/Museo300-Regular.otf");
+}
+@font-face {
+  font-family: "museo-weighted";
+  font-weight: 500;
+  src: url("/fonts/eva-fonts/Museo500-Regular.otf");
+}
+@font-face {
+  font-family: "artistamp";
+  font-weight: 700;
+  src: url("/fonts/eva-fonts/ArtistampMedium.ttf");
+}
+@font-face {
+  font-family: "georgia";
+  src: url("/fonts/eva-fonts/Georgia.ttf");
+}
+[ng\:cloak],
+[ng-cloak],
+.ng-cloak {
+  display: none !important;
+}
 body {
   padding: 0;
+  font-family: georgia;
+}
+md-toolbar {
+  font-family: georgia;
+  height: $min-nav-height !important;
+}
+div {
+  display: block;
+}
+h1,
+h2,
+h3,
+h4,
+h5 {
+  font-family: museo-weighted;
+}
+md-button {
+  font-family: museo-normal;
+}
+md-toolbar {
+
+}
+#header {
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
+
+  // background-image: url("../images/header.png");
+  background-size: cover;
+  min-height: 100vh;
 }
 md-sidenav,
-md-sidenav.md-locked-open{
+md-sidenav.md-locked-open,
+md-sidenav.md-closed.md-locked-open-add-active {
   min-width: 200px !important;
-  width: 60vw !important;
+  width: 80vw !important;
   max-width: 400px !important;
 }
-.white-bg {
-  margin-top: 2vh;
-  background-color: rgba(255, 255, 255, .75);
-  border-radius: 5px;
+md-input-container label {
+  color: #fff !important;
 }
-.recipe-properties {
-  padding: 10px;
+md-input-container .md-input {
+  color: #fff !important;
+  border-color: #fff;
 }
-.sidenav-content{
-  align-items: stretch;
-  padding: 0;
+.brand {
+  max-height: 40px;
+  max-height: 40px;
+  margin-bottom: 5px;
 }
-.sidenav-button {
-  margin: 0;
+.border-white {
+  border-style: solid;
+  border-color: #fff;
+  border-width: thin;
 }
-.sidenav-button:hover {
-  margin: 0;
-  color: #FFFFFF
+.bg-black {
+  background-color: $background-black-opac;
 }
-
-@media screen and (max-width: 767px) {
-
+.fullwidth {
+  height: 100%;
 }
-
-/* Responsive: Portrait tablets and up */
-@media screen and (min-width: 768px) {
-
+.fullwidth-item {
+  min-height: $vh-per-challenge;
+  background-size: cover;
+}
+.fullwidth-item-inner {
+  color: #fff;
+  background-color: $background-black-opac;
+  min-width: 250px;
+  max-width: 800px !important;
+  padding-top: 5px;
+}
+.blackboard-wrapper {
+  background-image: url("../images/blackboard.jpg");
+  background-color: #000;
+  background-size: cover;
+  position: absolute;
+  min-height: $content-height;
+  min-width: 100%;
+  padding-bottom: 50px;
+  color: #fff;
+}
+#header-btns {
+  margin-bottom: 20px;
+}
+#header-text {
+  margin-left: 50vw;
+  margin-top: 25vh;
+}
+#loginWrapper,
+#registerWrapper {
+  background-image: url("../images/form-bg.jpg");
+  background-size: cover;
+  min-height: $content-height;
+  min-width: 100%;
+  position: absolute;
+}
+#login,
+#register {
+  max-width: 600px;
+  margin-top: $margin-top-vh;
+  margin-left: auto;
+  margin-right: auto;
+  color: #fff !important;
+}
+#recipe-list {
+  display: flex;
+  flex-direction: row;
+  flex-grow: 1;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+#recipe-tile {
+  flex-grow: 1;
+  background-size: cover;
+  background-position: center;
+  margin: 10px;
+  height: 20em;
+  width: 20em;
+  align-self: center;
+  max-width: 800px;
+}
+#recipe-tile-content {
+  padding: 20px;
+}
+#recipe-header {
+  margin-top: 0;
+  min-height: 200px;
+  height: 30vh;
+  min-width: 100%;
+  background-size: cover;
+  background-position: center;
+}
+#recipe-header-content {
+  padding: 20px;
+}
+#recipe-content {
+  margin-top: 10px;
+  margin-left: 20vw;
+  margin-right: 20vw;
+}
+#recipe {
+  background-image: url("../images/challenges/recipe.jpg");
+}
+#recipe-region {
+  background-image: url("../images/challenges/recipe-region.jpg");
+}
+#restaurant {
+  background-image: url("../images/challenges/rest.jpg");
+}
+#restaurant-region {
+  background-image: url("../images/challenges/rest-region.jpg");
+}
+#creative-cooking {
+  background-image: url("../images/challenges/creative-cooking.jpg");
+}
+#video-background {
+  /*  making the video fullscreen  */
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  overflow: hidden;
+  z-index:0; //under the text
+}
+#video-overlay {
+  position: relative;
+  display:block;
+  z-index:1; //over the video
+  margin-top: 35vh;
+}
+#video-content {
+  padding: 20px;
+  color: #fff;
+}
+#loading-bar {
+  z-index:1;
+}
+//ANIMATIONS
+.bounceInUp {
+  -webkit-animation: bounceInUp 1s;
+  -webkit-animation-delay: 0s;
+}
+.bounceInLeft {
+  -webkit-animation: bounceInLeft 1s;
+  -webkit-animation-delay: 0s;
+}
+.fadeInLeft {
+  -webkit-animation: fadeInLeft 1s;
+  -webkit-animation-delay: 0s;
+}
+.fadeInRight {
+  -webkit-animation: fadeInRight 1s;
+  -webkit-animation-delay: 0s;
+}
+.slideInUp {
+  -webkit-animation: slideInUp 1s;
+}
+@media screen and (max-width: 768px) {
+  .fullwidth {
+    margin-bottom: 0;
+  }
+  .fullwidth-item {
+    width: 100%;
+    min-height: 200px;
+  }
+  #header {
+    background-image: url("../images/resp-header.jpg");
+    background-size: cover;
+  }
+  #loginWrapper,
+  #registerWrapper {
+    background-image: url("../images/sm/form-bg.jpg");
+  }
+  #login,
+  #register {
+    max-width: none;
+    margin: 0;
+  }
+  #header-text {
+    color: #fff;
+    margin-left: 0;
+    margin-top: 40vh;
+  }
+  #recipe {
+    background-image: url("../images/challenges/sm/recipe.jpg");
+  }
+  #recipe-region {
+    background-image: url("../images/challenges/sm/recipe-region.jpg");
+  }
+  #restaurant {
+    background-image: url("../images/challenges/sm/rest.jpg");
+  }
+  #restaurant-region {
+    background-image: url("../images/challenges/sm/rest-region.jpg");
+  }
+  #creative-cooking {
+    background-image: url("../images/challenges/sm/creative-cooking.jpg");
+  }
+  #recipe-list {
+    justify-content: none;
+  }
+  #recipe-tile {
+    margin-top: 10px;
+    width: 100%;
+  }
+  #recipe-tile-content {
+    width: 100%;
+    text-align: center;
+    background-color: $background-black-opac;
+  }
+}
+@media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
+  #login,
+  #register {
+    margin-top: $margin-top-vh;
+    margin-left: auto;
+    margin-right: auto;
+  }
+  #recipe-list {
+    margin-left: 2vw;
+    margin-right: 2vw;
+  }
+  #recipe-tile {
+    margin-top: 20px;
+    width: 400px;
+  }
 }

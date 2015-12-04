@@ -1,7 +1,32 @@
 {
-  "home": {
-    "title": "Welkom op de 21 day challenge website!"
+  "___comment": "niks",
+
+
+  "nav": {
+    "register": "registreren",
+    "login": "inloggen",
+    "logout": "uitloggen",
+    "settings": "instellingen",
+    "about": "over"
   },
+  "home": {
+    "title": "Maak het plantaardig!",
+    "headline": "Welkom op de 21 day challenge website!",
+    "text-signup-login": "Indien u klaar bent om de uitdaging aan te gaan, kan u zich hieronder aanmelden of registreren.",
+    "text-about": "Lees hieronder hoe het werkt!",
+    "about": "Hoe werkt het?",
+    "about-intro-1": "Met deze applicatie kan u de wereld van plantaardig eten ontdekken door middel van challenges die u elke dag kan uitvoeren.",
+    "about-step-1-title": "Je schrijft je in en/of meld je aan",
+    "about-step-1-text": "De eerste keer dat je inlogt vragen we om een paar gegevens in te vullen, zo kunnen we de uitdagingen personaliseren voor iedere gebruiker.",
+    "about-step-2-title": "Je bent ingelogd",
+    "about-step-2-text": "Indien je al een uitdaging hebt voor vandaag, dan krijg je deze bovenaan te zien met daarbij de resterende tijd. Als je nog geen uitdaging hebt, kan je er één aanvragen. Verder kan je de behaalde prestaties en de vorige uitdagingen bekijken.",
+    "about-step-3-title": "Een nieuwe uitdaging verkrijgen",
+    "about-step-3-text": "Je kan de details van de uitdaging bekijken door er eenvoudigweg op te klikken. Je kan er ook een nieuwe uitdaging beginnen. Bekijk zeker en vast de verschillende soorten uitdagingen.",
+    "about-step-4-title": "Een uitdaging vervolledigen",
+    "about-step-4-text": "Indien je de uitdaging vervolledigd hebt, vergeet dan niet om dit aan te duiden door onderaan bij de details op de knop te drukken!",
+    "about-step-5": "Proficiat, je hebt je eerste uitdaging vervolledigd!"
+  },
+
   "login": {
     "email": "Email adres",
     "emailPlaceholder": "voorbeeld@voorbeeld.com",
@@ -30,11 +55,58 @@
     "registerButton": "Registreer",
 
     "errors": {
-      "passwordRequired":"@:login.errors.passwordRequired",
-      "emailRequired":"@:login.errors.emailRequired",
-      "emailInvalid":"@:login.errors.emailInvalid",
-      "passwordMinLength":"Uw wachtwoord moet minstens 6 karakters tellen.",
-      "passwordConfirmation":"De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
+      "passwordRequired": "@:login.errors.passwordRequired",
+      "emailRequired": "@:login.errors.emailRequired",
+      "emailInvalid": "@:login.errors.emailInvalid",
+      "passwordMinLength": "Uw wachtwoord moet minstens 6 karakters tellen.",
+      "passwordConfirmation": "De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
     }
+  },
+
+  "challenges": {
+    "create": {
+      "choose": "Kies één van deze uitdagingen!",
+      "recipe": "Recept",
+      "recipe-text": "Maak één van onze gerechten klaar.",
+      "recipe-region": "Uitheems recept",
+      "recipe-region-text": "Leer de uithoeken van de wereld kennen en maak een gerecht uit een ander deel van de wereld klaar!",
+      "restaurant": "Restaurant",
+      "restaurant-text": "Geen zin om te koken? Probeer deze restaurants eens.",
+      "restaurant-region": "Uitheems restaurant",
+      "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
+      "creative-cooking": "Creative Cooking",
+      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen."
+    }
+  },
+
+  "recipe": {
+    "choose": "Kies één van de volgende recepten:"
+  },
+
+  "loading": {
+    "recipes": "We zijn wat recepten aan het zoeken!",
+    "login": "Even geduld!",
+    "register": "@:loading.login",
+    "social": "Even Google, Facebook en Twitter contacteren.",
+    "challenges": "We zijn wat challenges aan het uitzoeken!"
+  },
+
+  "about": {
+    "text": "De EVA 21 dagen challenge werd ontwikkeld in naam van EVA vzw. Deze app wil mensen aanzetten om 21 dagen plantaardig te eten om hen te overtuigen om minder dierlijke producten te gebruiken en meer alternatieven te nemen.",
+    "info": "Als je meer informatie wil weten over de werking van EVA, dan kun je altijd terecht op hun website."
+  },
+
+  "settings": {
+    "loading": "Even wat gegevens over je ophalen...",
+    "userSettings": "Instellingen",
+    "firstname": "Voornaam",
+    "lastname": "Achternaam",
+    "birthdate": "Geboortedatum",
+    "allergies": "Uw allergieën",
+    "budget": "Wat is uw budget?",
+    "typeOfVegan": "Bent u vegetariër?",
+    "peopleInFamily": "Aantal gezinsleden",
+    "save": "Opslaan"
+
   }
 }
