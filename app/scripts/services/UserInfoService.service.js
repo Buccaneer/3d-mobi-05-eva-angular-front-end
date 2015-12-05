@@ -11,7 +11,7 @@
     .module('eva21DayChallengeApp').service('UserInfoService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope',
       function ($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
         var service = {
-          userInfo: [] ,
+          userInfo: {} ,
 
           init: function () {
             //if there is a token object in the localstorage,
