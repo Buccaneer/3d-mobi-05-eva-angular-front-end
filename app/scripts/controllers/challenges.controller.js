@@ -10,10 +10,15 @@
    * Controller of the eva21DayChallengeApp
    */
   angular
-    .module('eva21DayChallengeApp').controller('ChallengesCtrl', ['$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'AuthService',
-      function($scope, $localstorage, TOKEN, ChallengeService) {
+    .module('eva21DayChallengeApp').controller('ChallengesCtrl', ['$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'AuthService','UserInfoService',
+      function($scope, $localstorage, TOKEN, ChallengeService, UserInfoService) {
         $scope.challenges = ChallengeService.challenges;
         $scope.detailedChallenges = [];
+        $scope.hasNotCreated = false;
+        
+        UserInfoService.getUserInfo().then(function(result) {
+          $scope.hasNotCreated = !result.data.HasRequestedChallengeToday;
+        });
 
         // $scope.loading = true;
 
