@@ -4,20 +4,43 @@
 		<div layout-align="center center" layout="column">
 			<div layout-align="center" layout="row">
 				<div layout="column">
-					<h1>Badges</h1>
+					<h1>{{userinfo.FirstName}} {{userinfo.LastName}} <small><strong>{{'badges.' +title | translate }}</strong></small></h1>
+
+				</div>
+			</div>
+
+			<div layout-align="center" layout="row">
+				<div layout="column">
+					<h2>Badges</h2>
+
+				</div>
+			</div>
+
+			<div layout-align="center" layout="row">
+				<div layout="column">
+					<md-grid-list md-cols-gt-md="6" md-cols-sm="3" md-cols-md="8" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="16px"
+					md-gutter-gt-sm="8px" md-gutter="4px" ng-style="{'width': '1024px'}">
+						<md-grid-tile ng-repeat="badge in userinfo.Badges" ng-style="{
+            'background-image': 'url({{'badges.' + badge + '_image' | translate}})',
+			'background-color': '#b3a59f',
+			'background-position': 'center',
+			'background-repeat': 'no-repeat'
+          }" md-colspan-gt-sm="2" md-rowspan-gt-sm="2">
+							<md-grid-tile-footer >
+								<h3>{{'badges.' + badge + '_title' | translate }}</h3>
+							</md-grid-tile-footer>
+							<md-tooltip>
+								{{ 'badges.' + badge + '_desc' | translate }}
+							</md-tooltip>
+						</md-grid-tile>
+					</md-grid-list>
 				</div>
 			</div>
 		</div>
 
 	</div>
-	<div id="recipe-list" layout-align="center center" layout="row" when-visible="slideInUp">
-		<div class="border-white" id="recipe-tile" layout-align="center center" layout="column"
-		ng-repeat="badge in userinfo.Badges" ng-style="{'background-image':'url(https://cdn1.iconfinder.com/data/icons/sports-awards/32/badge-star-512.png)'}">
-			<p id="recipe-tile-content" class="bg-black">
-				{{badge}}
-			</p>
 
-		</div>
+	<div layout-align="center center" flex="100">
+
 	</div>
-
 </div>
