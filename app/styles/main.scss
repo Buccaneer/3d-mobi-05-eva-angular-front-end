@@ -4,7 +4,7 @@
 //define variables here
 $nav-height: 7;
 $min-nav-height: 7vh;
-$content-height: 100% - $nav-height;
+$content-height: 100vh - $nav-height;
 $background-black-opac: rgba(0, 0, 0, 0.8);
 $margin-top-vh: 10vh;
 
@@ -61,7 +61,7 @@ md-button {
   font-family: museo-normal;
 }
 md-toolbar {
-
+  min-height: $min-nav-height;
 }
 #header {
   /* FF3.6-15 */
@@ -74,6 +74,9 @@ md-toolbar {
   // background-image: url("../images/header.png");
   background-size: cover;
   min-height: 100vh;
+}
+#burger {
+  margin-top: 20px;
 }
 md-sidenav,
 md-sidenav.md-locked-open,
@@ -116,14 +119,16 @@ md-input-container .md-input {
   max-width: 800px !important;
   padding-top: 5px;
 }
-.blackboard-wrapper {
-  background-image: url("../images/blackboard.jpg");
-  background-color: #000;
+.wrapper {
   background-size: cover;
   position: absolute;
   min-height: $content-height;
   min-width: 100%;
   padding-bottom: 50px;
+}
+.blackboard-wrapper {
+  background-image: url("../images/blackboard.jpg");
+  background-color: #000;
   color: #fff;
 }
 #header-btns {
@@ -210,21 +215,22 @@ md-input-container .md-input {
   bottom: 0;
   left: 0;
   overflow: hidden;
-  z-index:0; //under the text
+  z-index: 0; //under the text
 }
 #video-overlay {
   position: relative;
-  display:block;
-  z-index:1; //over the video
-  margin-top: 35vh;
+  display: block;
+  z-index: 1; //over the video
+  margin-top: 33vh;
 }
 #video-content {
   padding: 20px;
   color: #fff;
 }
 #loading-bar {
-  z-index:1;
+  z-index: 1;
 }
+
 //ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
@@ -246,6 +252,13 @@ md-input-container .md-input {
   -webkit-animation: slideInUp 1s;
 }
 @media screen and (max-width: 768px) {
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-size: 23px;
+  }
   .fullwidth {
     margin-bottom: 0;
   }
