@@ -1,6 +1,5 @@
-<md-content layout-align="center" layout="row" ng-init="getCurrentPosition()">
+<div class="restaurant-wrapper" layout-align="center" layout="row" ng-init="getCurrentPosition()" layout-fill>
   <div layout="column">
-
     <div class="bg-info">
       <p>
         We gebruiken uw locatie zodat we vegetarische restaurants in uw directe omgeving kunnen aanraden.
@@ -9,12 +8,12 @@
         Indien u dit niet wenst kan u locatievoorzieningen voor deze app negeren en zal de app het centrum van Gent als aangeraden locatie gebruiken, met een straal van 20km.
       </p>
     </div>
-    <md-content>
-      <input type="number"/>
+
+    <div>
+      <input ng-model="distance" type="number"/>
       <md-button class="md-raised" ng-click="findRestaurants()">
         Haal wat restaurants op!
       </md-button>
-    </md-content>
+    </div>
   </div>
-
-</md-content>
+</div>
