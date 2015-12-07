@@ -1,10 +1,9 @@
-(function () {
+(function() {
 
   'use strict';
 
-
   angular
-    .module('eva21DayChallengeApp').config(function ($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider) {
+    .module('eva21DayChallengeApp').config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider) {
       $urlRouterProvider.otherwise('/home');
 
 
@@ -37,7 +36,7 @@
           controller: 'SettingsCtrl',
           requireAuth: true,
           resolve: {
-            fetchUserInfo: ['UserInfoService', function (UserInfoService) {
+            fetchUserInfo: ['UserInfoService', function(UserInfoService) {
               return UserInfoService.getUserInfo();
             }]
           }
@@ -53,7 +52,7 @@
           controller: 'ChallengesCtrl',
           requireAuth: true,
           resolve: {
-            fetchChallengesPromise: ['ChallengeService', function (ChallengeService) {
+            fetchChallengesPromise: ['ChallengeService', function(ChallengeService) {
               return ChallengeService.getChallenges();
             }]
           }
@@ -70,7 +69,7 @@
           controller: 'ChallengeCtrl',
           requireAuth: true,
           resolve: {
-            challenge: ['$stateParams', 'ChallengeService', function ($stateParams, ChallengeService) {
+            challenge: ['$stateParams', 'ChallengeService', function($stateParams, ChallengeService) {
               return ChallengeService.getChallenge($stateParams.id);
             }]
           }
@@ -87,14 +86,14 @@
           controller: 'ChallengeRecipesCtrl',
           requireAuth: true,
           resolve: {
-            fetchChallengesPromise: ['RecipeService', function (RecipeService) {
+            fetchChallengesPromise: ['RecipeService', function(RecipeService) {
               return RecipeService.getRecipes();
             }]
           }
         })
         .state('select-view-creative-cooking', {
           url: '/challenge/create/creative-cooking',
-          //      controller: 'AgreeRecipeCtrl',
+          //controller: 'AgreeRecipeCtrl',
           templateUrl: 'views/challenges/create-creative-cooking.html',
 
           controller: 'CreativeCookingCtrl',
@@ -106,10 +105,16 @@
           controller: 'BadgeCtrl',
           requireAuth: true,
           resolve: {
-            fetchUserInfoPromise: ['UserInfoService', function( UserInfoService ) {
+            fetchUserInfoPromise: ['UserInfoService', function(UserInfoService) {
               return UserInfoService.getUserInfo();
             }]
           }
+
+        }).state('create-restaurant-challenge', {
+          url: '/challenge/create/restaurant',
+          templateUrl: '/views/challenges/create-restaurant-challenge.html',
+          controller: 'RestaurantCtrl',
+          requireAuth: true
         });
 
 
