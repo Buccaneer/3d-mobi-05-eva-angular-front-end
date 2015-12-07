@@ -1,6 +1,5 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
-
 // endbower
 //define variables here
 $nav-height: 7;
@@ -217,7 +216,7 @@ md-input-container .md-input {
   position: relative;
   display: block;
   z-index: 1; //over the video
-  margin-top: 35vh;
+  margin-top: 33%;
 }
 #video-content {
   padding: 20px;

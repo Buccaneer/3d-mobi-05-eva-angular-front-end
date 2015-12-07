@@ -16,7 +16,7 @@
     "angular-translate": "~2.8.1",
     "angular-translate-loader-static-files": "~2.8.1",
     "angular-messages": "~1.4.7",
-    "angular-material": "~0.11.4",
+    "angular-material": "0.11.3",
     "angular-google-maps": "~2.2.1",
     "angular-scroll-animate": "~0.9.8"
   },
