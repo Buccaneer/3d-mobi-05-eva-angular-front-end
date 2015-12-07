@@ -7,6 +7,8 @@
     .controller('RestaurantCtrl', ['RestaurantService', '$scope', 'uiGmapGoogleMapApi', '$rootScope',
     function(restaurantService, $scope, uiGmapGoogleMapApi, $rootScope) {
 
+      $scope.distance = 20;
+
       $scope.getCurrentPosition = function() {
         var currentPositionPromise = restaurantService.getCurrentPosition();
         currentPositionPromise.then(function(data) {
@@ -22,7 +24,7 @@
         /*
         Set default values
         */
-        $scope.distance = typeof $scope.distance !== 'undefined' ? $scope.distance : '20';
+
         $scope.currentPosition = typeof $scope.currentPosition !== 'undefined' ? $scope.currentPosition : {
           latitude: 51.053468,
           longitude: 3.73038
