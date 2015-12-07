@@ -4,7 +4,7 @@
 //define variables here
 $nav-height: 7;
 $min-nav-height: 7vh;
-$content-height: 100% - $nav-height;
+$content-height: 100vh - $nav-height;
 $background-black-opac: rgba(0, 0, 0, 0.8);
 $margin-top-vh: 10vh;
 
@@ -61,7 +61,7 @@ md-button {
   font-family: museo-normal;
 }
 md-toolbar {
-
+  min-height: $min-nav-height;
 }
 #header {
   /* FF3.6-15 */
@@ -74,6 +74,9 @@ md-toolbar {
   // background-image: url("../images/header.png");
   background-size: cover;
   min-height: 100vh;
+}
+#burger {
+  margin-top: 20px;
 }
 md-sidenav,
 md-sidenav.md-locked-open,
@@ -116,14 +119,16 @@ md-input-container .md-input {
   max-width: 800px !important;
   padding-top: 5px;
 }
-.blackboard-wrapper {
-  background-image: url("../images/blackboard.jpg");
-  background-color: #000;
+.wrapper {
   background-size: cover;
   position: absolute;
   min-height: $content-height;
   min-width: 100%;
   padding-bottom: 50px;
+}
+.blackboard-wrapper {
+  background-image: url("../images/blackboard.jpg");
+  background-color: #000;
   color: #fff;
 }
 #header-btns {
@@ -216,7 +221,7 @@ md-input-container .md-input {
   position: relative;
   display: block;
   z-index: 1; //over the video
-  margin-top: 33%;
+  margin-top: 33vh;
 }
 #video-content {
   padding: 20px;
