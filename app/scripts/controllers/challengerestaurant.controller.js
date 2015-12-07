@@ -8,14 +8,16 @@
     function(restaurantService, $scope, uiGmapGoogleMapApi, $rootScope) {
 
       $scope.distance = 20;
+      var currentPosition = {latitude: 51.053468, longitude: 3.73038};
 
       $scope.getCurrentPosition = function() {
         var currentPositionPromise = restaurantService.getCurrentPosition();
         currentPositionPromise.then(function(data) {
           console.log(data);
-          $scope.currentPosition = data.coords;
+          currentPosition = data.coords;
           $scope.map = { center: { latitude: data.coords.latitude, longitude: data.coords.longitude }, zoom: 15};
         }).catch(function(err) {
+          $scope.map = { center: { latitude: currentPosition.latitude, longitude: currentPosition.longitude }, zoom: 15};
           $scope.error = err;
           console.log(err);
         });
@@ -26,8 +28,8 @@
       * find Restaurants inside the radius
       */
       $scope.findRestaurants = function() {
-        var restaurantPromise = restaurantService.getRestaurants($scope.currentPosition.longitude,
-          $scope.currentPosition.latitude, $scope.distance);
+        var restaurantPromise = restaurantService.getRestaurants(currentPosition.longitude,
+          currentPosition.latitude, $scope.distance);
 
         restaurantPromise.then(function(data) {
           console.log(data);
@@ -55,14 +57,15 @@
           var item = {
             id: loc.Id,
             latitude: loc.Latitude,
-            longitude: loc.Longitude
+            longitude: loc.Longitude,
+            name: loc.Name
           }
-          console.log(arr);
+
           arr.push(item);
         });
 
         $scope.markers = arr;
-        $scope.map = {center: {longitude: arr[0].longitude, latitude: arr[0].latitude} };
+        console.log(arr);
       };
 
 
