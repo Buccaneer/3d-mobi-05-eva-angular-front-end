@@ -230,7 +230,13 @@ md-input-container .md-input {
 #loading-bar {
   z-index: 1;
 }
-
+.restaurant-wrapper {
+  background-image: url("../images/challenge-rest-bg.png");
+}
+#overlay {
+  background-color: rgba(255,255,255,0.7);
+}
+.angular-google-map-container { height: 400px; }
 //ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;

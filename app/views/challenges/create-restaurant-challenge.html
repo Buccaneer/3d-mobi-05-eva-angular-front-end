@@ -1,19 +1,28 @@
-<div class="restaurant-wrapper" layout-align="center" layout="row" ng-init="getCurrentPosition()" layout-fill>
-  <div layout="column">
-    <div class="bg-info">
-      <p>
-        We gebruiken uw locatie zodat we vegetarische restaurants in uw directe omgeving kunnen aanraden.
-      </p>
-      <p>
-        Indien u dit niet wenst kan u locatievoorzieningen voor deze app negeren en zal de app het centrum van Gent als aangeraden locatie gebruiken, met een straal van 20km.
-      </p>
-    </div>
+<div class="restaurant-wrapper wrapper" ng-init="getCurrentPosition()">
+  <ui-gmap-google-map center='map.center' zoom='map.zoom' pan='true'>
+    <ui-gmap-markers ng-show="markers" models="markers" coords="'self'" icon="'icon'" fit="'true'" click='clickedMarker'>
+        </ui-gmap-markers>
+  </ui-gmap-google-map>
 
-    <div>
-      <input ng-model="distance" type="number"/>
-      <md-button class="md-raised" ng-click="findRestaurants()">
-        Haal wat restaurants op!
-      </md-button>
+  <div layout-align="center" layout="row">
+
+    <div id="overlay" layout="column">
+      <div class="bg-info text-center">
+        <p>
+          We gebruiken uw locatie zodat we vegetarische restaurants in uw directe omgeving kunnen aanraden.
+        </p>
+        <p>
+          Indien u dit niet wenst kan u locatievoorzieningen voor deze app negeren en zal de app het centrum van Gent als aangeraden locatie gebruiken, met een straal van 20km.
+        </p>
+      </div>
+
+      <div>
+
+        <input ng-model="distance" type="number"/>
+        <md-button class="md-raised" ng-click="findRestaurants()">
+          Haal wat restaurants op!
+        </md-button>
+      </div>
     </div>
   </div>
 </div>
