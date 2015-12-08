@@ -1,11 +1,9 @@
-<div class="restaurant-wrapper wrapper" ng-init="getCurrentPosition()">
-  <ui-gmap-google-map center='map.center' zoom='map.zoom' pan='true'>
-    <ui-gmap-markers ng-show="markers" models="markers" coords="'self'" icon="'icon'" fit="'true'" click='clickedMarker'>
-        </ui-gmap-markers>
+<div class="restaurant-wrapper wrapper" ng-init="init()">
+  <ui-gmap-google-map center='map.center' id="map" pan='true' zoom='map.zoom'>
+    <ui-gmap-markers click='clickedMarker' coords="'self'" fit="'true'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
   </ui-gmap-google-map>
 
   <div layout-align="center" layout="row">
-
     <div id="overlay" layout="column">
       <div class="bg-info text-center">
         <p>
@@ -14,6 +12,12 @@
         <p>
           Indien u dit niet wenst kan u locatievoorzieningen voor deze app negeren en zal de app het centrum van Gent als aangeraden locatie gebruiken, met een straal van 20km.
         </p>
+        <p>
+          Indien u hiermee akkoord bent kan u hieronder op de knop drukken.
+        </p>
+        <md-button class="md-raised" ng-click="getCurrentPosition()">
+          Gebruik mijn locatie!
+        </md-button>
       </div>
 
       <div>

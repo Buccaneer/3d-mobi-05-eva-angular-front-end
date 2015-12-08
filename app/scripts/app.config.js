@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('eva21DayChallengeApp').config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider) {
+    .module('eva21DayChallengeApp').config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider, $httpProvider) {
       $urlRouterProvider.otherwise('/home');
 
 
@@ -117,6 +117,7 @@
           requireAuth: true
         });
 
+        $httpProvider.interceptors.push('authHttpResponseInterceptor');
 
       //let translateProvider load translations from external json
       $translateProvider.useStaticFilesLoader({
