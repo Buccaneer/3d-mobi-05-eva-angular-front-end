@@ -60,9 +60,6 @@ h5 {
 md-button {
   font-family: museo-normal;
 }
-md-toolbar {
-  min-height: $min-nav-height;
-}
 #header {
   /* FF3.6-15 */
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
@@ -73,14 +70,9 @@ md-toolbar {
 
   // background-image: url("../images/header.png");
   background-size: cover;
-  min-height: 100vh;
+  min-height: $content-height;
 }
-#burger {
-  margin-top: 20px;
-}
-md-sidenav,
-md-sidenav.md-locked-open,
-md-sidenav.md-closed.md-locked-open-add-active {
+md-sidenav {
   min-width: 200px !important;
   width: 80vw !important;
   max-width: 400px !important;
@@ -106,7 +98,7 @@ md-input-container .md-input {
   background-color: $background-black-opac;
 }
 .fullwidth {
-  height: 100%;
+  margin-bottom: 50px;
 }
 .fullwidth-item {
   min-height: $vh-per-challenge;
@@ -120,16 +112,38 @@ md-input-container .md-input {
   padding-top: 5px;
 }
 .wrapper {
-  background-size: cover;
-  position: absolute;
-  min-height: $content-height;
   min-width: 100%;
-  padding-bottom: 50px;
+  min-height: $content-height;
+  background-color: #000;
+  background-repeat: no-repeat;
 }
 .blackboard-wrapper {
   background-image: url("../images/blackboard.jpg");
-  background-color: #000;
+  position: absolute;
+  background-size: cover;
   color: #fff;
+}
+#step5 {
+  margin-top: 7vh;
+}
+#about {
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/about-bg.jpg");
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/about-bg.jpg");
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/about-bg.jpg");
+  color: #fff;
+  background-size: cover;
+}
+#expl {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+}
+#about-view {
+  padding: 25px;
+}
+#about-steps {
+  padding: 25px;
 }
 #header-btns {
   margin-bottom: 20px;
@@ -239,17 +253,26 @@ md-input-container .md-input {
 .bounceInLeft {
   -webkit-animation: bounceInLeft 1s;
   -webkit-animation-delay: 0s;
+  -webkit-animation-timing-function: ease-out !important;
 }
 .fadeInLeft {
   -webkit-animation: fadeInLeft 1s;
   -webkit-animation-delay: 0s;
+  -webkit-animation-timing-function: ease-out !important;
 }
 .fadeInRight {
   -webkit-animation: fadeInRight 1s;
   -webkit-animation-delay: 0s;
+  -webkit-animation-timing-function: ease-out !important;
 }
 .slideInUp {
   -webkit-animation: slideInUp 1s;
+}
+@media screen and (max-width: 960px) {
+  #expl {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
 }
 @media screen and (max-width: 768px) {
   h1,
@@ -257,18 +280,17 @@ md-input-container .md-input {
   h3,
   h4,
   h5 {
-    font-size: 23px;
+    font-size: 2em;
   }
   .fullwidth {
-    margin-bottom: 0;
+    margin-bottom: 0px;
   }
   .fullwidth-item {
     width: 100%;
     min-height: 200px;
   }
-  #header {
-    background-image: url("../images/resp-header.jpg");
-    background-size: cover;
+  #expl {
+    margin-bottom: 0;
   }
   #loginWrapper,
   #registerWrapper {
@@ -280,9 +302,29 @@ md-input-container .md-input {
     margin: 0;
   }
   #header-text {
-    color: #fff;
     margin-left: 0;
-    margin-top: 40vh;
+    margin-top: 30vh;
+  }
+  #recipe-list {
+    justify-content: none;
+  }
+  #recipe-tile {
+    margin-top: 10px;
+    width: 100%;
+  }
+  #recipe-tile-content {
+    width: 100%;
+    text-align: center;
+    background-color: $background-black-opac;
+  }
+  /*
+  * Resize all background images to smaller version
+  */
+  #header {
+    background-image: url("../images/sm/header.jpg");
+  }
+  #about {
+    background-image: url("../images/sm/about-bg.jpg");
   }
   #recipe {
     background-image: url("../images/challenges/sm/recipe.jpg");
@@ -298,18 +340,6 @@ md-input-container .md-input {
   }
   #creative-cooking {
     background-image: url("../images/challenges/sm/creative-cooking.jpg");
-  }
-  #recipe-list {
-    justify-content: none;
-  }
-  #recipe-tile {
-    margin-top: 10px;
-    width: 100%;
-  }
-  #recipe-tile-content {
-    width: 100%;
-    text-align: center;
-    background-color: $background-black-opac;
   }
 }
 @media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {

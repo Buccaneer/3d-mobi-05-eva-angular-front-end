@@ -1,5 +1,5 @@
 {
-  "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen",
+  "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
 
 
   "nav": {
@@ -91,10 +91,10 @@
     "loading": "Trying to find out more about you...",
     "userSettings": "User Settings"
   },
-  
+
   "badges": {
     "level1": "Seed",
     "level2": "Plant",
-    "starter_title": "Starter"   
+    "starter_title": "Starter"
   }
 }

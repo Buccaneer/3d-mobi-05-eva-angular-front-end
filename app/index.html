@@ -32,10 +32,10 @@
 
       <md-toolbar>
         <div class="md-toolbar-tools">
-          <md-button aria-label="button-collapse" ng-click="openLeftMenu()" show-sm hide-gt-sm>
-            <i id="burger" class="fa fa-bars pointer" hide-gt-lg></i>
+          <md-button aria-label="button-collapse" ng-click="openLeftMenu()" show-md hide-gt-md>
+            <i class="fa fa-bars pointer"></i>
           </md-button>
-          <div class="md-toolbar-tools" hide-sm>
+          <div class="md-toolbar-tools" hide-sm hide-md show-gt-md>
             <span flex></span>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/home">
               <img aria-label="eva-logo" class="brand" src="images/eva-logo.png" />
@@ -60,22 +60,18 @@
 
 
       <div layout="row" ng-controller="NavCtrl">
-
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" hide-gt-sm md-component-id="left">
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
           <md-toolbar layout="column" layout-align="center center">
             <span>
               <img class="brand" src="images/eva-logo.png" />
             </span>
           </md-toolbar>
           <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
-            <md-button class="sidenav-button" ng-href="#/home">
+            <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/home">
               <h4>home</h4>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/main">
               <h4>main</h4>
-            </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
-              <h4>challenges</h4>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
               <h4>challenges</h4>
@@ -101,6 +97,9 @@
 
     <div id="ui-view" ui-view ng-hide="loading" layout-fill></div>
 
+    <div id="footer">
+
+    </div>
   </div>
 
 
