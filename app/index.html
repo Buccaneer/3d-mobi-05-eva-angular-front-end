@@ -60,13 +60,13 @@
 
 
       <div layout="row" ng-controller="NavCtrl">
-        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left">
+        <md-sidenav layout="column" class="md-sidenav-left md-whiteframe-z2" md-component-id="left" flex="100">
           <md-toolbar layout="column" layout-align="center center">
             <span>
               <img class="brand" src="images/eva-logo.png" />
             </span>
           </md-toolbar>
-          <md-content class="sidenav-content" layout="column" layout-align="start center" flex>
+          <md-content class="sidenav-content" layout="column">
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/home">
               <h4>home</h4>
             </md-button>
@@ -85,7 +85,7 @@
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/login">
               <h4>{{'nav.login' | translate}}</h4>
             </md-button>
-            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout()">
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-click="logout(); closeNav();">
               <h4>{{'nav.logout' | translate}}</h4>
             </md-button>
           </md-content>

@@ -113,7 +113,6 @@
             var _token = $localstorage.getObject(TOKEN);
             if (_token !== null) {
               var parsedToken = _token;
-              console.log(parsedToken);
               $rootScope.authentication = {
                 isAuthed: true,
                 token: parsedToken

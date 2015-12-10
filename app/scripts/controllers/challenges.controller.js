@@ -15,6 +15,8 @@
         $scope.challenges = ChallengeService.challenges;
         $scope.detailedChallenges = [];
 
+        console.log($scope.challenges);
+
         // $scope.loading = true;
 
         //this should be called for each challenge is $scope.challenges to grab additional information
@@ -55,7 +57,6 @@
         }
 
         $scope.markAsDone = function() {
-          console.log(challenge);
           ChallengeService.markChallengeAsDone(challenge.ChallengeId);
           $state.go('challenges-overview');
         };

@@ -28,7 +28,12 @@
           url: '/main',
           templateUrl: 'views/main.html',
           controller: 'MainCtrl',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            fetchUserInfoPromise: ['UserInfoService', function(UserInfoService) {
+              return UserInfoService.getUserInfo();
+            }]
+          }
         })
         .state('settings', {
           url: '/settings',

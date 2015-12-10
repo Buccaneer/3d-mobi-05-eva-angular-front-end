@@ -398,6 +398,7 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*',
             'fonts/{,*/}*.*',
             'styles/animate.css',
+            'views/{,*/}*.*',
             'vids/loading.mp4'
           ]
         }, {

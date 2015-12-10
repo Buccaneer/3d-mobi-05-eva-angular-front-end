@@ -30,15 +30,14 @@
   </div>
 
   <!-- STATS -->
-  <div id="stats" flex="100">
+  <div id="stats">
     <h1>Statistieken</h1>
-    <!-- <div id="progressBar">
-          <md-progress-circular md-diameter="99%" md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}"></md-progress-circular>
-        </div> -->
     <p>STATS HIER</p>
 
     <h1>Prestaties</h1>
-    <p>Hier komen de achievements</p>
+    <div ng-include="'../views/badges.html'" ng-controller="BadgeCtrl">
+
+    </div>
   </div>
   <!-- close stats -->
 </div>

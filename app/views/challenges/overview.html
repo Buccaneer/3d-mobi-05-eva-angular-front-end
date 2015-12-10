@@ -1,23 +1,46 @@
 <div class="blackboard-wrapper wrapper">
+
+  <div id="challenge-header" layout-align="center center" layout="row">
+    <div class="new-challenge-content">
+      {{'challenge.New' | translate}}
+    </div>
+  </div>
+
   <div layout-align="center" layout="row">
 
-    <div class="bg-white" flex-gt-sm="70" flex-sm="100" layout-align="center center" layout="column" ng-hide="loading">
-      <div flex layout-align="center center" layout="column">
-        <div layout-align="center" layout="row">
-          <div layout="column">
-            <h1>Challenges</h1>
-            <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
-          </div>
+    <div class="fullwidth" flex-gt-md="70" flex="100" layout="column">
+      <div class="fullwidth-item border-white" layout="row" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp">
+        <div class="fullwidth-overview-item-inner" flex="50" layout-align="center center" layout="column">
+          <h3>
+            {{'challenge.Name' | translate}}
+          </h3>
         </div>
+        <div class="" flex="50">
 
-        <div layout="column" ng-repeat="challenge in challenges | orderBy: '-Date'">
-          <h2 class="md-title">Challenge
-            {{$index + 1}}</h2>
-          <p></p>
-          <md-button class="md-raised md-primary" ng-href="#/challenge/{{challenge.ChallengeId}}">Bekijk details</md-button>
         </div>
-
       </div>
     </div>
   </div>
 </div>
+
+<!-- <div layout-align="center" layout="row">
+
+  <div class="bg-white" flex-gt-sm="70" flex-sm="100" layout-align="center center" layout="column" ng-hide="loading">
+    <div flex layout-align="center center" layout="column">
+      <div layout-align="center" layout="row">
+        <div layout="column">
+          <h1>Challenges</h1>
+          <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
+        </div>
+      </div>
+
+      <div layout="column" ng-repeat="challenge in challenges | orderBy: '-Date' | reverse">
+        <h2 class="md-title">Challenge
+          {{$index + 1}}</h2>
+        <p></p>
+        <md-button class="md-raised md-primary" ng-href="#/challenge/{{challenge.ChallengeId}}">Bekijk details</md-button>
+      </div>
+
+    </div>
+  </div>
+</div> -->
