@@ -74,7 +74,15 @@
       "restaurant-region": "Uitheems restaurant",
       "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
       "creative-cooking": "Creative Cooking",
-      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen."
+      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen.",
+      "sugarfree":"Sugarfree",
+      "sugarfree-text":"..."
+    },
+    "sugarfree":{
+      "title": "Sugarfree",
+      "description1":"In this challenge, it's intended that you eat sugar free for a whole day.",
+      "description2":"There are different kinds of sugar and a lot of them are refined or produced with animal remains. For example, cow bones are used to give sugar his bright white color.",
+      "description3":"We challenge you to avoid all (or as much as possible) products with sugar in it. This means no soft drinks, candy and so on."
     }
   },
 

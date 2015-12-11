@@ -32,6 +32,10 @@
       $scope.createCreativeCookingChallenge = function(){
         $state.go('home');
       };
+      
+      $scope.createSugarfreeChallenge = function(){
+        $state.go('create-sugarfree-challenge');
+      };
     }
   ]);
 
