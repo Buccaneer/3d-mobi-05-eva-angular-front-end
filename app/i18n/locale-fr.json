@@ -73,7 +73,15 @@
       "restaurant-region": "Uitheems restaurant",
       "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
       "creative-cooking": "Creative Cooking",
-      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen."
+      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen.",
+      "sugarfree":"Sans sucre",
+      "sugarfree-text":"..."
+    },
+    "sugarfree":{
+      "title": "Sans sucre",
+      "description1":"Dans ce défi, il est prévu que vous mangez du sucre gratuitement pendant une journée entière.",
+      "description2":"Il existe différents types de sucre et beaucoup d'entre eux sont affinés ou fabriqués avec des restes d'animaux. Par exemple, os de vache sont utilisés pour donner sa couleur sucre blanc brillant.",
+      "description3":"Nous vous défions d'éviter toutes (ou autant que possible) produits avec du sucre. Cela signifie pas de boissons gazeuses, les bonbons et ainsi de suite."
     }
   },
 

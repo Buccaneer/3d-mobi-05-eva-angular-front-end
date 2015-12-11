@@ -120,6 +120,11 @@
           templateUrl: '/views/challenges/create-restaurant-challenge.html',
           controller: 'RestaurantCtrl',
           requireAuth: true
+          
+        }).state('create-sugarfree-challenge', {
+          url: '/challenge/create/sugarfree',
+          templateUrl: '/views/challenges/create-sugarfree-challenge.html',
+          requireAuth: true
         });
 
 

@@ -75,7 +75,15 @@
       "restaurant-region": "Uitheems restaurant",
       "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
       "creative-cooking": "Creative Cooking",
-      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen."
+      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen.",
+      "sugarfree":"Suikervrij",
+      "sugarfree-text":"..."
+    },
+    "sugarfree":{
+      "title": "Suikervrij",
+      "description1":"Bij deze challenge is het de bedoeling dat je een hele dag lang suikervrij leeft.",
+      "description2":"Er zijn verschillende soorten suikers en een groot aantal daarvan zijn verfijnd en bewerkt met dierlijke producten. Zo worden bijvoorbeeld resten van koeierbeenderen gebruikt om de witte kleur te geven.",
+      "description3":"We dagen je uit om een dag geen (of toch zo weinig mogelijk) suikers te eten. Dit wil zeggen dat frisdrank, snoep en dergelijke vermeden worden."
     }
   },
 
