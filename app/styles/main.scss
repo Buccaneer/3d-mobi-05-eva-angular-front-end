@@ -6,6 +6,7 @@ $nav-height: 7;
 $min-nav-height: 7vh;
 $content-height: 100vh - $nav-height;
 $background-black-opac: rgba(0, 0, 0, 0.8);
+$background-green-opac: rgba(3, 90, 72, 0.8);
 $margin-top-vh: 10vh;
 
 //amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
@@ -61,18 +62,6 @@ h5 {
 md-button {
   font-family: museo-normal;
 }
-#header {
-  /* FF3.6-15 */
-  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
-
-  // background-image: url("../images/header.png");
-  background-size: cover;
-  min-height: $content-height;
-}
 md-sidenav {
   min-width: 200px !important;
   width: 80vw !important;
@@ -88,15 +77,15 @@ md-input-container .md-input {
 md-radio-group {
   color: #fff !important;
 }
-md-radio-group, md-input, md-select, md-select-value, label {
-  color: #fff !important;
-}
-#settings {
+md-radio-group,
+md-input,
+md-select,
+md-select-value,
+label {
   color: #fff !important;
 }
 md-datepicker {
   background-color: rgba(0, 0, 0, 0);
-
 }
 .md-datepicker-input {
   color: #fff !important;
@@ -107,6 +96,7 @@ md-datepicker {
 .md-datepicker-calendar-icon {
   color: #fff !important;
 }
+
 .brand {
   max-height: 40px;
   max-height: 40px;
@@ -119,6 +109,17 @@ md-datepicker {
 }
 .bg-black {
   background-color: $background-black-opac;
+  padding: 25px;
+}
+.bg-active {
+  background-color: $background-green-opac !important;
+}
+.fillinWrapper {
+  background-image: url("../images/form-bg.jpg");
+  background-size: cover;
+  min-height: $content-height;
+  min-width: 100%;
+  position: absolute;
 }
 .fullwidth {
   margin-top: 5vh;
@@ -134,10 +135,6 @@ md-datepicker {
   min-width: 250px;
   max-width: 800px !important;
   padding-top: 5px;
-}
-.fullwidth-overview-item-inner{
-  background-color: $background-black-opac;
-  color: #fff;
 }
 .fullwidth-overview-item {
   min-height: $vh-per-comp-challenge;
@@ -155,9 +152,35 @@ md-datepicker {
   background-size: cover;
   color: #fff;
 }
-#step5 {
-  margin-top: 7vh;
+.challenge-thumbnail {
+  background-position: center;
+  background-size: cover;
 }
+.comp {
+  min-height: 40px;
+  min-width: 40px;
+}
+/* HOME HEADER */
+#header {
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
+
+  // background-image: url("../images/header.png");
+  background-size: cover;
+  min-height: $content-height;
+}
+#header-btns {
+  margin-bottom: 20px;
+}
+#header-text {
+  margin-left: 50vw;
+  margin-top: 25vh;
+}
+/* ABOUT VIEW */
 #about {
   background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/about-bg.jpg");
   /* Chrome10-25,Safari5.1-6 */
@@ -171,27 +194,12 @@ md-datepicker {
 #expl {
   margin-top: 10vh;
   margin-bottom: 10vh;
+  max-width: 750px;
 }
-#about-view {
-  padding: 25px;
+#step5 {
+  margin-top: 7vh;
 }
-#about-steps {
-  padding: 25px;
-}
-#header-btns {
-  margin-bottom: 20px;
-}
-#header-text {
-  margin-left: 50vw;
-  margin-top: 25vh;
-}
-.fillinWrapper {
-  background-image: url("../images/form-bg.jpg");
-  background-size: cover;
-  min-height: $content-height;
-  min-width: 100%;
-  position: absolute;
-}
+/* LOGIN/REGISTER/SETTINGS VIEW */
 #login,
 #register,
 #settings {
@@ -202,14 +210,26 @@ md-datepicker {
   color: #fff !important;
   margin-bottom: 50px;
 }
-#expl {
-  max-width: 750px;
+/* SETTINGS VIEW STYLE */
+#settings {
+  color: #fff !important;
 }
-#loginForm,
-#registerForm,
-#settingsForm {
-  padding: 30px;
+/* RECIPE DETAILS VIEW */
+#recipe-header {
+  margin-top: 0;
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 30vh;
+  background-size: cover;
+  background-position: center;
 }
+#recipe-header-content {
+  padding: 20px;
+}
+.recipe-description {
+  max-width: 50%;
+}
+/* RECIPE LIST VIEW */
 #recipe-list {
   display: flex;
   flex-direction: row;
@@ -229,25 +249,12 @@ md-datepicker {
   align-self: center;
   max-width: 800px;
 }
-#recipe-tile-content {
-  padding: 20px;
-}
-#recipe-header {
-  margin-top: 0;
-  min-height: 200px;
-  height: 30vh;
-  min-width: 100%;
-  background-size: cover;
-  background-position: center;
-}
-#recipe-header-content {
-  padding: 20px;
-}
 #recipe-content {
   margin-top: 10px;
   margin-left: 20vw;
   margin-right: 20vw;
 }
+/* CREATE CHALLENGE OVERVIEW */
 #recipe {
   background-image: url("../images/challenges/recipe.jpg");
 }
@@ -264,10 +271,13 @@ md-datepicker {
   background-image: url("../images/challenges/creative-cooking.jpg");
 }
 #challenge-header {
-    min-height: 30vh;
-    background-image: url("../images/about-bg.jpg");
-    background-size: cover;
-    background-position: center;
+  min-height: 30vh;
+  background-image: url("../images/about-bg.jpg");
+  background-size: cover;
+  background-position: center;
+}
+#status {
+  margin-top: 15px;
 }
 #video-background {
   /*  making the video fullscreen  */
@@ -292,25 +302,15 @@ md-datepicker {
 #loading-bar {
   z-index: 1;
 }
-//ANIMATIONS
+/* link animations to classes */
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
-  -webkit-animation-delay: 0s;
-}
-.bounceInLeft {
-  -webkit-animation: bounceInLeft 1s;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-timing-function: ease-out !important;
 }
 .fadeInLeft {
   -webkit-animation: fadeInLeft 1s;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-timing-function: ease-out !important;
 }
 .fadeInRight {
   -webkit-animation: fadeInRight 1s;
-  -webkit-animation-delay: 0s;
-  -webkit-animation-timing-function: ease-out !important;
 }
 .slideInUp {
   -webkit-animation: slideInUp 1s;
@@ -320,6 +320,57 @@ md-datepicker {
     margin-top: 0;
     margin-bottom: 0;
   }
+}
+/* ingredient-component style */
+.chipsdemoContactChips md-content.autocomplete {
+  min-height: 250px;
+}
+.chipsdemoContactChips md-content.autocomplete input {
+  min-width: 400px;
+}
+.chipsdemoContactChips .md-item-text.compact {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.chipsdemoContactChips .contact-item {
+  box-sizing: border-box;
+}
+.chipsdemoContactChips .contact-item.selected {
+  opacity: 0.5;
+}
+.chipsdemoContactChips .contact-item.selected h3 {
+  opacity: 0.5;
+}
+.chipsdemoContactChips .contact-item .md-list-item-text {
+  padding: 14px 0;
+  max-width: 190px;
+}
+.chipsdemoContactChips .contact-item .md-list-item-text h3 {
+  margin: 0 !important;
+  padding: 0;
+  line-height: 1.2em !important;
+}
+.chipsdemoContactChips .contact-item .md-list-item-text h3,
+.chipsdemoContactChips .contact-item .md-list-item-text p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media (min-width: 900px) {
+  .chipsdemoContactChips .contact-item {
+    float: left;
+    width: 33%;
+  }
+}
+.chipsdemoContactChips md-contact-chips {
+  margin-bottom: 10px;
+}
+.chipsdemoContactChips .md-chips {
+  padding: 5px 0 8px;
+}
+.chipsdemoContactChips .fixedRows {
+  height: 250px;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   h1,
@@ -420,5 +471,117 @@ md-datepicker {
   #recipe-tile {
     margin-top: 20px;
     width: 400px;
+  }
+}
+
+/* Animations from Animate.css */
+@-webkit-keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 }
