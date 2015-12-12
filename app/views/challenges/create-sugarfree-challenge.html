@@ -1,10 +1,19 @@
 <div class="blackboard-wrapper wrapper">
 
-		<div id="sugarfree" layout="column" flex="60">
-			<h1>{{'challenges.sugarfree.title' | translate}}</h1>
-			<p>{{'challenges.sugarfree.description1' | translate}}</p>
-			<p>{{'challenges.sugarfree.description2' | translate}}</p>
-			<p>{{'challenges.sugarfree.description3' | translate}}</p>
-		</div>
+	<div id="sugarfree" layout="column" flex="60">
+		<h1>{{'challenges.sugarfree.title' | translate}}</h1>
+		<p>{{'challenges.sugarfree.description1' | translate}}</p>
+		<p>{{'challenges.sugarfree.description2' | translate}}</p>
+		<p>{{'challenges.sugarfree.description3' | translate}}</p>
+	</div>
 
+	<div layout-align="center" layout="row">
+		<div layout-align="center center" layout="column">
+			<p>Pick this challenge?</p>
+			<div layout-align="center center" layout="row">
+				<md-button class="md-raised md-primary" ng-click="agreed()">Yes!</md-button>
+				<md-button class="md-raised md-warn" ng-click="disagreed()">No</md-button>
+			</div>
+		</div>
+	</div>
 </div>

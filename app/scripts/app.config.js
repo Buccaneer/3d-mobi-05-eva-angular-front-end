@@ -124,6 +124,7 @@
         }).state('create-sugarfree-challenge', {
           url: '/challenge/create/sugarfree',
           templateUrl: '/views/challenges/create-sugarfree-challenge.html',
+          controller:'AgreeSugarfreeCtrl',
           requireAuth: true
         });
 

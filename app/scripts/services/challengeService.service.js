@@ -81,6 +81,21 @@
                 "RecipeId": recipeId
               }
             });
+          },
+          
+          createSugarfreeChallenge: function () {
+            var token = $localstorage.getObject(TOKEN).token;
+            return $http({
+              method: 'PUT',
+              url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+              headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-type': 'application/json; charset=utf-8'
+              },
+              data: {
+                "Type": "Suikervrij"
+              }
+            });
           }
 
 
