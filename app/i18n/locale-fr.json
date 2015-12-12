@@ -2,30 +2,32 @@
   "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
 
   "nav": {
-    "register": "enregistrer",
-    "login": "login",
-    "logout": "Déconnexion",
-    "settings": "paramètres",
-    "about": ""
+    "register": "Inscription",
+    "login": "Connexion",
+    "logout": "Déconnecter",
+    "settings": "Paramètres",
+    "about": "À propos"
   },
   "home": {
-    "title": "Bienvenue sur le site '21 day challenge'!",
-    "headline": "Welkom op de 21 day challenge website!",
-    "text-signup-login": "Indien u klaar bent om de uitdaging aan te gaan, kan u zich hieronder aanmelden of registreren.",
-    "text-about": "Lees hieronder hoe het werkt!",
-    "about": "Hoe werkt het?",
-    "about-intro-1": "Met deze applicatie kan u de wereld van plantaardig eten ontdekken door middel van challenges die u elke dag kan uitvoeren.",
-    "about-step-1-title": "Je schrijft je in en/of meld je aan",
-    "about-step-1-text": "De eerste keer dat je inlogt vragen we om een paar gegevens in te vullen, zo kunnen we de uitdagingen personaliseren voor iedere gebruiker.",
-    "about-step-2-title": "Je bent ingelogd",
-    "about-step-2-text": "Indien je al een uitdaging hebt voor vandaag, dan krijg je deze bovenaan te zien met daarbij de resterende tijd. Als je nog geen uitdaging hebt, kan je er één aanvragen. Verder kan je de behaalde prestaties en de vorige uitdagingen bekijken.",
-    "about-step-3-title": "Een nieuwe uitdaging verkrijgen",
-    "about-step-3-text": "Je kan de details van de uitdaging bekijken door er eenvoudigweg op te klikken. Je kan er ook een nieuwe uitdaging beginnen. Bekijk zeker en vast de verschillende soorten uitdagingen.",
-    "about-step-4-title": "Een uitdaging vervolledigen",
-    "about-step-4-text": "Indien je de uitdaging vervolledigd hebt, vergeet dan niet om dit aan te duiden door onderaan bij de details op de knop te drukken!",
-    "about-step-5": "Proficiat, je hebt je eerste uitdaging vervolledigd!"
+    "title": "Explorer la nature!",
+    "headline": "Bienvenue sur le site '21 day challenge'!",
+    "text-signup-login": "Si vous êtes prêts à relever le défi, vous pouvez vous annoncer ou vous enregister ci-dessous.",
+    "text-about": "Lisez ci-dessous comment cela fonctionne!",
+    "about": "Comment cela fonctionne?",
+    "about-intro-1": "Cette application vous permet de découvrir le monde de la nouriture végétale au moyen de challenge que vous pouves exécuter chaque jour.",
+    "about-step-1-title": "Vous vous inscrivez et/ou vous vous annoncez",
+    "about-step-1-text": "La première fois que vous vous connectez, nous demandons de compléter certaines données, de cette manière nous pouvons personaliser les défis pour chaque utilisateur.",
+    "about-step-2-title": "Vous êtes connecté",
+    "about-step-2-text": "Si vous avez déjà un défi pour aujourd'hui, vous le voyez ci-dessus avec le temps restant. Si vous n'avez pas encore de défi, vous pouvez en demander un. Ci-après vous pouvez consulter les prestations ottenues et les défis précédents.",
+    "about-step-3-title": "Obtenir un nouveau défi",
+    "about-step-3-text": "Vous pouvez consulter les détails du défi en cliquant tout simplement dessus. Vous pouvez également commencer un nouveau challenge. Consultez absolument les différents sortes de défis.",
+    "about-step-4-title": "Accomplir un défi",
+    "about-step-4-text": "Si vous avez réussi votre défi, n'oubliez pas de l'indiquer en cliquant sur le bouton, ci-dessous dans les détails!",
+    "about-step-5": "Félicitations, vous avez réussi votre premier défi!"
   },
+  
   "login": {
+    "title": "Connexion",
     "email": "Adresse e-mail",
     "emailPlaceholder": "exemple@exemple.com",
     "password": "Mot de passe",
@@ -35,11 +37,11 @@
     "signInWith": "Se connecter avec",
 
     "errors": {
-      "passwordRequired": "Votre mot de passe est obligatoire.",
-      "emailRequired": "Votre adresse e-mail est obligatoire.",
-      "emailInvalid": "Ceci n’est pas une adresse e-mail valide.",
+      "passwordRequired": "Votre mot de passe est obligatoire",
+      "emailRequired": "Votre adresse e-mail est obligatoire",
+      "emailInvalid": "Ceci n’est pas une adresse e-mail valide",
       "alreadyLoggedIn": "Vous êtes déjà connecté!",
-      "socialLoginDisabled": "Désolé, s’identifier avec un réseau social n’est pas disponible."
+      "socialLoginDisabled": "Désolé, s’identifier avec un réseau social n’est pas disponible"
     }
   },
 
@@ -49,31 +51,31 @@
     "emailPlaceholder": "@:login.emailPlaceholder",
     "password": "@:login.password",
     "passwordPlaceholder": "@:login.passwordPlaceholder",
-    "passwordConfirmation": "Confirmez votre mot de passe",
+    "passwordConfirmation": "Confirme le mot de passe",
     "registerButton": "Inscription",
 
     "errors": {
       "passwordRequired": "@:login.errors.passwordRequired",
       "emailRequired": "@:login.errors.emailRequired",
       "emailInvalid": "@:login.errors.emailInvalid",
-      "passwordMinLength": "Votre mot de passe doit comporter au minimum 6 caractères.",
-      "passwordConfirmation": "Les 2 mots de passe que vous avez introduits ne sont pas identiques. "
+      "passwordMinLength": "Votre mot de passe doit comporter au minimum 6 caractères",
+      "passwordConfirmation": "Les mots de passe ne sont pas identiques"
     }
   },
 
   "challenges": {
     "create": {
-      "choose": "Kies één van deze uitdagingen!",
-      "recipe": "Recept",
-      "recipe-text": "Maak één van onze gerechten klaar.",
-      "recipe-region": "Uitheems recept",
-      "recipe-region-text": "Leer de uithoeken van de wereld kennen en maak een gerecht uit een ander deel van de wereld klaar!",
+      "choose": "Choisis un de ces défis!",
+      "recipe": "Recette",
+      "recipe-text": "Préparez un de ces recettes.",
+      "recipe-region": "Recette exotique",
+      "recipe-region-text": "Découvrez les fins fonds du monde et réalisez un plat d'une autre partie du monde!",
       "restaurant": "Restaurant",
-      "restaurant-text": "Geen zin om te koken? Probeer deze restaurants eens.",
-      "restaurant-region": "Uitheems restaurant",
-      "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
+      "restaurant-text": "Tu n'a pas envie de cuisiner? Essayez ces restaurants.",
+      "restaurant-region": "Restaurant exotique",
+      "restaurant-region-text": "Laissez vous combler par l'étranger, essayez ces restaurants!",
       "creative-cooking": "Creative Cooking",
-      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen.",
+      "creative-cooking-text": "Videz votre frigo en réalisant ces recettes qui sont basées sur ce que vous disposez.",
       "sugarfree":"Sans sucre",
       "sugarfree-text":"..."
     },
@@ -86,6 +88,72 @@
   },
 
   "recipe": {
-    "choose": "Kies één van de volgende recepten:"
+    "choose": "Choisis une des recettes suivante:"
+  },
+  
+    "loading": {
+    "challenge": "We zijn deze challenge aan het laden.",
+    "recipes": "We zijn wat recepten aan het zoeken!",
+    "login": "Even geduld!",
+    "register": "@:loading.login",
+    "social": "Even Google, Facebook en Twitter contacteren.",
+    "challenges": "We zijn wat challenges aan het uitzoeken!",
+    "settings": "Récupérer quelques données sur vous..."
+  },
+
+  "about": {
+    "title": "Over",
+    "text": "De EVA 21 dagen challenge werd ontwikkeld in naam van EVA vzw.",
+    "text-second": "Deze app wil mensen aanzetten om 21 dagen plantaardig te eten om hen te overtuigen om minder dierlijke producten te gebruiken en meer alternatieven te nemen.",
+    "info": "Als je meer informatie wil weten over de werking van EVA, dan kun je altijd terecht op hun",
+    "site": "website."
+  },
+
+  "settings": {
+    "userSettings": "Instellingen",
+    "firstname": "Prénom",
+    "lastname": "Nom",
+    "birthdate": "Date de naissance",
+    "allergies": "Vos allergies",
+    "budget": "Quel est votre budget?",
+    "typeOfVegan": "Bent u vegetariër?",
+    "peopleInFamily": "Nombre de personnes de votre ménage",
+    "save": "Confirmer"
+  },
+  
+  "badges": {
+    "level1": "Zaadje",
+    "level2": "Wortel",
+    "level3": "Stengel",
+    "level4": "Blaadje",
+    "level5": "Knop",
+    "level6": "Bloem",
+    "starter_title": "Starter",
+    "starter_image": "/images/badges/starter.png",
+    "starter_desc": "Je hebt uw eerste challenge aangevraagd.",
+    "sugarrush_title": "Sugarrush",
+    "sugarrush_image": "/images/badges/sugarrush.png",
+    "sugarrush_desc": "Je hebt je eerste sugarfree challenge voltooid! Een hele dag zonder toegevoegde suiker wat een prestatie!",
+    "creatieveling_title": "Creatieveling",
+    "creatieveling_desc":"Je hebt zelf je eerste veganistisch gerecht in elkaar gestoken!",
+    "creatieveling_image": "/images/badges/creatieveling.png",
+    "explorer_title": "Wereldreiziger",
+    "explorer_desc": "Je hebt een exotisch gerecht klaargemaakt!",
+    "explorer_image": "/images/badges/explorer.png",
+    "gastheer_title": "Gastheer",
+    "gastheer_desc": "Je hebt voor de eerste keer veganistisch gekookt voor je vrienden!",
+    "gastheer_image": "/images/badges/gastheer.png",
+    "gastronoom_title": "Gastronoom",
+    "gastronoom_desc": "Je bent al drie maal op restaurant geweest, gastronomisch.",
+    "gastronoom_image": "/images/badges/gastronoom.png",
+    "genieter_title": "Genieter",
+    "genieter_desc": "Je hebt je eerste restaurantchallenge voltooid!",
+    "genieter_image": "/images/badges/genieter.png",
+    "trotsegebruiker_title": "Trotse gebruiker",
+    "trotsegebruiker_desc": "Je hebt reeds 10 challenges voltooid. Ga zo door!",
+    "trotsegebruiker_image": "/images/badges/trotsegebruiker.png",
+    "doorzetter_title": "Doorzetter",
+    "doorzetter_desc": "Je hebt de 21 dagen successvol ten einde gebracht!",
+    "doorzetter_image": "/images/badges/doorzetter.png"
   }
 }

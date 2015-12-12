@@ -3,15 +3,15 @@
 
 
   "nav": {
-    "register": "register",
-    "login": "login",
-    "logout": "logout",
-    "settings": "settings",
+    "register": "Create account",
+    "login": "Sign in",
+    "logout": "Log out",
+    "settings": "Settings",
     "about": "About"
   },
 
   "home": {
-    "title": "Make it veggie!",
+    "title": "Makes it vegan!",
     "headline": "We challenge you to complete one of our challenges each day, for 21 days straight!",
     "text-signup-login": "If you think you've got what it takes, you can sign up or login below.",
     "text-about": "Take a look here at how the website works!",
@@ -29,6 +29,7 @@
   },
 
   "login": {
+    "title": "Sign in",
     "email": "Email address",
     "emailPlaceholder": "example@example.com",
     "password": "Password",
@@ -38,17 +39,18 @@
     "signInWith": "Sign in with ",
 
     "errors": {
-      "passwordRequired": "Your password is required.",
-      "emailRequired": "Your email address is required.",
-      "emailInvalid": "That email address is invalid.",
+      "passwordRequired": "Your password is required",
+      "emailRequired": "Your email address is required",
+      "emailInvalid": "That email address is invalid",
       "alreadyLoggedIn": "You are already logged in!",
-      "socialLoginDisabled": "Sorry! Logging in with social accounts is unavailable."
+      "socialLoginDisabled": "Sorry! Logging in with social accounts is unavailable"
     }
   },
 
   "register": {
-    "signUp": "Sign up",
+    "signUp": "Register",
     "email": "@:login.email",
+    "emailPlaceholder": "@:login.emailPlaceholder",
     "password": "@:login.password",
     "passwordPlaceholder": "@:login.passwordPlaceholder",
     "passwordConfirmation": "Confirm password",
@@ -58,7 +60,8 @@
       "passwordRequired": "@:login.passwordRequired",
       "emailRequired": "@:login.emailRequired",
       "emailInvald": "@:login.emailInvalid",
-      "passwordMinLength": "Your password has to be 6 characters long."
+      "passwordMinLength": "Password has to be 6 characters long.",
+      "passwordConfirmation": "Passwords are not equal"
     }
   },
 
@@ -89,6 +92,16 @@
   "recipe": {
     "choose": "Kies één van de volgende recepten:"
   },
+  
+  "loading": {
+    "challenge": "We zijn deze challenge aan het laden.",
+    "recipes": "We zijn wat recepten aan het zoeken!",
+    "login": "Even geduld!",
+    "register": "@:loading.login",
+    "social": "Even Google, Facebook en Twitter contacteren.",
+    "challenges": "We zijn wat challenges aan het uitzoeken!",
+    "settings": "Trying to find out more about you..."
+  },
 
   "about": {
     "title": "About",
@@ -96,10 +109,17 @@
     "text-second": "This app wants to inspire people to eat more vegan for 21 days and convince them to use less animal-related products and more alternatives.",
     "info": "If you want to read more about the goal of EVA, you can always go to their website."
   },
-
+  
   "settings": {
-    "loading": "Trying to find out more about you...",
-    "userSettings": "User Settings"
+    "userSettings": "Settings",
+    "firstname": "Firstnaam",
+    "lastname": "Lastnaam",
+    "birthdate": "Date of birth",
+    "allergies": "Your allergies",
+    "budget": "What is your budget?",
+    "typeOfVegan": "Are you vegetarian?",
+    "peopleInFamily": "Number of people in your household",
+    "save": "Confirm"
   },
 
   "badges": {

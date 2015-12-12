@@ -3,11 +3,11 @@
 
 
   "nav": {
-    "register": "registreren",
-    "login": "inloggen",
-    "logout": "uitloggen",
-    "settings": "instellingen",
-    "about": "over"
+    "register": "Nieuw account",
+    "login": "Aanmelden",
+    "logout": "Uitloggen",
+    "settings": "Instellingen",
+    "about": "Over"
   },
   "home": {
     "title": "Maak het plantaardig!",
@@ -28,7 +28,8 @@
   },
 
   "login": {
-    "email": "Email adres",
+    "title": "Aanmelden",
+    "email": "Email-adres",
     "emailPlaceholder": "voorbeeld@voorbeeld.com",
     "password": "Wachtwoord",
     "passwordPlaceholder": "Geef uw wachtwoord in",
@@ -37,29 +38,29 @@
     "signInWith": "Inloggen met ",
 
     "errors": {
-      "passwordRequired": "Uw wachtwoord is verplicht.",
-      "emailRequired": "Uw email adres is verplicht.",
+      "passwordRequired": "Uw wachtwoord is verplicht",
+      "emailRequired": "Uw email adres is verplicht",
       "emailInvalid": "Dit is geen geldig email adres",
       "alreadyLoggedIn": "U bent al aangemeld!",
-      "socialLoginDisabled": "Sorry! Inloggen met sociale media is niet beschikbaar."
+      "socialLoginDisabled": "Sorry! Inloggen met sociale media is niet beschikbaar"
     }
   },
 
   "register": {
-    "signUp": "Registreer",
+    "signUp": "Registreren",
     "email": "@:login.email",
     "emailPlaceholder": "@:login.emailPlaceholder",
     "password": "@:login.password",
     "passwordPlaceholder": "@:login.passwordPlaceholder",
-    "passwordConfirmation": "Bevestig uw wachtwoord",
+    "passwordConfirmation": "Bevestig paswoord",
     "registerButton": "Registreer",
 
     "errors": {
       "passwordRequired": "@:login.errors.passwordRequired",
       "emailRequired": "@:login.errors.emailRequired",
       "emailInvalid": "@:login.errors.emailInvalid",
-      "passwordMinLength": "Uw wachtwoord moet minstens 6 karakters tellen.",
-      "passwordConfirmation": "De 2 wachtwoorden die u ingevuld hebt zijn niet identiek."
+      "passwordMinLength": "Wachtwoord moet minstens 6 karakters tellen",
+      "passwordConfirmation": "Wachtwoorden komen niet overeen"
     }
   },
 
@@ -97,7 +98,8 @@
     "login": "Even geduld!",
     "register": "@:loading.login",
     "social": "Even Google, Facebook en Twitter contacteren.",
-    "challenges": "We zijn wat challenges aan het uitzoeken!"
+    "challenges": "We zijn wat challenges aan het uitzoeken!",
+    "settings": "Even wat gegevens over je ophalen..."
   },
 
   "about": {
@@ -109,7 +111,6 @@
   },
 
   "settings": {
-    "loading": "Even wat gegevens over je ophalen...",
     "userSettings": "Instellingen",
     "firstname": "Voornaam",
     "lastname": "Achternaam",
@@ -118,7 +119,7 @@
     "budget": "Wat is uw budget?",
     "typeOfVegan": "Bent u vegetariër?",
     "peopleInFamily": "Aantal gezinsleden",
-    "save": "Opslaan"
+    "save": "Bevestigen"
 
   },
   "badges": {
