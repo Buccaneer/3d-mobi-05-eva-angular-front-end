@@ -65,6 +65,8 @@
   },
 
   "challenges": {
+    "new": "Nieuwe challenge aanvragen",
+    
     "create": {
       "choose": "Kies één van deze uitdagingen!",
       "recipe": "Recept",

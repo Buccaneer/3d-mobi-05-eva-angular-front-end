@@ -1,23 +1,35 @@
-<div class="blackboard-wrapper wrapper">
+<div class="blackboard-wrapper wrapper" ng-init="init()">
 
   <div id="challenge-header" layout-align="center center" layout="row">
-    <div class="new-challenge-content">
-      {{'challenge.New' | translate}}
+    <div class="new-challenge-content bg-black" ng-click="createChallenge()">
+      {{'challenges.new' | translate}}
     </div>
   </div>
 
   <div layout-align="center" layout="row">
 
-    <div class="fullwidth" flex-gt-md="70" flex="100" layout="column">
-      <div class="fullwidth-item border-white" layout="row" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp">
-        <div class="fullwidth-overview-item-inner" flex="50" layout-align="center center" layout="column">
+    <div class="fullwidth" flex-gt-md="80" flex="100" layout="column">
+      <div class="fullwidth-item border-white" layout="row" ng-click="seeDetails(challenge.ChallengeId)" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp"
+      ng-class="{'bg-active': challenge.Done===false && challenge.TimeToAccept > 0}">
+        <div class="fullwidth-item-inner" flex="50" layout-align="center center" layout="column">
           <h3>
-            {{'challenge.Name' | translate}}
+            {{challenge.Name}}
           </h3>
-        </div>
-        <div class="" flex="50">
+          <div id="status">
+
+            <div ng-if="challenge.Done === false && challenge.TimeToAccept < 0">
+              <img class="comp" src="../images/components/cross.svg"/>
+            </div>
+            <div ng-if="challenge.Done === false && challenge.TimeToAccept > 0">
+              current
+            </div>
+            <div ng-if="challenge.Done">
+              <img class="comp" src="../images/components/checkmark.svg"/>
+            </div>
+          </div>
 
         </div>
+        <div class="challenge-thumbnail" flex="50" ng-style="{'background-image':'url({{challenge.Thumbnail}})'}"></div>
       </div>
     </div>
   </div>
