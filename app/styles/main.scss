@@ -1,5 +1,6 @@
 // bower:scss
 @import "font-awesome/scss/font-awesome.scss";
+
 // endbower
 //define variables here
 $nav-height: 7;
@@ -12,7 +13,7 @@ $margin-top-vh: 10vh;
 //amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
 $amount-challenge-types: 6;
 $vh-per-challenge: 30vh;
-$vh-per-comp-challenge: 25vh;
+$overview-vh-per-challenge: 20vh;
 $sidenav-width: 100vw - $nav-height;
 
 //fonts
@@ -96,7 +97,6 @@ md-datepicker {
 .md-datepicker-calendar-icon {
   color: #fff !important;
 }
-
 .brand {
   max-height: 40px;
   max-height: 40px;
@@ -110,6 +110,7 @@ md-datepicker {
 .bg-black {
   background-color: $background-black-opac;
   padding: 25px;
+  color: #fff;
 }
 .bg-active {
   background-color: $background-green-opac !important;
@@ -129,16 +130,14 @@ md-datepicker {
   min-height: $vh-per-challenge;
   background-size: cover;
 }
+.fullwidth-overview-item {
+  min-height: $overview-vh-per-challenge;
+}
 .fullwidth-item-inner {
   color: #fff;
-  background-color: $background-black-opac;
   min-width: 250px;
   max-width: 800px !important;
   padding-top: 5px;
-}
-.fullwidth-overview-item {
-  min-height: $vh-per-comp-challenge;
-  background-size: cover;
 }
 .wrapper {
   min-width: 100%;
@@ -159,6 +158,12 @@ md-datepicker {
 .comp {
   min-height: 40px;
   min-width: 40px;
+}
+.hover-enlarge {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.2, 1.2);
+  }
 }
 /* HOME HEADER */
 #header {
@@ -230,7 +235,7 @@ md-datepicker {
   max-width: 50%;
 }
 /* RECIPE LIST VIEW */
-#recipe-list {
+.flex-list {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -254,6 +259,19 @@ md-datepicker {
   margin-left: 20vw;
   margin-right: 20vw;
 }
+/* BADGE TILES */
+#badge-tile {
+  flex-grow: 0;
+  background-size: cover;
+  background-position: cover;
+  width: 250px;
+  margin: 10px;
+  align-self: center;
+}
+#badge {
+  max-height: 150px;
+  max-width: 150px;
+}
 /* CREATE CHALLENGE OVERVIEW */
 #recipe {
   background-image: url("../images/challenges/recipe.jpg");
@@ -264,20 +282,39 @@ md-datepicker {
 #restaurant {
   background-image: url("../images/challenges/rest.jpg");
 }
-#restaurant-region {
-  background-image: url("../images/challenges/rest-region.jpg");
-}
+
+// #restaurant-region {
+//   background-image: url("../images/challenges/rest-region.jpg");
+// }
 #creative-cooking {
   background-image: url("../images/challenges/creative-cooking.jpg");
 }
+#sugar-free {
+  background-image: url("../images/challenges/sugar-free.jpg");
+  background-position: center;
+}
 #challenge-header {
-  min-height: 30vh;
-  background-image: url("../images/about-bg.jpg");
+  min-height: 200px;
+  min-width: 100%;
+  height: 30vh;
+  background-image: url("../images/challenge-header.png");
   background-size: cover;
+  background-position: center;
+}
+#main-header {
+  min-height: 400px;
+  background-image: url("../images/challenge-header.png");
   background-position: center;
 }
 #status {
   margin-top: 15px;
+}
+#main-expl {
+  padding: 10px;
+}
+#img-main {
+  height: 25vw;
+  max-height: 250px;
 }
 #video-background {
   /*  making the video fullscreen  */
@@ -441,6 +478,10 @@ md-datepicker {
   #creative-cooking {
     background-image: url("../images/challenges/sm/creative-cooking.jpg");
   }
+  #sugar-free {
+    background-image: url("../images/challenges/sm/sugar-free.jpg");
+    background-position: center;
+  }
   .bounceInUp {
     -webkit-animation: none;
   }
@@ -578,6 +619,30 @@ md-datepicker {
     opacity: 0;
     -webkit-transform: translate3d(100%, 0, 0);
     transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
   }
   to {
     opacity: 1;

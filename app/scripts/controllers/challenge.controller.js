@@ -3,8 +3,8 @@
   'use strict';
 
   angular
-    .module('eva21DayChallengeApp').controller('ChallengeCtrl', ['$state', '$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'challenge', 'AuthService',
-      function($state, $scope, $localstorage, TOKEN, ChallengeService, challenge) {
+    .module('eva21DayChallengeApp').controller('ChallengeCtrl', ['$rootScope', '$state', '$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'challenge', 'AuthService',
+      function($rootScope, $state, $scope, $localstorage, TOKEN, ChallengeService, challenge) {
         $scope.challenge = challenge;
 
         console.log(challenge);
@@ -14,8 +14,14 @@
         }
 
         $scope.markAsDone = function() {
-          ChallengeService.markChallengeAsDone(challenge.ChallengeId);
-          $state.go('challenges-overview');
+          $rootScope.loading = true;
+          ChallengeService.markChallengeAsDone(challenge.ChallengeId).then(function(){
+            $rootScope.loading = false;
+            $state.go('challenges-overview');
+          }).catch(function(response){
+            console.log(response);
+            $rootScope.loading = false;
+          });
         };
       }
     ]);

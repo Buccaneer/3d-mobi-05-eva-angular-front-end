@@ -1,27 +1,31 @@
-<div class="blackboard-wrapper wrapper" ng-init="init()">
-
+<div class="blackboard-wrapper wrapper">
+  {{now}}
   <div id="challenge-header" layout-align="center center" layout="row">
-    <div class="new-challenge-content bg-black" ng-click="createChallenge()">
-      {{'challenges.new' | translate}}
+    <div class="hover-enlarge bg-black" ng-click="createChallenge()"  when-visible="bounceInUp">
+      <h3>{{'challenges.new' | translate}}</h3>
     </div>
   </div>
 
-  <div layout-align="center" layout="row">
+  <div layout-align="center" layout="row" ng-init="init()">
 
     <div class="fullwidth" flex-gt-md="80" flex="100" layout="column">
-      <div class="fullwidth-item border-white" layout="row" ng-click="seeDetails(challenge.ChallengeId)" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp"
+      <div class="fullwidth-overview-item border-white bg-black" layout="row" ng-click="seeDetails(challenge.ChallengeId)" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp"
       ng-class="{'bg-active': challenge.Done===false && challenge.TimeToAccept > 0}">
         <div class="fullwidth-item-inner" flex="50" layout-align="center center" layout="column">
           <h3>
             {{challenge.Name}}
           </h3>
+          <p>
+            {{challenge.Date | amUtc | amDateFormat:'DD.MM.YYYY'}} om {{challenge.Date | amUtc | amLocal | amDateFormat:'HH:mm'}}
+          </p>
           <div id="status">
 
             <div ng-if="challenge.Done === false && challenge.TimeToAccept < 0">
               <img class="comp" src="../images/components/cross.svg"/>
             </div>
             <div ng-if="challenge.Done === false && challenge.TimeToAccept > 0">
-              current
+              {{'challenges.timeLeft' | translate}}
+              {{challenge.TimeToAccept | amDurationFormat : 'minute' }}
             </div>
             <div ng-if="challenge.Done">
               <img class="comp" src="../images/components/checkmark.svg"/>

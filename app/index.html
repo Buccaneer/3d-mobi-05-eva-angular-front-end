@@ -43,7 +43,7 @@
             </md-button>
             <span flex></span>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
-              challenges
+              {{'nav.history' | translate}}
             </md-button>
             <md-button ng-show="authentication.isAuthed" ng-href="#/about">{{'nav.about' | translate}}</md-button>
             <md-button ng-hide="authentication.isAuthed" ng-href="#/register">{{'nav.register' | translate}}</md-button>
@@ -66,16 +66,19 @@
           </md-toolbar>
           <md-content class="sidenav-content" layout="column">
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/home">
-              <h4>home</h4>
+              <h4>{{'nav.home' | translate}}</h4>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/main">
-              <h4>main</h4>
+              <h4>{{'nav.main' | translate}}</h4>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/challenges">
-              <h4>challenges</h4>
+              <h4>{{'nav.history' | translate}}</h4>
             </md-button>
             <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/about">
               <h4>{{'nav.about' | translate}}</h4>
+            </md-button>
+            <md-button class="sidenav-button" ng-show="authentication.isAuthed" ng-href="#/settings">
+              <h4>{{'nav.settings' | translate}}</h4>
             </md-button>
             <md-button class="sidenav-button" ng-hide="authentication.isAuthed" ng-href="#/register">
               <h4>{{'nav.register' | translate}}</h4>
@@ -139,15 +142,18 @@
   <script src="bower_components/angular-google-maps/dist/angular-google-maps.js"></script>
   <script src="bower_components/angular-scroll-animate/dist/angular-scroll-animate.js"></script>
   <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular-moment/angular-moment.js"></script>
   <!-- endbower -->
   <!-- endbuild -->
+  <script src="bower_components/moment/locale/fr.js"></script>
+  <script src="bower_components/moment/locale/nl.js"></script>
+  <script src="bower_components/moment/locale/en-gb.js"></script>
 
   <!-- build:js({.tmp,app}) scripts/scripts.js -->
   <script src="scripts/app.module.js"></script>
   <script src="scripts/app.config.js"></script>
 
   <script src="scripts/controllers/animation.controller.js"></script>
-  <script src="scripts/controllers/badges.controller.js"></script>
   <script src="scripts/controllers/challenges.controller.js"></script>
   <script src="scripts/controllers/challenge.controller.js"></script>
   <script src="scripts/controllers/challengerecipe.controller.js"></script>

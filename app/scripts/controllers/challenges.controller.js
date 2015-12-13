@@ -10,17 +10,11 @@
    * Controller of the eva21DayChallengeApp
    */
   angular
-    .module('eva21DayChallengeApp').controller('ChallengesCtrl', ['$scope', '$localstorage', 'TOKEN', 'ChallengeService', '$state',
-      function($scope, $localstorage, TOKEN, ChallengeService, $state) {
+    .module('eva21DayChallengeApp').controller('ChallengesCtrl', ['$scope', '$localstorage', 'TOKEN', 'ChallengeService', '$state', '$translate', 'moment',
+      function($scope, $localstorage, TOKEN, ChallengeService, $state, $translate, moment) {
         $scope.challenges = ChallengeService.challenges;
-        $scope.detailedChallenges = [];
 
-
-        $scope.init = function() {
-          ChallengeService.getChallenges();
-          $scope.challenges = ChallengeService.challenges;
-          console.log($scope.challenges);
-        };
+        moment.locale($translate.use());
 
         console.log($scope.challenges);
 
@@ -31,7 +25,6 @@
         $scope.createChallenge = function(){
           $state.go("create-challenge");
         };
-
 
         // $scope.loading = true;
 

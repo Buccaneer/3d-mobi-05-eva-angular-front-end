@@ -3,8 +3,10 @@
 
 
   "nav": {
+    "main": "Hoofdmenu",
     "register": "Nieuw account",
     "login": "Aanmelden",
+    "history": "Geschiedenis",
     "logout": "Uitloggen",
     "settings": "Instellingen",
     "about": "Over"
@@ -25,6 +27,12 @@
     "about-step-4-title": "Een uitdaging vervolledigen",
     "about-step-4-text": "Indien je de uitdaging vervolledigd hebt, vergeet dan niet om dit aan te duiden door onderaan bij de details op de knop te drukken!",
     "about-step-5": "Proficiat, je hebt je eerste uitdaging vervolledigd!"
+  },
+  "main": {
+    "welcome": "Welkom terug, ",
+    "checkDetails": "Bekijk details",
+    "noChallenge": "Je hebt nog geen challenge voor vandaag!",
+    "newChallenge": "Nieuwe challenge"
   },
 
   "login": {
@@ -66,7 +74,9 @@
 
   "challenges": {
     "new": "Nieuwe challenge aanvragen",
-    
+    "timeLeft" : "Resterende tijd:",
+    "pointsToEarn": "Te verdienen punten:",
+
     "create": {
       "choose": "Kies één van deze uitdagingen!",
       "recipe": "Recept",
@@ -80,7 +90,7 @@
       "creative-cooking": "Creative Cooking",
       "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen.",
       "sugarfree":"Suikervrij",
-      "sugarfree-text":"..."
+      "sugarfree-text":"Weg met de suiker!"
     },
     "sugarfree":{
       "title": "Suikervrij",
@@ -95,6 +105,7 @@
   },
 
   "loading": {
+    "main": "Even geduld!",
     "challenge": "We zijn deze challenge aan het laden.",
     "recipes": "We zijn wat recepten aan het zoeken!",
     "login": "Even geduld!",
@@ -131,32 +142,23 @@
     "level4": "Blaadje",
     "level5": "Knop",
     "level6": "Bloem",
-    "starter_title": "Starter",
-    "starter_image": "/images/badges/starter.png",
-    "starter_desc": "Je hebt uw eerste challenge aangevraagd.",
-    "sugarrush_title": "Sugarrush",
-    "sugarrush_image": "/images/badges/sugarrush.png",
-    "sugarrush_desc": "Je hebt je eerste sugarfree challenge voltooid! Een hele dag zonder toegevoegde suiker wat een prestatie!",
-    "creatieveling_title": "Creatieveling",
-    "creatieveling_desc":"Je hebt zelf je eerste veganistisch gerecht in elkaar gestoken!",
-    "creatieveling_image": "/images/badges/creatieveling.png",
-    "explorer_title": "Wereldreiziger",
-    "explorer_desc": "Je hebt een exotisch gerecht klaargemaakt!",
-    "explorer_image": "/images/badges/explorer.png",
-    "gastheer_title": "Gastheer",
-    "gastheer_desc": "Je hebt voor de eerste keer veganistisch gekookt voor je vrienden!",
-    "gastheer_image": "/images/badges/gastheer.png",
-    "gastronoom_title": "Gastronoom",
-    "gastronoom_desc": "Je bent al drie maal op restaurant geweest, gastronomisch.",
-    "gastronoom_image": "/images/badges/gastronoom.png",
-    "genieter_title": "Genieter",
-    "genieter_desc": "Je hebt je eerste restaurantchallenge voltooid!",
-    "genieter_image": "/images/badges/genieter.png",
-    "trotsegebruiker_title": "Trotse gebruiker",
-    "trotsegebruiker_desc": "Je hebt reeds 10 challenges voltooid. Ga zo door!",
-    "trotsegebruiker_image": "/images/badges/trotsegebruiker.png",
-    "doorzetter_title": "Doorzetter",
-    "doorzetter_desc": "Je hebt de 21 dagen successvol ten einde gebracht!",
-    "doorzetter_image": "/images/badges/doorzetter.png"
+    "starter-title": "Starter",
+    "starter-desc": "Je hebt uw eerste challenge aangevraagd.",
+    "sugarrush-title": "Sugarrush",
+    "sugarrush-desc": "Je hebt je eerste sugarfree challenge voltooid! Een hele dag zonder toegevoegde suiker wat een prestatie!",
+    "creatieveling-title": "Creatieveling",
+    "creatieveling-desc":"Je hebt zelf je eerste veganistisch gerecht in elkaar gestoken!",
+    "explorer-title": "Wereldreiziger",
+    "explorer-desc": "Je hebt een exotisch gerecht klaargemaakt!",
+    "gastheer-title": "Gastheer",
+    "gastheer-desc": "Je hebt voor de eerste keer veganistisch gekookt voor je vrienden!",
+    "gastronoom-title": "Gastronoom",
+    "gastronoom-desc": "Je bent al drie maal op restaurant geweest, gastronomisch.",
+    "genieter-title": "Genieter",
+    "genieter-desc": "Je hebt je eerste restaurantchallenge voltooid!",
+    "trotsegebruiker-title": "Trotse gebruiker",
+    "trotsegebruiker-desc": "Je hebt reeds 10 challenges voltooid. Ga zo door!",
+    "doorzetter-title": "Doorzetter",
+    "doorzetter-desc": "Je hebt de 21 dagen successvol ten einde gebracht!"
   }
 }

@@ -5,6 +5,7 @@
     "register": "Inscription",
     "login": "Connexion",
     "logout": "Déconnecter",
+    "history": "",
     "settings": "Paramètres",
     "about": "À propos"
   },
@@ -25,7 +26,11 @@
     "about-step-4-text": "Si vous avez réussi votre défi, n'oubliez pas de l'indiquer en cliquant sur le bouton, ci-dessous dans les détails!",
     "about-step-5": "Félicitations, vous avez réussi votre premier défi!"
   },
-  
+
+  "main": {
+    "welcome": "Welkom terug, "
+  },
+
   "login": {
     "title": "Connexion",
     "email": "Adresse e-mail",
@@ -65,7 +70,7 @@
 
   "challenges": {
     "new": "Nieuwe challenge aanvragen",
-    
+
     "create": {
       "choose": "Choisis un de ces défis!",
       "recipe": "Recette",
@@ -92,7 +97,7 @@
   "recipe": {
     "choose": "Choisis une des recettes suivante:"
   },
-  
+
     "loading": {
     "challenge": "We zijn deze challenge aan het laden.",
     "recipes": "We zijn wat recepten aan het zoeken!",
@@ -122,7 +127,7 @@
     "peopleInFamily": "Nombre de personnes de votre ménage",
     "save": "Confirmer"
   },
-  
+
   "badges": {
     "level1": "Zaadje",
     "level2": "Wortel",
