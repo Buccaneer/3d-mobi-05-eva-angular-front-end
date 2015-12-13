@@ -31,7 +31,7 @@
       </div>
 
 
-      <div layout-align="center" layout="row">
+      <div layout-align="center" layout="row" ng-hide="currentChallenge.Done === false && currentChallenge.TimeToAccept > 0">
         <div layout="column" layout-align="center center" class="bg-black">
           <h3>{{'main.noChallenge' | translate}}</h3>
           <md-button class="md-primary md-raised" ng-click="getChallenge()">{{'main.newChallenge' | translate}}</md-button>

@@ -33,14 +33,15 @@
       </div>
 
       <div layout-align="center" layout-margin layout-padding layout="column">
-        <md-input-container>
+        <ingredient-selector ingredients="selected" placeholder="{{'settings.allergies' | translate}}" />
+        <!-- <md-input-container>
           <label>{{'settings.allergies' | translate}}</label>
           <md-select ng-model="user.allergies">
             <md-option ng-repeat="allergie in allergiesList" ng-selected="{{user.allergie == allergies}}">
               {{allergie}}
             </md-option>
           </md-select>
-        </md-input-container>
+        </md-input-container> -->
       </div>
 
       <div layout-align="center" layout-margin layout-padding layout="column">

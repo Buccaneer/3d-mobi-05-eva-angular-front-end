@@ -9,16 +9,7 @@
       </md-list>
 
 -->
-<md-content class="md-padding autocomplete" layout="column">
-    <md-contact-chips
-        ng-model="ingredients"
-        md-contacts="search($query)"
-        md-contact-name="Name"
-        md-autocomplete-snap="" 
-        md-require-match="true"
-        md-highlight-flags="i"
-        filter-selected="true"
-        placeholder="{{placeholder}}">
-    </md-contact-chips>
-    
-  </md-content>
+<div class="md-padding autocomplete" layout="column">
+  <md-contact-chips filter-selected="true" md-autocomplete-snap="" md-contact-name="Name" md-contacts="search($query)" md-highlight-flags="i" md-require-match="true" ng-model="ingredients" placeholder="{{placeholder}}"></md-contact-chips>
+
+</div>
