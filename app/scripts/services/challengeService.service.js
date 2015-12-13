@@ -62,6 +62,8 @@
                 "Type": "Recipe",
                 "RecipeId": recipeId
               }
+            }).then(function(challenge) {
+              service.challenges.push(challenge.data);
             });
           },
 
@@ -80,7 +82,9 @@
                 "IngredientsId": ingredientsId,
                 "RecipeId": recipeId
               }
-            });
+            }).then(function(challenge) {
+              service.challenges.push(challenge.data);
+            });;
           }
 
 

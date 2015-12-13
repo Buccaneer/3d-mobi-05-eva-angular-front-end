@@ -1,44 +1,54 @@
-(function() {
-//TODO
-//get correct recipe
-//add momentjs timer
-'use strict';
+(function () {
+  //TODO
+  //get correct recipe
+  //add momentjs timer
+  'use strict';
 
-/**
- * @ngdoc function
- * @name eva21DayChallengeApp.controller:MainCtrl
- * @description
- * # MainCtrl
- * Controller of the eva21DayChallengeApp
- */
-angular
+  /**
+   * @ngdoc function
+   * @name eva21DayChallengeApp.controller:MainCtrl
+   * @description
+   * # MainCtrl
+   * Controller of the eva21DayChallengeApp
+   */
+  angular
     .module('eva21DayChallengeApp').controller('MainCtrl', ['$localstorage', 'TOKEN',
-  '$scope', 'ChallengeService',
-  function($localstorage, TOKEN, $scope, challengeService) {
-    var tokenObj = $localstorage.getObject(TOKEN);
+      '$scope', 'ChallengeService','UserInfoService',
+      function ($localstorage, TOKEN, $scope, challengeService,UserInfoService) {
+        var tokenObj = $localstorage.getObject(TOKEN);
+        $scope.currentChallenge = null;
+        $scope.init = function () {
+          //gets more detailed info from the server
+          challengeService.getChallenges().then(function () {
+            challengeService.challenges.forEach(function (challenge) {
+              console.log(challenge);
+              var d = Date.parse(challenge.Date);
+              if ($scope.currentChallenge == null || Date.parse($scope.currentChallenge.Date) < d)  {
+                $scope.currentChallenge = challenge;
+            
+              }
+            });
 
-    $scope.init = function() {
-      //gets more detailed info from the server
-      challengeService.getChallenges().then(function() {
-        challengeService.challenges.forEach(function(challenge) {
-          console.log(challenge);
-          console.log(Date.parse(challenge.date));
+          });
+        };
+
+        $scope.hasNotCreated = false;
+
+        UserInfoService.getUserInfo().then(function (result) {
+          $scope.hasNotCreated = !result.data.HasRequestedChallengeToday;
         });
 
-      });
-    };
 
+        if (tokenObj !== null) {
+          var current = new Date();
 
-    if (tokenObj !== null) {
-      var current = new Date();
+          console.log(Date.parse(tokenObj.expires));
+          console.log(current - Date.parse(tokenObj.expires));
+        }
 
-      console.log(Date.parse(tokenObj.expires));
-      console.log(current - Date.parse(tokenObj.expires));
-    }
-
-    console.log($scope.currentChallenge);
-  }
-]);
+        console.log($scope.currentChallenge);
+      }
+    ]);
 
 })();
 

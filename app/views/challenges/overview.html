@@ -1,13 +1,16 @@
 <div class="blackboard-wrapper wrapper">
   <div layout-align="center" layout="row">
 
+
     <div class="bg-white" flex-gt-sm="70" flex-sm="100" layout-align="center center" layout="column" ng-hide="loading">
       <div flex layout-align="center center" layout="column">
         <div layout-align="center" layout="row">
           <div layout="column">
             <h1>Challenges</h1>
-            <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
+            <md-button class="md-raised md-primary" ng-href="#/challenge/create" ng-show="hasNotCreated">Nieuwe challenge</md-button>
           </div>
+
+
         </div>
 
         <div layout="column" ng-repeat="challenge in challenges | orderBy: '-Date'">
