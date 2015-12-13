@@ -233,8 +233,14 @@ md-input-container .md-input {
 .restaurant-wrapper {
   background-image: url("../images/challenge-rest-bg.png");
 }
+.bg-info {
+  padding: 25px;
+}
 #overlay {
-  background-color: rgba(255,255,255,0.7);
+  padding: 25px;
+}
+#restaurant-body{
+  width: 75vw;
 }
 
 .angular-google-map-container {

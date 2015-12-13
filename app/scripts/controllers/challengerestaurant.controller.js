@@ -34,6 +34,7 @@
         $scope.getCurrentPosition = function() {
           var currentPositionPromise = restaurantService.getCurrentPosition();
           currentPositionPromise.then(function(data) {
+            $scope.accepted = true;
             console.log(data);
             currentPosition = data.coords;
             $scope.map = {
@@ -80,7 +81,7 @@
           var restaurantPromise = restaurantService.getRestaurant(data.id);
 
           restaurantPromise.then(function(data) {
-            console.log(data);
+            $scope.currentRestaurant = data;
           }).catch(function(error) {
             console.log(error);
           });

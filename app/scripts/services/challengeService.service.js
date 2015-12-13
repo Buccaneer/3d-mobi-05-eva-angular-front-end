@@ -81,10 +81,28 @@
                 "RecipeId": recipeId
               }
             });
-          }
+          },
+
+          createRestaurantChallenge: function (restaurantId) {
+            var token = $localstorage.getObject(TOKEN).token;
+
+            return $http({
+              method: 'PUT',
+              url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+              headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-type': 'application/json; charset=utf-8'
+              },
+              data: {
+                "Type": "Restaurant",
+                "RestaurantId": restaurantId
+              }
+            });
+          },
 
 
         };
+
         service.getChallenges = function () {
           var token = $localstorage.getObject(TOKEN).token;
 
