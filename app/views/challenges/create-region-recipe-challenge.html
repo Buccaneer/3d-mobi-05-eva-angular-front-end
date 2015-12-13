@@ -1,0 +1,40 @@
+<!-- CHOOSE RECIPE VIEW -->
+<div class="blackboard-wrapper">
+  <div layout="row" layout-align="center">
+    <md-content class="bg-white" layout="column" layout-align="center center" flex-gt-md="100" flex-sm='100'>
+      <h1 class="text-center">{{'recipe.choose' | translate}}</h1>
+
+      <md-select layout-align="center" layout="row" ng-model="selectedRegion" placeholder="Pick a region" ng-change="onChange(selectedRegion)">
+        <md-option ng-repeat="r in regions" ng-value="r">
+          {{r}}
+        </md-option>
+      </md-select>
+
+      <div id="recipe-list" layout-align="center center" layout="row" when-visible="slideInUp">
+        <div class="border-white" id="recipe-tile" layout-align="center center" layout="column" ng-click="setSelectedRecipe(recipe)"
+        ng-repeat="recipe in recipes | orderBy:'Name'" ng-style="{'background-image':'url({{recipe.Image}})'}">
+          <p id="recipe-tile-content" class="bg-black" ng-style="{'color': 'white'}">
+            {{recipe.Name}}
+          </p>
+
+        </div>
+      </div>
+
+
+    </md-content>
+  </div>
+
+  <div layout="row" ng-include="'views/recipe.html'" ng-show="recipe" />
+  <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+
+
+  
+  <div layout="row" layout-align="center" ng-show="recipe">
+    <div layout-align="center center" layout="column">
+      <p>Pick this recipe?</p>
+      <md-button class="md-raised md-primary" ng-click="agreed()">Yes!</md-button>
+      <md-button class="md-raised md-warn" ng-click="disagreed()">No</md-button>
+    </div>
+  </div>
+
+</div>

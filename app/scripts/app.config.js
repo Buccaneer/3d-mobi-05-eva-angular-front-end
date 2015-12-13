@@ -91,6 +91,14 @@
             }]
           }
         })
+        .state('create-recipe-rr-challenge', {
+          url: '/challenge/create/region-recipe',
+          templateUrl: 'views/challenges/create-region-recipe-challenge.html',
+          controller: 'ChallengeRegionRecipesCtrl',
+          requireAuth: true,
+          resolve: {
+          }
+        })
         .state('select-view-creative-cooking', {
           url: '/challenge/create/creative-cooking',
           //controller: 'AgreeRecipeCtrl',
@@ -116,7 +124,7 @@
           controller: 'RestaurantCtrl',
           requireAuth: true
         });
-
+//
 
       //let translateProvider load translations from external json
       $translateProvider.useStaticFilesLoader({
