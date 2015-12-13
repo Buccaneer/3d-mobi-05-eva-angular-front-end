@@ -5,9 +5,11 @@
 			<div layout-align="center" layout="row">
 				<div layout="column">
 					<h1>{{userinfo.FirstName}} {{userinfo.LastName}} <small><strong>{{'badges.' +title | translate }}</strong></small></h1>
-
+					
 				</div>
+			
 			</div>
+			
 
 			<div layout-align="center" layout="row">
 				<div layout="column">
@@ -15,7 +17,9 @@
 
 				</div>
 			</div>
-
+			<p></p>
+	<md-progress-linear md-mode="determinate" value="{{next}}" >{{next}}</md-progress-linear>
+	<p></p>
 			<div layout-align="center" layout="row">
 				<div layout="column">
 					<md-grid-list md-cols-gt-md="6" md-cols-sm="3" md-cols-md="8" md-row-height-gt-md="1:1" md-row-height="4:3" md-gutter-gt-md="16px"
@@ -40,7 +44,4 @@
 
 	</div>
 
-	<div layout-align="center center" flex="100">
-
-	</div>
 </div>
