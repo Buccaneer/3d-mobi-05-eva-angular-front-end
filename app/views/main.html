@@ -1,44 +1,54 @@
-<div class="blackboard-wrapper wrapper" layout="column" ng-init="init()">
+<div class="blackboard-wrapper wrapper" ng-init="init()">
 
-  <!-- DIV TO SHOW CURRENT CHALLENGE -->
-  <div ng-show="currentChallenge">
-    <div class="big-left-margin">
-      <h1>Timer hier</h1>
-    </div>
-    <div class="big-left-margin" id="title" layout-align="center" layout="row">
-      <h1>Huidige uitdaging:</h1>
+  <div flex="100" layout="column">
+    <div id="main-header">
+      <div layout-align="end" layout="row">
+        <p class="bg-black" id="welcome">
+          {{'main.welcome' | translate}}
+          {{userinfo.FirstName}}
+          {{userinfo.LastName}}!
+        </p>
+      </div>
+
+      <div layout-align="center" layout="row" ng-show="currentChallenge.Type === 'Recipe' && currentChallenge.Done === false && currentChallenge.TimeToAccept > 0">
+        <div layout="column" layout-align="center">
+          <div layout="row" class="bg-black">
+            <img class="img-responsive" id="img-main" src="{{currentChallenge.Thumbnail}}" />
+            <div layout="column" layout-align="center center" id="main-expl">
+              <p>
+                {{'challenges.pointsToEarn' | translate}}
+                {{currentChallenge.Earnings}}
+              </p>
+              <p>
+                {{'challenges.timeLeft' | translate}}
+                {{currentChallenge.TimeToAccept | amDurationFormat : 'minute'}}
+              </p>
+              <md-button class="md-primary md-raised" ng-click="seeDetails()">{{'main.checkDetails' | translate}}</md-button>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <div layout-align="center" layout="row" ng-hide="currentChallenge.Done === false && currentChallenge.TimeToAccept > 0">
+        <div layout="column" layout-align="center center" class="bg-black">
+          <h3>{{'main.noChallenge' | translate}}</h3>
+          <md-button class="md-primary md-raised" ng-click="getChallenge()">{{'main.newChallenge' | translate}}</md-button>
+        </div>
+      </div>
     </div>
 
-    <div>
-      <h2>{{currentChallenge.Name}}</h2>
-    </div>
+    <md-progress-linear md-mode="determinate" value="{{next}}"></md-progress-linear>
+    <p>{{next}}</p>
 
-    <div>
-      <md-button class="header-btn md-primary md-raised" ng-href="#/challenge/{{currentChallenge.ChallengeId}}">Bekijk details</md-button>
+    <!-- STATS -->
+    <div id="stats">
+      <h1>Statistieken</h1>
+
+      <div ng-include="'../views/badges.html'"></div>
     </div>
+    <!-- close stats -->
   </div>
-
-  <!-- DIV TO SHOW WHEN NO CURRENT CHALLENGE -->
-  <div ng-hide="currentChallenge">
-    <h1>
-      U hebt nog geen actieve uitdaging.
-    </h1>
-
-    <md-button class="md-primary md-raised" ng-href="#/challenge/create">
-      Verkrijg een uitdaging</md-button>
-  </div>
-
-  <!-- STATS -->
-  <div id="stats" flex="100">
-    <h1>Statistieken</h1>
-    <!-- <div id="progressBar">
-          <md-progress-circular md-diameter="99%" md-mode="determinate" value="{{progress.amountOfDays * progress.percentagePerDay}}"></md-progress-circular>
-        </div> -->
-    <p>STATS HIER</p>
-
-    <h1>Prestaties</h1>
-    <p>Hier komen de achievements</p>
-  </div>
-  <!-- close stats -->
 </div>
+
 <!-- close wrapper -->

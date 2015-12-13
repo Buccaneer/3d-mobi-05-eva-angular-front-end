@@ -19,6 +19,7 @@
     "angular-material": "0.11.3",
     "angular-google-maps": "~2.2.1",
     "angular-scroll-animate": "~0.9.8",
+    "angular-moment": "1.0.0-beta.3",
     "moment": "~2.10.6"
   },
   "devDependencies": {

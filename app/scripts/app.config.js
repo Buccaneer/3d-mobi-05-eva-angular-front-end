@@ -28,7 +28,15 @@
           url: '/main',
           templateUrl: 'views/main.html',
           controller: 'MainCtrl',
-          requireAuth: true
+          requireAuth: true,
+          resolve: {
+            fetchUserInfoPromise: ['UserInfoService', function(UserInfoService) {
+              return UserInfoService.getUserInfo();
+            }],
+            fetchChallengesPromise: ['ChallengeService', function(ChallengeService) {
+              return ChallengeService.getChallenges();
+            }]
+          }
         })
         .state('settings', {
           url: '/settings',
@@ -122,6 +130,12 @@
           url: '/challenge/create/restaurant',
           templateUrl: '/views/challenges/create-restaurant-challenge.html',
           controller: 'RestaurantCtrl',
+          requireAuth: true
+
+        }).state('create-sugarfree-challenge', {
+          url: '/challenge/create/sugarfree',
+          templateUrl: '/views/challenges/create-sugarfree-challenge.html',
+          controller:'AgreeSugarfreeCtrl',
           requireAuth: true
         });
 //

@@ -1,12 +1,11 @@
 <div class="blackboard-wrapper wrapper" layout-align-gt-md="center center" layout="row">
-  <div class="fullwidth" layout="column" flex="100" flex-gt-md="80">
-
+  <div class="fullwidth" flex-gt-md="80" flex="100" layout="column">
     <h1 class="text-center">
       {{'challenges.create.choose' | translate}}
     </h1>
 
     <div class="fullwidth-item border-white" id="recipe" layout-align="center center" layout="row" ng-click="createRecipeChallenge()" when-visible="slideInUp">
-      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+      <div class="fullwidth-item-inner bg-black" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.recipe' | translate}}
         </h3>
@@ -17,7 +16,7 @@
     </div>
 
     <div class="fullwidth-item border-white" id="recipe-region" layout-align="center center" layout="row" ng-click="createRegionRecipeChallenge()" when-visible="slideInUp">
-      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+      <div class="fullwidth-item-inner bg-black" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.recipe-region' | translate}}
         </h3>
@@ -28,7 +27,7 @@
     </div>
 
     <div class="fullwidth-item border-white" id="restaurant" layout-align="center center" layout="row" ng-click="createRestaurantChallenge()" when-visible="slideInUp">
-      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+      <div class="fullwidth-item-inner bg-black" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.restaurant' | translate}}
         </h3>
@@ -38,8 +37,8 @@
       </div>
     </div>
 
-    <div class="fullwidth-item border-white" id="restaurant-region" layout-align="center center" layout="row" ng-click="createRegionRestaurantChallenge()" when-visible="slideInUp">
-      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+    <!-- <div class="fullwidth-item border-white" id="restaurant-region" layout-align="center center" layout="row" ng-click="createRegionRestaurantChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner bg-black" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.restaurant-region' | translate}}
         </h3>
@@ -47,15 +46,26 @@
           {{'challenges.create.restaurant-region-text' | translate}}
         </p>
       </div>
-    </div>
+    </div> -->
 
     <div class="fullwidth-item border-white" id="creative-cooking" layout-align="center center" layout="row" ng-click="createCreativeCookingChallenge()" when-visible="slideInUp">
-      <div class="fullwidth-item-inner" flex="60" layout-align="center center" layout="column">
+      <div class="fullwidth-item-inner bg-black" layout-align="center center" layout="column">
         <h3>
           {{'challenges.create.creative-cooking' | translate}}
         </h3>
         <p class="text-center">
           {{'challenges.create.creative-cooking-text' | translate}}
+        </p>
+      </div>
+    </div>
+
+    <div class="fullwidth-item border-white" id="sugar-free" layout-align="center center" layout="row" ng-click="createSugarfreeChallenge()" when-visible="slideInUp">
+      <div class="fullwidth-item-inner bg-black" layout-align="center center" layout="column">
+        <h3>
+          {{'challenges.create.sugarfree' | translate}}
+        </h3>
+        <p class="text-center">
+          {{'challenges.create.sugarfree-text' | translate}}
         </p>
       </div>
     </div>

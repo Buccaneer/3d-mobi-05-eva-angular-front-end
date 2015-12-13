@@ -19,7 +19,6 @@
         link: function(scope) {
           if (scope.ingredients === undefined || scope.ingredients === null) {
             scope.ingredients = [];
-            console.log('hier');
           }
 
 

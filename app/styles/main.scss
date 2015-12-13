@@ -6,11 +6,13 @@ $nav-height: 7;
 $min-nav-height: 7vh;
 $content-height: 100vh - $nav-height;
 $background-black-opac: rgba(0, 0, 0, 0.8);
+$background-green-opac: rgba(3, 90, 72, 0.8);
 $margin-top-vh: 10vh;
 
 //amount of challenge types to be displayed on the createChallenge view, INCLUDING the title
 $amount-challenge-types: 6;
 $vh-per-challenge: 30vh;
+$overview-vh-per-challenge: 20vh;
 $sidenav-width: 100vw - $nav-height;
 
 //fonts
@@ -60,27 +62,7 @@ h5 {
 md-button {
   font-family: museo-normal;
 }
-md-toolbar {
-  min-height: $min-nav-height;
-}
-#header {
-  /* FF3.6-15 */
-  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
-  /* Chrome10-25,Safari5.1-6 */
-  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
-  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
-
-  // background-image: url("../images/header.png");
-  background-size: cover;
-  min-height: 100vh;
-}
-#burger {
-  margin-top: 20px;
-}
-md-sidenav,
-md-sidenav.md-locked-open,
-md-sidenav.md-closed.md-locked-open-add-active {
+md-sidenav {
   min-width: 200px !important;
   width: 80vw !important;
   max-width: 400px !important;
@@ -91,6 +73,28 @@ md-input-container label {
 md-input-container .md-input {
   color: #fff !important;
   border-color: #fff;
+}
+md-radio-group {
+  color: #fff !important;
+}
+md-radio-group,
+md-input,
+md-select,
+md-select-value,
+label {
+  color: #fff !important;
+}
+md-datepicker {
+  background-color: rgba(0, 0, 0, 0);
+}
+.md-datepicker-input {
+  color: #fff !important;
+}
+.md-datepicker-triangle-button {
+  background-color: #fff !important;
+}
+.md-datepicker-calendar-icon {
+  color: #fff !important;
 }
 .brand {
   max-height: 40px;
@@ -104,32 +108,74 @@ md-input-container .md-input {
 }
 .bg-black {
   background-color: $background-black-opac;
+  padding: 25px;
+  color: #fff;
+}
+.bg-active {
+  background-color: $background-green-opac !important;
+}
+.fillinWrapper {
+  background-image: url("../images/form-bg.jpg");
+  background-size: cover;
+  min-height: $content-height;
+  min-width: 100%;
+  position: absolute;
 }
 .fullwidth {
-  height: 100%;
+  margin-top: 5vh;
+  margin-bottom: 5vh;
 }
 .fullwidth-item {
   min-height: $vh-per-challenge;
   background-size: cover;
 }
+.fullwidth-overview-item {
+  min-height: $overview-vh-per-challenge;
+}
 .fullwidth-item-inner {
   color: #fff;
-  background-color: $background-black-opac;
   min-width: 250px;
   max-width: 800px !important;
   padding-top: 5px;
 }
 .wrapper {
-  background-size: cover;
-  position: absolute;
-  min-height: $content-height;
   min-width: 100%;
-  padding-bottom: 50px;
+  min-height: $content-height;
+  background-color: #000;
+  background-repeat: no-repeat;
 }
 .blackboard-wrapper {
   background-image: url("../images/blackboard.jpg");
-  background-color: #000;
+  position: absolute;
+  background-size: cover;
   color: #fff;
+}
+.challenge-thumbnail {
+  background-position: center;
+  background-size: cover;
+}
+.comp {
+  min-height: 40px;
+  min-width: 40px;
+}
+.hover-enlarge {
+  transition: all 0.2s ease-in-out;
+  &:hover {
+    transform: scale(1.2, 1.2);
+  }
+}
+/* HOME HEADER */
+#header {
+  /* FF3.6-15 */
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/header.jpg");
+
+  // background-image: url("../images/header.png");
+  background-size: cover;
+  min-height: $content-height;
 }
 #header-btns {
   margin-bottom: 20px;
@@ -138,23 +184,57 @@ md-input-container .md-input {
   margin-left: 50vw;
   margin-top: 25vh;
 }
-#loginWrapper,
-#registerWrapper {
-  background-image: url("../images/form-bg.jpg");
-  background-size: cover;
+/* ABOUT VIEW */
+#about {
+  background: -moz-linear-gradient(top, rgba(255,255,255,0) 0%, rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/about-bg.jpg");
+  /* Chrome10-25,Safari5.1-6 */
+  background: -webkit-linear-gradient(top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%,rgba(255,255,255,1) 100%), url("../images/about-bg.jpg");
+  /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+  background: linear-gradient(to top, rgba(255,255,255,0) 0%,rgba(255,255,255,0) 79%, rgba(255,255,255,1) 100%), url("../images/about-bg.jpg");
   min-height: $content-height;
-  min-width: 100%;
-  position: absolute;
+  color: #fff;
+  background-size: cover;
 }
+#expl {
+  margin-top: 10vh;
+  margin-bottom: 10vh;
+  max-width: 750px;
+}
+#step5 {
+  margin-top: 7vh;
+}
+/* LOGIN/REGISTER/SETTINGS VIEW */
 #login,
-#register {
+#register,
+#settings {
   max-width: 600px;
   margin-top: $margin-top-vh;
   margin-left: auto;
   margin-right: auto;
   color: #fff !important;
+  margin-bottom: 50px;
 }
-#recipe-list {
+/* SETTINGS VIEW STYLE */
+#settings {
+  color: #fff !important;
+}
+/* RECIPE DETAILS VIEW */
+#recipe-header {
+  margin-top: 0;
+  min-width: 70%;
+  max-width: 70%;
+  min-height: 30vh;
+  background-size: cover;
+  background-position: center;
+}
+#recipe-header-content {
+  padding: 20px;
+}
+.recipe-description {
+  max-width: 50%;
+}
+/* RECIPE LIST VIEW */
+.flex-list {
   display: flex;
   flex-direction: row;
   flex-grow: 1;
@@ -173,25 +253,25 @@ md-input-container .md-input {
   align-self: center;
   max-width: 800px;
 }
-#recipe-tile-content {
-  padding: 20px;
-}
-#recipe-header {
-  margin-top: 0;
-  min-height: 200px;
-  height: 30vh;
-  min-width: 100%;
-  background-size: cover;
-  background-position: center;
-}
-#recipe-header-content {
-  padding: 20px;
-}
 #recipe-content {
   margin-top: 10px;
   margin-left: 20vw;
   margin-right: 20vw;
 }
+/* BADGE TILES */
+#badge-tile {
+  flex-grow: 0;
+  background-size: cover;
+  background-position: cover;
+  width: 250px;
+  margin: 10px;
+  align-self: center;
+}
+#badge {
+  max-height: 150px;
+  max-width: 150px;
+}
+/* CREATE CHALLENGE OVERVIEW */
 #recipe {
   background-image: url("../images/challenges/recipe.jpg");
 }
@@ -201,11 +281,39 @@ md-input-container .md-input {
 #restaurant {
   background-image: url("../images/challenges/rest.jpg");
 }
-#restaurant-region {
-  background-image: url("../images/challenges/rest-region.jpg");
-}
+
+// #restaurant-region {
+//   background-image: url("../images/challenges/rest-region.jpg");
+// }
 #creative-cooking {
   background-image: url("../images/challenges/creative-cooking.jpg");
+}
+#sugar-free {
+  background-image: url("../images/challenges/sugar-free.jpg");
+  background-position: center;
+}
+#challenge-header {
+  min-height: 200px;
+  min-width: 100%;
+  height: 30vh;
+  background-image: url("../images/challenge-header.png");
+  background-size: cover;
+  background-position: center;
+}
+#main-header {
+  min-height: 400px;
+  background-image: url("../images/challenge-header.png");
+  background-position: center;
+}
+#status {
+  margin-top: 15px;
+}
+#main-expl {
+  padding: 10px;
+}
+#img-main {
+  height: 25vw;
+  max-height: 250px;
 }
 #video-background {
   /*  making the video fullscreen  */
@@ -230,26 +338,75 @@ md-input-container .md-input {
 #loading-bar {
   z-index: 1;
 }
-
-//ANIMATIONS
+/* link animations to classes */
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
-  -webkit-animation-delay: 0s;
-}
-.bounceInLeft {
-  -webkit-animation: bounceInLeft 1s;
-  -webkit-animation-delay: 0s;
 }
 .fadeInLeft {
   -webkit-animation: fadeInLeft 1s;
-  -webkit-animation-delay: 0s;
 }
 .fadeInRight {
   -webkit-animation: fadeInRight 1s;
-  -webkit-animation-delay: 0s;
 }
 .slideInUp {
   -webkit-animation: slideInUp 1s;
+}
+@media screen and (max-width: 960px) {
+  #expl {
+    margin-top: 0;
+    margin-bottom: 0;
+  }
+}
+/* ingredient-component style */
+.chipsdemoContactChips md-content.autocomplete {
+  min-height: 250px;
+}
+.chipsdemoContactChips md-content.autocomplete input {
+  min-width: 400px;
+}
+.chipsdemoContactChips .md-item-text.compact {
+  padding-top: 8px;
+  padding-bottom: 8px;
+}
+.chipsdemoContactChips .contact-item {
+  box-sizing: border-box;
+}
+.chipsdemoContactChips .contact-item.selected {
+  opacity: 0.5;
+}
+.chipsdemoContactChips .contact-item.selected h3 {
+  opacity: 0.5;
+}
+.chipsdemoContactChips .contact-item .md-list-item-text {
+  padding: 14px 0;
+  max-width: 190px;
+}
+.chipsdemoContactChips .contact-item .md-list-item-text h3 {
+  margin: 0 !important;
+  padding: 0;
+  line-height: 1.2em !important;
+}
+.chipsdemoContactChips .contact-item .md-list-item-text h3,
+.chipsdemoContactChips .contact-item .md-list-item-text p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+}
+@media (min-width: 900px) {
+  .chipsdemoContactChips .contact-item {
+    float: left;
+    width: 33%;
+  }
+}
+.chipsdemoContactChips md-contact-chips {
+  margin-bottom: 10px;
+}
+.chipsdemoContactChips .md-chips {
+  padding: 5px 0 8px;
+}
+.chipsdemoContactChips .fixedRows {
+  height: 250px;
+  overflow: hidden;
 }
 @media screen and (max-width: 768px) {
   h1,
@@ -257,32 +414,53 @@ md-input-container .md-input {
   h3,
   h4,
   h5 {
-    font-size: 23px;
+    font-size: 2em;
   }
   .fullwidth {
+    margin-top: 0;
     margin-bottom: 0;
   }
   .fullwidth-item {
     width: 100%;
     min-height: 200px;
   }
-  #header {
-    background-image: url("../images/resp-header.jpg");
-    background-size: cover;
+  #expl {
+    margin-bottom: 0;
   }
   #loginWrapper,
   #registerWrapper {
     background-image: url("../images/sm/form-bg.jpg");
   }
   #login,
-  #register {
+  #register,
+  #settings {
     max-width: none;
     margin: 0;
   }
   #header-text {
-    color: #fff;
     margin-left: 0;
-    margin-top: 40vh;
+    margin-top: 30vh;
+  }
+  #recipe-list {
+    justify-content: none;
+  }
+  #recipe-tile {
+    margin-top: 10px;
+    width: 100%;
+  }
+  #recipe-tile-content {
+    width: 100%;
+    text-align: center;
+    background-color: $background-black-opac;
+  }
+  /*
+  * Resize all background images to smaller version
+  */
+  #header {
+    background-image: url("../images/sm/header.jpg");
+  }
+  #about {
+    background-image: url("../images/sm/about-bg.jpg");
   }
   #recipe {
     background-image: url("../images/challenges/sm/recipe.jpg");
@@ -299,17 +477,24 @@ md-input-container .md-input {
   #creative-cooking {
     background-image: url("../images/challenges/sm/creative-cooking.jpg");
   }
-  #recipe-list {
-    justify-content: none;
+  #sugar-free {
+    background-image: url("../images/challenges/sm/sugar-free.jpg");
+    background-position: center;
   }
-  #recipe-tile {
-    margin-top: 10px;
-    width: 100%;
+  .bounceInUp {
+    -webkit-animation: none;
   }
-  #recipe-tile-content {
-    width: 100%;
-    text-align: center;
-    background-color: $background-black-opac;
+  .bounceInLeft {
+    -webkit-animation: none;
+  }
+  .fadeInLeft {
+    -webkit-animation: none;
+  }
+  .fadeInRight {
+    -webkit-animation: none;
+  }
+  .slideInUp {
+    -webkit-animation: none;
   }
 }
 @media screen and (min-width: 1200px) and (-webkit-min-device-pixel-ratio: 1) {
@@ -326,5 +511,141 @@ md-input-container .md-input {
   #recipe-tile {
     margin-top: 20px;
     width: 400px;
+  }
+}
+
+/* Animations from Animate.css */
+@-webkit-keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes bounceInUp {
+  from,
+  60%,
+  75%,
+  90%,
+  to {
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+    animation-timing-function: cubic-bezier(0.215, 0.610, 0.355, 1.000);
+  }
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(0, 3000px, 0);
+    transform: translate3d(0, 3000px, 0);
+  }
+  60% {
+    opacity: 1;
+    -webkit-transform: translate3d(0, -20px, 0);
+    transform: translate3d(0, -20px, 0);
+  }
+  75% {
+    -webkit-transform: translate3d(0, 10px, 0);
+    transform: translate3d(0, 10px, 0);
+  }
+  90% {
+    -webkit-transform: translate3d(0, -5px, 0);
+    transform: translate3d(0, -5px, 0);
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@keyframes slideInUp {
+  from {
+    -webkit-transform: translate3d(0, 100%, 0);
+    transform: translate3d(0, 100%, 0);
+    visibility: visible;
+  }
+  to {
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+  }
+}
+@-webkit-keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInRight {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(100%, 0, 0);
+    transform: translate3d(100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@-webkit-keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
+  }
+}
+@keyframes fadeInLeft {
+  from {
+    opacity: 0;
+    -webkit-transform: translate3d(-100%, 0, 0);
+    transform: translate3d(-100%, 0, 0);
+  }
+  to {
+    opacity: 1;
+    -webkit-transform: none;
+    transform: none;
   }
 }
