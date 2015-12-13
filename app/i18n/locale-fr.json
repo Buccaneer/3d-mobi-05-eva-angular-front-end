@@ -2,6 +2,7 @@
   "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
 
   "nav": {
+    "home": "Page d'acceuil",
     "register": "Inscription",
     "login": "Connexion",
     "logout": "Déconnecter",

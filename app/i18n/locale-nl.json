@@ -3,6 +3,7 @@
 
 
   "nav": {
+    "home": "Startpagina",
     "main": "Hoofdmenu",
     "register": "Nieuw account",
     "login": "Aanmelden",

@@ -35,11 +35,14 @@
         };
 
         $scope.agreed = function() {
-          ChallengeService.createRecipeChallenge(RecipeService.selectedChallenge.RecipeId).then(function() {
-            $rootScope.loading = true;
+          $rootScope.loading = true;
+          ChallengeService.createRecipeChallenge(RecipeService.selectedChallenge.RecipeId).then(function(data) {
+            $rootScope.loading = false;
+            console.log(data);
             $state.go('challenges-overview');
           }).catch(function(response) {
             $rootScope.loading = false;
+            $state.go('challenges-overview');
             console.log(response);
           });
         };

@@ -3,6 +3,7 @@
 
 
   "nav": {
+    "home": "Home",
     "main": "Main Menu",
     "register": "Create account",
     "login": "Sign in",

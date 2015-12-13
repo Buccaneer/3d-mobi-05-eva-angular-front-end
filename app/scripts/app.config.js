@@ -34,7 +34,6 @@
               return UserInfoService.getUserInfo();
             }],
             fetchChallengesPromise: ['ChallengeService', function(ChallengeService) {
-              console.log("fetched");
               return ChallengeService.getChallenges();
             }]
           }
@@ -62,7 +61,6 @@
           requireAuth: true,
           resolve: {
             fetchChallengesPromise: ['ChallengeService', function(ChallengeService) {
-              console.log("fetched2");
               return ChallengeService.getChallenges();
             }]
           }
