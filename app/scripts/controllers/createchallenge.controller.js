@@ -22,7 +22,7 @@
       };
 
       $scope.createRegionRecipeChallenge = function(){
-        $state.go('home');
+        $state.go('create-recipe-rr-challenge');
       };
 
       $scope.createRegionRestaurantChallenge = function(){
@@ -30,7 +30,7 @@
       };
 
       $scope.createCreativeCookingChallenge = function(){
-        $state.go('home');
+        $state.go('select-view-creative-cooking');
       };
     }
   ]);

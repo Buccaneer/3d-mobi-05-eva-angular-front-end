@@ -62,6 +62,8 @@
                 "Type": "Recipe",
                 "RecipeId": recipeId
               }
+            }).then(function (data) {
+              service.challenges.push(data.data);
             });
           },
 
@@ -80,10 +82,32 @@
                 "IngredientsId": ingredientsId,
                 "RecipeId": recipeId
               }
+            }).then(function (data) {
+              
+              service.challenges.push(data.data);
             });
           }
 
 
+        };
+
+        service.createRegionRecipeChallenge = function (recipeId) {
+          var token = $localstorage.getObject(TOKEN).token;
+
+          return $http({
+            method: 'PUT',
+            url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'Content-type': 'application/json; charset=utf-8'
+            },
+            data: {
+              "Type": "RegionRecipe",
+              "RecipeId": recipeId
+            }
+          }).then(function (data) {
+            service.challenges.push(data.data);
+          });
         };
         service.getChallenges = function () {
           var token = $localstorage.getObject(TOKEN).token;
@@ -102,6 +126,8 @@
             angular.copy(data, service.challenges);
           });
         };
+
+
 
         service.getChallenge = function (challengeId) {
           var token = $localstorage.getObject(TOKEN).token;
