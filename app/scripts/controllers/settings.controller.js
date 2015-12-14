@@ -14,25 +14,28 @@
         .module('eva21DayChallengeApp').controller('SettingsCtrl', ['$scope', 'UserInfoService', '$location', function ($scope, UserInfoService, $location) {
             var _userInfo = UserInfoService.userInfo;
             var _doneSetup = _userInfo.DoneSetup;
-            $scope.selected = [];    
-     /*        $scope.validate = {
 
-             };
-            
-             var calcMinDate = function(){
-                 return new Date();
-             };
-            
-             var calcMaxDate = function(){
-                 var cur = new Date();
-                 var y = cur.getFullYear();
-                 var maxY = y-14;
-                 cur.setFullYear(maxY);
-                
-                 return cur;
-             };*/
-             
-            
+            $scope.selected = [];    
+            /*        $scope.validate = {
+       
+                    };
+       
+         
+                   
+                    var calcMinDate = function(){
+                        return new Date();
+                    };
+                   
+                    var calcMaxDate = function(){
+                        var cur = new Date();
+                        var y = cur.getFullYear();
+                        var maxY = y-14;
+                        cur.setFullYear(maxY);
+                       
+                        return cur;
+                    };*/
+
+
             $scope.user = {
                 firstname: '',
                 lastname: '',
@@ -55,11 +58,13 @@
                 };
 
 
+
             };
 
             var toId = function (ingredient) {
                 return ingredient.IngredientId;
             };
+
             if (_doneSetup === true) {
                 $scope.user = {
                     firstname: _userInfo.FirstName,
@@ -79,8 +84,10 @@
             $scope.peopleInFamilyList = ['1', '2', '3', '4'];
 
             $scope.callSettings = function () {
+
                 $scope.user.allergies = $scope.selected.map(toId);
                 console.log($scope.user.allergies);
+
                 UserInfoService.markSetupAsDone($scope.user)
                     .then(function () {
                         $location.path('/main');
