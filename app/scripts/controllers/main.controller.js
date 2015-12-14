@@ -17,9 +17,6 @@
       function($scope, $state, UserInfoService, ChallengeService, $translate, moment) {
         moment.locale($translate.use());
 
-        $scope.userinfo = UserInfoService.userInfo;
-        $scope.currentChallenge = ChallengeService.challenges.sort(compare)[0];
-
         function compare(a, b) {
           if (a.TimeToAccept > b.TimeToAccept) {
             return -1;
@@ -29,6 +26,10 @@
           }
           return 0;
         }
+
+        $scope.userinfo = UserInfoService.userInfo;
+        $scope.currentChallenge = ChallengeService.challenges.sort(compare)[0];
+
         console.log($scope.currentChallenge);
 
         $scope.init = function() {
@@ -73,7 +74,7 @@
           $scope.next = Math.round(nextXp);
           $scope.nextLevel = nextLevel;
 
-          $scope.seeDetails = function(id){
+          $scope.seeDetails = function(){
             $state.go("challenge-overview", {"id": $scope.currentChallenge.ChallengeId});
           };
 

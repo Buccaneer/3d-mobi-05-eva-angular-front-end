@@ -109,7 +109,7 @@
 
         $scope.agreed = function(){
           console.log($scope.currentRestaurant);
-          challengeService.createRestaurantChallenge($scope.currentRestaurant.RestaurantId).then(function(data){
+          challengeService.createRestaurantChallenge($scope.currentRestaurant.RestaurantId).then(function(){
             $state.go('challenges-overview');
           }).catch(function(response){
             console.log(response);

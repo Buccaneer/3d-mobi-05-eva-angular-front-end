@@ -8,7 +8,7 @@
 
   <div layout-align="center" layout="row" ng-init="init()">
 
-    <div class="fullwidth" flex-md="100" flex-gt-md="60" layout="column">
+    <div class="fullwidth" flex="100" flex-gt-md="60" layout="column">
       <div class="fullwidth-overview-item border-white bg-black" layout="row" ng-class="{'bg-active': challenge.Done===false && challenge.TimeToAccept > 0}" ng-click="seeDetails(challenge.ChallengeId)" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp">
         <div class="fullwidth-item-inner" layout-align="center" flex="100" flex="grow" layout="row">
           <div layout="column" layout-align="center center" flex="50">

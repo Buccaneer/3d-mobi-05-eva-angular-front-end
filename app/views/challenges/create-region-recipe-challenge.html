@@ -1,10 +1,10 @@
 <!-- CHOOSE RECIPE VIEW -->
 <div class="blackboard-wrapper wrapper">
-  <div layout="row" layout-align="center">
-    <div class="bg-white" layout="column" layout-align="center center" flex-gt-md="60" flex-sm='100'>
+  <div layout-align="center" layout="row">
+    <div class="bg-white" flex-gt-md="60" flex='100' layout-align="center center" layout="column">
       <h1 class="text-center">{{'recipe.choose' | translate}}</h1>
 
-      <md-select layout-align="center" layout="row" ng-model="selectedRegion" placeholder="{{'region.choose' | translate}}" ng-change="onChange(selectedRegion)">
+      <md-select layout-align="center" layout="row" ng-change="onChange(selectedRegion)" ng-model="selectedRegion" placeholder="{{'region.choose' | translate}}">
         <md-option ng-repeat="r in regions" ng-value="r">
           {{"region." + r | translate}}
         </md-option>
@@ -12,7 +12,7 @@
 
       <div class="flex-list" layout-align="center center" layout="row" when-visible="slideInUp">
         <div class="border-white" id="recipe-tile" layout-align="center center" layout="column" ng-click="setSelectedRecipe(recipe)" ng-repeat="recipe in recipes | orderBy:'Name'" ng-style="{'background-image':'url({{recipe.Image}})'}">
-          <p id="recipe-tile-content" class="bg-black">
+          <p class="bg-black" id="recipe-tile-content">
             {{recipe.Name}}
           </p>
         </div>
@@ -21,16 +21,16 @@
     </div>
   </div>
 
-  <div layout="row" ng-include="'views/recipe.html'" ng-show="recipe" />
+  <div id="recipe-body" layout="column" ng-include="'views/recipe.html'" ng-show="recipe"/>
   <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
 
-
-
-  <div layout="row" layout-align="center" ng-show="recipe">
+  <div layout-align="center" layout="row" ng-show="recipe">
     <div layout-align="center center" layout="column">
       <p>{{'challenges.pick' | translate }}</p>
-      <md-button class="md-raised md-primary" ng-click="agreed()">{{'yes' | translate}}</md-button>
-      <md-button class="md-raised md-warn" ng-click="disagreed()">{{'no' | translate}}</md-button>
+      <div layout="row">
+        <md-button class="md-raised md-primary" ng-click="agreed()">{{'yes' | translate}}</md-button>
+        <md-button class="md-raised md-warn" ng-click="disagreed()">{{'no' | translate}}</md-button>
+      </div>
     </div>
   </div>
 
