@@ -31,6 +31,7 @@
 
       $scope.onChange = function(recipe) {
         $scope.recipe = recipe;
+				console.log(recipe);
       };
 
       $scope.agreed = function() {

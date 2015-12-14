@@ -1,13 +1,13 @@
 <!-- TODO include translations -->
+<div id="recipe-header" layout-align="center center" layout="column" ng-style="{'background-image':'url({{recipe.Image}})'}">
+  <div class="bg-black" id="recipe-header-content">
+    <h2>{{recipe.Name}}</h2>
+  </div>
+</div>
 
 <div layout-align="center" layout="row">
   <div layout="column">
 
-    <div id="recipe-header" layout-align="center center" layout="column" ng-style="{'background-image':'url({{recipe.Image}})'}">
-      <div class="bg-black" id="recipe-header-content">
-        <h2>{{recipe.Name}}</h2>
-      </div>
-    </div>
     <div id="recipe-properties">
       <div class="recipe-property" ng-repeat="property in recipe.Properties">
         <span class="title">{{property.Type}}</span>:
@@ -23,7 +23,6 @@
       {{ingredient.Ingredient.Name}}
     </div>
     <h3>Beschrijving</h3>
-    <div class="recipe-description" layout="column" layout-align="center center" ng-bind-html="recipe.Description">
-    </div>
+    <div class="recipe-description" layout-align="center center" layout="column" ng-bind-html="recipe.Description"></div>
   </div>
 </div>

@@ -121,6 +121,12 @@ md-datepicker {
   min-width: 100%;
   position: absolute;
 }
+#sugar-header {
+  min-height: 250px;
+  height: 10vh;
+  background-image: url("../images/challenges/sugar-free.jpg");
+  background-position: center;
+}
 .fullwidth {
   margin-top: 5vh;
   margin-bottom: 5vh;
@@ -163,6 +169,9 @@ md-datepicker {
   &:hover {
     transform: scale(1.2, 1.2);
   }
+}
+.restaurant-challenge{
+  background-image: url("../images/components/restaurant-challenge.png");
 }
 /* HOME HEADER */
 #header {
@@ -220,18 +229,16 @@ md-datepicker {
 }
 /* RECIPE DETAILS VIEW */
 #recipe-header {
-  margin-top: 0;
-  min-width: 70%;
-  max-width: 70%;
+  min-width: 100%;
   min-height: 30vh;
   background-size: cover;
   background-position: center;
 }
-#recipe-header-content {
-  padding: 20px;
-}
+// #recipe-header-content {
+//   padding: 20px;
+// }
 .recipe-description {
-  max-width: 50%;
+  max-width: 500px;
 }
 /* RECIPE LIST VIEW */
 .flex-list {
@@ -288,7 +295,7 @@ md-datepicker {
 #creative-cooking {
   background-image: url("../images/challenges/creative-cooking.jpg");
 }
-#sugar-free {
+.sugarfree-challenge {
   background-image: url("../images/challenges/sugar-free.jpg");
   background-position: center;
 }
@@ -347,9 +354,6 @@ md-datepicker {
 #overlay {
   padding: 25px;
 }
-#restaurant-body{
-  width: 75vw;
-}
 
 .angular-google-map-container {
   top:0;
@@ -360,7 +364,9 @@ md-datepicker {
   min-width: 100vw;
   min-height: $content-height*0.5;
 }
-
+#restaurant-desc {
+  max-width: 50vw;
+}
 //ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;

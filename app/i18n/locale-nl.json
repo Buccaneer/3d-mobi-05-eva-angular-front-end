@@ -1,6 +1,14 @@
 {
   "___comment": "niks",
 
+  "pick": "Kies een recept",
+  "yes": "JA",
+  "no": "NEEN",
+  "type": "Soort",
+  "Restaurant": "Restaurant",
+  "Recipe": "Recept",
+  "CreativeCooking": "Creative Cooking",
+  "Suikervrij": "Suikervrij",
 
   "nav": {
     "home": "Startpagina",
@@ -77,6 +85,7 @@
     "new": "Nieuwe challenge aanvragen",
     "timeLeft" : "Resterende tijd:",
     "pointsToEarn": "Te verdienen punten:",
+    "pick": "Kies je deze challenge?",
 
     "create": {
       "choose": "Kies één van deze uitdagingen!",
@@ -162,5 +171,22 @@
     "trotsegebruiker-desc": "Je hebt reeds 10 challenges voltooid. Ga zo door!",
     "doorzetter-title": "Doorzetter",
     "doorzetter-desc": "Je hebt de 21 dagen successvol ten einde gebracht!"
+  },
+
+  "restaurant": {
+    "distance": "Afstand tot het restaurant",
+    "info-1": "We gebruiken uw locatie zodat we vegetarische restaurants in uw directe omgeving kunnen aanraden.",
+    "info-2": "Indien u dit niet wenst kan u locatievoorzieningen voor deze app negeren en zal de app het centrum van Gent als aangeraden locatie gebruiken, met een straal van 20km.",
+    "info-3": "Indien u hiermee akkoord bent kan u hieronder op de knop drukken.",
+    "use-loc": "Gebruik mijn locatie!",
+    "find": "Zoek restaurants"
+  },
+
+  "region": {
+    "Oosters": "Oosters",
+    "Afrikaans": "Afrikaans",
+    "Zuid-Amerikaans": "Zuid-Amerikaans",
+    "Westers": "Westers",
+    "choose": "Kies een regio"
   }
 }

@@ -10,8 +10,8 @@
 
     <div class="fullwidth" flex-sm="100" flex-gt-sm="60" layout="column">
       <div class="fullwidth-overview-item border-white bg-black" layout="row" ng-class="{'bg-active': challenge.Done===false && challenge.TimeToAccept > 0}" ng-click="seeDetails(challenge.ChallengeId)" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp">
-        <div class="fullwidth-item-inner" layout-align="center" flex="100" layout="row">
-          <div layout="column" flex="50">
+        <div class="fullwidth-item-inner" layout-align="center" flex="100" flex="grow" layout="row">
+          <div layout="column" layout-align="center center" flex="50">
             <h3>
               {{challenge.Name}}
             </h3>
@@ -19,6 +19,9 @@
               {{challenge.Date | amUtc | amDateFormat:'DD.MM.YYYY'}}
               om
               {{challenge.Date | amUtc | amLocal | amDateFormat:'HH:mm'}}
+            </p>
+            <p>
+              {{'type' | translate}}: {{challenge.Type | translate}}
             </p>
             <div id="status">
               <div ng-if="challenge.Done === false && challenge.TimeToAccept < 0">
@@ -34,7 +37,10 @@
             </div>
           </div>
 
-          <div class="challenge-thumbnail"flex="50" ng-style="{'background-image':'url({{challenge.Thumbnail}})'}"></div>
+          <div layout-align="center end" layout="row" ng-show="challenge.Type === 'Recipe' || challenge.Type === 'CreativeCooking'" class="challenge-thumbnail" flex="50" ng-style="{'background-image':'url({{challenge.Thumbnail}})'}"></div>
+          <div layout-align="center end" layout="row" ng-show="challenge.Type === 'Restaurant'" flex="50" class="restaurant-challenge challenge-thumbnail"></div>
+          <div layout-align="center end" layout="row" ng-show="challenge.Type === 'Suikervrij'" flex="50" class="sugarfree-challenge challenge-thumbnail"></div>
+
         </div>
       </div>
     </div>

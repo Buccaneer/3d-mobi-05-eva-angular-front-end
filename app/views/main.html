@@ -10,18 +10,21 @@
         </p>
       </div>
 
-      <div layout-align="center" layout="row" ng-show="currentChallenge.Type === 'Recipe' && currentChallenge.Done === false && currentChallenge.TimeToAccept > 0">
+      <div layout-align="center" layout="row" ng-show="currentChallenge.Done === false && currentChallenge.TimeToAccept > 0">
         <div layout="column" layout-align="center">
           <div layout-sm="column" layout-gt-sm="row" class="bg-black">
-            <img class="img-responsive" id="img-main" src="{{currentChallenge.Thumbnail}}" />
+            <img ng-show="currentChallenge.Thumbnail" class="img-responsive" id="img-main" src="{{currentChallenge.Thumbnail}}" />
+            <img ng-show="currentChallenge.Type === 'Restaurant'" class="img-responsive" id="img-main" src="../images/components/restaurant-challenge-main.png" />
+            <img ng-show="currentChallenge.Type === 'Suikervrij'" class="img-responsive" id="img-main" src="../images/components/suikervrij-challenge-main.png" />
             <div layout="column" layout-align="center center" id="main-expl">
-              <p>
-                {{'challenges.pointsToEarn' | translate}}
-                {{currentChallenge.Earnings}}
-              </p>
+              <h3>{{currentChallenge.Type | translate}}</h3>
               <p>
                 {{'challenges.timeLeft' | translate}}
                 {{currentChallenge.TimeToAccept | amDurationFormat : 'minute'}}
+              </p>
+              <p>
+                {{'challenges.pointsToEarn' | translate}}
+                {{currentChallenge.Earnings}}
               </p>
               <md-button class="md-primary md-raised" ng-click="seeDetails()">{{'main.checkDetails' | translate}}</md-button>
             </div>
@@ -39,12 +42,10 @@
     </div>
 
     <md-progress-linear md-mode="determinate" value="{{next}}"></md-progress-linear>
-    <p>{{next}}</p>
+    <!-- <p>{{next}}</p> -->
 
     <!-- STATS -->
     <div id="stats">
-      <h1>Statistieken</h1>
-
       <div ng-include="'../views/badges.html'"></div>
     </div>
     <!-- close stats -->

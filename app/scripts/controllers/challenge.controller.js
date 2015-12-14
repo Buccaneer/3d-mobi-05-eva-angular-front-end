@@ -3,9 +3,12 @@
   'use strict';
 
   angular
-    .module('eva21DayChallengeApp').controller('ChallengeCtrl', ['$rootScope', '$state', '$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'challenge', 'RestaurantService',
-      function($rootScope, $state, $scope, $localstorage, TOKEN, ChallengeService, challenge, restaurantService) {
+    .module('eva21DayChallengeApp').controller('ChallengeCtrl', ['$rootScope', '$state', '$scope', '$localstorage', 'TOKEN', 'ChallengeService', 'challenge', 'RestaurantService', 'moment', '$translate',
+      function($rootScope, $state, $scope, $localstorage, TOKEN, ChallengeService, challenge, restaurantService, moment, $translate) {
+        moment.locale($translate.use());
+
         $scope.challenge = challenge;
+        $scope.challenge.Date = new moment($scope.challenge.Date);
 
         console.log(challenge);
         if (challenge.Type === 'Recipe' || challenge.Type === 'CreativeCooking') {
@@ -13,6 +16,9 @@
           $scope.view = "views/recipe.html";
         }
 
+        if (challenge.Type === 'Suikervrij') {
+          $scope.view = "views/sugarfree.html";
+        }
 
         if (challenge.Type === 'Restaurant') {
           $scope.view = "views/restaurant.html";
@@ -20,9 +26,6 @@
         }
 
         $scope.initMap = function() {
-          var rest = (challenge.Restaurant);
-          console.log(typeof(rest.Longitude));
-          console.log(isNaN(parseFloat($scope.restaurant.Longitude)));
           var long = $scope.restaurant.Longitute;
           var lat = $scope.restaurant.Latitude;
 

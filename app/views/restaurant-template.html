@@ -1,0 +1,31 @@
+<div class="bg-black" layout-align="center center" layout="row" ng-show="currentRestaurant">
+  <div layout="column">
+
+    <h3>{{currentRestaurant.Name}}</h3>
+    <p id="restaurant-desc" ng-bind-html="currentRestaurant.Description">{{currentRestaurant.Description}}</p>
+    <p>
+      {{currentRestaurant.Street}}
+    </p>
+    <p>
+      {{currentRestaurant.Postal}}
+      {{currentRestaurant.City}}
+    </p>
+    <p ng-show="currentRestaurant.Email">
+      {{currentRestaurant.Email}}
+    </p>
+    <p ng-show="currentRestaurant.Website">
+      <a href="{{currentRestaurant.Website}}">Website</a>
+    </p>
+
+    <div layout-align="center" layout="row">
+      <div layout="column">
+
+        <p class="text-center">{{'challenges.pick' | translate}}</p>
+        <div layout="row">
+          <md-button class="md-raised md-primary" ng-click="agreed()">{{'yes' | translate}}</md-button>
+          <md-button class="md-raised md-warn" ng-click="disagreed()">{{'no' | translate}}</md-button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

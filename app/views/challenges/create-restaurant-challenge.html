@@ -1,23 +1,23 @@
 <div class="restaurant-wrapper wrapper" ng-init="init()">
   <ui-gmap-google-map center='map.center' id="map" pan='true' zoom='map.zoom'>
-    <ui-gmap-markers click='clickedMarker' fit="'true'" coords="'self'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
+    <ui-gmap-markers click='clickedMarker' coords="'self'" fit="'true'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
   </ui-gmap-google-map>
 
   <div layout-align="center center" layout="row">
 
-    <div id="restaurant-body" layout-align="center" layout="column">
+    <div id="restaurant-body" layout-align="center" flex-md="100" flex-gt-md="80" layout="column">
       <div class="bg-info text-center" ng-show="!accepted">
         <p>
-          We gebruiken uw locatie zodat we vegetarische restaurants in uw directe omgeving kunnen aanraden.
+          {{'restaurant.info-1' | translate}}
         </p>
         <p>
-          Indien u dit niet wenst kan u locatievoorzieningen voor deze app negeren en zal de app het centrum van Gent als aangeraden locatie gebruiken, met een straal van 20km.
+          {{'restaurant.info-2' | translate}}
         </p>
         <p>
-          Indien u hiermee akkoord bent kan u hieronder op de knop drukken.
+          {{'restaurant.info-3' | translate}}
         </p>
         <md-button class="md-raised" ng-click="getCurrentPosition()">
-          Gebruik mijn locatie!
+          {{'restaurant.use-loc' | translate}}
         </md-button>
       </div>
       <div class="bg-black" id="overlay" layout="column">
@@ -27,27 +27,17 @@
         * { city, description, email, latitude, longitude,
         *   name, phone, postal, restaurantid, street, website }
         */ -->
-        <md-input-container>
-          <label>{{'restaurant.distance' | translate}}</label>
-          <input ng-model="distance">
-        </md-input-container>
+          <md-input-container>
+            <label>{{'restaurant.distance' | translate}}</label>
+            <input ng-model="distance">
+          </md-input-container>
           <md-button class="md-raised" ng-click="findRestaurants()">
-            Haal wat restaurants op!
+            {{'restaurant.find' | translate}}
           </md-button>
         </div>
       </div>
 
-      <div layout="column" ng-show="currentRestaurant">
-        {{currentRestaurant.City}}
-        {{currentRestaurant.Description}}
-        {{currentRestaurant.Email}}
-        {{CurrentRestaurant.Name}}
-        {{currentRestaurant.Street}}
-        {{currentRestaurant.Postal}}
-        {{currentRestaurant.Website}}
-        <md-button class="md-raised md-primary" ng-click="agreed()">Yes!</md-button>
-        <md-button class="md-raised md-warn" ng-click="disagreed()">No</md-button>
-      </div>
+      <div ng-include="'views/restaurant-template.html'"
 
     </div>
   </div>

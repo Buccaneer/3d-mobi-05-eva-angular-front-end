@@ -1,10 +1,11 @@
-<div class="blackboard-wrapper wrapper" layout-align="center" layout="row">
+<div class="blackboard-wrapper wrapper" layout="column">
+
+  <h1 class="text-center">{{challenge.Date | amDateFormat:'DD MMMM YYYY'}}</h1>
+
+  <div ng-include="view"></div>
+
   <div layout="column">
     <div>
-      <h1 class="text-center">{{challenge.Date | date:'fullDate' | translate}}</h1>
-
-      <div ng-include="view"></div>
-
       <div layout-align="center" layout="row">
         <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
           Done!
