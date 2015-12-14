@@ -28,20 +28,12 @@
       <div layout-align="center" layout-margin layout-padding layout="column">
         <label>{{'settings.birthdate' | translate}}</label>
 
-        <md-datepicker md-max-date="validate.maxDate" md-min-date="validate.minDate" md-placeholder="Geboortedatum" ng-model="user.birthdate"></md-datepicker>
+        <md-datepicker md-placeholder="Geboortedatum" ng-model="user.birthdate"></md-datepicker>
 
       </div>
 
       <div layout-align="center" layout-margin layout-padding layout="column">
         <ingredient-selector ingredients="selected" placeholder="{{'settings.allergies' | translate}}" />
-        <!-- <md-input-container>
-          <label>{{'settings.allergies' | translate}}</label>
-          <md-select ng-model="user.allergies">
-            <md-option ng-repeat="allergie in allergiesList" ng-selected="{{user.allergie == allergies}}">
-              {{allergie}}
-            </md-option>
-          </md-select>
-        </md-input-container> -->
       </div>
 
       <div layout-align="center" layout-margin layout-padding layout="column">
