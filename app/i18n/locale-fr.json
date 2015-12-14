@@ -1,12 +1,11 @@
 {
-  "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
-
   "nav": {
     "home": "Page d'acceuil",
+    "main": "Menu principal",
     "register": "Inscription",
     "login": "Connexion",
+    "history": "Historique",
     "logout": "Déconnecter",
-    "history": "",
     "settings": "Paramètres",
     "about": "À propos"
   },
@@ -27,11 +26,12 @@
     "about-step-4-text": "Si vous avez réussi votre défi, n'oubliez pas de l'indiquer en cliquant sur le bouton, ci-dessous dans les détails!",
     "about-step-5": "Félicitations, vous avez réussi votre premier défi!"
   },
-
   "main": {
-    "welcome": "Welkom terug, "
+    "welcome": "Bienvenu de nouveau, ",
+    "checkDetails": "Regardez les détails",
+    "noChallenge": "Vous n'avez pas encore de défi pour aujourd'hui!",
+    "newChallenge": "Nouveau défi"
   },
-
   "login": {
     "title": "Connexion",
     "email": "Adresse e-mail",
@@ -41,7 +41,6 @@
     "loginButton": "Se connecter",
     "noAccount": "Ni de compte?",
     "signInWith": "Se connecter avec",
-
     "errors": {
       "passwordRequired": "Votre mot de passe est obligatoire",
       "emailRequired": "Votre adresse e-mail est obligatoire",
@@ -50,7 +49,6 @@
       "socialLoginDisabled": "Désolé, s’identifier avec un réseau social n’est pas disponible"
     }
   },
-
   "register": {
     "signUp": "Inscription",
     "email": "@:login.email",
@@ -59,7 +57,6 @@
     "passwordPlaceholder": "@:login.passwordPlaceholder",
     "passwordConfirmation": "Confirme le mot de passe",
     "registerButton": "Inscription",
-
     "errors": {
       "passwordRequired": "@:login.errors.passwordRequired",
       "emailRequired": "@:login.errors.emailRequired",
@@ -68,10 +65,15 @@
       "passwordConfirmation": "Les mots de passe ne sont pas identiques"
     }
   },
-
   "challenges": {
-    "new": "Nieuwe challenge aanvragen",
-
+    "new": "Demander un nouveau défi",
+    "timeLeft": "Temps restant:",
+    "pointsToEarn": "Points à gagner:",
+    "txt_takeChallenge": "Choisissez ce défi?",
+    "btn_yes": "Oui",
+    "btn_no": "Non",
+    "btn_done": "Réussi!",
+    "txt_alreadyDone": "Vous avez déjà fait ce défi!",
     "create": {
       "choose": "Choisis un de ces défis!",
       "recipe": "Recette",
@@ -80,88 +82,70 @@
       "recipe-region-text": "Découvrez les fins fonds du monde et réalisez un plat d'une autre partie du monde!",
       "restaurant": "Restaurant",
       "restaurant-text": "Tu n'a pas envie de cuisiner? Essayez ces restaurants.",
-      "restaurant-region": "Restaurant exotique",
-      "restaurant-region-text": "Laissez vous combler par l'étranger, essayez ces restaurants!",
       "creative-cooking": "Creative Cooking",
       "creative-cooking-text": "Videz votre frigo en réalisant ces recettes qui sont basées sur ce que vous disposez.",
-      "sugarfree":"Sans sucre",
-      "sugarfree-text":"..."
+      "sugarfree": "Sans sucre",
+      "sugarfree-text": "Weg met de suiker!"
     },
-    "sugarfree":{
+    "sugarfree": {
       "title": "Sans sucre",
-      "description1":"Dans ce défi, il est prévu que vous mangez du sucre gratuitement pendant une journée entière.",
-      "description2":"Il existe différents types de sucre et beaucoup d'entre eux sont affinés ou fabriqués avec des restes d'animaux. Par exemple, os de vache sont utilisés pour donner sa couleur sucre blanc brillant.",
-      "description3":"Nous vous défions d'éviter toutes (ou autant que possible) produits avec du sucre. Cela signifie pas de boissons gazeuses, les bonbons et ainsi de suite."
+      "description1": "Dans ce défi, il est prévu que vous mangez du sucre gratuitement pendant une journée entière.",
+      "description2": "Il existe différents types de sucre et beaucoup d'entre eux sont affinés ou fabriqués avec des restes d'animaux. Par exemple, os de vache sont utilisés pour donner sa couleur sucre blanc brillant.",
+      "description3": "Nous vous défions d'éviter toutes (ou autant que possible) produits avec du sucre. Cela signifie pas de boissons gazeuses, les bonbons et ainsi de suite."
     }
   },
-
   "recipe": {
     "choose": "Choisis une des recettes suivante:"
   },
-
-    "loading": {
-    "challenge": "We zijn deze challenge aan het laden.",
-    "recipes": "We zijn wat recepten aan het zoeken!",
-    "login": "Even geduld!",
+  "loading": {
+    "challenge": "Nous chargeons ce défi.",
+    "recipes": "Nous cherchons des recettes!",
+    "login": "Un peu de patience!",
     "register": "@:loading.login",
-    "social": "Even Google, Facebook en Twitter contacteren.",
-    "challenges": "We zijn wat challenges aan het uitzoeken!",
+    "social": "Un instant, nous contactons Google, Facebook et Twitter.",
+    "challenges": "Nous recherchons des défis!",
     "settings": "Récupérer quelques données sur vous..."
   },
-
   "about": {
-    "title": "Over",
-    "text": "De EVA 21 dagen challenge werd ontwikkeld in naam van EVA vzw.",
-    "text-second": "Deze app wil mensen aanzetten om 21 dagen plantaardig te eten om hen te overtuigen om minder dierlijke producten te gebruiken en meer alternatieven te nemen.",
-    "info": "Als je meer informatie wil weten over de werking van EVA, dan kun je altijd terecht op hun",
-    "site": "website."
+    "title": "À propos",
+    "text": "Le challenge EVA 21 jours a été développé au nom de l’A.S.B.L. EVA.",
+    "text-second": "Cette application veut encourager des personnes à manger plus végétal durant 21 jours  pour les convaincre d’utiliser moins de produits animaliers et de choisir plus d’alternatives.",
+    "info": "Si vous souhaitez obtenir plus d’informations sur le travail d’EVA, alors vous pouvez toujours consulter leur ",
+    "site": "site internet."
   },
-
   "settings": {
-    "userSettings": "Instellingen",
+    "userSettings": "Paramètres",
     "firstname": "Prénom",
     "lastname": "Nom",
     "birthdate": "Date de naissance",
     "allergies": "Vos allergies",
     "budget": "Quel est votre budget?",
-    "typeOfVegan": "Bent u vegetariër?",
+    "typeOfVegan": "Êtes-vous végétarien?",
     "peopleInFamily": "Nombre de personnes de votre ménage",
     "save": "Confirmer"
   },
-
   "badges": {
-    "level1": "Zaadje",
-    "level2": "Wortel",
-    "level3": "Stengel",
-    "level4": "Blaadje",
-    "level5": "Knop",
-    "level6": "Bloem",
-    "starter_title": "Starter",
-    "starter_image": "/images/badges/starter.png",
-    "starter_desc": "Je hebt uw eerste challenge aangevraagd.",
-    "sugarrush_title": "Sugarrush",
-    "sugarrush_image": "/images/badges/sugarrush.png",
-    "sugarrush_desc": "Je hebt je eerste sugarfree challenge voltooid! Een hele dag zonder toegevoegde suiker wat een prestatie!",
-    "creatieveling_title": "Creatieveling",
-    "creatieveling_desc":"Je hebt zelf je eerste veganistisch gerecht in elkaar gestoken!",
-    "creatieveling_image": "/images/badges/creatieveling.png",
-    "explorer_title": "Wereldreiziger",
-    "explorer_desc": "Je hebt een exotisch gerecht klaargemaakt!",
-    "explorer_image": "/images/badges/explorer.png",
-    "gastheer_title": "Gastheer",
-    "gastheer_desc": "Je hebt voor de eerste keer veganistisch gekookt voor je vrienden!",
-    "gastheer_image": "/images/badges/gastheer.png",
-    "gastronoom_title": "Gastronoom",
-    "gastronoom_desc": "Je bent al drie maal op restaurant geweest, gastronomisch.",
-    "gastronoom_image": "/images/badges/gastronoom.png",
-    "genieter_title": "Genieter",
-    "genieter_desc": "Je hebt je eerste restaurantchallenge voltooid!",
-    "genieter_image": "/images/badges/genieter.png",
-    "trotsegebruiker_title": "Trotse gebruiker",
-    "trotsegebruiker_desc": "Je hebt reeds 10 challenges voltooid. Ga zo door!",
-    "trotsegebruiker_image": "/images/badges/trotsegebruiker.png",
-    "doorzetter_title": "Doorzetter",
-    "doorzetter_desc": "Je hebt de 21 dagen successvol ten einde gebracht!",
-    "doorzetter_image": "/images/badges/doorzetter.png"
+    "level1": "Niveau actuel: 1 (Graine)",
+    "level2": "Niveau actuel: 2 (Racine)",
+    "level3": "Niveau actuel: 3 (Tige)",
+    "level4": "Niveau actuel: 4 (Feuille)",
+    "level5": "Niveau actuel: 5 (Bouton)",
+    "level6": "Niveau actuel: 6 (Fleur)",
+    "starter-title": "Starter",
+    "starter-desc": "Vous avez complétez votre premier défi.",
+    "sugarrush-title": "Hâte de sucre",
+    "sugarrush-desc": "Vous avez réussi votre premier defi sans sucre! Une journée entière sans ajouter de sucre, quelle prestation!",
+    "creatieveling-title": "Créateur",
+    "creatieveling-desc": "Vous avez même réalisé votre premier plat végitalien!",
+    "explorer-title": "Explorateur",
+    "explorer-desc": "Vous avez préparé un plat exotique!",
+    "gastronoom-title": "Gastronome",
+    "gastronoom-desc": "Vous avez déjà allé 3 fois au restaurant, impressionant.",
+    "genieter-title": "Jouisseur",
+    "genieter-desc": "Vous avez réussi votre premier défi de restaurant!",
+    "trotsegebruiker-title": "Fier utilisateur",
+    "trotsegebruiker-desc": "Vous avez déjà réussi 10 challenges. Continuez comme ça!",
+    "doorzetter-title": "Tenance",
+    "doorzetter-desc": "Je hebt de 21 dagen successvol ten einde gebracht!"
   }
 }

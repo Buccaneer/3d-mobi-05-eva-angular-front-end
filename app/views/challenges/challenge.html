@@ -7,11 +7,10 @@
 
       <div layout-align="center" layout="row">
         <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
-          Done!
+          {{'challenges.btn_done' | translate}}
         </md-button>
         <div ng-show="challenge.Done">
-          <h3 class="text-success">Je hebt deze challenge al gedaan!
-          </h3>
+          <h3 class="text-success">{{'challenges.txt_alreadyDone' | translate}}</h3>
         </div>
       </div>
 
