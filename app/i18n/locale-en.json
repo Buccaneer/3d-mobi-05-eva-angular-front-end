@@ -1,7 +1,6 @@
 {
   "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
   
-  "pick": "Choose a recipe",
   "yes": "YES",
   "no": "NO",
   "type": "Type",
@@ -108,13 +107,15 @@
     "choose": "Select one off the following recipes:"
   },
   "loading": {
+    "main": "Even geduld!",
     "challenge": "Loading challenges",
     "recipes": "Finding recipes",
     "login": "Please wait!",
     "register": "@:loading.login",
     "social": "Contacting Google, Twitter or Facebook at the moment.",
     "challenges": "Selecting some challenges for you!",
-    "settings": "Trying to find out more about you..."
+    "settings": "Trying to find out more about you...",
+    "restaurants": "We zoeken wat plekjes voor je uit!"
   },
   "about": {
     "title": "About",
