@@ -10,8 +10,8 @@
    */
   angular
     .module('eva21DayChallengeApp')
-    .controller('CreativeCookingCtrl', ['$scope', '$localstorage', 'TOKEN', 'ChallengeService', '$state', 'RecipeService', '$location', '$anchorScroll',
-      function($scope, $localstorage, TOKEN, ChallengeService, $state, RecipeService, $location, $anchorScroll) {
+    .controller('CreativeCookingCtrl', ['$scope', '$localstorage', 'TOKEN', 'ChallengeService', '$state', 'RecipeService',
+      function($scope, $localstorage, TOKEN, ChallengeService, $state, RecipeService) {
 
         $scope.selected = [];
         $scope.recipes = [];

@@ -11,7 +11,7 @@
         $scope.challenge.Date = new moment($scope.challenge.Date);
 
         console.log(challenge);
-        if (challenge.Type === 'Recipe' || challenge.Type === 'CreativeCooking') {
+        if (challenge.Type === 'Recipe' || challenge.Type === 'CreativeCooking' || challenge.Type === 'RegionRecipe') {
           $scope.recipe = challenge.Recipe;
           $scope.view = "views/recipe.html";
         }

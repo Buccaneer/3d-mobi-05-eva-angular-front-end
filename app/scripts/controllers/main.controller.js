@@ -16,7 +16,8 @@
       '$scope', '$state', 'UserInfoService', 'ChallengeService', '$translate', 'moment',
       function($scope, $state, UserInfoService, ChallengeService, $translate, moment) {
         moment.locale($translate.use());
-
+        console.log($translate.use());
+        
         function compare(a, b) {
           if (a.TimeToAccept > b.TimeToAccept) {
             return -1;

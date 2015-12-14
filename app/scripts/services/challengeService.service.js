@@ -8,8 +8,8 @@
    * This service allows the user to work with challenges.
    */
   angular
-    .module('eva21DayChallengeApp').service('ChallengeService', ['$q', '$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope', 'UserInfoService',
-      function ($q, $localstorage, $http, URLS, TOKEN, $location, $rootScope, UserInfoService) {
+    .module('eva21DayChallengeApp').service('ChallengeService', ['$q', '$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope', 'UserInfoService', '$state',
+      function ($q, $localstorage, $http, URLS, TOKEN, $location, $rootScope, UserInfoService, $state) {
 
 
         var service = {
@@ -226,6 +226,9 @@
           }).then(function (res) {
             $rootScope.loading = false;
             return res.data;
+          }).catch(function(response){
+            $rootScope.loading = false;
+            $state.go('main');
           });
         };
 
