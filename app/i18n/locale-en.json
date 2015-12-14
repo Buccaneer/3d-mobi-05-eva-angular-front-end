@@ -1,5 +1,15 @@
 {
   "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
+  
+  "pick": "Choose a recipe",
+  "yes": "YES",
+  "no": "NO",
+  "type": "Type",
+  "Restaurant": "Restaurant",
+  "Recipe": "Recipe",
+  "CreativeCooking": "Creative Cooking",
+  "Suikervrij": "Suikerfree",
+  
   "nav": {
     "home": "Home",
     "main": "Main Menu",
@@ -147,5 +157,23 @@
     "trotsegebruiker-desc": "You already have finished ten challenges, keep it up!",
     "doorzetter-title": "Go-getter",
     "doorzetter-desc": "You have successfully completed the 21 days, congratulations!"
+  },
+  
+  "restaurant": {
+    "distance": "Distance to restaurant",
+    "info-1": "We use your location to recommend vegan restaurants in your area.",
+    "info-2": "When you prefer not to use locationservices, we will use the center of Ghent instead, with a range of 20km",
+    "info-3": "When you agree you can press the button and continue.",
+    "use-loc": "Use my location!",
+    "find": "Find restaurants"
+  },
+
+  "region": {
+    "Oosters": "Eastern",
+    "Afrikaans": "African",
+    "Zuid-Amerikaans": "South American",
+    "Westers": "Western",
+    "choose": "Choose a region"
   }
+  
 }

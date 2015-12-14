@@ -1,4 +1,13 @@
 {
+  "pick": "Kies een recept",
+  "yes": "JA",
+  "no": "NEEN",
+  "type": "Soort",
+  "Restaurant": "Restaurant",
+  "Recipe": "Recept",
+  "CreativeCooking": "Creative Cooking",
+  "Suikervrij": "Suikervrij",
+  
   "nav": {
     "home": "Page d'acceuil",
     "main": "Menu principal",
@@ -74,6 +83,7 @@
     "btn_no": "Non",
     "btn_done": "Réussi!",
     "txt_alreadyDone": "Vous avez déjà fait ce défi!",
+    
     "create": {
       "choose": "Choisis un de ces défis!",
       "recipe": "Recette",
@@ -85,7 +95,7 @@
       "creative-cooking": "Creative Cooking",
       "creative-cooking-text": "Videz votre frigo en réalisant ces recettes qui sont basées sur ce que vous disposez.",
       "sugarfree": "Sans sucre",
-      "sugarfree-text": "Weg met de suiker!"
+      "sugarfree-text": "À bas le sucre!"
     },
     "sugarfree": {
       "title": "Sans sucre",
@@ -98,13 +108,15 @@
     "choose": "Choisis une des recettes suivante:"
   },
   "loading": {
+    "main": "Even geduld!",
     "challenge": "Nous chargeons ce défi.",
     "recipes": "Nous cherchons des recettes!",
     "login": "Un peu de patience!",
     "register": "@:loading.login",
     "social": "Un instant, nous contactons Google, Facebook et Twitter.",
     "challenges": "Nous recherchons des défis!",
-    "settings": "Récupérer quelques données sur vous..."
+    "settings": "Récupérer quelques données sur vous...",
+    "restaurants": "We zoeken wat plekjes voor je uit!"
   },
   "about": {
     "title": "À propos",
@@ -146,6 +158,23 @@
     "trotsegebruiker-title": "Fier utilisateur",
     "trotsegebruiker-desc": "Vous avez déjà réussi 10 challenges. Continuez comme ça!",
     "doorzetter-title": "Tenance",
-    "doorzetter-desc": "Je hebt de 21 dagen successvol ten einde gebracht!"
+    "doorzetter-desc": "Vous avez arrivé au termine des 21 jours avec succés!"
+  },
+  
+  "restaurant": {
+    "distance": "Distance jusqu'au restaurant",
+    "info-1": "Nous utilisons votre localisation. Afin que nous puissions vous conseiller les restaurants végétariens dans les environs immédiats.",
+    "info-2": "Si vous ne les souhaitez pas, vous pouvez ignorer les proprietés de localisation et l'application. Conseillée dans un rayon de 20km.",
+    "info-3": "Si vous étes d'accord, vous pouvez appuyer sur le bouton ci-dessous.",
+    "use-loc": "Utilise ma localisation!",
+    "find": "Cherche les restaurants"
+  },
+
+  "region": {
+    "Oosters": "Oriental",
+    "Afrikaans": "Africain",
+    "Zuid-Amerikaans": "Sud Americain",
+    "Westers": "Occidental",
+    "choose": "Choisis une région"
   }
 }
