@@ -43,7 +43,6 @@
     "noChallenge": "Je hebt nog geen challenge voor vandaag!",
     "newChallenge": "Nieuwe challenge"
   },
-
   "login": {
     "title": "Aanmelden",
     "email": "Email-adres",
@@ -53,7 +52,6 @@
     "loginButton": "Inloggen",
     "noAccount": "Nog geen account?",
     "signInWith": "Inloggen met ",
-
     "errors": {
       "passwordRequired": "Uw wachtwoord is verplicht",
       "emailRequired": "Uw email adres is verplicht",
@@ -62,7 +60,6 @@
       "socialLoginDisabled": "Sorry! Inloggen met sociale media is niet beschikbaar"
     }
   },
-
   "register": {
     "signUp": "Registreren",
     "email": "@:login.email",
@@ -71,7 +68,6 @@
     "passwordPlaceholder": "@:login.passwordPlaceholder",
     "passwordConfirmation": "Bevestig paswoord",
     "registerButton": "Registreer",
-
     "errors": {
       "passwordRequired": "@:login.errors.passwordRequired",
       "emailRequired": "@:login.errors.emailRequired",
@@ -80,13 +76,15 @@
       "passwordConfirmation": "Wachtwoorden komen niet overeen"
     }
   },
-
   "challenges": {
     "new": "Nieuwe challenge aanvragen",
-    "timeLeft" : "Resterende tijd:",
+    "timeLeft": "Resterende tijd:",
     "pointsToEarn": "Te verdienen punten:",
-    "pick": "Kies je deze challenge?",
-    "completed": "Je hebt deze challenge vervolledigd!",
+    "txt_takeChallenge": "Kies deze challenge?",
+    "btn_yes": "Ja",
+    "btn_no": "Nee",
+    "btn_done": "Volbracht!",
+    "txt_alreadyDone": "Je hebt deze challenge al gedaan!",
 
     "create": {
       "choose": "Kies één van deze uitdagingen!",
@@ -96,25 +94,21 @@
       "recipe-region-text": "Leer de uithoeken van de wereld kennen en maak een gerecht uit een ander deel van de wereld klaar!",
       "restaurant": "Restaurant",
       "restaurant-text": "Geen zin om te koken? Probeer deze restaurants eens.",
-      "restaurant-region": "Uitheems restaurant",
-      "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
       "creative-cooking": "Creative Cooking",
       "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen.",
-      "sugarfree":"Suikervrij",
-      "sugarfree-text":"Weg met de suiker!"
+      "sugarfree": "Suikervrij",
+      "sugarfree-text": "Weg met de suiker!"
     },
-    "sugarfree":{
+    "sugarfree": {
       "title": "Suikervrij",
-      "description1":"Bij deze challenge is het de bedoeling dat je een hele dag lang suikervrij leeft.",
-      "description2":"Er zijn verschillende soorten suikers en een groot aantal daarvan zijn verfijnd en bewerkt met dierlijke producten. Zo worden bijvoorbeeld resten van koeierbeenderen gebruikt om de witte kleur te geven.",
-      "description3":"We dagen je uit om een dag geen (of toch zo weinig mogelijk) suikers te eten. Dit wil zeggen dat frisdrank, snoep en dergelijke vermeden worden."
+      "description1": "Bij deze challenge is het de bedoeling dat je een hele dag lang suikervrij leeft.",
+      "description2": "Er zijn verschillende soorten suikers en een groot aantal daarvan zijn verfijnd en bewerkt met dierlijke producten. Zo worden bijvoorbeeld resten van koeierbeenderen gebruikt om de witte kleur te geven.",
+      "description3": "We dagen je uit om een dag geen (of toch zo weinig mogelijk) suikers te eten. Dit wil zeggen dat frisdrank, snoep en dergelijke vermeden worden."
     }
   },
-
   "recipe": {
     "choose": "Kies één van de volgende recepten:"
   },
-
   "loading": {
     "main": "Even geduld!",
     "challenge": "We zijn deze challenge aan het laden.",
@@ -126,15 +120,13 @@
     "settings": "Even wat gegevens over je ophalen...",
     "restaurants": "We zoeken wat plekjes voor je uit!"
   },
-
   "about": {
     "title": "Over",
     "text": "De EVA 21 dagen challenge werd ontwikkeld in naam van EVA vzw.",
     "text-second": "Deze app wil mensen aanzetten om 21 dagen plantaardig te eten om hen te overtuigen om minder dierlijke producten te gebruiken en meer alternatieven te nemen.",
-    "info": "Als je meer informatie wil weten over de werking van EVA, dan kun je altijd terecht op hun",
+    "info": "Als je meer informatie wil weten over de werking van EVA, dan kun je altijd terecht op hun ",
     "site": "website."
   },
-
   "settings": {
     "userSettings": "Instellingen",
     "firstname": "Voornaam",
@@ -145,25 +137,22 @@
     "typeOfVegan": "Bent u vegetariër?",
     "peopleInFamily": "Aantal gezinsleden",
     "save": "Bevestigen"
-
   },
   "badges": {
-    "level1": "Zaadje",
-    "level2": "Wortel",
-    "level3": "Stengel",
-    "level4": "Blaadje",
-    "level5": "Knop",
-    "level6": "Bloem",
+    "level1": "Huidig niveau: 1 (Zaadje)",
+    "level2": "Huidig niveau: 2 (Wortel)",
+    "level3": "Huidig niveau: 3 (Stengel)",
+    "level4": "Huidig niveau: 4 (Blaadje)",
+    "level5": "Huidig niveau: 5 (Knop)",
+    "level6": "Huidig niveau: 6 (Bloem)",
     "starter-title": "Starter",
     "starter-desc": "Je hebt uw eerste challenge aangevraagd.",
-    "sugarrush-title": "Sugarrush",
+    "sugarrush-title": "Suiker kick",
     "sugarrush-desc": "Je hebt je eerste sugarfree challenge voltooid! Een hele dag zonder toegevoegde suiker wat een prestatie!",
     "creatieveling-title": "Creatieveling",
-    "creatieveling-desc":"Je hebt zelf je eerste veganistisch gerecht in elkaar gestoken!",
+    "creatieveling-desc": "Je hebt zelf je eerste veganistisch gerecht in elkaar gestoken!",
     "explorer-title": "Wereldreiziger",
     "explorer-desc": "Je hebt een exotisch gerecht klaargemaakt!",
-    "gastheer-title": "Gastheer",
-    "gastheer-desc": "Je hebt voor de eerste keer veganistisch gekookt voor je vrienden!",
     "gastronoom-title": "Gastronoom",
     "gastronoom-desc": "Je bent al drie maal op restaurant geweest, gastronomisch.",
     "genieter-title": "Genieter",

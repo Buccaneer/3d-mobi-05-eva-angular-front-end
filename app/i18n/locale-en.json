@@ -1,7 +1,5 @@
 {
   "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
-
-
   "nav": {
     "home": "Home",
     "main": "Main Menu",
@@ -12,7 +10,6 @@
     "settings": "Settings",
     "about": "About"
   },
-
   "home": {
     "title": "Makes it vegan!",
     "headline": "We challenge you to complete one of our challenges each day, for 21 days straight!",
@@ -30,12 +27,12 @@
     "about-step-4-text": "If you completed the challenge, don't forget to mark it as done on the bottom of the detailed view!",
     "about-step-5": "Congratulations, you just completed your first challenge!"
   },
-
   "main": {
     "welcome": "Welcome back, ",
-    "checkDetails": "Bekijk details"
+    "checkDetails": "Details",
+    "noChallenge": "You don't yet have a challenge for today!",
+    "newChallenge": "New challenge"
   },
-
   "login": {
     "title": "Sign in",
     "email": "Email address",
@@ -45,7 +42,6 @@
     "loginButton": "Login",
     "noAccount": "Don't have an account?",
     "signInWith": "Sign in with ",
-
     "errors": {
       "passwordRequired": "Your password is required",
       "emailRequired": "Your email address is required",
@@ -54,7 +50,6 @@
       "socialLoginDisabled": "Sorry! Logging in with social accounts is unavailable"
     }
   },
-
   "register": {
     "signUp": "Register",
     "email": "@:login.email",
@@ -63,7 +58,6 @@
     "passwordPlaceholder": "@:login.passwordPlaceholder",
     "passwordConfirmation": "Confirm password",
     "registerButton": "Register",
-
     "errors": {
       "passwordRequired": "@:login.passwordRequired",
       "emailRequired": "@:login.emailRequired",
@@ -72,54 +66,53 @@
       "passwordConfirmation": "Passwords are not equal"
     }
   },
-
   "challenges": {
-    "new": "Nieuwe challenge aanvragen",
-
+    "timeLeft": "Time left:",
+    "pointsToEarn": "Points to earn:",
+    "txt_takeChallenge": "Pick this challenge?",
+    "btn_yes": "Yes",
+    "btn_no": "No",
+    "btn_done": "Done!",
+    "txt_alreadyDone": "You have already done this challenge!",
     "create": {
-      "choose": "Kies één van deze uitdagingen!",
-      "recipe": "Recept",
-      "recipe-text": "Maak één van onze gerechten klaar.",
-      "recipe-region": "Uitheems recept",
-      "recipe-region-text": "Leer de uithoeken van de wereld kennen en maak een gerecht uit een ander deel van de wereld klaar!",
+      "choose": "Choose one of the following challenges!",
+      "recipe": "Recipe",
+      "recipe-text": "Prepare one of our recipes.",
+      "recipe-region": "Exotic recipe",
+      "recipe-region-text": "Explore the corners of the world and learn what different cultures have to offer of recipes!",
       "restaurant": "Restaurant",
-      "restaurant-text": "Geen zin om te koken? Probeer deze restaurants eens.",
-      "restaurant-region": "Uitheems restaurant",
-      "restaurant-region-text": "Laat je verwennen door het buitenland, probeer deze restaurants!",
+      "restaurant-text": "No time to cook? Try a vegan restaurant.",
       "creative-cooking": "Creative Cooking",
-      "creative-cooking-text": "Kuis je koelkast uit met deze recepten die gebaseerd zijn op wat je hebt liggen.",
-      "sugarfree":"Sugarfree",
-      "sugarfree-text":"..."
+      "creative-cooking-text": "Clean your fridge and prepare a meal with what your fridge has to offer.",
+      "sugarfree": "Sugarfree",
+      "sugarfree-text": "Done with sugar!"
     },
-    "sugarfree":{
+    "sugarfree": {
       "title": "Sugarfree",
-      "description1":"In this challenge, it's intended that you eat sugar free for a whole day.",
-      "description2":"There are different kinds of sugar and a lot of them are refined or produced with animal remains. For example, cow bones are used to give sugar his bright white color.",
-      "description3":"We challenge you to avoid all (or as much as possible) products with sugar in it. This means no soft drinks, candy and so on."
+      "description1": "In this challenge, it's intended that you eat sugar free for a whole day.",
+      "description2": "There are different kinds of sugar and a lot of them are refined or produced with animal remains. For example, cow bones are used to give sugar his bright white color.",
+      "description3": "We challenge you to avoid all (or as much as possible) products with sugar in it. This means no soft drinks, candy and so on."
     }
   },
-
   "recipe": {
-    "choose": "Kies één van de volgende recepten:"
+    "choose": "Select one off the following recipes:"
   },
-
   "loading": {
-    "challenge": "We zijn deze challenge aan het laden.",
-    "recipes": "We zijn wat recepten aan het zoeken!",
-    "login": "Even geduld!",
+    "challenge": "Loading challenges",
+    "recipes": "Finding recipes",
+    "login": "Please wait!",
     "register": "@:loading.login",
-    "social": "Even Google, Facebook en Twitter contacteren.",
-    "challenges": "We zijn wat challenges aan het uitzoeken!",
+    "social": "Contacting Google, Twitter or Facebook at the moment.",
+    "challenges": "Selecting some challenges for you!",
     "settings": "Trying to find out more about you..."
   },
-
   "about": {
     "title": "About",
     "text": "The EVA 21 days challenge was developed for EVA vzw.",
     "text-second": "This app wants to inspire people to eat more vegan for 21 days and convince them to use less animal-related products and more alternatives.",
-    "info": "If you want to read more about the goal of EVA, you can always go to their website."
+    "info": "If you want to read more about the goal of EVA, you can always go to their ",
+    "site": "website."
   },
-
   "settings": {
     "userSettings": "Settings",
     "firstname": "Firstnaam",
@@ -131,40 +124,28 @@
     "peopleInFamily": "Number of people in your household",
     "save": "Confirm"
   },
-
   "badges": {
-    "level1": "Seed",
-    "level2": "Root",
-    "level3": "Stem",
-    "level4": "Leaf",
-    "level5": "Bud",
-    "level6": "Flower",
-    "starter_title": "Starter",
-    "starter_image": "/images/badges/starter.png",
-    "starter_desc": "Je hebt uw eerste challenge aangevraagd.",
-    "sugarrush_title": "Sugarrush",
-    "sugarrush_image": "/images/badges/sugarrush.png",
-    "sugarrush_desc": "Je hebt je eerste sugarfree challenge voltooid! Een hele dag zonder toegevoegde suiker wat een prestatie!",
-    "creatieveling_title": "Creatieveling",
-    "creatieveling_desc":"Je hebt zelf je eerste veganistisch gerecht in elkaar gestoken!",
-    "creatieveling_image": "/images/badges/creatieveling.png",
-    "explorer_title": "Wereldreiziger",
-    "explorer_desc": "Je hebt een exotisch gerecht klaargemaakt!",
-    "explorer_image": "/images/badges/explorer.png",
-    "gastheer_title": "Gastheer",
-    "gastheer_desc": "Je hebt voor de eerste keer veganistisch gekookt voor je vrienden!",
-    "gastheer_image": "/images/badges/gastheer.png",
-    "gastronoom_title": "Gastronoom",
-    "gastronoom_desc": "Je bent al drie maal op restaurant geweest, gastronomisch.",
-    "gastronoom_image": "/images/badges/gastronoom.png",
-    "genieter_title": "Genieter",
-    "genieter_desc": "Je hebt je eerste restaurantchallenge voltooid!",
-    "genieter_image": "/images/badges/genieter.png",
-    "trotsegebruiker_title": "Trotse gebruiker",
-    "trotsegebruiker_desc": "Je hebt reeds 10 challenges voltooid. Ga zo door!",
-    "trotsegebruiker_image": "/images/badges/trotsegebruiker.png",
-    "doorzetter_title": "Doorzetter",
-    "doorzetter_desc": "Je hebt de 21 dagen successvol ten einde gebracht!",
-    "doorzetter_image": "/images/badges/doorzetter.png"
+    "level1": "Current level: 1 (Seed)",
+    "level2": "Current level: 2 (Root)",
+    "level3": "Current level: 3 (Stem)",
+    "level4": "Current level: 4 (Leaf)",
+    "level5": "Current level: 5 (Bud)",
+    "level6": "Current level: 6 (Flower)",
+    "starter-title": "Starter",
+    "starter-desc": "You have requested your first challenge.",
+    "sugarrush-title": "Sugar rush",
+    "sugarrush-desc": "You have completed your first sugarfree challenge! A day without added sugars, quite the achievement!",
+    "creatieveling-title": "Creative mind",
+    "creatieveling-desc": "You have complete your first vegan recipe!!",
+    "explorer-title": "Explorer",
+    "explorer-desc": "You have prepared your first exotic meal!",
+    "gastronoom-title": "Gastronomist",
+    "gastronoom-desc": "You have gone three times to a restaurant, gastronomic.",
+    "genieter-title": "Enjoyer",
+    "genieter-desc": "You have accomplished your first restaurantchallenge!",
+    "trotsegebruiker-title": "Proud user",
+    "trotsegebruiker-desc": "You already have finished ten challenges, keep it up!",
+    "doorzetter-title": "Go-getter",
+    "doorzetter-desc": "You have successfully completed the 21 days, congratulations!"
   }
 }
