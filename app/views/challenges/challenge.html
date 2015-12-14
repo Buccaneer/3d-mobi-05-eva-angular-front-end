@@ -7,7 +7,7 @@
   <div layout="column">
     <div>
       <div layout-align="center" layout="row">
-        <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
+        <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done || challenge.TimeToAccept < 0">
           {{'challenges.btn_done' | translate}}
         </md-button>
         <div ng-show="challenge.Done">
