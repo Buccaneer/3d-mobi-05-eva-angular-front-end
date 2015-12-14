@@ -2,7 +2,7 @@
 
   <div flex="100" layout="column">
     <div id="main-header">
-      <div layout-align="end" layout="row">
+      <div layout-align="end" layout-align-sm="center center" layout="row">
         <p class="bg-black" id="welcome">
           {{'main.welcome' | translate}}
           {{userinfo.FirstName}}
@@ -12,7 +12,7 @@
 
       <div layout-align="center" layout="row" ng-show="currentChallenge.Type === 'Recipe' && currentChallenge.Done === false && currentChallenge.TimeToAccept > 0">
         <div layout="column" layout-align="center">
-          <div layout="row" class="bg-black">
+          <div layout-sm="column" layout-gt-sm="row" class="bg-black">
             <img class="img-responsive" id="img-main" src="{{currentChallenge.Thumbnail}}" />
             <div layout="column" layout-align="center center" id="main-expl">
               <p>
