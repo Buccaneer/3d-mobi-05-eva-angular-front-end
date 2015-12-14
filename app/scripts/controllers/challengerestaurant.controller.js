@@ -110,10 +110,10 @@
         $scope.agreed = function(){
           console.log($scope.currentRestaurant);
           challengeService.createRestaurantChallenge($scope.currentRestaurant.RestaurantId).then(function(data){
-            $state.go('challenge-overview');
+            $state.go('challenges-overview');
           }).catch(function(response){
             console.log(response);
-            $state.go('challenge-overview');
+            $state.go('challenges-overview');
           });
         };
         $scope.disagreed = function(){
