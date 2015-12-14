@@ -42,6 +42,7 @@
               }
             }).then(function(response) {
               deferred.resolve(response.data);
+              console.log(response);
             }).catch(function(err) {
               deferred.reject(err);
             });

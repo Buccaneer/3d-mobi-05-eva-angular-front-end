@@ -1,6 +1,6 @@
 <div class="restaurant-wrapper wrapper" ng-init="init()">
   <ui-gmap-google-map center='map.center' id="map" pan='true' zoom='map.zoom'>
-    <ui-gmap-markers click='clickedMarker' coords="'self'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
+    <ui-gmap-markers click='clickedMarker' fit="'true'" coords="'self'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
   </ui-gmap-google-map>
 
   <div layout-align="center center" layout="row">

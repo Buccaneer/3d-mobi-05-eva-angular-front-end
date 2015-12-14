@@ -135,7 +135,8 @@
                 'Content-type': 'application/json; charset=utf-8'
               },
               data: {
-                "Type": "Restaurant"
+                "Type": "Restaurant",
+                "RestaurantId": restaurantId
               }
             }).then(function(data){
               deferred.resolve(data);
@@ -143,7 +144,7 @@
               deferred.reject(response);
             });
 
-            return deferred;
+            return deferred.promise;
           },
 
           createSugarfreeChallenge: function () {
