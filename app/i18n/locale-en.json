@@ -1,10 +1,10 @@
-{ 
+{
   "type": "Type",
   "Restaurant": "Restaurant",
   "Recipe": "Recipe",
   "CreativeCooking": "Creative Cooking",
   "Suikervrij": "Sugarfree",
-  
+
   "nav": {
     "home": "Home",
     "main": "Main Menu",
@@ -100,7 +100,8 @@
     }
   },
   "recipe": {
-    "choose": "Select one off the following recipes:"
+    "choose": "Select one off the following recipes:",
+    "pick": "Choose a recipe"
   },
   "loading": {
     "main": "Please wait!",
@@ -155,7 +156,7 @@
     "doorzetter-title": "Go-getter",
     "doorzetter-desc": "You have successfully completed the 21 days, congratulations!"
   },
-  
+
   "restaurant": {
     "distance": "Distance to restaurant",
     "info-1": "We use your location to recommend vegan restaurants in your area.",
@@ -172,5 +173,5 @@
     "Westers": "Western",
     "choose": "Choose a region"
   }
-  
+
 }

@@ -10,7 +10,7 @@
       <div layout="column">
         <ingredient-selector ingredients="selected" placeholder="Ingredient"/>
       </div>
-      <md-select layout-align="center" layout="row" ng-change="onChange(recipe)" ng-model="recipe" ng-show="recipes.length > 0" placeholder="{{'pick' | translate}}">
+      <md-select layout-align="center" layout="row" ng-change="onChange(recipe)" ng-model="recipe" ng-show="recipes.length > 0" placeholder="{{'recipe.pick' | translate}}">
         <md-option ng-repeat="r in recipes" ng-value="r">
           {{r.Name}}
         </md-option>

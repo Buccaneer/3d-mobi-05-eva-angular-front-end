@@ -104,7 +104,8 @@
     }
   },
   "recipe": {
-    "choose": "Kies één van de volgende recepten:"
+    "choose": "Kies één van de volgende recepten:",
+    "pick": "Kies een recept"
   },
   "loading": {
     "main": "Even geduld!",

@@ -5,7 +5,7 @@
   "Recipe": "Recette",
   "CreativeCooking": "Creative Cooking",
   "Suikervrij": "Sans sucre",
-  
+
   "nav": {
     "home": "Page d'acceuil",
     "main": "Menu principal",
@@ -81,7 +81,7 @@
     "btn_no": "Non",
     "btn_done": "Réussi!",
     "txt_alreadyDone": "Vous avez déjà fait ce défi!",
-    
+
     "create": {
       "choose": "Choisis un de ces défis!",
       "recipe": "Recette",
@@ -103,7 +103,8 @@
     }
   },
   "recipe": {
-    "choose": "Choisis une des recettes suivante:"
+    "choose": "Choisis une des recettes suivante:",
+    "pick": "Choisis une recette"
   },
   "loading": {
     "main": "Un peu de patience!",
@@ -158,7 +159,7 @@
     "doorzetter-title": "Tenance",
     "doorzetter-desc": "Vous avez arrivé au termine des 21 jours avec succés!"
   },
-  
+
   "restaurant": {
     "distance": "Distance jusqu'au restaurant",
     "info-1": "Nous utilisons votre localisation. Afin que nous puissions vous conseiller les restaurants végétariens dans les environs immédiats.",
