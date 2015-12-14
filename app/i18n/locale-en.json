@@ -1,13 +1,9 @@
-{
-  "___comment": "TODO: home stappen vertalen, challenges.create vertalen, recipe vertalen, about",
-  
-  "yes": "YES",
-  "no": "NO",
+{ 
   "type": "Type",
   "Restaurant": "Restaurant",
   "Recipe": "Recipe",
   "CreativeCooking": "Creative Cooking",
-  "Suikervrij": "Suikerfree",
+  "Suikervrij": "Sugarfree",
   
   "nav": {
     "home": "Home",
@@ -107,7 +103,7 @@
     "choose": "Select one off the following recipes:"
   },
   "loading": {
-    "main": "Even geduld!",
+    "main": "Please wait!",
     "challenge": "Loading challenges",
     "recipes": "Finding recipes",
     "login": "Please wait!",
@@ -115,7 +111,7 @@
     "social": "Contacting Google, Twitter or Facebook at the moment.",
     "challenges": "Selecting some challenges for you!",
     "settings": "Trying to find out more about you...",
-    "restaurants": "We zoeken wat plekjes voor je uit!"
+    "restaurants": "We're looking for some spots for you!"
   },
   "about": {
     "title": "About",

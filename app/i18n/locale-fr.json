@@ -1,11 +1,10 @@
 {
-  "yes": "JA",
-  "no": "NEEN",
-  "type": "Soort",
+
+  "type": "Type",
   "Restaurant": "Restaurant",
-  "Recipe": "Recept",
+  "Recipe": "Recette",
   "CreativeCooking": "Creative Cooking",
-  "Suikervrij": "Suikervrij",
+  "Suikervrij": "Sans sucre",
   
   "nav": {
     "home": "Page d'acceuil",
@@ -107,7 +106,7 @@
     "choose": "Choisis une des recettes suivante:"
   },
   "loading": {
-    "main": "Even geduld!",
+    "main": "Un peu de patience!",
     "challenge": "Nous chargeons ce défi.",
     "recipes": "Nous cherchons des recettes!",
     "login": "Un peu de patience!",
@@ -115,7 +114,7 @@
     "social": "Un instant, nous contactons Google, Facebook et Twitter.",
     "challenges": "Nous recherchons des défis!",
     "settings": "Récupérer quelques données sur vous...",
-    "restaurants": "We zoeken wat plekjes voor je uit!"
+    "restaurants": "Nous cherchons quelques places pour vous!"
   },
   "about": {
     "title": "À propos",
