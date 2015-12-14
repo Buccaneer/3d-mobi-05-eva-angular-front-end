@@ -3,7 +3,7 @@
   'use strict';
 
   angular
-    .module('eva21DayChallengeApp').config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider) {
+    .module('eva21DayChallengeApp').config(function($stateProvider, $urlRouterProvider, $translateProvider, $mdThemingProvider, uiGmapGoogleMapApiProvider, $httpProvider) {
       $urlRouterProvider.otherwise('/home');
 
 
@@ -104,8 +104,7 @@
           templateUrl: 'views/challenges/create-region-recipe-challenge.html',
           controller: 'ChallengeRegionRecipesCtrl',
           requireAuth: true,
-          resolve: {
-          }
+          resolve: {}
         })
         .state('select-view-creative-cooking', {
           url: '/challenge/create/creative-cooking',
@@ -131,14 +130,14 @@
           templateUrl: '/views/challenges/create-restaurant-challenge.html',
           controller: 'RestaurantCtrl',
           requireAuth: true
-
         }).state('create-sugarfree-challenge', {
           url: '/challenge/create/sugarfree',
           templateUrl: '/views/challenges/create-sugarfree-challenge.html',
-          controller:'AgreeSugarfreeCtrl',
+          controller: 'AgreeSugarfreeCtrl',
           requireAuth: true
         });
-//
+
+      $httpProvider.interceptors.push('authHttpResponseInterceptor');
 
       //let translateProvider load translations from external json
       $translateProvider.useStaticFilesLoader({

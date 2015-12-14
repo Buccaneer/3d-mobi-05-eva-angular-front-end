@@ -30,7 +30,7 @@
 
             $http({
               method: 'POST',
-              url: URLS.PUBLIC_API + URLS.RESTAURANT + '/find',
+              url: URLS.PUBLIC_API + URLS.RESTAURANTS + '/find',
               data: {
                 'Longitude': long,
                 'Latitude': lat,
@@ -40,9 +40,9 @@
                 'Authorization': 'Bearer ' + token,
                 'Content-Type': 'application/json; charset=utf-8'
               }
-            }).then(function(response){
+            }).then(function(response) {
               deferred.resolve(response.data);
-            }).catch(function(err){
+            }).catch(function(err) {
               deferred.reject(err);
             });
 
@@ -65,6 +65,32 @@
               function(error) {
                 deferred.reject(error);
               });
+
+            return deferred.promise;
+          },
+
+          /*
+          * find Restaurant with a given id.
+          * Response has the following fields in json:
+          * { city, description, email, latitude, longitude,
+          *   name, phone, postal, restaurantid, street, website }
+          */
+          getRestaurant: function(id) {
+            var deferred = $q.defer();
+            var token = $localstorage.getObject(TOKEN).token;
+
+            $http({
+              method: 'GET',
+              url: URLS.PUBLIC_API + URLS.RESTAURANT + '/' + id,
+              headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-Type': 'application/json; charset=utf-8'
+              }
+            }).then(function(response){
+              deferred.resolve(response.data);
+            }).catch(function(response){
+              deferred.reject(response);
+            });
 
             return deferred.promise;
           }

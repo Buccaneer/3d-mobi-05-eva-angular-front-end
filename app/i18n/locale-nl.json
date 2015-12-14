@@ -113,7 +113,8 @@
     "register": "@:loading.login",
     "social": "Even Google, Facebook en Twitter contacteren.",
     "challenges": "We zijn wat challenges aan het uitzoeken!",
-    "settings": "Even wat gegevens over je ophalen..."
+    "settings": "Even wat gegevens over je ophalen...",
+    "restaurants": "We zoeken wat plekjes voor je uit!"
   },
 
   "about": {

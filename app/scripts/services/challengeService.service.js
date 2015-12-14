@@ -120,8 +120,30 @@
             }).catch(function(response){
               deferred.reject(response);
             });
-
             return deferred.promise;
+          },
+
+          createRestaurantChallenge: function (restaurantId) {
+            var token = $localstorage.getObject(TOKEN).token;
+            var deferred = $q.defer();
+
+            $http({
+              method: 'PUT',
+              url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+              headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-type': 'application/json; charset=utf-8'
+              },
+              data: {
+                "Type": "Restaurant"
+              }
+            }).then(function(data){
+              deferred.resolve(data);
+            }).catch(function(response){
+              deferred.reject(response);
+            });
+
+            return deferred;
           },
 
           createSugarfreeChallenge: function () {
@@ -146,7 +168,6 @@
             }).catch(function(response){
               deferred.reject(response);
             });
-
           }
 
 
@@ -170,6 +191,7 @@
             service.challenges.push(data.data);
           });
         };
+
         service.getChallenges = function () {
           var token = $localstorage.getObject(TOKEN).token;
 

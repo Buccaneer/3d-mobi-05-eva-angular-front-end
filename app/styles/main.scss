@@ -338,7 +338,30 @@ md-datepicker {
 #loading-bar {
   z-index: 1;
 }
-/* link animations to classes */
+.restaurant-wrapper {
+  background-image: url("../images/challenge-rest-bg.png");
+}
+.bg-info {
+  padding: 25px;
+}
+#overlay {
+  padding: 25px;
+}
+#restaurant-body{
+  width: 75vw;
+}
+
+.angular-google-map-container {
+  top:0;
+  left:0;
+  min-height: $content-height*0.5;
+}
+.wrapper-map {
+  min-width: 100vw;
+  min-height: $content-height*0.5;
+}
+
+//ANIMATIONS
 .bounceInUp {
   -webkit-animation: bounceInUp 1s;
 }
