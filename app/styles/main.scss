@@ -248,6 +248,10 @@ md-input-container .md-input {
   left:0;
   min-height: $content-height*0.5;
 }
+.wrapper-map {
+  min-width: 100vw;
+  min-height: $content-height*0.5;
+}
 
 //ANIMATIONS
 .bounceInUp {

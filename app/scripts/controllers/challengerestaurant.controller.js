@@ -4,8 +4,8 @@
 
   angular
     .module('eva21DayChallengeApp')
-    .controller('RestaurantCtrl', ['RestaurantService', '$scope',
-      function(restaurantService, $scope) {
+    .controller('RestaurantCtrl', ['RestaurantService', '$scope', '$state', 'ChallengeService',
+      function(restaurantService, $scope, $state, challengeService) {
 
         $scope.distance = 20;
         $scope.markers = [];
@@ -24,8 +24,8 @@
         $scope.init = function() {
           $scope.map = {
             center: {
-              latitude: currentPosition.latitude,
-              longitude: currentPosition.longitude
+              latitude: parseFloat(currentPosition.latitude),
+              longitude: parseFloat(currentPosition.longitude)
             },
             zoom: 15
           };
@@ -105,6 +105,17 @@
           });
 
           $scope.markers = arr;
+        };
+
+        $scope.agreed = function(){
+          console.log($scope.currentRestaurant);
+          challengeService.createRestaurantChallenge($scope.currentRestaurant.RestaurantId).then(function(data){
+            $state.go('challenge-overview');
+            console.log(data);
+          });
+        };
+        $scope.disagreed = function(){
+          $state.go('create-challenge');
         };
       }
     ]);
