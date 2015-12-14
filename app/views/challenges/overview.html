@@ -8,7 +8,7 @@
 
   <div layout-align="center" layout="row" ng-init="init()">
 
-    <div class="fullwidth" flex-sm="100" flex-gt-sm="60" layout="column">
+    <div class="fullwidth" flex-md="100" flex-gt-md="60" layout="column">
       <div class="fullwidth-overview-item border-white bg-black" layout="row" ng-class="{'bg-active': challenge.Done===false && challenge.TimeToAccept > 0}" ng-click="seeDetails(challenge.ChallengeId)" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp">
         <div class="fullwidth-item-inner" layout-align="center" flex="100" flex="grow" layout="row">
           <div layout="column" layout-align="center center" flex="50">
@@ -46,28 +46,3 @@
     </div>
   </div>
 </div>
-
-<!-- <div layout-align="center" layout="row">
-
-  <div class="bg-white" flex-gt-sm="70" flex-sm="100" layout-align="center center" layout="column" ng-hide="loading">
-    <div flex layout-align="center center" layout="column">
-      <div layout-align="center" layout="row">
-        <div layout="column">
-          <h1>Challenges</h1>
-          <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
-        </div>
-      </div>
-
-      <div layout="column" ng-repeat="challenge in challenges | orderBy: '-Date' | reverse">
-        <h2 class="md-title">Challenge
-          {{$index + 1}}</h2>
-        <p></p>
-        <md-button class="md-raised md-primary" ng-href="#/challenge/{{challenge.ChallengeId}}">Bekijk details</md-button>
-      </div>
-
-    </div>
-  </div>
-<<<<<<< HEAD
-</div>
-=======
-</div> -->
