@@ -1,9 +1,9 @@
 
 <!-- CHOOSE RECIPE VIEW -->
-<div class="blackboard-wrapper">
+<div class="blackboard-wrapper wrapper">
   <h1 class="text-center">{{'recipe.choose' | translate}}</h1>
 
-  <div id="recipe-list" layout-align="center center" layout="row" when-visible="slideInUp">
+  <div class="flex-list" layout-align="center center" layout="row" when-visible="slideInUp">
     <div class="border-white" id="recipe-tile" layout-align="center center" layout="column" ng-click="setSelectedRecipe(recipe)" ng-repeat="recipe in recipes | orderBy:'Name'" ng-style="{'background-image':'url({{recipe.Image}})'}">
       <p id="recipe-tile-content" class="bg-black">
         {{recipe.Name}}

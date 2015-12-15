@@ -18,11 +18,11 @@
       };
 
       $scope.createRestaurantChallenge = function(){
-        $state.go('home');
+        $state.go('create-restaurant-challenge');
       };
 
       $scope.createRegionRecipeChallenge = function(){
-        $state.go('home');
+        $state.go('create-recipe-rr-challenge');
       };
 
       $scope.createRegionRestaurantChallenge = function(){
@@ -30,7 +30,11 @@
       };
 
       $scope.createCreativeCookingChallenge = function(){
-        $state.go('home');
+        $state.go('select-view-creative-cooking');
+      };
+      
+      $scope.createSugarfreeChallenge = function(){
+        $state.go('create-sugarfree-challenge');
       };
     }
   ]);

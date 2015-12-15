@@ -8,12 +8,16 @@
    * This service allows the user to work with challenges.
    */
   angular
-    .module('eva21DayChallengeApp').service('ChallengeService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope',
-      function ($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
+    .module('eva21DayChallengeApp').service('ChallengeService', ['$q', '$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope', 'UserInfoService', '$state',
+      function ($q, $localstorage, $http, URLS, TOKEN, $location, $rootScope, UserInfoService, $state) {
+
+
         var service = {
+          self: this,
           challenges: [],
 
           init: function () {
+            var self = this;
             //if there is a token object in the localstorage,
             //load it in memory
             var _token = $localstorage.getObject(TOKEN);
@@ -24,18 +28,33 @@
                 token: parsedToken
               };
             }
+
+            UserInfoService.getUserInfo().then(function(resp){
+              console.log(resp);
+              console.log(resp.data.HasRequestedChallengeToday);
+              self.hasReqChallenge = resp.data.HasRequestedChallengeToday;
+              console.log(self);
+            });
           },
 
           markChallengeAsDone: function (challengeId) {
             var token = $localstorage.getObject(TOKEN).token;
 
-            return $http({
+            var deferred = $q.defer();
+
+            $http({
               method: 'POST',
               url: URLS.PUBLIC_API + URLS.CHALLENGE + '/' + challengeId,
               headers: {
                 'Authorization': 'Bearer ' + token
               }
+            }).then(function(data){
+              deferred.resolve(data);
+            }).catch(function(response){
+              deferred.reject(response);
             });
+
+            return deferred.promise;
           },
 
           deleteChallenge: function (challengeId) {
@@ -51,7 +70,13 @@
 
           createRecipeChallenge: function (recipeId) {
             var token = $localstorage.getObject(TOKEN).token;
-            return $http({
+            var deferred = $q.defer();
+
+            if(this.hasReqChallenge){
+              deferred.reject('hasReqChallenge');
+            }
+
+            $http({
               method: 'PUT',
               url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
               headers: {
@@ -62,13 +87,23 @@
                 "Type": "Recipe",
                 "RecipeId": recipeId
               }
+            }).then(function(data){
+              deferred.resolve(data);
+            }).catch(function(response){
+              deferred.reject(response);
             });
+
+            return deferred.promise;
           },
 
           createCreativeCookingChallenge: function (ingredientsId, recipeId) {
             var token = $localstorage.getObject(TOKEN).token;
+            var deferred = $q.defer();
 
-            return $http({
+            if(this.hasReqChallenge){
+              deferred.reject('hasReqChallenge');
+            }
+            $http({
               method: 'PUT',
               url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
               headers: {
@@ -80,11 +115,84 @@
                 "IngredientsId": ingredientsId,
                 "RecipeId": recipeId
               }
+            }).then(function(data){
+              deferred.resolve(data);
+            }).catch(function(response){
+              deferred.reject(response);
+            });
+            return deferred.promise;
+          },
+
+          createRestaurantChallenge: function (restaurantId) {
+            var token = $localstorage.getObject(TOKEN).token;
+            var deferred = $q.defer();
+
+            $http({
+              method: 'PUT',
+              url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+              headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-type': 'application/json; charset=utf-8'
+              },
+              data: {
+                "Type": "Restaurant",
+                "RestaurantId": restaurantId
+              }
+            }).then(function(data){
+              deferred.resolve(data);
+            }).catch(function(response){
+              deferred.reject(response);
+            });
+
+            return deferred.promise;
+          },
+
+          createSugarfreeChallenge: function () {
+            var token = $localstorage.getObject(TOKEN).token;
+            var deferred = $q.defer();
+
+            if(this.hasReqChallenge){
+              deferred.reject('hasReqChallenge');
+            }
+            $http({
+              method: 'PUT',
+              url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+              headers: {
+                'Authorization': 'Bearer ' + token,
+                'Content-type': 'application/json; charset=utf-8'
+              },
+              data: {
+                "Type": "Suikervrij"
+              }
+            }).then(function(data){
+              deferred.resolve(data);
+            }).catch(function(response){
+              deferred.reject(response);
             });
           }
 
 
         };
+
+        service.createRegionRecipeChallenge = function (recipeId) {
+          var token = $localstorage.getObject(TOKEN).token;
+
+          return $http({
+            method: 'PUT',
+            url: URLS.PUBLIC_API + URLS.CHALLENGE + '/',
+            headers: {
+              'Authorization': 'Bearer ' + token,
+              'Content-type': 'application/json; charset=utf-8'
+            },
+            data: {
+              "Type": "RegionRecipe",
+              "RecipeId": recipeId
+            }
+          }).then(function (data) {
+            service.challenges.push(data.data);
+          });
+        };
+
         service.getChallenges = function () {
           var token = $localstorage.getObject(TOKEN).token;
 
@@ -103,6 +211,8 @@
           });
         };
 
+
+
         service.getChallenge = function (challengeId) {
           var token = $localstorage.getObject(TOKEN).token;
           $rootScope.loading = "loading.challenge";
@@ -116,6 +226,9 @@
           }).then(function (res) {
             $rootScope.loading = false;
             return res.data;
+          }).catch(function(response){
+            $rootScope.loading = false;
+            $state.go('main');
           });
         };
 

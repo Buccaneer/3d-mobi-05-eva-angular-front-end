@@ -1,4 +1,4 @@
-<div id="loginWrapper">
+<div class="fillinWrapper">
 
   <div flex="100" id="login" class="bg-black" layout="column" when-visible="bounceInUp">
     <div layout-align="center center" layout="column">
@@ -6,14 +6,14 @@
         {{error | translate}}
       </div>
       <div>
-        <h1>{{'login.loginButton' | translate}}</h1>
+        <h1>{{'login.title' | translate}}</h1>
       </div>
       <div>
         <a ng-href="#/register">{{'login.noAccount' | translate}}</a>
       </div>
     </div>
 
-    <form id="loginForm" name="loginForm" ng-submit="callLogin()" novalidate layout-margin layout-padding>
+    <form id="loginForm" name="loginForm" ng-submit="callLogin()" novalidate>
         <md-input-container>
           <label>{{'login.email' | translate}}</label>
           <input name="email" ng-model="user.email" required type="email">

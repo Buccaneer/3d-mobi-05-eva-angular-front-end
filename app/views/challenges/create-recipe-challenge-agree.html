@@ -1,15 +1,17 @@
-<div class="blackboard-wrapper" layout="column">
+<div class="blackboard-wrapper wrapper" layout="column">
   <!-- CHANGE FLEX OF ENTIRE PAGE HERE -->
+  <div ng-include="'views/recipe.html'" ng-show="recipe"></div>
 
-  <div layout="row" ng-include="'views/recipe.html'" ng-show="recipe"/>
-  <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+  <div layout="row" layout-align="center center">
 
-  <div layout-align="center center" layout="column">
-    <p>Pick this recipe?</p>
-    <div layout="row">
-      <md-button class="md-raised md-primary" ng-click="agreed()">Yes!</md-button>
-      <md-button class="md-raised md-warn" ng-click="disagreed()">No</md-button>
+      <div layout-align="center center" layout="column">
+
+        <p>{{'challenges.txt_takeChallenge' | translate}}</p>
+        <div>
+          <md-button class="md-raised md-primary" ng-click="agreed()">{{'challenges.btn_yes' | translate}}</md-button>
+          <md-button class="md-raised md-warn" ng-click="disagreed()">{{'challenges.btn_no' | translate}}</md-button>
+        </div>
+      </div>
     </div>
   </div>
-
 </div>

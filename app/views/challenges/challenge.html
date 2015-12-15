@@ -1,23 +1,20 @@
-<div class="blackboard-wrapper" layout-align="center" layout="row">
+<div class="blackboard-wrapper wrapper" layout="column">
+
+  <h1 class="text-center">{{challenge.Date | amDateFormat:'DD MMMM YYYY'}}</h1>
+
+  <div ng-include="view"></div>
+
   <div layout="column">
-    <div class="padding-view" flex layout="column">
-      <div flex layout="column">
-        <div class="bg-white padding-view" layout-align="center center" layout="column" ng-hide="loading">
-          <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
-
-            <div flex layout="column" ng-include="view"></div>
-
-          <div layout-align="center" layout="row">
-            <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done">
-              Done!
-            </md-button>
-            <div ng-show="challenge.Done">
-              <h3 class="text-success">Je hebt deze challenge al gedaan! </h3>
-            </div>
-          </div>
-
+    <div>
+      <div layout-align="center" layout="row">
+        <md-button class="md-primary md-raised" ng-click="markAsDone()" ng-hide="challenge.Done || challenge.TimeToAccept < 0">
+          {{'challenges.btn_done' | translate}}
+        </md-button>
+        <div ng-show="challenge.Done">
+          <h3 class="text-success">{{'challenges.txt_alreadyDone' | translate}}</h3>
         </div>
       </div>
+
     </div>
   </div>
 </div>

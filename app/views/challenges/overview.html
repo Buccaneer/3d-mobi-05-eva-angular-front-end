@@ -1,22 +1,48 @@
-<div class="blackboard-wrapper">
-  <div layout-align="center" layout="row">
+<div class="blackboard-wrapper wrapper">
+  {{now}}
+  <div id="challenge-header" layout-align="center center" layout="row">
+    <div class="hover-enlarge bg-black" ng-click="createChallenge()" when-visible="bounceInUp">
+      <h3>{{'challenges.new' | translate}}</h3>
+    </div>
+  </div>
 
-    <div layout-align="center center" layout="column">
-      <div layout-align="center" layout="row">
-        <div layout="column">
-          <h1>Challenges</h1>
-          <md-button class="md-raised md-primary" ng-href="#/challenge/create">Nieuwe challenge</md-button>
+  <div layout-align="center" layout="row" ng-init="init()">
+
+    <div class="fullwidth" flex="100" flex-gt-md="60" layout="column">
+      <div class="fullwidth-overview-item border-white bg-black" layout="row" ng-class="{'bg-active': challenge.Done===false && challenge.TimeToAccept > 0}" ng-click="seeDetails(challenge.ChallengeId)" ng-repeat="challenge in challenges | orderBy: '-Date'" when-visible="slideInUp">
+        <div class="fullwidth-item-inner" layout-align="center" flex="100" flex="grow" layout="row">
+          <div layout="column" layout-align="center center" flex="50">
+            <h3>
+              {{challenge.Name}}
+            </h3>
+            <p>
+              {{challenge.Date | amUtc | amDateFormat:'DD.MM.YYYY'}}
+              om
+              {{challenge.Date | amUtc | amLocal | amDateFormat:'HH:mm'}}
+            </p>
+            <p>
+              {{'type' | translate}}: {{challenge.Type | translate}}
+            </p>
+            <div id="status">
+              <div ng-if="challenge.Done === false && challenge.TimeToAccept < 0">
+                <img class="comp" src="../images/components/cross.svg"/>
+              </div>
+              <div ng-if="challenge.Done === false && challenge.TimeToAccept > 0">
+                {{'challenges.timeLeft' | translate}}
+                {{challenge.TimeToAccept | amDurationFormat : 'minute' }}
+              </div>
+              <div ng-if="challenge.Done">
+                <img class="comp" src="../images/components/checkmark.svg"/>
+              </div>
+            </div>
+          </div>
+
+          <div layout-align="center end" layout="row" ng-show="challenge.Type === 'Recipe' || challenge.Type === 'CreativeCooking' || challenge.Type === 'RegionRecipe'" class="challenge-thumbnail" flex="50" ng-style="{'background-image':'url({{challenge.Thumbnail}})'}"></div>
+          <div layout-align="center end" layout="row" ng-show="challenge.Type === 'Restaurant'" flex="50" class="restaurant-challenge challenge-thumbnail"></div>
+          <div layout-align="center end" layout="row" ng-show="challenge.Type === 'Suikervrij'" flex="50" class="sugarfree-challenge challenge-thumbnail"></div>
+
         </div>
       </div>
-
-      <div layout="column" ng-repeat="challenge in challenges | orderBy: '-Date'">
-
-        <h2 class="md-title">Challenge
-          {{$index + 1}}</h2>
-        <p></p>
-        <md-button class="md-raised md-primary" ng-href="#/challenge/{{challenge.ChallengeId}}">Bekijk details</md-button>
-      </div>
-
     </div>
   </div>
 </div>

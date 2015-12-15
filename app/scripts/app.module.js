@@ -24,7 +24,8 @@
       'ui.router',
       'ngMaterial',
       'uiGmapgoogle-maps',
-      'angular-scroll-animate'
+      'angular-scroll-animate',
+      'angularMoment'
     ]);
 
   /**
@@ -67,14 +68,10 @@
     'CHALLENGE': '/api/Challenge',
     'RECIPE': '/api/Recipes',
     'INGREDIENT': '/api/Ingredient?name=',
-
-    'RESTAURANT': '/api/Restaurants',
-
+    'RESTAURANTS': '/api/Restaurants',
+    'RESTAURANT': '/api/Restaurant',
     'RECIPEBYINGREDIENTS': '/api/Recipes/ByIngredient'
-    
-
   });
   app.constant('TOKEN', 'eva.access_token');
-
 
 })();

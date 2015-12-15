@@ -1,0 +1,7 @@
+<div class="wrapper-map" ng-init="initMap()">
+  <ui-gmap-google-map center='map.center' id="map" pan='true' zoom='map.zoom'>
+    <ui-gmap-markers coords="'self'" fit="'true'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
+  </ui-gmap-google-map>
+  <div class="bg-black" ng-include="'views/restaurant-template.html'">
+  </div>
+</div>

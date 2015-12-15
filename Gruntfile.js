@@ -398,6 +398,7 @@ module.exports = function (grunt) {
             'styles/fonts/{,*/}*.*',
             'fonts/{,*/}*.*',
             'styles/animate.css',
+            'views/{,*/}*.*',
             'vids/loading.mp4'
           ]
         }, {
@@ -480,14 +481,14 @@ module.exports = function (grunt) {
     'useminPrepare',
     'concurrent:dist',
     'autoprefixer',
-    'ngtemplates',
+    // 'ngtemplates',
     'concat',
     'ngAnnotate',
     'copy:dist',
     'cdnify',
     'cssmin',
     'uglify',
-    'filerev',
+    // 'filerev',
     'usemin',
     'htmlmin'
   ]);

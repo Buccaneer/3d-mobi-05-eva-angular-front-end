@@ -1,7 +1,73 @@
-<div class="padding-view" layout-align="center" layout="row">
-	<div class="bg-white">
-		{{'about.text' | translate}}<br>
-		{{'about.info' | translate}}
-	</div>
+<div id="about" layout-align="center" layout="row" when-visible="bounceInUp">
+  <div id="expl">
+    <div class="bg-black" id="about-view">
+      <h1 class="text-center">{{'about.title' | translate}}</h1>
+      <p>
+        {{'about.text' | translate}}
+      </p>
+      <p>
+        {{'about.text-second' | translate}}
+      </p>
+      <p>
+        {{'about.info' | translate}}
+        <a href="http://evavzw.be">{{'about.site' | translate}}</a>
+      </p>
+    </div>
+
+    <div class="bg-black" id="about-steps">
+      <div class="text-center" layout="row">
+        <div flex="100">
+          <h1>{{'home.about' | translate}}</h1>
+          <p>
+            {{'home.about-intro-1' | translate}}
+          </p>
+        </div>
+      </div>
+
+      <div id="steps" layout="column">
+        <div layout="row" when-visible="fadeInLeft">
+          <div id="step1">
+            <h3>1. {{'home.about-step-1-title' | translate}}</h3>
+            <p>
+              {{'home.about-step-1-text' | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div layout="row" when-visible="fadeInRight">
+          <div id="step2">
+            <h3>2. {{'home.about-step-2-title' | translate}}</h3>
+            <p>
+              {{'home.about-step-2-text' | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div layout="row" when-visible="fadeInLeft">
+          <div id="step3">
+            <h3>3. {{'home.about-step-3-title' | translate}}</h3>
+            <p>
+              {{'home.about-step-3-text' | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div layout="row" when-visible="fadeInRight">
+          <div id="step4">
+            <h3>4. {{'home.about-step-4-title' | translate}}</h3>
+            <p>
+              {{'home.about-step-4-text' | translate}}
+            </p>
+          </div>
+        </div>
+
+        <div class="text-center" layout="row">
+          <div class="text-center" flex="100" id="step5">
+            <h3>{{'home.about-step-5' | translate}}
+              🎉</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </div>
-	

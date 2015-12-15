@@ -1,30 +1,33 @@
-<div class="padding-view" layout="row" layout-align="center" ng-controller="ChallengeRecipesCtrl">
-  <md-content class="bg-white" layout="column" layout-align="center center" flex-gt-md="40" flex-sm='100'>
-    <h2>Creative cooking challenge</h2>
-    <div layout-align="center" layout="row">
+<div class="blackboard-wrapper wrapper" layout-align="center" layout="row" ng-controller="ChallengeRecipesCtrl">
+  <div layout="column">
 
-      <ingredient-selector ingredients="selected" placeholder="Ingredient" />
-    </div>
-    <md-select layout-align="center" layout="row" ng-model="recipe" placeholder="Pick a recipe" ng-show="recipes.length > 0" ng-change="onChange(recipe)">
-      <md-option ng-repeat="r in recipes" ng-value="r">
-        {{r.Name}}
-      </md-option>
-    </md-select>
-    
-    <div flex id="recipe" ng-show="recipe">
-        <div flex ng-include="'views/recipe.html'"/>
+    <div>
+
+      <div layout-align="center" layout="row">
+        <h2>Creative cooking challenge</h2>
       </div>
 
-    <div layout-align="center" layout="row">
+      <div layout="column">
+        <ingredient-selector ingredients="selected" placeholder="Ingredient"/>
+      </div>
+      <md-select layout-align="center" layout="row" ng-change="onChange(recipe)" ng-model="recipe" ng-show="recipes.length > 0" placeholder="{{'recipe.pick' | translate}}">
+        <md-option ng-repeat="r in recipes" ng-value="r">
+          {{r.Name}}
+        </md-option>
+      </md-select>
+    </div>
+
+    <div ng-show="recipe">
+      <div  id="recipe-body" ng-include="'views/recipe.html'"></div>
+
       <div layout-align="center center" layout="column">
-        <p>Pick this challenge?</p>
+        <p>{{'challenges.txt_takeChallenge' | translate}}</p>
         <div layout-align="center center" layout="row">
-          <md-button class="md-raised md-primary" ng-click="agreed()">Yes!</md-button>
-          <md-button class="md-raised md-warn" ng-click="disagreed()">No</md-button>
+          <md-button class="md-raised md-primary" ng-click="agreed()">{{'challenges.btn_yes' | translate}}</md-button>
+          <md-button class="md-raised md-warn" ng-click="disagreed()">{{'challenges.btn_no' | translate}}</md-button>
         </div>
       </div>
     </div>
-
-  </md-content>
+  </div>
 
 </div>

@@ -1,0 +1,56 @@
+<div class="restaurant-wrapper wrapper" ng-init="init()">
+  <ui-gmap-google-map center='map.center' id="map" pan='true' zoom='map.zoom'>
+    <ui-gmap-markers click='clickedMarker' coords="'self'" fit="'true'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
+  </ui-gmap-google-map>
+
+  <div layout-align="center center" layout="row">
+
+    <div flex-gt-md="60" flex="100" id="restaurant-body" layout-align="center" layout="column">
+      <div class="bg-info text-center" ng-show="!accepted">
+        <p>
+          {{'restaurant.info-1' | translate}}
+        </p>
+        <p>
+          {{'restaurant.info-2' | translate}}
+        </p>
+        <p>
+          {{'restaurant.info-3' | translate}}
+        </p>
+        <md-button class="md-raised" ng-click="getCurrentPosition()">
+          {{'restaurant.use-loc' | translate}}
+        </md-button>
+      </div>
+      <div class="bg-black" id="overlay" layout="column">
+
+        <div layout-align="center center" layout="row">
+          <!-- /*
+        * { city, description, email, latitude, longitude,
+        *   name, phone, postal, restaurantid, street, website }
+        */ -->
+          <md-input-container>
+            <label>{{'restaurant.distance' | translate}}</label>
+            <input ng-model="distance">
+          </md-input-container>
+          <md-button class="md-raised" ng-click="findRestaurants()">
+            {{'restaurant.find' | translate}}
+          </md-button>
+        </div>
+      </div>
+
+      <div class="bg-black">
+        <div ng-include="'views/restaurant-template.html'"></div>
+        <div layout-align="center" layout="row">
+          <div layout="column">
+
+            <p class="text-center">{{'challenges.txt_takeChallenge' | translate}}</p>
+            <div layout="row">
+              <md-button class="md-raised md-primary" ng-click="agreed()">{{'challenges.btn_yes' | translate}}</md-button>
+              <md-button class="md-raised md-warn" ng-click="disagreed()">{{'challenges.btn_no' | translate}}</md-button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

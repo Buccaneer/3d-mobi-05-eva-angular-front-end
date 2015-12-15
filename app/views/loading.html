@@ -1,12 +1,12 @@
-<div id="video-overlay" layout-align="center" layout="row">
-  <div layout-align="center center" layout="column">
+<div id="video-overlay" layout="row" layout-align-gt-sm="center">
+  <div layout="column" layout-align-gt-sm="center center">
     <div id="video-content" class="bg-black">
       <h1>
-        {{loading | translate}}
+        {{'loading.main' | translate}}
       </h1>
     </div>
   </div>
 </div>
-<video autoplay id="video-background" loop muted>
+<video show-gt-sm autoplay id="video-background" loop muted>
   <source src="/vids/loading.mp4" type="video/mp4">
 </video>

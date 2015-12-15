@@ -1,0 +1,37 @@
+<!-- CHOOSE RECIPE VIEW -->
+<div class="blackboard-wrapper wrapper">
+  <div layout-align="center" layout="row">
+    <div class="bg-white" flex-gt-md="60" flex='100' layout-align="center center" layout="column">
+      <h1 class="text-center">{{'recipe.choose' | translate}}</h1>
+
+      <md-select layout-align="center" layout="row" ng-change="onChange(selectedRegion)" ng-model="selectedRegion" placeholder="{{'region.choose' | translate}}">
+        <md-option ng-repeat="r in regions" ng-value="r">
+          {{"region." + r | translate}}
+        </md-option>
+      </md-select>
+
+      <div class="flex-list" layout-align="center center" layout="row" when-visible="slideInUp">
+        <div class="border-white" id="recipe-tile" layout-align="center center" layout="column" ng-click="setSelectedRecipe(recipe)" ng-repeat="recipe in recipes | orderBy:'Name'" ng-style="{'background-image':'url({{recipe.Image}})'}">
+          <p class="bg-black" id="recipe-tile-content">
+            {{recipe.Name}}
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div id="recipe-body" layout="column" ng-include="'views/recipe.html'" ng-show="recipe"/>
+  <h1>{{challenge.Date | date:'fullDate' | translate}}</h1>
+
+  <div layout-align="center" layout="row" ng-show="recipe">
+    <div layout-align="center center" layout="column">
+      <p>{{'challenges.txt_takeChallenge' | translate }}</p>
+      <div layout="row">
+        <md-button class="md-raised md-primary" ng-click="agreed()">{{'challenges.btn_yes' | translate}}</md-button>
+        <md-button class="md-raised md-warn" ng-click="disagreed()">{{'challenges.btn_no' | translate}}</md-button>
+      </div>
+    </div>
+  </div>
+
+</div>

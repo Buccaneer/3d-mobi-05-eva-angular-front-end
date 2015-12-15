@@ -9,9 +9,9 @@
    */
   angular
     .module('eva21DayChallengeApp').service('UserInfoService', ['$localstorage', '$http', 'URLS', 'TOKEN', '$location', '$rootScope',
-      function ($localstorage, $http, URLS, TOKEN, $location, $rootScope) {
+      function ( $localstorage, $http, URLS, TOKEN, $location, $rootScope) {
         var service = {
-          userInfo: [] ,
+          userInfo: {} ,
 
           init: function () {
             //if there is a token object in the localstorage,
@@ -52,7 +52,7 @@
         service.getUserInfo = function () {
           var token = $localstorage.getObject(TOKEN).token;
 
-          $rootScope.loading = "settings.loading";
+          $rootScope.loading = "loading.settings";
 
           //probably best for this to be temporary.
           return $http({
