@@ -200,6 +200,19 @@
       $translateProvider.translations('nl', {
         "___comment": "niks",
 
+        "Low": "laag",
+        "Medium": "gemiddeld",
+        "High": "hoog",
+        "Not Shared":"niet gedeeld",
+
+        "Omnivore": "Omnivoor",
+        "Pescetarian": "Pescotariër",
+        "Parttime vegetarian": "Deeltijds vegetariër",
+        "Vegetarian": "Vegetariër",
+        "Vegan": "Veganistisch",
+        "Other": "Andere",
+
+
         "type": "Soort",
         "Restaurant": "Restaurant",
         "Recipe": "Recept",
@@ -380,6 +393,19 @@
       });
 
       $translateProvider.translations('fr', {
+
+
+        "Low": "bas",
+        "Medium": "moyen",
+        "High": "haut",
+        "Not Shared":"pas partagé",
+
+        "Omnivore": "Omnivore",
+        "Pescetarian": "Pescétarien",
+        "Parttime vegetarian": "Végétarien à temps partiel",
+        "Vegetarian": "Végétarien",
+        "Vegan": "Végétalien",
+        "Other": "Autre",
 
         "type": "Type",
         "Restaurant": "Restaurant",

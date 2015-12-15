@@ -40,8 +40,8 @@
         <md-input-container>
           <label>{{'settings.budget' | translate}}</label>
           <md-select ng-model="user.budget">
-            <md-option ng-repeat="budget in budgetList">
-              {{budget}}
+            <md-option ng-value="budget" ng-repeat="budget in budgetList">
+              {{budget | translate}}
             </md-option>
           </md-select>
         </md-input-container>
@@ -51,8 +51,8 @@
         <md-input-container>
           <label>{{'settings.typeOfVegan' | translate}}</label>
           <md-select ng-model="user.typeOfVegan">
-            <md-option ng-repeat="type in typeOfVeganList">
-              {{type}}
+            <md-option ng-value="type" ng-repeat="type in typeOfVeganList">
+              {{type | translate}}
             </md-option>
           </md-select>
         </md-input-container>

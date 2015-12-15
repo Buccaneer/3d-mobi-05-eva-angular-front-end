@@ -53,8 +53,8 @@
           lastname: 'Dupont',
           birthdate: new moment(),
           allergies: '',
-          budget: 'hoog',
-          typeOfVegan: 'Veganist',
+          budget: 'High',
+          typeOfVegan: 'Vegan',
           peopleInFamily: '3'
         };
 
@@ -65,6 +65,7 @@
       var toId = function(ingredient) {
         return ingredient.IngredientId;
       };
+      console.log(_userInfo);
 
       if (_doneSetup === true) {
         $scope.user = {
@@ -80,8 +81,8 @@
       }
 
 
-      $scope.typeOfVeganList = ['Omnivoor', 'Pescotariër', 'Parttime-vegetariër', 'Vegetariër', 'Veganist'];
-      $scope.budgetList = ['hoog', 'gemiddeld', 'laag', 'niet gedeeld'];
+      $scope.typeOfVeganList = ['Omnivore', 'Pescetarian', 'Parttime vegetarian', 'Vegetarian', 'Vegan', 'Other'];
+      $scope.budgetList = ['High', 'Medium', 'Low', 'Not Shared'];
       $scope.peopleInFamilyList = ['1', '2', '3', '4'];
 
       $scope.callSettings = function() {
