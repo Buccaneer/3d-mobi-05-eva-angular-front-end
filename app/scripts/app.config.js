@@ -22,6 +22,7 @@
         "Recipe": "Recipe",
         "CreativeCooking": "Creative Cooking",
         "Suikervrij": "Sugarfree",
+        "RegionRecipe": "Foreign Recipe",
 
         "nav": {
           "home": "Home",
@@ -34,10 +35,10 @@
           "about": "About"
         },
         "home": {
-          "title": "Makes it vegan!",
+          "title": "Make it vegan!",
           "headline": "We challenge you to complete one of our challenges each day, for 21 days straight!",
-          "text-signup-login": "If you think you've got what it takes, you can sign up or login below.",
-          "text-about": "Take a look here at how the website works!",
+          "text-signup-login": "If you think you've got what it takes, you can sign up or login and get started.",
+          "text-about": "Take a look below to see how the website works!",
           "about": "How does it work?",
           "about-intro-1": "With this application you can discover the world of vegetables by completing daily challenges.",
           "about-step-1-title": "You register and/or sign in on the website",
@@ -45,7 +46,7 @@
           "about-step-2-title": "You're logged in",
           "about-step-2-text": "In case you already have a challenge for today, you'll get to view the challenge and the time that's left to complete it. If you do not have a challenge, you'll be able to request one. Furthermore you can look at the achievements you have unlocked and the previous challenges.",
           "about-step-3-title": "Receiving a new challenge",
-          "about-step-3-text": "You can view the details of the challenge by clicking on it. You can also start a new one. You can also take a look at the different type of challenges.",
+          "about-step-3-text": "You can view the details of the challenge by clicking on it. You can also start a new one and take a look at the different type of challenges.",
           "about-step-4-title": "Completing a challenge",
           "about-step-4-text": "If you completed the challenge, don't forget to mark it as done on the bottom of the detailed view!",
           "about-step-5": "Congratulations, you just completed your first challenge!"
@@ -204,6 +205,7 @@
         "Recipe": "Recept",
         "CreativeCooking": "Creative Cooking",
         "Suikervrij": "Suikervrij",
+        "RegionRecipe": "Uitheems recept",
 
         "nav": {
           "home": "Startpagina",
@@ -414,7 +416,7 @@
           "about-step-5": "Félicitations, vous avez réussi votre premier défi!"
         },
         "main": {
-          "welcome": "Bienvenu de nouveau, ",
+          "welcome": "Bienvenue, ",
           "checkDetails": "Regardez les détails",
           "noChallenge": "Vous n'avez pas encore de défi pour aujourd'hui!",
           "newChallenge": "Nouveau défi"

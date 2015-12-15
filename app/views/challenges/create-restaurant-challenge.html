@@ -5,7 +5,7 @@
 
   <div layout-align="center center" layout="row">
 
-    <div id="restaurant-body" layout-align="center" flex="100" flex-gt-md="60" layout="column">
+    <div flex-gt-md="60" flex="100" id="restaurant-body" layout-align="center" layout="column">
       <div class="bg-info text-center" ng-show="!accepted">
         <p>
           {{'restaurant.info-1' | translate}}
@@ -37,8 +37,20 @@
         </div>
       </div>
 
-      <div ng-include="'views/restaurant-template.html'"
+      <div class="bg-black">
+        <div ng-include="'views/restaurant-template.html'"></div>
+        <div layout-align="center" layout="row">
+          <div layout="column">
 
+            <p class="text-center">{{'challenges.txt_takeChallenge' | translate}}</p>
+            <div layout="row">
+              <md-button class="md-raised md-primary" ng-click="agreed()">{{'challenges.btn_yes' | translate}}</md-button>
+              <md-button class="md-raised md-warn" ng-click="disagreed()">{{'challenges.btn_no' | translate}}</md-button>
+            </div>
+          </div>
+        </div>
+      </div>
     </div>
+
   </div>
 </div>

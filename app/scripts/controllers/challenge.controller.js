@@ -22,12 +22,12 @@
 
         if (challenge.Type === 'Restaurant') {
           $scope.view = "views/restaurant.html";
-          $scope.restaurant = challenge.Restaurant;
+          $scope.currentRestaurant = challenge.Restaurant;
         }
 
         $scope.initMap = function() {
-          var long = $scope.restaurant.Longitute;
-          var lat = $scope.restaurant.Latitude;
+          var long = $scope.currentRestaurant.Longitute;
+          var lat = $scope.currentRestaurant.Latitude;
 
           $scope.map = {
             center: {
@@ -39,7 +39,7 @@
 
           $scope.markers = [];
           var item = {
-            id: $scope.restaurant.RestaurantId,
+            id: $scope.currentRestaurant.RestaurantId,
             latitude: lat,
             longitude: long
           };

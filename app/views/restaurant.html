@@ -2,14 +2,6 @@
   <ui-gmap-google-map center='map.center' id="map" pan='true' zoom='map.zoom'>
     <ui-gmap-markers coords="'self'" fit="'true'" icon="'icon'" models="markers" ng-if="markers.length > 0"></ui-gmap-markers>
   </ui-gmap-google-map>
-  <div>
-    {{restaurant.Name}}
-    {{restaurant.Street}}
-    {{restaurant.Postal}}
-    {{restaurant.City}}
-    {{restaurant.Email}}
-    {{restaurant.Phone}}
-    {{restaurant.Email}}
-    {{restaurant.Description}}
+  <div class="bg-black" ng-include="'views/restaurant-template.html'">
   </div>
 </div>

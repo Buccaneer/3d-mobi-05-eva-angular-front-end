@@ -1,4 +1,4 @@
-<div class="bg-black" layout-align="center center" layout="row" ng-show="currentRestaurant">
+<div layout-align="center center" layout="row" ng-show="currentRestaurant">
   <div layout="column">
 
     <h3>{{currentRestaurant.Name}}</h3>
@@ -16,16 +16,5 @@
     <p ng-show="currentRestaurant.Website">
       <a target="blank" href="{{currentRestaurant.Website}}">Website</a>
     </p>
-
-    <div layout-align="center" layout="row">
-      <div layout="column">
-
-        <p class="text-center">{{'challenges.txt_takeChallenge' | translate}}</p>
-        <div layout="row">
-          <md-button class="md-raised md-primary" ng-click="agreed()">{{'challenges.btn_yes' | translate}}</md-button>
-          <md-button class="md-raised md-warn" ng-click="disagreed()">{{'challenges.btn_no' | translate}}</md-button>
-        </div>
-      </div>
-    </div>
   </div>
 </div>
